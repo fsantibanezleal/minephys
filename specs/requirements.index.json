@@ -1,0 +1,69 @@
+{
+  "requirements": {
+    "US-000-1": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "tasks": [],
+      "tests": []
+    },
+    "FR-000-01": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "tasks": [],
+      "tests": []
+    },
+    "FR-000-02": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "tasks": [],
+      "tests": []
+    },
+    "FR-000-03": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "tasks": [],
+      "tests": []
+    },
+    "FR-000-04": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "tasks": [],
+      "tests": []
+    },
+    "NFR-000-01": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "tasks": [],
+      "tests": []
+    },
+    "NFR-000-02": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "tasks": [],
+      "tests": []
+    },
+    "SC-000-01": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "tasks": [],
+      "tests": []
+    },
+    "DC-000-01": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "tasks": [],
+      "tests": []
+    }
+  },
+  "tasks": {},
+  "unknown": []
+}

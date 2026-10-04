@@ -1,0 +1,57 @@
+# CI — authoritative checks for every push and PR. Every action is pinned to a full commit SHA (release tag in the
+# comment; resolve with `gh api repos/<owner>/<action>/commits/<tag> --jq .sha`). Dependabot keeps them current.
+name: CI
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0 # full history for tools/check_tdd.py
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
+      - run: uv sync --all-groups --locked
+      - run: uv run ruff check . && uv run ruff format --check .
+      - run: uv run mypy src
+      - run: uv run python tools/trace.py --check
+      - run: uv run python tools/check_tdd.py --replay
+      - run: uv run python tools/check_repo.py
+
+  test:
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ["3.12", "3.13", "3.14"]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with: { persist-credentials: false }
+      - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
+        with: { python-version: "${{ matrix.python }}" }
+      - run: uv sync --all-groups --locked
+      - run: uv run pytest -m "not gpu" --cov=src --cov-branch
+
+  wheel:
+    # The tests run against the built wheel in a clean environment, not against the source tree.
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with: { persist-credentials: false }
+      - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
+      - run: uv build --no-sources
+      - run: uv sync --all-groups --locked --no-install-project
+      - run: uv pip install dist/*.whl
+      - run: uv run --no-sync pytest -m "not gpu" -p no:cacheprovider

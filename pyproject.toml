@@ -1,0 +1,45 @@
+[project]
+name = "minephys"
+version = "0.0.0"
+description = "Sourced, tested reference implementations of mining-engineering models with cited parameter tables"
+readme = "README.md"
+authors = [{ name = "Felipe A. Santibanez-Leal" }]
+classifiers = ["Programming Language :: Python :: 3.12", "Programming Language :: Python :: 3.13", "Programming Language :: Python :: 3.14", "Topic :: Scientific/Engineering"]
+license = "Apache-2.0"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy>=2.0",
+    "pyyaml>=6.0",
+]  # minimal and Pyodide-safe; added with `uv add`, versions written by the resolver
+
+[dependency-groups]
+dev = [
+    "hypothesis>=6.168.3",
+    "mypy>=2.4.0",
+    "poethepoet>=0.48.0",
+    "pytest>=9.1.1",
+    "pytest-cov>=7.1.0",
+    "pytest-xdist>=3.8.0",
+    "ruff>=0.16.10",
+    "types-pyyaml>=6.0.12.20260906",
+]
+
+[tool.uv]
+package = true
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM", "NPY", "PERF", "PT", "RUF"]
+
+[tool.pytest]
+minversion = "9.0"
+addopts = ["-ra", "--strict-markers"]
+testpaths = ["tests"]
+markers = ["req(id): links a test to a requirement ID", "gpu: needs CUDA", "slow: long-running"]
+
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
