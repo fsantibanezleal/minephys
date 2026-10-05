@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 700" role="img" aria-labelledby="t d" class="psd">
+  <title id="t">minephys planned modules, knowledge tables and consumers</title>
+  <desc id="d">The seven planned domain modules of minephys sit between the cited knowledge tables they read and the consumers that call them: a data pipeline, a simulation studio, a Kit extension and the browser through Pyodide.</desc>
+  <style>
+    .psd{--bg:#ffffff;--surface:#f7f4fb;--surface-2:#eee8f5;--fg:#1b1523;--fg-muted:#5c5468;--border:#ddd6e6;
+      --border-strong:#7d7589;--primary:#7500c0;--accent:#a100ff;--primary-soft:#f1e3ff;--danger:#b42318;
+      --success:#067647;--warning:#93370d;--info:#175cd3;--chart-1:#7500c0;--chart-2:#0e7c86;--chart-3:#c2410c;
+      --chart-4:#1d4ed8;--chart-5:#be185d;--chart-6:#4d7c0f}
+    @media (prefers-color-scheme: dark){.psd{--bg:#0f0b14;--surface:#1a1521;--surface-2:#251e2e;--fg:#f4f0f8;
+      --fg-muted:#b7aec3;--border:#352c40;--border-strong:#8c829b;--primary:#a100ff;--accent:#be82ff;
+      --primary-soft:#2e1a47;--danger:#fda29b;--success:#75e0a7;--warning:#fec84b;--info:#84adff;--chart-1:#be82ff;
+      --chart-2:#2dd4bf;--chart-3:#fb923c;--chart-4:#60a5fa;--chart-5:#f472b6;--chart-6:#a3e635}}
+    .bg{fill:var(--bg)}
+    .band{fill:var(--surface);stroke:var(--border);stroke-width:1}
+    .box{fill:var(--surface-2);stroke:var(--border-strong);stroke-width:1.5}
+    .box-accent{fill:var(--primary-soft);stroke:var(--accent);stroke-width:2}
+    .title{font:600 15px Inter,system-ui,sans-serif;fill:var(--fg)}
+    .path{font:13px "JetBrains Mono",ui-monospace,monospace;fill:var(--primary)}
+    .item{font:13px Inter,system-ui,sans-serif;fill:var(--fg-muted)}
+    .caveat{font:italic 13px Inter,system-ui,sans-serif;fill:var(--warning)}
+    .label{font:13px Inter,system-ui,sans-serif;fill:var(--fg)}
+    .edge{stroke:var(--fg-muted);stroke-width:1.5;fill:none}
+    .edge-accent{stroke:var(--accent);stroke-width:2.2;fill:none}
+    .arrowhead{fill:var(--fg-muted)}
+    .arrowhead-accent{fill:var(--accent)}
+    .bandtitle{font:600 15px Inter,system-ui,sans-serif;fill:var(--fg-muted)}
+    .planned{fill:var(--surface-2);stroke:var(--border-strong);stroke-width:1.5;stroke-dasharray:6 4}
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" class="arrowhead"/>
+    </marker>
+    <marker id="arrow-accent" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" class="arrowhead-accent"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1100" height="700"/>
+
+  <!-- ===== Consumers ===== -->
+  <rect class="band" x="20" y="20" width="1060" height="130" rx="8"/>
+  <text class="bandtitle" x="36" y="42">Consumers — one implementation, four runtimes</text>
+
+  <rect class="box" x="36" y="52" width="250" height="88" rx="6"/>
+  <text class="title" x="50" y="74">Data pipeline</text>
+  <text class="path" x="50" y="94">PitStudio pipeline/ (3.14)</text>
+  <text class="item" x="50" y="114">parameter sweeps, synthetic</text>
+  <text class="item" x="50" y="132">series, meta-model training data</text>
+
+  <rect class="box" x="298" y="52" width="250" height="88" rx="6"/>
+  <text class="title" x="312" y="74">Studio + docs build</text>
+  <text class="path" x="312" y="94">PitStudio studio/, docs</text>
+  <text class="item" x="312" y="114">tables → generated pages</text>
+  <text class="item" x="312" y="132">reference for TS-port parity</text>
+
+  <rect class="box" x="560" y="52" width="250" height="88" rx="6"/>
+  <text class="title" x="574" y="74">Kit extension</text>
+  <text class="path" x="574" y="94">Kit's own Python 3.12</text>
+  <text class="item" x="574" y="114">installed into a git-ignored</text>
+  <text class="item" x="574" y="132">target folder, not a venv</text>
+
+  <rect class="box-accent" x="822" y="52" width="242" height="88" rx="6"/>
+  <text class="title" x="836" y="74">Browser (Pyodide)</text>
+  <text class="path" x="836" y="94">wheel + numpy + PyYAML</text>
+  <text class="item" x="836" y="114">“run in Python” button,</text>
+  <text class="item" x="836" y="132">loaded on user action</text>
+
+  <!-- edge modules -> consumers -->
+  <path class="edge" d="M550,195 L550,152" marker-end="url(#arrow)"/>
+  <text class="label" x="562" y="178">pure functions · NumPy arrays · SI units</text>
+
+  <!-- ===== Modules ===== -->
+  <rect class="band" x="20" y="195" width="1060" height="305" rx="8"/>
+  <text class="bandtitle" x="36" y="217">minephys — planned domain modules (no model is implemented yet)</text>
+
+  <rect class="planned" x="36" y="230" width="250" height="122" rx="6"/>
+  <text class="title" x="50" y="252">Haulage</text>
+  <text class="path" x="50" y="272">minephys.haulage</text>
+  <text class="item" x="50" y="292">rimpull, retarder, resistance</text>
+  <text class="item" x="50" y="312">cycle time, energy, CO₂, trolley/BEV</text>
+  <text class="item" x="50" y="332">match factor, M/M/c, MVA</text>
+
+  <rect class="planned" x="298" y="230" width="250" height="122" rx="6"/>
+  <text class="title" x="312" y="252">Blasting</text>
+  <text class="path" x="312" y="272">minephys.blasting</text>
+  <text class="item" x="312" y="292">Kuz-Ram, KCO, Swebrec</text>
+  <text class="item" x="312" y="312">PPV by scaled distance</text>
+  <text class="item" x="312" y="332">flyrock: ballistic with drag</text>
+
+  <rect class="planned" x="560" y="230" width="250" height="122" rx="6"/>
+  <text class="title" x="574" y="252">Geotech</text>
+  <text class="path" x="574" y="272">minephys.geotech</text>
+  <text class="item" x="574" y="292">Hoek–Brown; LEM (Bishop, Spencer)</text>
+  <text class="item" x="574" y="312">inverse velocity, Bayesian TTF</text>
+  <text class="item" x="574" y="332">GB-InSAR slope-radar LOS model</text>
+
+  <rect class="planned" x="822" y="230" width="242" height="122" rx="6"/>
+  <text class="title" x="836" y="252">Bulk</text>
+  <text class="path" x="836" y="272">minephys.bulk</text>
+  <text class="item" x="836" y="292">Beverloo discharge</text>
+  <text class="item" x="836" y="312">repose cone / ridge volumes</text>
+  <text class="item" x="836" y="332">CEMA power, Gy blending</text>
+
+  <rect class="planned" x="36" y="364" width="250" height="122" rx="6"/>
+  <text class="title" x="50" y="386">Comminution</text>
+  <text class="path" x="50" y="406">minephys.comminution</text>
+  <text class="item" x="50" y="426">Bond, Morrell energy</text>
+  <text class="item" x="50" y="446">population balance (PBM)</text>
+  <text class="item" x="50" y="466">flotation: first-order, Klimpel</text>
+
+  <rect class="planned" x="298" y="364" width="250" height="122" rx="6"/>
+  <text class="title" x="312" y="386">Environment</text>
+  <text class="path" x="312" y="406">minephys.environment</text>
+  <text class="item" x="312" y="426">AP-42 unpaved-road dust</text>
+  <text class="item" x="312" y="446">Gaussian plume (point, line)</text>
+  <text class="item" x="312" y="466">Beer–Lambert dust for lidar</text>
+
+  <rect class="planned" x="560" y="364" width="250" height="122" rx="6"/>
+  <text class="title" x="574" y="386">Planning</text>
+  <text class="path" x="574" y="406">minephys.planning</text>
+  <text class="item" x="574" y="426">block economic value</text>
+  <text class="item" x="574" y="446">Lane cut-off grades</text>
+  <text class="item" x="574" y="466">small min-cut ultimate pit</text>
+
+  <rect class="box-accent" x="822" y="364" width="242" height="122" rx="6"/>
+  <text class="title" x="836" y="386">Conventions</text>
+  <text class="path" x="836" y="406">SI units in and out</text>
+  <text class="item" x="836" y="426">validity range per model</text>
+  <text class="item" x="836" y="446">equation + source per model</text>
+  <text class="caveat" x="836" y="476">UNVERIFIED rows flagged</text>
+
+  <!-- edge knowledge -> modules -->
+  <path class="edge-accent" d="M550,530 L550,502" marker-end="url(#arrow-accent)"/>
+  <text class="label" x="562" y="522">cited values: value or range, units, citation + page, status</text>
+
+  <!-- ===== Knowledge ===== -->
+  <rect class="band" x="20" y="530" width="1060" height="155" rx="8"/>
+  <text class="bandtitle" x="36" y="552">Knowledge — the cited tables every module reads</text>
+
+  <rect class="box" x="36" y="564" width="250" height="110" rx="6"/>
+  <text class="title" x="50" y="586">Loader</text>
+  <text class="path" x="50" y="606">minephys.knowledge</text>
+  <text class="item" x="50" y="626">load tables, look up a value</text>
+  <text class="caveat" x="50" y="660">a row without a source fails</text>
+
+  <rect class="box" x="298" y="564" width="250" height="110" rx="6"/>
+  <text class="title" x="312" y="586">Parameter tables</text>
+  <text class="path" x="312" y="606">knowledge/*.yaml</text>
+  <text class="item" x="312" y="626">value or range · units</text>
+  <text class="item" x="312" y="646">citation + page · status · symbol</text>
+
+  <rect class="box" x="560" y="564" width="250" height="110" rx="6"/>
+  <text class="title" x="574" y="586">Bibliography</text>
+  <text class="path" x="574" y="606">knowledge/references.bib</text>
+  <text class="item" x="574" y="626">BibTeX, DOI or URL per key</text>
+  <text class="item" x="574" y="646">generated bibliography pages</text>
+
+  <rect class="box" x="822" y="564" width="242" height="110" rx="6"/>
+  <text class="title" x="836" y="586">Dependencies</text>
+  <text class="path" x="836" y="606">numpy + PyYAML only</text>
+  <text class="item" x="836" y="626">Python ≥ 3.12; tests 3.12–3.14</text>
+  <text class="item" x="836" y="646">plus Pyodide and Kit smoke</text>
+</svg>

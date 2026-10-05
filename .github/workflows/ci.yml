@@ -29,6 +29,7 @@ jobs:
       - run: uv run python tools/trace.py --check
       - run: uv run python tools/check_tdd.py --replay
       - run: uv run python tools/check_repo.py
+      - run: uv run python tools/check_docs.py
 
   test:
     runs-on: ubuntu-24.04
