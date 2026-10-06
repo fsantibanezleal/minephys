@@ -33,7 +33,7 @@ specification**; such a form is a target for the specification, not a claim.
 
 | Model | Relation | Source | Notes |
 |---|---|---|---|
-| Kuznetsov mean size | $x_{50} = A\,K^{-0.8}\,Q^{1/6}\,(115/RWS)^{19/30}$ (cm) | [9] | $K$ powder factor (kg/m³), $Q$ charge per hole (kg), $RWS$ relative weight strength (ANFO = 100), $A$ rock factor; exponents **UNVERIFIED — pinned at specification** |
+| Kuznetsov mean size | $x_{50} = A\,K^{-0.8}\,Q^{1/6}\,(115/RWS)^{19/30}$ (cm; the 1983/1987 exponent 19/30 by default, Cunningham's 2005 exponent 19/20 as an option) | [9] | $K$ powder factor (kg/m³), $Q$ charge per hole (kg), $RWS$ relative weight strength (ANFO = 100), $A$ rock factor; exponents **UNVERIFIED — pinned at specification** |
 | Rosin–Rammler (Kuz-Ram) | $R(x) = \exp[-\ln 2\,(x/x_{50})^n]$ | [9] | uniformity index $n$ (Cunningham) and rock-factor constant **UNVERIFIED — pinned at specification** [10] |
 | Swebrec / KCO | $P(x) = \big\{1 + [\ln(x_{\max}/x)/\ln(x_{\max}/x_{50})]^b\big\}^{-1}$, $0 < x \le x_{\max}$ | [11][12] | better fines than Rosin–Rammler; links blasting and crushing |
 | Peak particle velocity | $PPV = K_s (D/\sqrt{W})^{-\beta}$ | [13][14] | $D$ distance, $W$ maximum charge per delay; $K_s$, $\beta$ fitted per site; US limits are in [14] |
