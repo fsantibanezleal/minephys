@@ -34,7 +34,7 @@ specification**; such a form is a target for the specification, not a claim.
 | Model | Relation | Source | Notes |
 |---|---|---|---|
 | Kuznetsov mean size | $x_{50} = A\,K^{-0.8}\,Q^{1/6}\,(115/RWS)^{19/30}$ (cm; the 1983/1987 exponent 19/30 by default, Cunningham's 2005 exponent 19/20 as an option) | [9] | $K$ powder factor (kg/m³), $Q$ charge per hole (kg), $RWS$ relative weight strength (ANFO = 100), $A$ rock factor; exponents **UNVERIFIED — pinned at specification** |
-| Rosin–Rammler (Kuz-Ram) | $R(x) = \exp[-\ln 2\,(x/x_{50})^n]$ | [9] | uniformity index $n$ (Cunningham) and rock-factor constant **UNVERIFIED — pinned at specification** [10] |
+| Rosin–Rammler (Kuz-Ram) | $R(x) = \exp[-\ln 2\,(x/x_{50})^n]$ | [9] | uniformity index $n$ (Cunningham) **UNVERIFIED — pinned at specification** [10]; rock factor $A = 0.06\,(RMD + RDI + HF)$ [10] (eq. 4), the joint factor entering through $RMD$ |
 | Swebrec / KCO | $P(x) = \big\{1 + [\ln(x_{\max}/x)/\ln(x_{\max}/x_{50})]^b\big\}^{-1}$, $0 < x \le x_{\max}$ | [11][12] | better fines than Rosin–Rammler; links blasting and crushing |
 | Peak particle velocity | $PPV = K_s (D/\sqrt{W})^{-\beta}$ | [13][14] | $D$ distance, $W$ maximum charge per delay; $K_s$, $\beta$ fitted per site; US limits are in [14] |
 | Flyrock | $m\dot{\mathbf v} = -mg\hat{\mathbf z} - \tfrac12\rho_a C_D A\,|\mathbf v|\,\mathbf v$; drag-free bound $R = v_0^2 \sin 2\theta_0 / g$ | [15] | ballistic flight from the launch velocity |
@@ -53,7 +53,7 @@ specification**; such a form is a target for the specification, not a claim.
 
 | Model | Relation | Source | Notes |
 |---|---|---|---|
-| Beverloo discharge | $Q = C\,\rho_b\sqrt{g}\,(D_o - k\,d)^{5/2}$ | [25][26] | exponent 5/2 and $C \approx 0.56$ reproduced by a Hertz–Mindlin DEM [26]; textbook $C$, $k$ ranges **UNVERIFIED — pinned at specification** |
+| Beverloo discharge | $Q = C\,\rho_b\sqrt{g}\,(D_o - k\,d)^{5/2}$ | [25][26] | exponent 5/2 and $C \approx 0.56$ reproduced by a Hertz–Mindlin DEM [26], with $C$ fitted on the particle density, not $\rho_b$; textbook $C$, $k$ ranges **UNVERIFIED — pinned at specification** |
 | Repose geometry | cone of base radius $r$ at repose angle $\varphi$: $V = \tfrac{\pi}{3} r^3 \tan\varphi$ | arithmetic | stockpile volumes; the repose angle is a calibration target [27] |
 | Conveyor power (CEMA) | effective tension $T_e$ from idler, flexure, lift and accessory terms; $P = T_e V$ | [28] | standard is paywalled; only the public form is implemented; transcription **UNVERIFIED — pinned at specification** |
 | Bed blending (Gy) | idealised $\sigma^2_{\text{out}} \approx \sigma^2_{\text{in}}/N$ for $N$ layers | [29] | real inputs are autocorrelated; variance reduction from variogram-based simulation |
@@ -107,12 +107,12 @@ row format is described in [reference](../reference/README.md#knowledge-tables).
 7. Carmichael, D. G. (1986), shovel–truck queues, Construction Management and Economics 4(2). https://doi.org/10.1080/01446198600000013
 8. "Mean value analysis" — closed-network recursion. https://en.wikipedia.org/wiki/Mean_value_analysis
 9. Kuznetsov, V. M. (1973), mean fragment size from blasting, Soviet Mining Science 9. https://doi.org/10.1007/BF02506177
-10. Cunningham, C. V. B. (2005), "The Kuz-Ram fragmentation model — 20 years on" (bibliographic). https://www.scirp.org/reference/referencespapers?referenceid=4120306
+10. Cunningham, C. V. B. (2005), "The Kuz-Ram fragmentation model — 20 years on" (bibliographic). https://www.scirp.org/reference/referencespapers?referenceid=4120306; full text: https://www.smctesting.com/documents/mine-to-mill/The%20kuz%20ram%20fragmentation%20model%2020%20years%20on.pdf
 11. Ouchterlony, F. (2005), the Swebrec function, Mining Technology 114(1). https://doi.org/10.1179/037178405X44539
 12. Mutinda, E. K. et al. (2021), KCO model, JSAIMM 121(3). https://doi.org/10.17159/2411-9717/1401/2021
 13. Siskind, D. E. et al. (1980), USBM RI 8507. https://www.osti.gov/biblio/6777883
 14. 30 CFR § 816.67. https://www.law.cornell.edu/cfr/text/30/816.67
-15. Szendrei, T. and Tose, S. (2023), flyrock models, JSAIMM 122(12). https://doi.org/10.17159/2411-9717/1873/2022
+15. Szendrei, T. and Tose, S. (2022), flyrock models, JSAIMM 122(12). https://doi.org/10.17159/2411-9717/1873/2022
 16. Hoek, E. and Brown, E. T. (2019), Hoek–Brown criterion and GSI — 2018 edition, JRMGE 11(3). https://doi.org/10.1016/j.jrmge.2018.08.001
 17. Itasca, Hoek–Brown model documentation. https://docs.itascacg.com/itasca900/common/models/hoek/doc/modelhoek.html
 18. Bishop, A. W. (1955), the slip circle, Géotechnique 5(1). https://doi.org/10.1680/geot.1955.5.1.7
