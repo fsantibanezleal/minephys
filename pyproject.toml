@@ -34,6 +34,13 @@ target-version = "py312"
 [tool.ruff.lint]
 select = ["E", "F", "W", "I", "B", "UP", "SIM", "NPY", "PERF", "PT", "RUF"]
 
+[tool.ruff.lint.per-file-ignores]
+# the locked test files cannot be reformatted or rewritten (tests.lock), so style rules that only touch layout are off
+"tests/**" = ["E501", "PT018", "RUF001", "RUF007", "UP031", "SIM102", "RUF005", "PERF401", "F401", "W292", "RUF100"]
+
+[tool.ruff.format]
+exclude = ["tests/**"]
+
 [tool.pytest]
 minversion = "9.0"
 addopts = ["-ra", "--strict-markers"]
