@@ -16,7 +16,7 @@ precedes every task that uses the `networkx` oracle.
 - [x] T-007-013 [US-007-2] (FR-007-10) strip-ratio guards (zero ore raises) — test: tests/unit/test_t_007_013_strip_ratio_guards.py
 
 ## Phase 3 — US-007-1 (P1) Ultimate pit and nested pits
-- [ ] T-007-020 [US-007-1] (FR-007-03) regular-grid precedence arcs and their counts — test: tests/unit/test_t_007_020_precedence.py
+- [x] T-007-020 [US-007-1] (FR-007-03) regular-grid precedence arcs and their counts — test: tests/unit/test_t_007_020_precedence.py
 - [ ] T-007-021 [US-007-1] (FR-007-04, FR-007-05, P-007-02, P-007-03, SC-007-01) min-cut ultimate pit against the worked example, exhaustive enumeration and `networkx` (OR-Tools when installed) — test: tests/unit/test_t_007_021_mincut.py, tests/property/test_t_007_021_mincut_oracles.py, tests/metamorphic/test_t_007_021_mincut_mr.py
 - [ ] T-007-022 [US-007-1] (FR-007-06, P-007-04) nested pits over revenue factors — test: tests/unit/test_t_007_022_nested_pits.py, tests/property/test_t_007_022_nested_properties.py
 - [ ] T-007-023 [US-007-1] (FR-007-07) min-cut, nested-pit and precedence guards (oversized instances, bad arcs, unknown pattern) — test: tests/unit/test_t_007_023_mincut_guards.py
