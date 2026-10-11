@@ -19,6 +19,7 @@ dev = [
     "jsonschema>=4.26.0",
     "mutmut>=3.8.0",
     "mypy>=2.4.0",
+    "networkx>=3.7",
     "poethepoet>=0.48.0",
     "pyslope>=1.4.0",
     "pytest>=9.1.1",
@@ -82,9 +83,3 @@ tests_dir = ["tests/unit/", "tests/property/"]
 [build-system]
 requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
-
-[tool.ruff.lint.per-file-ignores]
-"tests/**" = ["E501", "PT018", "RUF001", "RUF007", "UP031", "SIM102", "RUF005", "PERF401", "F401"]
-
-[tool.ruff.format]
-exclude = ["tests/**"]

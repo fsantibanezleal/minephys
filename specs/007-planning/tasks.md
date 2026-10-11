@@ -7,7 +7,7 @@ precedes every task that uses the `networkx` oracle.
 
 ## Phase 1 — Setup
 - [x] T-007-001 (DC-007-01) planning entries of `knowledge/catalogue/equations.yaml` and the §7 bibliography entries — test: tests/contract/test_t_007_001_planning_knowledge.py
-- [ ] T-007-002 add `networkx` to the `dev` dependency group (test-only oracle; `uv add --dev networkx`), lock, and record the version; no runtime change
+- [x] T-007-002 add `networkx` to the `dev` dependency group (test-only oracle; `uv add --dev networkx`), lock, and record the version; no runtime change
 
 ## Phase 2 — US-007-2 (P1) Block values and strip ratio
 - [x] T-007-010 [US-007-2] (FR-007-01, FR-007-02, P-007-01) block economic value, destination and break-even cut-off — test: tests/unit/test_t_007_010_block_value.py, tests/property/test_t_007_010_block_value_properties.py
