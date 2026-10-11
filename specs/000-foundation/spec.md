@@ -115,9 +115,9 @@ the knowledge tables (§9).
 
 | ID | Artifact | Schema | Producer → Consumer |
 |---|---|---|---|
-| DC-000-02 | knowledge tables `src/minephys/knowledge/*.yaml` and `src/minephys/knowledge/share-alike/*.yaml` | `contracts/knowledge-table.schema.json` | module specs (maintainer) → model code, `minephys.knowledge`, docs generator, PitStudio knowledge pages and parameter browser |
-| DC-000-03 | bibliography `src/minephys/knowledge/references.bib` (each parsed entry) | `contracts/bibliography-entry.schema.json` | maintainer → `minephys.knowledge`, docs generator, PitStudio bibliography |
-| DC-000-04 | public API snapshot `docs/reference/api-snapshot.json` | `contracts/api-snapshot.schema.json` | `tools/check_api.py` → release check |
+| DC-000-02 | knowledge tables `src/minephys/knowledge/*.yaml` and `src/minephys/knowledge/share-alike/*.yaml` | `specs/000-foundation/contracts/knowledge-table.schema.json` (draft; promoted to `contracts/knowledge-table.schema.json` by T-000-001) | module specs (maintainer) → model code, `minephys.knowledge`, docs generator, PitStudio knowledge pages and parameter browser |
+| DC-000-03 | bibliography `src/minephys/knowledge/references.bib` (each parsed entry) | `specs/000-foundation/contracts/bibliography-entry.schema.json` (draft; promoted to `contracts/bibliography-entry.schema.json` by T-000-001) | maintainer → `minephys.knowledge`, docs generator, PitStudio bibliography |
+| DC-000-04 | public API snapshot `docs/reference/api-snapshot.json` | `specs/000-foundation/contracts/api-snapshot.schema.json` (draft; promoted to `contracts/api-snapshot.schema.json` by T-000-001) | `tools/check_api.py` → release check |
 
 The fields, enums and validation rules are in [data-model.md](data-model.md). The runtime validator in
 `minephys.knowledge` is pure Python (NumPy and PyYAML only); the JSON Schema files are the neutral contract that CI
@@ -204,6 +204,24 @@ Each module spec lists the sources it uses, the rows they feed and the verificat
 - Integration 2026-10-07: FR-000-19 states what the literal allowlist may hold — structural constants, decimal SI
   prefixes, exact mathematical constants and numerical tolerances or tiny guards (e.g. 1e-12) — and that every
   physical or empirical constant still comes from a knowledge table.
+- Integration 2026-10-07: draft schemas written for DC-000-02, DC-000-03 and DC-000-04
+  (`specs/000-foundation/contracts/`, valid and hostile examples indexed in `examples/index.json`); ambiguities
+  resolved with the stricter reading: patterns use the portable form (`[0-9]` for `\d`; the DOI suffix `\S+` becomes
+  printable ASCII `[!-~]+`; versions `^[0-9]+\.[0-9]{2}\.[0-9]{3}$`); a `"p/q"` value needs a non-zero denominator;
+  `title`, `quantity`, `page` and `units` are single-line, trimmed and non-blank; dimensionless units are written `1`
+  only (`-`, `none`, `dimensionless`, `unitless`, `n/a` are rejected); caps chosen here: ids and keys 64 characters,
+  text lines 200, units 64, notes 1,000, 1,000 rows per table, 32 symbols per row, bibliography title 500 and author
+  list 2,000 characters; no `$schema` member at a document root, because the data model allows no other field; the
+  bibliography `licence` is an allowlist of SPDX ids (`CC0-1.0` and the `CC-BY-3.0`, `CC-BY-4.0`, `CC-BY-SA-3.0`,
+  `CC-BY-SA-4.0`, `CC-BY-ND-4.0`, `CC-BY-NC-4.0`, `CC-BY-NC-SA-4.0`, `CC-BY-NC-ND-4.0` family), so that a misspelt
+  licence cannot hide a share-alike source; every bibliography entry, `bibliographic-only` included, carries a DOI or
+  a URL; URLs carry no user information; the API snapshot lists at least one object, requires `deprecated` (null when
+  not deprecated), records `parameters` for functions only (forbidden on other kinds), names parameter kinds after
+  Python's `inspect` kinds in snake case (`positional_only`, `positional_or_keyword`, `var_positional`,
+  `keyword_only`, `var_keyword`), and writes `unit` without the brackets, or null for flags and options that have
+  no bracketed unit.
+- Integration 2026-10-07 (2): the data model states once that a knowledge table is shipped only when it has ≥ 1 row (no empty files);
+  spec 008 applies the same rule to the catalogues (FR-008-22).
 
 ## 11. Changes
 

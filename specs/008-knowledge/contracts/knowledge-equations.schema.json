@@ -1,0 +1,209 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/fsantibanezleal/minephys/contracts/knowledge-equations.schema.json",
+  "title": "minephys equations catalogue",
+  "description": "Equations catalogue src/minephys/knowledge/catalogue/equations.yaml (DC-008-01, spec 008-knowledge).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "title",
+    "licence",
+    "equations"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "title": {
+      "$ref": "#/$defs/text_line"
+    },
+    "licence": {
+      "const": "CC-BY-4.0"
+    },
+    "equations": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 500,
+      "items": {
+        "$ref": "#/$defs/equation"
+      }
+    }
+  },
+  "$defs": {
+    "equation": {
+      "description": "One model equation with its symbols and units, function, citation, page and status.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "title",
+        "domain",
+        "latex",
+        "symbols",
+        "function",
+        "citation",
+        "page",
+        "verification"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "title": {
+          "$ref": "#/$defs/text_line"
+        },
+        "domain": {
+          "$ref": "#/$defs/domain"
+        },
+        "latex": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "symbols": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 64,
+          "items": {
+            "$ref": "#/$defs/symbol_entry"
+          }
+        },
+        "function": {
+          "$ref": "#/$defs/dotted_symbol"
+        },
+        "citation": {
+          "$ref": "#/$defs/bib_key"
+        },
+        "page": {
+          "$ref": "#/$defs/text_line"
+        },
+        "verification": {
+          "$ref": "#/$defs/verification"
+        },
+        "verified_on": {
+          "$ref": "#/$defs/date"
+        },
+        "rows": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 64,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/identifier"
+          }
+        },
+        "notes": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000
+        }
+      },
+      "if": {
+        "properties": {
+          "verification": {
+            "const": "verified"
+          }
+        },
+        "required": [
+          "verification"
+        ]
+      },
+      "then": {
+        "required": [
+          "verified_on"
+        ]
+      },
+      "else": {
+        "not": {
+          "required": [
+            "verified_on"
+          ]
+        }
+      }
+    },
+    "symbol_entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "symbol",
+        "meaning",
+        "units"
+      ],
+      "properties": {
+        "symbol": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64,
+          "pattern": "^[^ \\t\\r\\n]([^\\r\\n]*[^ \\t\\r\\n])?$"
+        },
+        "meaning": {
+          "$ref": "#/$defs/text_line"
+        },
+        "units": {
+          "$ref": "#/$defs/units"
+        }
+      }
+    },
+    "identifier": {
+      "type": "string",
+      "maxLength": 64,
+      "pattern": "^[a-z][a-z0-9_]*$"
+    },
+    "bib_key": {
+      "type": "string",
+      "maxLength": 64,
+      "pattern": "^[a-z][a-z0-9_:-]*$"
+    },
+    "text_line": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200,
+      "pattern": "^[^ \\t\\r\\n]([^\\r\\n]*[^ \\t\\r\\n])?$"
+    },
+    "units": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 64,
+      "pattern": "^[^ \\t\\r\\n]([^\\r\\n]*[^ \\t\\r\\n])?$",
+      "not": {
+        "enum": [
+          "-",
+          "none",
+          "None",
+          "dimensionless",
+          "unitless",
+          "n/a",
+          "N/A"
+        ]
+      }
+    },
+    "verification": {
+      "enum": [
+        "verified",
+        "UNVERIFIED"
+      ]
+    },
+    "date": {
+      "type": "string",
+      "maxLength": 10,
+      "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$"
+    },
+    "dotted_symbol": {
+      "type": "string",
+      "maxLength": 128,
+      "pattern": "^minephys\\.[a-z][a-z0-9_]*\\.[A-Za-z_][A-Za-z0-9_]*$"
+    },
+    "domain": {
+      "enum": [
+        "haulage",
+        "blasting",
+        "geotech",
+        "bulk",
+        "comminution",
+        "environment",
+        "planning"
+      ]
+    }
+  }
+}

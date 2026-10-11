@@ -4,6 +4,7 @@
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-000-003",
         "T-000-004",
@@ -19,6 +20,7 @@
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-000-011",
         "T-000-021"
@@ -29,6 +31,7 @@
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-000-020"
       ],
@@ -38,6 +41,7 @@
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-000-002",
         "T-000-006",
@@ -50,6 +54,7 @@
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-000-001",
         "T-000-013",
@@ -63,6 +68,7 @@
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-000-030",
         "T-000-031"
@@ -73,6 +79,7 @@
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-000-010",
         "T-001-080",
@@ -89,6 +96,7 @@
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-000-011"
       ],
@@ -98,6 +106,7 @@
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-000-003",
         "T-000-010",
@@ -115,6 +124,7 @@
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-000-006",
         "T-000-012"
@@ -125,6 +135,7 @@
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-000-012"
       ],
@@ -134,6 +145,7 @@
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-000-003",
         "T-001-080",
@@ -150,6 +162,7 @@
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-000-003",
         "T-001-080",
@@ -166,6 +179,7 @@
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-000-003",
         "T-001-080",
@@ -182,6 +196,7 @@
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-000-003",
         "T-001-080",
@@ -196,6 +211,7 @@
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-000-003"
       ],
@@ -205,6 +221,7 @@
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-000-003"
       ],
@@ -214,6 +231,7 @@
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-000-003"
       ],
@@ -223,6 +241,7 @@
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-000-004"
       ],
@@ -232,6 +251,7 @@
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-000-005",
         "T-003-080"
@@ -242,6 +262,7 @@
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-000-013"
       ],
@@ -251,6 +272,7 @@
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-000-014"
       ],
@@ -260,6 +282,7 @@
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-000-014"
       ],
@@ -269,6 +292,7 @@
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-000-014"
       ],
@@ -278,6 +302,7 @@
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-000-015"
       ],
@@ -287,6 +312,7 @@
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-000-020"
       ],
@@ -296,6 +322,7 @@
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-000-021"
       ],
@@ -305,6 +332,7 @@
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-000-022"
       ],
@@ -314,6 +342,7 @@
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-000-002"
       ],
@@ -323,6 +352,7 @@
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-000-030"
       ],
@@ -332,6 +362,7 @@
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-000-030"
       ],
@@ -341,6 +372,7 @@
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-000-031"
       ],
@@ -350,6 +382,7 @@
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-000-014"
       ],
@@ -359,6 +392,7 @@
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-000-002"
       ],
@@ -368,6 +402,7 @@
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-000-016"
       ],
@@ -377,6 +412,7 @@
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-000-010",
         "T-001-080",
@@ -393,6 +429,7 @@
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-000-010",
         "T-001-080",
@@ -409,6 +446,7 @@
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-000-010",
         "T-001-080",
@@ -425,6 +463,7 @@
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-000-005",
         "T-003-080"
@@ -435,6 +474,7 @@
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-000-006"
       ],
@@ -444,6 +484,7 @@
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-000-011"
       ],
@@ -453,6 +494,7 @@
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-000-020"
       ],
@@ -462,6 +504,7 @@
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-000-020"
       ],
@@ -471,6 +514,7 @@
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-000-021"
       ],
@@ -480,6 +524,7 @@
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-000-023"
       ],
@@ -489,6 +534,7 @@
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-000-024"
       ],
@@ -498,6 +544,7 @@
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-000-024"
       ],
@@ -507,6 +554,7 @@
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-000-016"
       ],
@@ -516,6 +564,7 @@
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-000-032"
       ],
@@ -525,6 +574,7 @@
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-000-032"
       ],
@@ -534,6 +584,7 @@
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-000-001",
         "T-008-010"
@@ -544,6 +595,7 @@
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-000-001",
         "T-008-011"
@@ -554,6 +606,7 @@
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-000-001",
         "T-000-030"
@@ -564,6 +617,7 @@
       "spec": "000-foundation",
       "retired": true,
       "draft": true,
+      "phase": "clarified",
       "tasks": [],
       "tests": []
     },
@@ -571,6 +625,7 @@
       "spec": "000-foundation",
       "retired": true,
       "draft": true,
+      "phase": "clarified",
       "tasks": [],
       "tests": []
     },
@@ -578,6 +633,7 @@
       "spec": "000-foundation",
       "retired": true,
       "draft": true,
+      "phase": "clarified",
       "tasks": [],
       "tests": []
     },
@@ -585,6 +641,7 @@
       "spec": "000-foundation",
       "retired": true,
       "draft": true,
+      "phase": "clarified",
       "tasks": [],
       "tests": []
     },
@@ -592,6 +649,7 @@
       "spec": "000-foundation",
       "retired": true,
       "draft": true,
+      "phase": "clarified",
       "tasks": [],
       "tests": []
     },
@@ -599,6 +657,7 @@
       "spec": "000-foundation",
       "retired": true,
       "draft": true,
+      "phase": "clarified",
       "tasks": [],
       "tests": []
     },
@@ -606,6 +665,7 @@
       "spec": "000-foundation",
       "retired": true,
       "draft": true,
+      "phase": "clarified",
       "tasks": [],
       "tests": []
     },
@@ -613,6 +673,7 @@
       "spec": "000-foundation",
       "retired": true,
       "draft": true,
+      "phase": "clarified",
       "tasks": [],
       "tests": []
     },
@@ -620,6 +681,7 @@
       "spec": "000-foundation",
       "retired": true,
       "draft": true,
+      "phase": "clarified",
       "tasks": [],
       "tests": []
     },
@@ -627,6 +689,7 @@
       "spec": "001-haulage",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-001-030",
         "T-001-031",
@@ -638,6 +701,7 @@
       "spec": "001-haulage",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-001-010",
         "T-001-011",
@@ -654,6 +718,7 @@
       "spec": "001-haulage",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-001-040",
         "T-001-041",
@@ -666,6 +731,7 @@
       "spec": "001-haulage",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-001-020"
       ],
@@ -675,6 +741,7 @@
       "spec": "001-haulage",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-001-010"
       ],
@@ -684,6 +751,7 @@
       "spec": "001-haulage",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-001-010"
       ],
@@ -693,6 +761,7 @@
       "spec": "001-haulage",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-001-011"
       ],
@@ -702,6 +771,7 @@
       "spec": "001-haulage",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-001-012"
       ],
@@ -711,6 +781,7 @@
       "spec": "001-haulage",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-001-012"
       ],
@@ -720,6 +791,7 @@
       "spec": "001-haulage",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-001-013"
       ],
@@ -729,6 +801,7 @@
       "spec": "001-haulage",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-001-014"
       ],
@@ -738,6 +811,7 @@
       "spec": "001-haulage",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-001-020"
       ],
@@ -747,6 +821,7 @@
       "spec": "001-haulage",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-001-020"
       ],
@@ -756,6 +831,7 @@
       "spec": "001-haulage",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-001-015"
       ],
@@ -765,6 +841,7 @@
       "spec": "001-haulage",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-001-030"
       ],
@@ -774,6 +851,7 @@
       "spec": "001-haulage",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-001-030"
       ],
@@ -783,6 +861,7 @@
       "spec": "001-haulage",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-001-031"
       ],
@@ -792,6 +871,7 @@
       "spec": "001-haulage",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-001-031"
       ],
@@ -801,6 +881,7 @@
       "spec": "001-haulage",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-001-031"
       ],
@@ -810,6 +891,7 @@
       "spec": "001-haulage",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-001-032"
       ],
@@ -819,6 +901,7 @@
       "spec": "001-haulage",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-001-032"
       ],
@@ -828,6 +911,7 @@
       "spec": "001-haulage",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-001-040"
       ],
@@ -837,6 +921,7 @@
       "spec": "001-haulage",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-001-041"
       ],
@@ -846,6 +931,7 @@
       "spec": "001-haulage",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-001-042"
       ],
@@ -855,6 +941,7 @@
       "spec": "001-haulage",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-001-043"
       ],
@@ -864,6 +951,7 @@
       "spec": "001-haulage",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-001-080"
       ],
@@ -873,6 +961,7 @@
       "spec": "001-haulage",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-001-080"
       ],
@@ -882,6 +971,7 @@
       "spec": "001-haulage",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-001-041"
       ],
@@ -891,6 +981,7 @@
       "spec": "001-haulage",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-001-032"
       ],
@@ -900,6 +991,7 @@
       "spec": "001-haulage",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-001-043"
       ],
@@ -909,6 +1001,7 @@
       "spec": "001-haulage",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-001-010"
       ],
@@ -918,6 +1011,7 @@
       "spec": "001-haulage",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-001-012"
       ],
@@ -927,6 +1021,7 @@
       "spec": "001-haulage",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-001-012"
       ],
@@ -936,6 +1031,7 @@
       "spec": "001-haulage",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-001-013"
       ],
@@ -945,6 +1041,7 @@
       "spec": "001-haulage",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-001-030"
       ],
@@ -954,6 +1051,7 @@
       "spec": "001-haulage",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-001-030"
       ],
@@ -963,6 +1061,7 @@
       "spec": "001-haulage",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-001-030"
       ],
@@ -972,6 +1071,7 @@
       "spec": "001-haulage",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-001-041"
       ],
@@ -981,6 +1081,7 @@
       "spec": "001-haulage",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-001-041"
       ],
@@ -990,6 +1091,7 @@
       "spec": "001-haulage",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-001-042"
       ],
@@ -999,6 +1101,7 @@
       "spec": "001-haulage",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-001-043"
       ],
@@ -1008,6 +1111,7 @@
       "spec": "001-haulage",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-001-040"
       ],
@@ -1017,6 +1121,7 @@
       "spec": "001-haulage",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-001-020"
       ],
@@ -1026,6 +1131,7 @@
       "spec": "001-haulage",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-001-081"
       ],
@@ -1035,6 +1141,7 @@
       "spec": "001-haulage",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-001-081"
       ],
@@ -1044,6 +1151,7 @@
       "spec": "001-haulage",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-001-001"
       ],
@@ -1053,6 +1161,7 @@
       "spec": "002-blasting",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-002-010",
         "T-002-011",
@@ -1066,6 +1175,7 @@
       "spec": "002-blasting",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-002-020",
         "T-002-021"
@@ -1076,6 +1186,7 @@
       "spec": "002-blasting",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-002-030",
         "T-002-031"
@@ -1086,6 +1197,7 @@
       "spec": "002-blasting",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-002-040",
         "T-002-041",
@@ -1097,6 +1209,7 @@
       "spec": "002-blasting",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-002-010"
       ],
@@ -1106,6 +1219,7 @@
       "spec": "002-blasting",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-002-011"
       ],
@@ -1115,6 +1229,7 @@
       "spec": "002-blasting",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-002-012"
       ],
@@ -1124,6 +1239,7 @@
       "spec": "002-blasting",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-002-013"
       ],
@@ -1133,6 +1249,7 @@
       "spec": "002-blasting",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-002-020"
       ],
@@ -1142,6 +1259,7 @@
       "spec": "002-blasting",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-002-020"
       ],
@@ -1151,6 +1269,7 @@
       "spec": "002-blasting",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-002-021"
       ],
@@ -1160,6 +1279,7 @@
       "spec": "002-blasting",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-002-030"
       ],
@@ -1169,6 +1289,7 @@
       "spec": "002-blasting",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-002-031"
       ],
@@ -1178,6 +1299,7 @@
       "spec": "002-blasting",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-002-040"
       ],
@@ -1187,6 +1309,7 @@
       "spec": "002-blasting",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-002-040"
       ],
@@ -1196,6 +1319,7 @@
       "spec": "002-blasting",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-002-041"
       ],
@@ -1205,6 +1329,7 @@
       "spec": "002-blasting",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-002-041"
       ],
@@ -1214,6 +1339,7 @@
       "spec": "002-blasting",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-002-013"
       ],
@@ -1223,6 +1349,7 @@
       "spec": "002-blasting",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-002-020"
       ],
@@ -1232,6 +1359,7 @@
       "spec": "002-blasting",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-002-080"
       ],
@@ -1241,6 +1369,7 @@
       "spec": "002-blasting",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-002-080"
       ],
@@ -1250,6 +1379,7 @@
       "spec": "002-blasting",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-002-011",
         "T-002-080"
@@ -1260,6 +1390,7 @@
       "spec": "002-blasting",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-002-011"
       ],
@@ -1269,6 +1400,7 @@
       "spec": "002-blasting",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-002-011"
       ],
@@ -1278,6 +1410,7 @@
       "spec": "002-blasting",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-002-013"
       ],
@@ -1287,6 +1420,7 @@
       "spec": "002-blasting",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-002-020"
       ],
@@ -1296,6 +1430,7 @@
       "spec": "002-blasting",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-002-020"
       ],
@@ -1305,6 +1440,7 @@
       "spec": "002-blasting",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-002-021"
       ],
@@ -1314,6 +1450,7 @@
       "spec": "002-blasting",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-002-030"
       ],
@@ -1323,6 +1460,7 @@
       "spec": "002-blasting",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-002-031"
       ],
@@ -1332,6 +1470,7 @@
       "spec": "002-blasting",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-002-040"
       ],
@@ -1341,6 +1480,7 @@
       "spec": "002-blasting",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-002-041"
       ],
@@ -1350,6 +1490,7 @@
       "spec": "002-blasting",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-002-081"
       ],
@@ -1359,6 +1500,7 @@
       "spec": "002-blasting",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-002-081"
       ],
@@ -1368,6 +1510,7 @@
       "spec": "002-blasting",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-002-001"
       ],
@@ -1377,6 +1520,7 @@
       "spec": "003-geotech",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-003-020",
         "T-003-021",
@@ -1392,6 +1536,7 @@
       "spec": "003-geotech",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-003-031",
         "T-003-032"
@@ -1402,6 +1547,7 @@
       "spec": "003-geotech",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-003-030",
         "T-003-040",
@@ -1413,6 +1559,7 @@
       "spec": "003-geotech",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-003-010",
         "T-003-011"
@@ -1423,6 +1570,7 @@
       "spec": "003-geotech",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-003-010"
       ],
@@ -1432,6 +1580,7 @@
       "spec": "003-geotech",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-003-010"
       ],
@@ -1441,6 +1590,7 @@
       "spec": "003-geotech",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-003-010"
       ],
@@ -1450,6 +1600,7 @@
       "spec": "003-geotech",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-003-011"
       ],
@@ -1459,6 +1610,7 @@
       "spec": "003-geotech",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-003-011"
       ],
@@ -1468,6 +1620,7 @@
       "spec": "003-geotech",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-003-010"
       ],
@@ -1477,6 +1630,7 @@
       "spec": "003-geotech",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-003-020"
       ],
@@ -1486,6 +1640,7 @@
       "spec": "003-geotech",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-003-020"
       ],
@@ -1495,6 +1650,7 @@
       "spec": "003-geotech",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-003-021",
         "T-003-023"
@@ -1505,6 +1661,7 @@
       "spec": "003-geotech",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-003-022"
       ],
@@ -1514,6 +1671,7 @@
       "spec": "003-geotech",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-003-021",
         "T-003-022"
@@ -1524,6 +1682,7 @@
       "spec": "003-geotech",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-003-024"
       ],
@@ -1533,6 +1692,7 @@
       "spec": "003-geotech",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-003-024"
       ],
@@ -1542,6 +1702,7 @@
       "spec": "003-geotech",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-003-030"
       ],
@@ -1551,6 +1712,7 @@
       "spec": "003-geotech",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-003-031"
       ],
@@ -1560,6 +1722,7 @@
       "spec": "003-geotech",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-003-031"
       ],
@@ -1569,6 +1732,7 @@
       "spec": "003-geotech",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-003-032"
       ],
@@ -1578,6 +1742,7 @@
       "spec": "003-geotech",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-003-040"
       ],
@@ -1587,6 +1752,7 @@
       "spec": "003-geotech",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-003-041"
       ],
@@ -1596,6 +1762,7 @@
       "spec": "003-geotech",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-003-080"
       ],
@@ -1605,6 +1772,7 @@
       "spec": "003-geotech",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-003-080"
       ],
@@ -1614,6 +1782,7 @@
       "spec": "003-geotech",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-003-021",
         "T-003-022"
@@ -1624,6 +1793,7 @@
       "spec": "003-geotech",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-003-032",
         "T-003-080"
@@ -1634,6 +1804,7 @@
       "spec": "003-geotech",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-003-024",
         "T-003-080"
@@ -1644,6 +1815,7 @@
       "spec": "003-geotech",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-003-010"
       ],
@@ -1653,6 +1825,7 @@
       "spec": "003-geotech",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-003-010"
       ],
@@ -1662,6 +1835,7 @@
       "spec": "003-geotech",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-003-010"
       ],
@@ -1671,6 +1845,7 @@
       "spec": "003-geotech",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-003-021"
       ],
@@ -1680,6 +1855,7 @@
       "spec": "003-geotech",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-003-021"
       ],
@@ -1689,6 +1865,7 @@
       "spec": "003-geotech",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-003-021"
       ],
@@ -1698,6 +1875,7 @@
       "spec": "003-geotech",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-003-021"
       ],
@@ -1707,6 +1885,7 @@
       "spec": "003-geotech",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-003-024"
       ],
@@ -1716,6 +1895,7 @@
       "spec": "003-geotech",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-003-031"
       ],
@@ -1725,6 +1905,7 @@
       "spec": "003-geotech",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-003-032"
       ],
@@ -1734,6 +1915,7 @@
       "spec": "003-geotech",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-003-040"
       ],
@@ -1743,6 +1925,7 @@
       "spec": "003-geotech",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-003-041"
       ],
@@ -1752,6 +1935,7 @@
       "spec": "003-geotech",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-003-081"
       ],
@@ -1761,6 +1945,7 @@
       "spec": "003-geotech",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-003-081"
       ],
@@ -1770,6 +1955,7 @@
       "spec": "003-geotech",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-003-001"
       ],
@@ -1779,6 +1965,7 @@
       "spec": "004-bulk",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-004-010",
         "T-004-011",
@@ -1790,6 +1977,7 @@
       "spec": "004-bulk",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-004-020",
         "T-004-081"
@@ -1800,6 +1988,7 @@
       "spec": "004-bulk",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-004-030",
         "T-004-031"
@@ -1810,6 +1999,7 @@
       "spec": "004-bulk",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-004-010"
       ],
@@ -1819,6 +2009,7 @@
       "spec": "004-bulk",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-004-010"
       ],
@@ -1828,6 +2019,7 @@
       "spec": "004-bulk",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-004-011"
       ],
@@ -1837,6 +2029,7 @@
       "spec": "004-bulk",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-004-011"
       ],
@@ -1846,6 +2039,7 @@
       "spec": "004-bulk",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-004-020"
       ],
@@ -1855,6 +2049,7 @@
       "spec": "004-bulk",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-004-020"
       ],
@@ -1864,6 +2059,7 @@
       "spec": "004-bulk",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-004-020"
       ],
@@ -1873,6 +2069,7 @@
       "spec": "004-bulk",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-004-030"
       ],
@@ -1882,6 +2079,7 @@
       "spec": "004-bulk",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-004-031"
       ],
@@ -1891,6 +2089,7 @@
       "spec": "004-bulk",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-004-080"
       ],
@@ -1900,6 +2099,7 @@
       "spec": "004-bulk",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-004-080"
       ],
@@ -1909,6 +2109,7 @@
       "spec": "004-bulk",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-004-030",
         "T-004-031"
@@ -1919,6 +2120,7 @@
       "spec": "004-bulk",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-004-010"
       ],
@@ -1928,6 +2130,7 @@
       "spec": "004-bulk",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-004-010"
       ],
@@ -1937,6 +2140,7 @@
       "spec": "004-bulk",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-004-011"
       ],
@@ -1946,6 +2150,7 @@
       "spec": "004-bulk",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-004-020"
       ],
@@ -1955,6 +2160,7 @@
       "spec": "004-bulk",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-004-020"
       ],
@@ -1964,6 +2170,7 @@
       "spec": "004-bulk",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-004-020"
       ],
@@ -1973,6 +2180,7 @@
       "spec": "004-bulk",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-004-030"
       ],
@@ -1982,6 +2190,7 @@
       "spec": "004-bulk",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-004-031"
       ],
@@ -1991,6 +2200,7 @@
       "spec": "004-bulk",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-004-081"
       ],
@@ -2000,6 +2210,7 @@
       "spec": "004-bulk",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-004-001"
       ],
@@ -2009,6 +2220,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-010"
       ],
@@ -2018,6 +2230,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-010"
       ],
@@ -2027,6 +2240,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-010"
       ],
@@ -2036,6 +2250,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-011"
       ],
@@ -2045,6 +2260,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-012"
       ],
@@ -2054,6 +2270,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-012"
       ],
@@ -2063,6 +2280,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-012"
       ],
@@ -2072,6 +2290,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-012"
       ],
@@ -2081,6 +2300,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-012"
       ],
@@ -2090,6 +2310,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-012"
       ],
@@ -2099,6 +2320,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-012"
       ],
@@ -2108,6 +2330,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-013"
       ],
@@ -2117,6 +2340,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-020"
       ],
@@ -2126,6 +2350,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-021"
       ],
@@ -2135,6 +2360,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-023"
       ],
@@ -2144,6 +2370,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-022"
       ],
@@ -2153,6 +2380,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-022"
       ],
@@ -2162,6 +2390,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-023"
       ],
@@ -2171,6 +2400,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-030"
       ],
@@ -2180,6 +2410,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-030"
       ],
@@ -2189,6 +2420,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-030"
       ],
@@ -2198,6 +2430,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-031"
       ],
@@ -2207,6 +2440,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-032"
       ],
@@ -2216,6 +2450,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-040"
       ],
@@ -2225,6 +2460,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-040"
       ],
@@ -2234,6 +2470,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-041"
       ],
@@ -2243,6 +2480,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-042"
       ],
@@ -2252,6 +2490,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-042"
       ],
@@ -2261,6 +2500,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-043"
       ],
@@ -2270,6 +2510,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-044"
       ],
@@ -2279,6 +2520,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-045"
       ],
@@ -2288,6 +2530,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-014"
       ],
@@ -2297,6 +2540,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-014"
       ],
@@ -2306,6 +2550,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-050"
       ],
@@ -2315,6 +2560,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-010"
       ],
@@ -2324,6 +2570,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-010"
       ],
@@ -2333,6 +2580,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-010",
         "T-005-012"
@@ -2343,6 +2591,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-012"
       ],
@@ -2352,6 +2601,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-012"
       ],
@@ -2361,6 +2611,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-020",
         "T-005-021"
@@ -2371,6 +2622,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-020"
       ],
@@ -2380,6 +2632,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-020"
       ],
@@ -2389,6 +2642,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-021"
       ],
@@ -2398,6 +2652,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-030"
       ],
@@ -2407,6 +2662,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-030"
       ],
@@ -2416,6 +2672,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-031"
       ],
@@ -2425,6 +2682,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-042"
       ],
@@ -2434,6 +2692,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-040"
       ],
@@ -2443,6 +2702,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-044"
       ],
@@ -2452,6 +2712,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-060"
       ],
@@ -2461,6 +2722,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-061"
       ],
@@ -2470,6 +2732,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-062"
       ],
@@ -2479,6 +2742,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-063"
       ],
@@ -2488,6 +2752,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-010",
         "T-005-012"
@@ -2498,6 +2763,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-090"
       ],
@@ -2507,6 +2773,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-001"
       ],
@@ -2516,6 +2783,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-001"
       ],
@@ -2525,6 +2793,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-010",
         "T-005-011",
@@ -2539,6 +2808,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-020",
         "T-005-021",
@@ -2551,6 +2821,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-030",
         "T-005-031",
@@ -2562,6 +2833,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-040",
         "T-005-041",
@@ -2576,6 +2848,7 @@
       "spec": "005-comminution",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-005-001",
         "T-005-050"
@@ -2586,6 +2859,7 @@
       "spec": "006-environment",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-006-010"
       ],
@@ -2595,6 +2869,7 @@
       "spec": "006-environment",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-006-011"
       ],
@@ -2604,6 +2879,7 @@
       "spec": "006-environment",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-006-011"
       ],
@@ -2613,6 +2889,7 @@
       "spec": "006-environment",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-006-012"
       ],
@@ -2622,6 +2899,7 @@
       "spec": "006-environment",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-006-012"
       ],
@@ -2631,6 +2909,7 @@
       "spec": "006-environment",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-006-012"
       ],
@@ -2640,6 +2919,7 @@
       "spec": "006-environment",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-006-013"
       ],
@@ -2649,6 +2929,7 @@
       "spec": "006-environment",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-006-020"
       ],
@@ -2658,6 +2939,7 @@
       "spec": "006-environment",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-006-020"
       ],
@@ -2667,6 +2949,7 @@
       "spec": "006-environment",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-006-020"
       ],
@@ -2676,6 +2959,7 @@
       "spec": "006-environment",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-006-021"
       ],
@@ -2685,6 +2969,7 @@
       "spec": "006-environment",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-006-021"
       ],
@@ -2694,6 +2979,7 @@
       "spec": "006-environment",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-006-022"
       ],
@@ -2703,6 +2989,7 @@
       "spec": "006-environment",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-006-023"
       ],
@@ -2712,6 +2999,7 @@
       "spec": "006-environment",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-006-030"
       ],
@@ -2721,6 +3009,7 @@
       "spec": "006-environment",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-006-030"
       ],
@@ -2730,6 +3019,7 @@
       "spec": "006-environment",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-006-031"
       ],
@@ -2739,6 +3029,7 @@
       "spec": "006-environment",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-006-032"
       ],
@@ -2748,6 +3039,7 @@
       "spec": "006-environment",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-006-040"
       ],
@@ -2757,6 +3049,7 @@
       "spec": "006-environment",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-006-010"
       ],
@@ -2766,6 +3059,7 @@
       "spec": "006-environment",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-006-010"
       ],
@@ -2775,6 +3069,7 @@
       "spec": "006-environment",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-006-010"
       ],
@@ -2784,6 +3079,7 @@
       "spec": "006-environment",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-006-012"
       ],
@@ -2793,6 +3089,7 @@
       "spec": "006-environment",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-006-021"
       ],
@@ -2802,6 +3099,7 @@
       "spec": "006-environment",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-006-021"
       ],
@@ -2811,6 +3109,7 @@
       "spec": "006-environment",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-006-021"
       ],
@@ -2820,6 +3119,7 @@
       "spec": "006-environment",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-006-022"
       ],
@@ -2829,6 +3129,7 @@
       "spec": "006-environment",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-006-020"
       ],
@@ -2838,6 +3139,7 @@
       "spec": "006-environment",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-006-030"
       ],
@@ -2847,6 +3149,7 @@
       "spec": "006-environment",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-006-030"
       ],
@@ -2856,6 +3159,7 @@
       "spec": "006-environment",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-006-031"
       ],
@@ -2865,6 +3169,7 @@
       "spec": "006-environment",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-006-050"
       ],
@@ -2874,6 +3179,7 @@
       "spec": "006-environment",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-006-051"
       ],
@@ -2883,6 +3189,7 @@
       "spec": "006-environment",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-006-052"
       ],
@@ -2892,6 +3199,7 @@
       "spec": "006-environment",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-006-053"
       ],
@@ -2901,6 +3209,7 @@
       "spec": "006-environment",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-006-012"
       ],
@@ -2910,6 +3219,7 @@
       "spec": "006-environment",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-006-090"
       ],
@@ -2919,6 +3229,7 @@
       "spec": "006-environment",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-006-001"
       ],
@@ -2928,6 +3239,7 @@
       "spec": "006-environment",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-006-001"
       ],
@@ -2937,6 +3249,7 @@
       "spec": "006-environment",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-006-010",
         "T-006-011",
@@ -2950,6 +3263,7 @@
       "spec": "006-environment",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-006-020",
         "T-006-021",
@@ -2962,6 +3276,7 @@
       "spec": "006-environment",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-006-030",
         "T-006-031",
@@ -2973,6 +3288,7 @@
       "spec": "006-environment",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-006-001",
         "T-006-040"
@@ -2983,6 +3299,7 @@
       "spec": "007-planning",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-007-010"
       ],
@@ -2992,6 +3309,7 @@
       "spec": "007-planning",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-007-010"
       ],
@@ -3001,6 +3319,7 @@
       "spec": "007-planning",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-007-020"
       ],
@@ -3010,6 +3329,7 @@
       "spec": "007-planning",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-007-021"
       ],
@@ -3019,6 +3339,7 @@
       "spec": "007-planning",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-007-021"
       ],
@@ -3028,6 +3349,7 @@
       "spec": "007-planning",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-007-022"
       ],
@@ -3037,6 +3359,7 @@
       "spec": "007-planning",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-007-023"
       ],
@@ -3046,6 +3369,7 @@
       "spec": "007-planning",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-007-011"
       ],
@@ -3055,6 +3379,7 @@
       "spec": "007-planning",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-007-012"
       ],
@@ -3064,6 +3389,7 @@
       "spec": "007-planning",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-007-013"
       ],
@@ -3073,6 +3399,7 @@
       "spec": "007-planning",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-007-030"
       ],
@@ -3082,6 +3409,7 @@
       "spec": "007-planning",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-007-031"
       ],
@@ -3091,6 +3419,7 @@
       "spec": "007-planning",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-007-032"
       ],
@@ -3100,6 +3429,7 @@
       "spec": "007-planning",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-007-032"
       ],
@@ -3109,6 +3439,7 @@
       "spec": "007-planning",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-007-040"
       ],
@@ -3118,6 +3449,7 @@
       "spec": "007-planning",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-007-041"
       ],
@@ -3127,6 +3459,7 @@
       "spec": "007-planning",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-007-042"
       ],
@@ -3136,6 +3469,7 @@
       "spec": "007-planning",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-007-010"
       ],
@@ -3145,6 +3479,7 @@
       "spec": "007-planning",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-007-021"
       ],
@@ -3154,6 +3489,7 @@
       "spec": "007-planning",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-007-021"
       ],
@@ -3163,6 +3499,7 @@
       "spec": "007-planning",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-007-022"
       ],
@@ -3172,6 +3509,7 @@
       "spec": "007-planning",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-007-012"
       ],
@@ -3181,6 +3519,7 @@
       "spec": "007-planning",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-007-030"
       ],
@@ -3190,6 +3529,7 @@
       "spec": "007-planning",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-007-031"
       ],
@@ -3199,6 +3539,7 @@
       "spec": "007-planning",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-007-041"
       ],
@@ -3208,6 +3549,7 @@
       "spec": "007-planning",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-007-056"
       ],
@@ -3217,6 +3559,7 @@
       "spec": "007-planning",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-007-041"
       ],
@@ -3226,6 +3569,7 @@
       "spec": "007-planning",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-007-050"
       ],
@@ -3235,6 +3579,7 @@
       "spec": "007-planning",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-007-051"
       ],
@@ -3244,6 +3589,7 @@
       "spec": "007-planning",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-007-052"
       ],
@@ -3253,6 +3599,7 @@
       "spec": "007-planning",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-007-053"
       ],
@@ -3262,6 +3609,7 @@
       "spec": "007-planning",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-007-055"
       ],
@@ -3271,6 +3619,7 @@
       "spec": "007-planning",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-007-056"
       ],
@@ -3280,6 +3629,7 @@
       "spec": "007-planning",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-007-021"
       ],
@@ -3289,6 +3639,7 @@
       "spec": "007-planning",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-007-090"
       ],
@@ -3298,6 +3649,7 @@
       "spec": "007-planning",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-007-001"
       ],
@@ -3307,6 +3659,7 @@
       "spec": "007-planning",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-007-020",
         "T-007-021",
@@ -3321,6 +3674,7 @@
       "spec": "007-planning",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-007-010",
         "T-007-011",
@@ -3333,6 +3687,7 @@
       "spec": "007-planning",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-007-030",
         "T-007-031",
@@ -3344,6 +3699,7 @@
       "spec": "007-planning",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-007-040",
         "T-007-041",
@@ -3355,6 +3711,7 @@
       "spec": "008-knowledge",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-008-010"
       ],
@@ -3364,6 +3721,7 @@
       "spec": "008-knowledge",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-008-010"
       ],
@@ -3373,6 +3731,7 @@
       "spec": "008-knowledge",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-008-011"
       ],
@@ -3382,6 +3741,7 @@
       "spec": "008-knowledge",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-008-012"
       ],
@@ -3391,6 +3751,7 @@
       "spec": "008-knowledge",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-008-010"
       ],
@@ -3400,6 +3761,7 @@
       "spec": "008-knowledge",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-008-013"
       ],
@@ -3409,6 +3771,7 @@
       "spec": "008-knowledge",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-008-013"
       ],
@@ -3418,6 +3781,7 @@
       "spec": "008-knowledge",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-008-014"
       ],
@@ -3427,6 +3791,7 @@
       "spec": "008-knowledge",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-008-010"
       ],
@@ -3436,6 +3801,7 @@
       "spec": "008-knowledge",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-008-015"
       ],
@@ -3445,6 +3811,7 @@
       "spec": "008-knowledge",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-008-020"
       ],
@@ -3454,6 +3821,7 @@
       "spec": "008-knowledge",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-008-020"
       ],
@@ -3463,6 +3831,7 @@
       "spec": "008-knowledge",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-008-020"
       ],
@@ -3472,6 +3841,7 @@
       "spec": "008-knowledge",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-008-021"
       ],
@@ -3481,6 +3851,7 @@
       "spec": "008-knowledge",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-008-030"
       ],
@@ -3490,6 +3861,7 @@
       "spec": "008-knowledge",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-008-040"
       ],
@@ -3499,6 +3871,7 @@
       "spec": "008-knowledge",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-008-032"
       ],
@@ -3508,6 +3881,7 @@
       "spec": "008-knowledge",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-008-031"
       ],
@@ -3517,6 +3891,7 @@
       "spec": "008-knowledge",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-008-031"
       ],
@@ -3526,8 +3901,20 @@
       "spec": "008-knowledge",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-008-042"
+      ],
+      "tests": []
+    },
+    "FR-008-22": {
+      "spec": "008-knowledge",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-008-001",
+        "T-008-016"
       ],
       "tests": []
     },
@@ -3535,6 +3922,7 @@
       "spec": "008-knowledge",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-008-041"
       ],
@@ -3544,6 +3932,7 @@
       "spec": "008-knowledge",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-008-010"
       ],
@@ -3553,6 +3942,7 @@
       "spec": "008-knowledge",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-008-010"
       ],
@@ -3562,6 +3952,7 @@
       "spec": "008-knowledge",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-008-030"
       ],
@@ -3571,6 +3962,7 @@
       "spec": "008-knowledge",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-008-040"
       ],
@@ -3580,6 +3972,7 @@
       "spec": "008-knowledge",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-008-011"
       ],
@@ -3589,6 +3982,7 @@
       "spec": "008-knowledge",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-008-060"
       ],
@@ -3598,6 +3992,7 @@
       "spec": "008-knowledge",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-008-061"
       ],
@@ -3607,6 +4002,7 @@
       "spec": "008-knowledge",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-008-062"
       ],
@@ -3616,6 +4012,7 @@
       "spec": "008-knowledge",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-008-063"
       ],
@@ -3625,6 +4022,7 @@
       "spec": "008-knowledge",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-008-064"
       ],
@@ -3634,6 +4032,7 @@
       "spec": "008-knowledge",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-008-070"
       ],
@@ -3643,6 +4042,7 @@
       "spec": "008-knowledge",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-008-041"
       ],
@@ -3652,6 +4052,7 @@
       "spec": "008-knowledge",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-008-001"
       ],
@@ -3661,6 +4062,7 @@
       "spec": "008-knowledge",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-008-001"
       ],
@@ -3670,6 +4072,7 @@
       "spec": "008-knowledge",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-008-001"
       ],
@@ -3679,6 +4082,7 @@
       "spec": "008-knowledge",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-008-010",
         "T-008-011",
@@ -3692,6 +4096,7 @@
       "spec": "008-knowledge",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-008-020",
         "T-008-021",
@@ -3704,6 +4109,7 @@
       "spec": "008-knowledge",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-008-030",
         "T-008-031",
@@ -3715,8 +4121,10 @@
       "spec": "008-knowledge",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
       "tasks": [
         "T-008-012",
+        "T-008-016",
         "T-008-041"
       ],
       "tests": []
@@ -4539,7 +4947,8 @@
     "T-008-001": [
       "DC-008-01",
       "DC-008-02",
-      "DC-008-03"
+      "DC-008-03",
+      "FR-008-22"
     ],
     "T-008-002": [],
     "T-008-010": [
@@ -4574,6 +4983,10 @@
     "T-008-015": [
       "US-008-1",
       "FR-008-10"
+    ],
+    "T-008-016": [
+      "US-008-4",
+      "FR-008-22"
     ],
     "T-008-020": [
       "US-008-2",

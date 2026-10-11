@@ -6,7 +6,7 @@ Order: after the foundation's schemas and honesty checks (T-000-001, T-000-014);
 knowledge task of every module spec (001–007).
 
 ## Phase 1 — Setup
-- [ ] T-008-001 (DC-008-01, DC-008-02, DC-008-03) `contracts/knowledge-equations.schema.json`, `knowledge-glossary.schema.json`, `knowledge-export.schema.json` with valid and invalid fixtures, and empty-but-valid `catalogue/equations.yaml` and `catalogue/glossary.yaml` headers — test: tests/contract/test_t_008_001_catalogue_schemas.py
+- [ ] T-008-001 (DC-008-01, DC-008-02, DC-008-03) `contracts/knowledge-equations.schema.json`, `knowledge-glossary.schema.json`, `knowledge-export.schema.json` with valid and invalid fixtures (no catalogue file is created here: the first entry of each catalogue is written by a module knowledge task, FR-008-22) — test: tests/contract/test_t_008_001_catalogue_schemas.py
 - [ ] T-008-002 add `jsonschema` to the `dev` dependency group (test-only reference validator), lock, and record the version; no runtime change
 
 ## Phase 2 — US-008-1 (P1) Validated tables and bibliography
@@ -16,6 +16,7 @@ knowledge task of every module spec (001–007).
 - [ ] T-008-013 [US-008-1] (FR-008-06, FR-008-07) schema errors and hostile YAML (size, encoding, tags, aliases, duplicates, depth) — test: tests/unit/test_t_008_013_yaml_guards.py
 - [ ] T-008-014 [US-008-1] (FR-008-08) hostile BibTeX — test: tests/unit/test_t_008_014_bibtex_guards.py
 - [ ] T-008-015 [US-008-1] (FR-008-10) hostile table names and unknown ids (path traversal, no file opened) — test: tests/unit/test_t_008_015_name_guards.py
+- [ ] T-008-016 [US-008-4] (FR-008-22) absent catalogue read as empty; a present table or catalogue file with no row or entry rejected — test: tests/unit/test_t_008_016_absent_catalogues.py
 
 ## Phase 3 — US-008-2 (P1) UNVERIFIED rows surfaced
 - [ ] T-008-020 [US-008-2] (FR-008-11, FR-008-12, FR-008-13) `get_value` kinds, `UnverifiedParameterWarning` by role, no default filtering — test: tests/unit/test_t_008_020_values_and_warnings.py

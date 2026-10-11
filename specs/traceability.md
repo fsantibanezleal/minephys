@@ -1,4 +1,4 @@
-# Traceability matrix — generated 2026-10-07 by tools/trace.py (do not edit)
+# Traceability matrix — generated 2026-10-10 by tools/trace.py (do not edit)
 
 | Req ID | Spec | Status | Tasks | Tests |
 |---|---|---|---|---|
@@ -222,6 +222,7 @@
 | FR-008-19 | 008-knowledge | draft | T-008-031 | - |
 | FR-008-20 | 008-knowledge | draft | T-008-042 | - |
 | FR-008-21 | 008-knowledge | draft | T-008-041 | - |
+| FR-008-22 | 008-knowledge | draft | T-008-001, T-008-016 | - |
 | NFR-000-01 | 000-foundation | retired | - | - |
 | NFR-000-02 | 000-foundation | retired | - | - |
 | NFR-000-03 | 000-foundation | draft | T-000-011 | - |
@@ -397,6 +398,6 @@
 | US-008-1 | 008-knowledge | draft | T-008-010, T-008-011, T-008-013, T-008-014, T-008-015 | - |
 | US-008-2 | 008-knowledge | draft | T-008-020, T-008-021, T-008-040, T-008-042 | - |
 | US-008-3 | 008-knowledge | draft | T-008-030, T-008-031, T-008-032 | - |
-| US-008-4 | 008-knowledge | draft | T-008-012, T-008-041 | - |
+| US-008-4 | 008-knowledge | draft | T-008-012, T-008-016, T-008-041 | - |
 
 Problems: 0

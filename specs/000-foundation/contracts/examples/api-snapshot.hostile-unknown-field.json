@@ -1,0 +1,45 @@
+{
+  "version": "0.01.000",
+  "objects": [
+    {
+      "name": "minephys.ConvergenceError",
+      "kind": "class",
+      "deprecated": null,
+      "signature": "(argument)"
+    },
+    {
+      "name": "minephys.InputError",
+      "kind": "class",
+      "deprecated": null
+    },
+    {
+      "name": "minephys.__version__",
+      "kind": "constant",
+      "deprecated": null
+    },
+    {
+      "name": "minephys.haulage",
+      "kind": "module",
+      "deprecated": null
+    },
+    {
+      "name": "minephys.haulage.grade_resistance",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "grade",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        },
+        {
+          "name": "small_angle",
+          "kind": "keyword_only",
+          "default": "False",
+          "unit": null
+        }
+      ],
+      "deprecated": null
+    }
+  ]
+}

@@ -57,7 +57,7 @@ resolves, and every glossary term has both languages.
 
 | ID | Pattern | Requirement | Verification |
 |---|---|---|---|
-| FR-008-01 | Ubiquitous | The loader shall read the tables `minephys/knowledge/*.yaml` and `minephys/knowledge/share-alike/*.yaml`, the bibliography `minephys/knowledge/references.bib` and the catalogues `minephys/knowledge/catalogue/equations.yaml` and `catalogue/glossary.yaml` through `importlib.resources` (never through paths built from `__file__`). | contract |
+| FR-008-01 | Ubiquitous | The loader shall read the tables `minephys/knowledge/*.yaml` and `minephys/knowledge/share-alike/*.yaml`, the bibliography `minephys/knowledge/references.bib` and the catalogues `minephys/knowledge/catalogue/equations.yaml` and `catalogue/glossary.yaml` (when present, FR-008-22) through `importlib.resources` (never through paths built from `__file__`). | contract |
 | FR-008-02 | Ubiquitous | The loader shall accept a table only if it satisfies every rule of the foundation data model for DC-000-02 (`schema_version`, `table` equal to the file stem, `title`, `licence`, at least one row; row fields `id`, `quantity`, exactly one of `value` (finite number or exact rational string `"p/q"`) and `range` (`min ≤ max`), `units`, `role`, `citation`, `page`, `verification`, `verified_on` exactly when verified, `symbol`, optional `notes`; no other field). | unit |
 | FR-008-03 | Ubiquitous | The bibliography parser shall read the BibTeX subset of §7 and accept an entry only if it satisfies every DC-000-03 rule (key pattern, entry type, `author` or `organization`, `title`, `year` in 1800–2100, `doi` or `url` with their patterns, `access` enum, optional fields only from the allowed list, unknown fields rejected). | unit |
 | FR-008-04 | Ubiquitous | The loader shall accept `catalogue/equations.yaml` only if it satisfies the equation rules of §7 (DC-008-01) and `catalogue/glossary.yaml` only if it satisfies the glossary rules of §7 (DC-008-02). | unit |
@@ -77,6 +77,7 @@ resolves, and every glossary term has both languages.
 | FR-008-18 | Ubiquitous | `python -m minephys.knowledge` shall offer `validate [PATH]`, `export [--out FILE]` (stdout by default) and `render --out-dir DIR`, exiting 0 on success, 1 on validation errors (every error listed) and 2 on usage errors. | unit (CLI) |
 | FR-008-19 | Ubiquitous | `validate_tables(path=None)` shall validate the packaged knowledge, or a user directory with the same layout, and return a report listing every error (not only the first) with the row, entry and UNVERIFIED counts. | unit |
 | FR-008-20 | Ubiquitous | `knowledge_changes(old_dir, new_dir)` shall return the sorted ids of rows whose `value`, `range` or `verification` differ between the two layouts, including added and removed rows, and nothing else; the foundation's release check (FR-000-30) shall use it. | unit |
+| FR-008-22 | Optional | Where `catalogue/equations.yaml` or `catalogue/glossary.yaml` is absent because no entry has been written yet, the loader shall treat that catalogue as empty (`equations()` / `glossary()` return an empty tuple, the export lists no entry of it); no knowledge table or catalogue file shall be shipped without ≥ 1 row or entry, so an empty file that is present is rejected (FR-008-02, FR-008-04, FR-008-06). | unit |
 | FR-008-21 | Ubiquitous | The foundation's docs generator (FR-000-23, `tools/gen_knowledge_docs.py`) shall produce its pages through `render_pages`, so that the docs, the export and the API share one code path. | unit |
 
 ## 4. Correctness properties
@@ -110,9 +111,9 @@ enum literal, unknown key, `verified_on` on an UNVERIFIED row).
 
 | ID | Artifact | Schema | Producer → Consumer |
 |---|---|---|---|
-| DC-008-01 | `src/minephys/knowledge/catalogue/equations.yaml` | `contracts/knowledge-equations.schema.json` | module specs (maintainer) → loader, export, pages, PitStudio equation explorer |
-| DC-008-02 | `src/minephys/knowledge/catalogue/glossary.yaml` | `contracts/knowledge-glossary.schema.json` | maintainer → export, pages, PitStudio glossary (EN/ES) |
-| DC-008-03 | `python -m minephys.knowledge export` output | `contracts/knowledge-export.schema.json` (references the foundation's `knowledge-table` and `bibliography-entry` schemas and DC-008-01/02) | `minephys` → PitStudio docs build and `/knowledge` route (pinned version) |
+| DC-008-01 | `src/minephys/knowledge/catalogue/equations.yaml` | `specs/008-knowledge/contracts/knowledge-equations.schema.json` (draft; promoted to `contracts/knowledge-equations.schema.json` by T-008-001) | module specs (maintainer) → loader, export, pages, PitStudio equation explorer |
+| DC-008-02 | `src/minephys/knowledge/catalogue/glossary.yaml` | `specs/008-knowledge/contracts/knowledge-glossary.schema.json` (draft; promoted to `contracts/knowledge-glossary.schema.json` by T-008-001) | maintainer → export, pages, PitStudio glossary (EN/ES) |
+| DC-008-03 | `python -m minephys.knowledge export` output | `specs/008-knowledge/contracts/knowledge-export.schema.json` (draft; promoted to `contracts/knowledge-export.schema.json` by T-008-001; references the foundation's `knowledge-table` and `bibliography-entry` schemas and DC-008-01/02) | `minephys` → PitStudio docs build and `/knowledge` route (pinned version) |
 
 The tables and the bibliography follow the foundation's DC-000-02 (`contracts/knowledge-table.schema.json`) and
 DC-000-03 (`contracts/bibliography-entry.schema.json`); this spec implements their validator and does not redefine them.
@@ -142,8 +143,10 @@ duplicate key silently wins; aliases share objects and allow alias bombs).
 
 - The catalogues live under `knowledge/catalogue/` so that the foundation's table globs (`knowledge/*.yaml`,
   `knowledge/share-alike/*.yaml`) contain tables only.
-- A domain without published constants ships no table (the foundation requires at least one row per table); the
-  planning module (spec 007) is such a domain and appears in the catalogues only.
+- No knowledge file is shipped empty: a table needs ≥ 1 row (foundation data model) and a catalogue ≥ 1 entry; a
+  catalogue file is created by the first module knowledge task that adds an entry, and until then the loader treats it
+  as empty (FR-008-22). A domain without published constants therefore ships no table; the planning module (spec 007)
+  is such a domain and appears in the catalogues only.
 - `get_value` is the only access path for model defaults (foundation FR-000-19: no other literals in model code).
   Rows of role `limit` (validity bounds, unit tripwires) and `conversion` (exact definitions) do not warn when UNVERIFIED,
   because they gate warnings or are exact by definition; their status is still shown everywhere else.
@@ -170,6 +173,22 @@ duplicate key silently wins; aliases share objects and allow alias bombs).
   had no format for them, so DC-008-01 and DC-008-02 define it.
 - Resolved: "UNVERIFIED rows must be surfaced, never hidden" is made testable by FR-008-12 (warning on use), FR-008-13
   (no default filtering), FR-008-16 (labels and counts) and P-008-04 (label conservation).
+- Integration 2026-10-07: draft schemas written for DC-008-01, DC-008-02 and DC-008-03
+  (`specs/008-knowledge/contracts/`, valid and hostile examples indexed in `examples/index.json`); the export
+  references the foundation drafts (`knowledge-table.schema.json` for each table, `bibliography-entry.schema.json`
+  for each entry) and this spec's `knowledge-equations.schema.json#/$defs/equation` and
+  `knowledge-glossary.schema.json#/$defs/term`. Ambiguities resolved with the stricter reading: the `equations` and
+  `terms` lists keep at least one entry as stated above, so the "empty-but-valid" catalogue headers of T-008-001
+  need one seed entry each; the glossary `licence` is `CC-BY-4.0` (constitution principle 9) and its `id` follows the
+  row-id pattern `^[a-z][a-z0-9_]*$`; symbol units follow the foundation's units rule (`1` for dimensionless); the
+  optional `rows` and `see_also` lists are non-empty when present and hold unique ids; `term_en` and `term_es` are
+  single-line and non-blank; caps chosen here: 500 equations, 64 symbols and 64 rows per equation, LaTeX 2,000
+  characters, 1,000 terms, 16 `see_also` ids; the export holds exactly `version`, `tables`, `equations`, `glossary`,
+  `bibliography` and `summary` (`rows` and `equations` as total and UNVERIFIED counts, `terms`, `references`,
+  `per_table`, and `per_role` with all four roles), with no timestamp or other field.
+- Integration 2026-10-07 (2): the "≥ 1 entry" rule stays. A table or catalogue file is shipped only when it has ≥ 1 row or entry (no
+  empty files); an absent catalogue reads as empty (new FR-008-22, task T-008-016). This supersedes the "empty-but-
+  valid catalogue headers" of T-008-001 and the "one seed entry each" note above: T-008-001 writes no catalogue file.
 
 ## 9. Changes (only for features that modify earlier behaviour)
 ### ADDED Requirements

@@ -18,7 +18,7 @@ One YAML file per domain: `src/minephys/knowledge/<table>.yaml`. Tables derived 
 | `table` | string | equals the file stem; pattern `^[a-z][a-z0-9_]*$` |
 | `title` | string | non-empty, English |
 | `licence` | string | SPDX id; `CC-BY-4.0` for files in `knowledge/`; `CC-BY-SA-4.0` or `CC-BY-SA-3.0` for files in `knowledge/share-alike/` |
-| `rows` | array of row objects | at least one row |
+| `rows` | array of row objects | at least one row (a table file is shipped only when it has a row; no empty files, spec 008 FR-008-22) |
 
 No other field is allowed (`additionalProperties: false`).
 
