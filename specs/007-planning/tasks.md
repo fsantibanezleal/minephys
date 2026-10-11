@@ -32,7 +32,7 @@ precedes every task that uses the `networkx` oracle.
 - [x] T-007-042 [US-007-4] (FR-007-17) Lane guards — test: tests/unit/test_t_007_042_lane_guards.py
 
 ## Phase 6 — Non-functional and cross-cutting contract
-- [ ] T-007-050 (NFR-007-01) import audit and source scan (no `networkx`/`ortools` in `src/`) — test: tests/contract/test_t_007_050_imports.py
+- [x] T-007-050 (NFR-007-01) import audit and source scan (no `networkx`/`ortools` in `src/`) — test: tests/contract/test_t_007_050_imports.py
 - [ ] T-007-051 (NFR-007-02) register the reference sizes in `tools/bench.py` — test: tests/unit/test_t_007_051_bench_registry.py
 - [ ] T-007-052 (NFR-007-03) one worked-example oracle per family in the Pyodide smoke subset — test: tests/pyodide/test_t_007_052_planning_smoke.py
 - [ ] T-007-053 (NFR-007-04) model-card audit over `minephys.planning.__all__` — test: tests/contract/test_t_007_053_model_cards.py
