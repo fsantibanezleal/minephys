@@ -34,7 +34,7 @@ precedes every task that uses the `networkx` oracle.
 ## Phase 6 — Non-functional and cross-cutting contract
 - [x] T-007-050 (NFR-007-01) import audit and source scan (no `networkx`/`ortools` in `src/`) — test: tests/contract/test_t_007_050_imports.py
 - [ ] T-007-051 (NFR-007-02) register the reference sizes in `tools/bench.py` — test: tests/unit/test_t_007_051_bench_registry.py
-- [ ] T-007-052 (NFR-007-03) one worked-example oracle per family in the Pyodide smoke subset — test: tests/pyodide/test_t_007_052_planning_smoke.py
+- [x] T-007-052 (NFR-007-03) one worked-example oracle per family in the Pyodide smoke subset — test: tests/pyodide/test_t_007_052_planning_smoke.py
 - [ ] T-007-053 (NFR-007-04) model-card audit over `minephys.planning.__all__` — test: tests/contract/test_t_007_053_model_cards.py
 - [ ] T-007-054 [US-007-1] (FR-000-05, FR-000-07, FR-000-10, FR-000-11, FR-000-12, FR-000-13, P-000-01, P-000-02, P-000-03) the foundation cross-cutting contract checks (T-000-010) on every `minephys.planning` function — test: tests/property/test_t_007_054_planning_contract.py
 - [ ] T-007-055 (NFR-007-05) 10,164-block min-cut benchmark (`slow`) — test: tests/unit/test_t_007_055_large_mincut_benchmark.py
