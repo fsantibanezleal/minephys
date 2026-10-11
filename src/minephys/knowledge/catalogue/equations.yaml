@@ -1,0 +1,134 @@
+schema_version: 1
+title: minephys equations catalogue
+licence: CC-BY-4.0
+equations:
+  - id: planning_block_economic_value
+    title: Block economic value with the process-or-waste destination
+    domain: planning
+    latex: 'v = \max\big(T\,[\,g\,y\,(p - s_r) - c_p\,],\ 0\big) - T\,c_m'
+    symbols:
+      - {symbol: v, meaning: economic value of the block, units: currency}
+      - {symbol: T, meaning: block tonnage, units: kg}
+      - {symbol: g, meaning: block grade (mass fraction), units: "1"}
+      - {symbol: y, meaning: metallurgical recovery, units: "1"}
+      - {symbol: p, meaning: metal price, units: currency/kg}
+      - {symbol: s_r, meaning: selling cost per kg of metal, units: currency/kg}
+      - {symbol: c_p, meaning: processing cost per kg of ore, units: currency/kg}
+      - {symbol: c_m, meaning: mining cost per kg of rock, units: currency/kg}
+    function: minephys.planning.block_economic_value
+    citation: lane1988economic
+    page: not read (bibliographic); derived form
+    verification: UNVERIFIED
+    notes: the block is sent to the plant exactly when its processing margin is positive; the form is derived in spec 007 and checked by hand calculation
+  - id: planning_breakeven_cutoff_grade
+    title: Break-even cut-off grade
+    domain: planning
+    latex: 'g_{be} = \frac{c_p}{y\,(p - s_r)}'
+    symbols:
+      - {symbol: 'g_{be}', meaning: break-even grade, units: "1"}
+      - {symbol: c_p, meaning: processing cost per kg of ore, units: currency/kg}
+      - {symbol: y, meaning: metallurgical recovery, units: "1"}
+      - {symbol: p, meaning: metal price, units: currency/kg}
+      - {symbol: s_r, meaning: selling cost per kg of metal, units: currency/kg}
+    function: minephys.planning.breakeven_cutoff_grade
+    citation: lane1988economic
+    page: not read (bibliographic); derived form
+    verification: UNVERIFIED
+    notes: the grade at which the processing margin of the block vanishes (spec 007 FR-007-02)
+  - id: planning_ultimate_pit_closure
+    title: Ultimate pit as a maximum-value closure of the block precedence graph
+    domain: planning
+    latex: '\max_{C \subseteq V} \sum_{i \in C} v_i \quad \text{s.t.} \quad i \in C,\ (i, j) \in A \Rightarrow j \in C'
+    symbols:
+      - {symbol: v_i, meaning: economic value of block i, units: currency}
+      - {symbol: C, meaning: closure (the set of mined blocks), units: "1"}
+      - {symbol: A, meaning: precedence arcs (mining block i requires block j), units: "1"}
+    function: minephys.planning.ultimate_pit_mincut
+    citation: lerchs1965optimum
+    page: not read (bibliographic)
+    verification: UNVERIFIED
+    notes: the closure definition is read on picard1976closure (abstract); exhaustive enumeration is the test oracle
+  - id: planning_closure_mincut_reduction
+    title: Reduction of the maximum closure to a minimum s-t cut
+    domain: planning
+    latex: 'c(s, i) = v_i \ (v_i > 0), \quad c(i, t) = -v_i \ (v_i < 0), \quad c(i, j) = \infty \ ((i, j) \in A), \quad C^\ast = \{\, i : i \text{ reachable from } s \text{ in the residual network} \,\}'
+    symbols:
+      - {symbol: c, meaning: arc capacity of the s-t network, units: currency}
+      - {symbol: s, meaning: source node, units: "1"}
+      - {symbol: t, meaning: sink node, units: "1"}
+      - {symbol: 'C^\ast', meaning: smallest maximum-value closure, units: "1"}
+    function: minephys.planning.ultimate_pit_mincut
+    citation: picard1976closure
+    page: not read (the abstract was read); the reduction is re-derived in spec 007
+    verification: UNVERIFIED
+    notes: the minimum cut with the smallest source side gives the smallest optimal closure
+  - id: planning_nested_pits
+    title: Nested pits over revenue factors
+    domain: planning
+    latex: 'v_i(\lambda) = \max\big(T_i\,[\,\lambda\,g_i\,y\,(p - s_r) - c_p\,],\ 0\big) - T_i\,c_m'
+    symbols:
+      - {symbol: '\lambda', meaning: revenue factor, units: "1"}
+      - {symbol: T_i, meaning: tonnage of block i, units: kg}
+      - {symbol: g_i, meaning: grade of block i, units: "1"}
+    function: minephys.planning.nested_pits
+    citation: hochbaum2008pseudoflow
+    page: not read (abstract only); the parametric form is derived in spec 007
+    verification: UNVERIFIED
+    notes: the pits are solved one revenue factor at a time; the parametric pseudoflow algorithm is not implemented
+  - id: planning_strip_ratio
+    title: Strip ratio of a pit or pushback
+    domain: planning
+    latex: 'SR = \frac{\sum_{i \in P,\ \neg ore} T_i}{\sum_{i \in P,\ ore} T_i}'
+    symbols:
+      - {symbol: SR, meaning: strip ratio, units: "1"}
+      - {symbol: P, meaning: selected blocks, units: "1"}
+      - {symbol: T_i, meaning: tonnage of block i, units: kg}
+    function: minephys.planning.strip_ratio
+    citation: lane1988economic
+    page: not read (bibliographic); definition
+    verification: UNVERIFIED
+    notes: waste tonnage over ore tonnage of the selected blocks
+  - id: planning_npv
+    title: Net present value of a cash-flow series
+    domain: planning
+    latex: 'NPV = \sum_{t=1}^{T} \frac{CF_t}{(1 + r)^t}'
+    symbols:
+      - {symbol: CF_t, meaning: cash flow of period t, units: currency}
+      - {symbol: r, meaning: discount rate per period, units: "1"}
+      - {symbol: T, meaning: number of periods, units: "1"}
+    function: minephys.planning.npv
+    citation: lane1988economic
+    page: not read (bibliographic); definition
+    verification: UNVERIFIED
+    notes: end-of-period discounting; start-of-period is available
+  - id: planning_schedule_npv
+    title: Schedule NPV from per-period aggregation of block values
+    domain: planning
+    latex: 'CF_t = \sum_{i:\ \tau_i = t} v_i, \qquad NPV = \sum_{t} \frac{CF_t}{(1 + r)^{t+1}}'
+    symbols:
+      - {symbol: '\tau_i', meaning: period in which block i is mined, units: "1"}
+      - {symbol: v_i, meaning: value of block i, units: currency}
+    function: minephys.planning.schedule_npv
+    citation: lane1988economic
+    page: not read (bibliographic); definition
+    verification: UNVERIFIED
+    notes: a check and an evaluation, not an optimiser (spec 007 section 7)
+  - id: planning_lane_cutoff_grades
+    title: Lane limiting, balancing and optimum cut-off grades
+    domain: planning
+    latex: 'V(g) = (s - r)\,q(g) - h\,x(g) - m - (f + F)\max\!\left(\tfrac{1}{M},\ \tfrac{x(g)}{C},\ \tfrac{q(g)}{R}\right), \quad g_m = \frac{h}{(s - r)\,y}, \quad g_c = \frac{h + (f + F)/C}{(s - r)\,y}, \quad g_r = \frac{h}{\big(s - r - (f + F)/R\big)\,y}'
+    symbols:
+      - {symbol: s, meaning: metal price, units: currency/kg}
+      - {symbol: r, meaning: selling cost per kg of metal, units: currency/kg}
+      - {symbol: y, meaning: metallurgical recovery, units: "1"}
+      - {symbol: h, meaning: processing cost per kg of ore, units: currency/kg}
+      - {symbol: m, meaning: mining cost per kg of material, units: currency/kg}
+      - {symbol: f, meaning: fixed cost per unit time, units: currency/s}
+      - {symbol: F, meaning: opportunity cost per unit time, units: currency/s}
+      - {symbol: 'M, C, R', meaning: mine, plant and market capacities, units: kg/s}
+      - {symbol: 'x(g), q(g)', meaning: ore fraction and recovered metal per unit of material, units: "1"}
+    function: minephys.planning.lane_cutoff_grades
+    citation: lane1964choosing
+    page: not read (bibliographic); derived forms
+    verification: UNVERIFIED
+    notes: derived from the controlling-capacity rule read on cetin2013gridsearch pp. 660 and 663; the brute-force grid is the test oracle

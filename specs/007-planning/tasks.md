@@ -6,7 +6,7 @@ Dependencies: the foundation validators (T-000-003) and the catalogue schema of 
 precedes every task that uses the `networkx` oracle.
 
 ## Phase 1 — Setup
-- [ ] T-007-001 (DC-007-01) planning entries of `knowledge/catalogue/equations.yaml` and the §7 bibliography entries — test: tests/contract/test_t_007_001_planning_knowledge.py
+- [x] T-007-001 (DC-007-01) planning entries of `knowledge/catalogue/equations.yaml` and the §7 bibliography entries — test: tests/contract/test_t_007_001_planning_knowledge.py
 - [ ] T-007-002 add `networkx` to the `dev` dependency group (test-only oracle; `uv add --dev networkx`), lock, and record the version; no runtime change
 
 ## Phase 2 — US-007-2 (P1) Block values and strip ratio
