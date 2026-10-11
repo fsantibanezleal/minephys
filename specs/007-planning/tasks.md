@@ -38,7 +38,7 @@ precedes every task that uses the `networkx` oracle.
 - [x] T-007-053 (NFR-007-04) model-card audit over `minephys.planning.__all__` — test: tests/contract/test_t_007_053_model_cards.py
 - [x] T-007-054 [US-007-1] (FR-000-05, FR-000-07, FR-000-10, FR-000-11, FR-000-12, FR-000-13, P-000-01, P-000-02, P-000-03) the foundation cross-cutting contract checks (T-000-010) on every `minephys.planning` function — test: tests/property/test_t_007_054_planning_contract.py
 - [x] T-007-055 (NFR-007-05) 10,164-block min-cut benchmark (`slow`) — test: tests/unit/test_t_007_055_large_mincut_benchmark.py
-- [ ] T-007-056 [US-007-1] (NFR-007-06, P-007-10) minimal maximum closure at the 10⁵-block cap: `networkx` agreement, ≤ 60 s and ≤ 2 GB (`slow`), and the penalised-problem relation on CI-size grids — test: tests/metamorphic/test_t_007_056_minimal_closure_at_scale.py
+- [x] T-007-056 [US-007-1] (NFR-007-06, P-007-10) minimal maximum closure at the 10⁵-block cap: `networkx` agreement, ≤ 60 s and ≤ 2 GB (`slow`), and the penalised-problem relation on CI-size grids — test: tests/metamorphic/test_t_007_056_minimal_closure_at_scale.py
 
 ## Phase 7 — Polish and review
 - [ ] T-007-090 (SC-007-02) mutation run on `minephys.planning`; record the score in the task log and fail below `mutation.numerical_core_min` — test: tests/unit/test_t_007_090_mutation_score.py
