@@ -15,12 +15,15 @@ dependencies = [
 [dependency-groups]
 dev = [
     "hypothesis>=6.168.3",
+    "jsonschema>=4.26.0",
     "mypy>=2.4.0",
     "poethepoet>=0.48.0",
+    "pyslope>=1.4.0",
     "pytest>=9.1.1",
     "pytest-cov>=7.1.0",
     "pytest-xdist>=3.8.0",
     "ruff>=0.16.10",
+    "scipy>=1.18.1",
     "types-pyyaml>=6.0.12.20260906",
 ]
 
