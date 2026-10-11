@@ -73,6 +73,7 @@ the knowledge tables (§9).
 | FR-000-31 | Ubiquitous | Every knowledge table shall declare an SPDX licence; a `CC-BY-4.0` table shall cite no bibliography entry marked share-alike; share-alike-derived rows shall live under `knowledge/share-alike/` with their own licence; and `REUSE.toml` shall annotate both folders. | contract |
 | FR-000-32 | Ubiquitous | The package shall export from `minephys` the classes `InputError(ValueError)`, `InputTypeError(TypeError)`, `ValidityWarning(UserWarning)` and `ConvergenceError(RuntimeError)`, each with an `argument` attribute (`None` for `ConvergenceError`), plus `__version__` and the public subpackages. | unit |
 | FR-000-33 | Ubiquitous | Every test whose expected value comes from an oracle shall carry `@pytest.mark.oracle(kind, reference)` with `kind` in {`analytical`, `worked-example`, `reference-implementation`, `hand-calculation`} and, for a worked example, a reference that names the BibTeX key and page. | contract |
+| FR-000-34 | Unwanted | If `docs/reference/api-snapshot.json`, the file read by `tools/check_api.py`, holds a duplicate object key, a non-finite number (`NaN`, `Infinity`, `-Infinity`) or invalid UTF-8, then `tools/check_api.py` shall exit non-zero naming the file and the key or JSON pointer, and shall compare nothing. | unit (hostile) |
 
 ## 4. Correctness properties
 
@@ -133,6 +134,11 @@ and other consumers use, and a contract test proves that both agree on valid and
 | Definitions | SI and NIST unit definitions | public | exact conversion factors (`units` table) |
 
 Each module spec lists the sources it uses, the rows they feed and the verification status pinned at specification.
+
+**Hostile-input class outside the mechanical scope (G5 M4).** A share-alike source whose bibliography entry omits its
+`licence` field cannot be rejected by any file-level rule: the `licence` field is the only share-alike marker of an
+entry, so its absence is indistinguishable from an entry that is not share-alike. It is enforced by review (the release
+checklist reads every new entry's licence against its source) and, once a licence is present, by FR-000-31.
 
 ## 8. Risks and assumptions
 

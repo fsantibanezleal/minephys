@@ -77,6 +77,7 @@ in-domain. Markers registered in `pyproject.toml`: `req`, `oracle`, `knowledge`,
 | NFR-000-07 | release | measurement | `tools/bench.py` |
 | NFR-000-08 | CI | measurement | pytest-cov, mutation tool, Hypothesis profile |
 | NFR-000-09 | CI | measurement | mypy |
+| FR-000-34 | unit (hostile) | hand calculation: snapshot fixtures with a repeated key, `NaN` and a lone `0xff` byte give a non-zero exit naming the file and pointer; a clean file passes | pytest |
 
 ## Risks and complexity tracking
 

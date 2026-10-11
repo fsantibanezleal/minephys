@@ -32,6 +32,8 @@ and are locked after `[red]` (`python tools/lock_tests.py specs/000-foundation/t
 - [ ] T-000-031 [US-000-7] (FR-000-30) knowledge value-change check against the previous release — test: tests/unit/test_t_000_031_value_changelog.py
 - [ ] T-000-032 [US-000-6] (SC-000-03, SC-000-04) release evidence report (honesty and portability summary) — test: tests/unit/test_t_000_032_release_evidence.py
 
+- [ ] T-000-033 (FR-000-34) `tools/check_api.py` strict JSON reader: duplicate key, non-finite number, invalid UTF-8 — test: tests/unit/test_t_000_033_api_snapshot_strict_json.py
+
 ## Phase 5 — Polish and independent review
 - [ ] T-000-090 mutation run on `src/minephys/_validate.py`, `_solve.py`, `_random.py`, `units.py`; record the score
 - [ ] T-000-091 independent review of the diff against this spec; append tasks for gaps

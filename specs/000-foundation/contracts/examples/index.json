@@ -660,7 +660,7 @@
       "class": "share-alike source without its licence field",
       "by": "checker",
       "rule": "-",
-      "note": "the licence field is the only share-alike marker of an entry; no file-level rule can detect its absence (review only)"
+      "note": "outside the mechanical scope: recorded in the spec 000 section 7 and enforced by review"
     },
     {
       "schema": "api-snapshot.schema.json",
@@ -684,8 +684,8 @@
       "schema": "api-snapshot.schema.json",
       "class": "duplicate JSON key or non-finite number in the snapshot file",
       "by": "loader",
-      "rule": "-",
-      "note": "no requirement names a strict JSON reader for tools/check_api.py"
+      "rule": "FR-000-34",
+      "note": "enforced by FR-000-34 (task T-000-033)"
     }
   ]
 }

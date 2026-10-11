@@ -1,4 +1,4 @@
-# Traceability matrix — generated 2026-10-10 by tools/trace.py (do not edit)
+# Traceability matrix — generated 2026-10-11 by tools/trace.py (do not edit)
 
 | Req ID | Spec | Status | Tasks | Tests |
 |---|---|---|---|---|
@@ -51,6 +51,7 @@
 | FR-000-31 | 000-foundation | draft | T-000-014 | - |
 | FR-000-32 | 000-foundation | draft | T-000-002 | - |
 | FR-000-33 | 000-foundation | draft | T-000-016 | - |
+| FR-000-34 | 000-foundation | draft | T-000-033 | - |
 | FR-001-01 | 001-haulage | draft | T-001-010 | - |
 | FR-001-02 | 001-haulage | draft | T-001-010 | - |
 | FR-001-03 | 001-haulage | draft | T-001-011 | - |
