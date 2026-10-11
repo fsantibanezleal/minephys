@@ -11,7 +11,7 @@ precedes every task that uses the `networkx` oracle.
 
 ## Phase 2 — US-007-2 (P1) Block values and strip ratio
 - [x] T-007-010 [US-007-2] (FR-007-01, FR-007-02, P-007-01) block economic value, destination and break-even cut-off — test: tests/unit/test_t_007_010_block_value.py, tests/property/test_t_007_010_block_value_properties.py
-- [ ] T-007-011 [US-007-2] (FR-007-08) block-value guards — test: tests/unit/test_t_007_011_block_value_guards.py
+- [x] T-007-011 [US-007-2] (FR-007-08) block-value guards — test: tests/unit/test_t_007_011_block_value_guards.py
 - [ ] T-007-012 [US-007-2] (FR-007-09, P-007-05) strip ratio of pits and pushbacks — test: tests/unit/test_t_007_012_strip_ratio.py, tests/property/test_t_007_012_strip_ratio_properties.py
 - [ ] T-007-013 [US-007-2] (FR-007-10) strip-ratio guards (zero ore raises) — test: tests/unit/test_t_007_013_strip_ratio_guards.py
 
