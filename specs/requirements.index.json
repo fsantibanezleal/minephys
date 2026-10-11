@@ -1,69 +1,5052 @@
 {
   "requirements": {
-    "US-000-1": {
+    "US-000-2": {
       "spec": "000-foundation",
       "retired": false,
       "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-000-003",
+        "T-000-004",
+        "T-000-005",
+        "T-000-010",
+        "T-000-022",
+        "T-000-023",
+        "T-000-024"
+      ],
+      "tests": []
+    },
+    "US-000-3": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-000-011",
+        "T-000-021"
+      ],
+      "tests": []
+    },
+    "US-000-4": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-000-020"
+      ],
+      "tests": []
+    },
+    "US-000-5": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-000-002",
+        "T-000-006",
+        "T-000-012",
+        "T-000-016"
+      ],
+      "tests": []
+    },
+    "US-000-6": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-000-001",
+        "T-000-013",
+        "T-000-014",
+        "T-000-015",
+        "T-000-032"
+      ],
+      "tests": []
+    },
+    "US-000-7": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-000-030",
+        "T-000-031"
+      ],
+      "tests": []
+    },
+    "FR-000-05": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-000-010",
+        "T-001-080",
+        "T-002-080",
+        "T-003-080",
+        "T-004-080",
+        "T-005-064",
+        "T-006-054",
+        "T-007-054"
+      ],
+      "tests": []
+    },
+    "FR-000-06": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-000-011"
+      ],
+      "tests": []
+    },
+    "FR-000-07": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-000-003",
+        "T-000-010",
+        "T-001-080",
+        "T-002-080",
+        "T-003-080",
+        "T-004-080",
+        "T-005-064",
+        "T-006-054",
+        "T-007-054"
+      ],
+      "tests": []
+    },
+    "FR-000-08": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-000-006",
+        "T-000-012"
+      ],
+      "tests": []
+    },
+    "FR-000-09": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-000-012"
+      ],
+      "tests": []
+    },
+    "FR-000-10": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-000-003",
+        "T-001-080",
+        "T-002-080",
+        "T-003-080",
+        "T-004-080",
+        "T-005-064",
+        "T-006-054",
+        "T-007-054"
+      ],
+      "tests": []
+    },
+    "FR-000-11": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-000-003",
+        "T-001-080",
+        "T-002-080",
+        "T-003-080",
+        "T-004-080",
+        "T-005-064",
+        "T-006-054",
+        "T-007-054"
+      ],
+      "tests": []
+    },
+    "FR-000-12": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-000-003",
+        "T-001-080",
+        "T-002-080",
+        "T-003-080",
+        "T-004-080",
+        "T-005-064",
+        "T-006-054",
+        "T-007-054"
+      ],
+      "tests": []
+    },
+    "FR-000-13": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-000-003",
+        "T-001-080",
+        "T-003-080",
+        "T-005-064",
+        "T-006-054",
+        "T-007-054"
+      ],
+      "tests": []
+    },
+    "FR-000-14": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-000-003"
+      ],
+      "tests": []
+    },
+    "FR-000-15": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-000-003"
+      ],
+      "tests": []
+    },
+    "FR-000-16": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-000-003"
+      ],
+      "tests": []
+    },
+    "FR-000-17": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-000-004"
+      ],
+      "tests": []
+    },
+    "FR-000-18": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-000-005",
+        "T-003-080"
+      ],
+      "tests": []
+    },
+    "FR-000-19": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-000-013"
+      ],
+      "tests": []
+    },
+    "FR-000-20": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-000-014"
+      ],
+      "tests": []
+    },
+    "FR-000-21": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-000-014"
+      ],
+      "tests": []
+    },
+    "FR-000-22": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-000-014"
+      ],
+      "tests": []
+    },
+    "FR-000-23": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-000-015"
+      ],
+      "tests": []
+    },
+    "FR-000-24": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-000-020"
+      ],
+      "tests": []
+    },
+    "FR-000-25": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-000-021"
+      ],
+      "tests": []
+    },
+    "FR-000-26": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-000-022"
+      ],
+      "tests": []
+    },
+    "FR-000-27": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-000-002"
+      ],
+      "tests": []
+    },
+    "FR-000-28": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-000-030"
+      ],
+      "tests": []
+    },
+    "FR-000-29": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-000-030"
+      ],
+      "tests": []
+    },
+    "FR-000-30": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-000-031"
+      ],
+      "tests": []
+    },
+    "FR-000-31": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-000-014"
+      ],
+      "tests": []
+    },
+    "FR-000-32": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-000-002"
+      ],
+      "tests": []
+    },
+    "FR-000-33": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-000-016"
+      ],
+      "tests": []
+    },
+    "P-000-01": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-000-010",
+        "T-001-080",
+        "T-002-080",
+        "T-003-080",
+        "T-004-080",
+        "T-005-064",
+        "T-006-054",
+        "T-007-054"
+      ],
+      "tests": []
+    },
+    "P-000-02": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-000-010",
+        "T-001-080",
+        "T-002-080",
+        "T-003-080",
+        "T-004-080",
+        "T-005-064",
+        "T-006-054",
+        "T-007-054"
+      ],
+      "tests": []
+    },
+    "P-000-03": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-000-010",
+        "T-001-080",
+        "T-002-080",
+        "T-003-080",
+        "T-004-080",
+        "T-005-064",
+        "T-006-054",
+        "T-007-054"
+      ],
+      "tests": []
+    },
+    "P-000-04": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-000-005",
+        "T-003-080"
+      ],
+      "tests": []
+    },
+    "P-000-05": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-000-006"
+      ],
+      "tests": []
+    },
+    "NFR-000-03": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-000-011"
+      ],
+      "tests": []
+    },
+    "NFR-000-04": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-000-020"
+      ],
+      "tests": []
+    },
+    "NFR-000-05": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-000-020"
+      ],
+      "tests": []
+    },
+    "NFR-000-06": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-000-021"
+      ],
+      "tests": []
+    },
+    "NFR-000-07": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-000-023"
+      ],
+      "tests": []
+    },
+    "NFR-000-08": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-000-024"
+      ],
+      "tests": []
+    },
+    "NFR-000-09": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-000-024"
+      ],
+      "tests": []
+    },
+    "SC-000-02": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-000-016"
+      ],
+      "tests": []
+    },
+    "SC-000-03": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-000-032"
+      ],
+      "tests": []
+    },
+    "SC-000-04": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-000-032"
+      ],
+      "tests": []
+    },
+    "DC-000-02": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-000-001",
+        "T-008-010"
+      ],
+      "tests": []
+    },
+    "DC-000-03": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-000-001",
+        "T-008-011"
+      ],
+      "tests": []
+    },
+    "DC-000-04": {
+      "spec": "000-foundation",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-000-001",
+        "T-000-030"
+      ],
+      "tests": []
+    },
+    "US-000-1": {
+      "spec": "000-foundation",
+      "retired": true,
+      "draft": true,
+      "phase": "clarified",
       "tasks": [],
       "tests": []
     },
     "FR-000-01": {
       "spec": "000-foundation",
-      "retired": false,
+      "retired": true,
       "draft": true,
+      "phase": "clarified",
       "tasks": [],
       "tests": []
     },
     "FR-000-02": {
       "spec": "000-foundation",
-      "retired": false,
+      "retired": true,
       "draft": true,
+      "phase": "clarified",
       "tasks": [],
       "tests": []
     },
     "FR-000-03": {
       "spec": "000-foundation",
-      "retired": false,
+      "retired": true,
       "draft": true,
+      "phase": "clarified",
       "tasks": [],
       "tests": []
     },
     "FR-000-04": {
       "spec": "000-foundation",
-      "retired": false,
+      "retired": true,
       "draft": true,
+      "phase": "clarified",
       "tasks": [],
       "tests": []
     },
     "NFR-000-01": {
       "spec": "000-foundation",
-      "retired": false,
+      "retired": true,
       "draft": true,
+      "phase": "clarified",
       "tasks": [],
       "tests": []
     },
     "NFR-000-02": {
       "spec": "000-foundation",
-      "retired": false,
+      "retired": true,
       "draft": true,
+      "phase": "clarified",
       "tasks": [],
       "tests": []
     },
     "SC-000-01": {
       "spec": "000-foundation",
-      "retired": false,
+      "retired": true,
       "draft": true,
+      "phase": "clarified",
       "tasks": [],
       "tests": []
     },
     "DC-000-01": {
       "spec": "000-foundation",
+      "retired": true,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [],
+      "tests": []
+    },
+    "US-001-1": {
+      "spec": "001-haulage",
       "retired": false,
       "draft": true,
-      "tasks": [],
+      "phase": "clarified",
+      "tasks": [
+        "T-001-030",
+        "T-001-031",
+        "T-001-032"
+      ],
+      "tests": []
+    },
+    "US-001-2": {
+      "spec": "001-haulage",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-001-010",
+        "T-001-011",
+        "T-001-012",
+        "T-001-013",
+        "T-001-014",
+        "T-001-015",
+        "T-001-080",
+        "T-001-081"
+      ],
+      "tests": []
+    },
+    "US-001-3": {
+      "spec": "001-haulage",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-001-040",
+        "T-001-041",
+        "T-001-042",
+        "T-001-043"
+      ],
+      "tests": []
+    },
+    "US-001-4": {
+      "spec": "001-haulage",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-001-020"
+      ],
+      "tests": []
+    },
+    "FR-001-01": {
+      "spec": "001-haulage",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-001-010"
+      ],
+      "tests": []
+    },
+    "FR-001-02": {
+      "spec": "001-haulage",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-001-010"
+      ],
+      "tests": []
+    },
+    "FR-001-03": {
+      "spec": "001-haulage",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-001-011"
+      ],
+      "tests": []
+    },
+    "FR-001-04": {
+      "spec": "001-haulage",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-001-012"
+      ],
+      "tests": []
+    },
+    "FR-001-05": {
+      "spec": "001-haulage",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-001-012"
+      ],
+      "tests": []
+    },
+    "FR-001-06": {
+      "spec": "001-haulage",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-001-013"
+      ],
+      "tests": []
+    },
+    "FR-001-07": {
+      "spec": "001-haulage",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-001-014"
+      ],
+      "tests": []
+    },
+    "FR-001-08": {
+      "spec": "001-haulage",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-001-020"
+      ],
+      "tests": []
+    },
+    "FR-001-09": {
+      "spec": "001-haulage",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-001-020"
+      ],
+      "tests": []
+    },
+    "FR-001-10": {
+      "spec": "001-haulage",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-001-015"
+      ],
+      "tests": []
+    },
+    "FR-001-11": {
+      "spec": "001-haulage",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-001-030"
+      ],
+      "tests": []
+    },
+    "FR-001-12": {
+      "spec": "001-haulage",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-001-030"
+      ],
+      "tests": []
+    },
+    "FR-001-13": {
+      "spec": "001-haulage",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-001-031"
+      ],
+      "tests": []
+    },
+    "FR-001-14": {
+      "spec": "001-haulage",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-001-031"
+      ],
+      "tests": []
+    },
+    "FR-001-15": {
+      "spec": "001-haulage",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-001-031"
+      ],
+      "tests": []
+    },
+    "FR-001-16": {
+      "spec": "001-haulage",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-001-032"
+      ],
+      "tests": []
+    },
+    "FR-001-17": {
+      "spec": "001-haulage",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-001-032"
+      ],
+      "tests": []
+    },
+    "FR-001-18": {
+      "spec": "001-haulage",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-001-040"
+      ],
+      "tests": []
+    },
+    "FR-001-19": {
+      "spec": "001-haulage",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-001-041"
+      ],
+      "tests": []
+    },
+    "FR-001-20": {
+      "spec": "001-haulage",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-001-042"
+      ],
+      "tests": []
+    },
+    "FR-001-21": {
+      "spec": "001-haulage",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-001-043"
+      ],
+      "tests": []
+    },
+    "FR-001-22": {
+      "spec": "001-haulage",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-001-080"
+      ],
+      "tests": []
+    },
+    "FR-001-23": {
+      "spec": "001-haulage",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-001-080"
+      ],
+      "tests": []
+    },
+    "FR-001-24": {
+      "spec": "001-haulage",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-001-041"
+      ],
+      "tests": []
+    },
+    "FR-001-25": {
+      "spec": "001-haulage",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-001-032"
+      ],
+      "tests": []
+    },
+    "FR-001-26": {
+      "spec": "001-haulage",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-001-043"
+      ],
+      "tests": []
+    },
+    "P-001-01": {
+      "spec": "001-haulage",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-001-010"
+      ],
+      "tests": []
+    },
+    "P-001-02": {
+      "spec": "001-haulage",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-001-012"
+      ],
+      "tests": []
+    },
+    "P-001-03": {
+      "spec": "001-haulage",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-001-012"
+      ],
+      "tests": []
+    },
+    "P-001-04": {
+      "spec": "001-haulage",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-001-013"
+      ],
+      "tests": []
+    },
+    "P-001-05": {
+      "spec": "001-haulage",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-001-030"
+      ],
+      "tests": []
+    },
+    "P-001-06": {
+      "spec": "001-haulage",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-001-030"
+      ],
+      "tests": []
+    },
+    "P-001-07": {
+      "spec": "001-haulage",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-001-030"
+      ],
+      "tests": []
+    },
+    "P-001-08": {
+      "spec": "001-haulage",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-001-041"
+      ],
+      "tests": []
+    },
+    "P-001-09": {
+      "spec": "001-haulage",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-001-041"
+      ],
+      "tests": []
+    },
+    "P-001-10": {
+      "spec": "001-haulage",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-001-042"
+      ],
+      "tests": []
+    },
+    "P-001-11": {
+      "spec": "001-haulage",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-001-043"
+      ],
+      "tests": []
+    },
+    "P-001-12": {
+      "spec": "001-haulage",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-001-040"
+      ],
+      "tests": []
+    },
+    "P-001-13": {
+      "spec": "001-haulage",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-001-020"
+      ],
+      "tests": []
+    },
+    "NFR-001-01": {
+      "spec": "001-haulage",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-001-081"
+      ],
+      "tests": []
+    },
+    "NFR-001-02": {
+      "spec": "001-haulage",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-001-081"
+      ],
+      "tests": []
+    },
+    "DC-001-01": {
+      "spec": "001-haulage",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-001-001"
+      ],
+      "tests": []
+    },
+    "US-002-1": {
+      "spec": "002-blasting",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-002-010",
+        "T-002-011",
+        "T-002-012",
+        "T-002-013",
+        "T-002-080"
+      ],
+      "tests": []
+    },
+    "US-002-2": {
+      "spec": "002-blasting",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-002-020",
+        "T-002-021"
+      ],
+      "tests": []
+    },
+    "US-002-3": {
+      "spec": "002-blasting",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-002-030",
+        "T-002-031"
+      ],
+      "tests": []
+    },
+    "US-002-4": {
+      "spec": "002-blasting",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-002-040",
+        "T-002-041",
+        "T-002-081"
+      ],
+      "tests": []
+    },
+    "FR-002-01": {
+      "spec": "002-blasting",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-002-010"
+      ],
+      "tests": []
+    },
+    "FR-002-02": {
+      "spec": "002-blasting",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-002-011"
+      ],
+      "tests": []
+    },
+    "FR-002-03": {
+      "spec": "002-blasting",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-002-012"
+      ],
+      "tests": []
+    },
+    "FR-002-04": {
+      "spec": "002-blasting",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-002-013"
+      ],
+      "tests": []
+    },
+    "FR-002-05": {
+      "spec": "002-blasting",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-002-020"
+      ],
+      "tests": []
+    },
+    "FR-002-06": {
+      "spec": "002-blasting",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-002-020"
+      ],
+      "tests": []
+    },
+    "FR-002-07": {
+      "spec": "002-blasting",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-002-021"
+      ],
+      "tests": []
+    },
+    "FR-002-08": {
+      "spec": "002-blasting",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-002-030"
+      ],
+      "tests": []
+    },
+    "FR-002-09": {
+      "spec": "002-blasting",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-002-031"
+      ],
+      "tests": []
+    },
+    "FR-002-10": {
+      "spec": "002-blasting",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-002-040"
+      ],
+      "tests": []
+    },
+    "FR-002-11": {
+      "spec": "002-blasting",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-002-040"
+      ],
+      "tests": []
+    },
+    "FR-002-12": {
+      "spec": "002-blasting",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-002-041"
+      ],
+      "tests": []
+    },
+    "FR-002-13": {
+      "spec": "002-blasting",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-002-041"
+      ],
+      "tests": []
+    },
+    "FR-002-14": {
+      "spec": "002-blasting",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-002-013"
+      ],
+      "tests": []
+    },
+    "FR-002-15": {
+      "spec": "002-blasting",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-002-020"
+      ],
+      "tests": []
+    },
+    "FR-002-16": {
+      "spec": "002-blasting",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-002-080"
+      ],
+      "tests": []
+    },
+    "FR-002-17": {
+      "spec": "002-blasting",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-002-080"
+      ],
+      "tests": []
+    },
+    "FR-002-18": {
+      "spec": "002-blasting",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-002-011",
+        "T-002-080"
+      ],
+      "tests": []
+    },
+    "P-002-01": {
+      "spec": "002-blasting",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-002-011"
+      ],
+      "tests": []
+    },
+    "P-002-02": {
+      "spec": "002-blasting",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-002-011"
+      ],
+      "tests": []
+    },
+    "P-002-03": {
+      "spec": "002-blasting",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-002-013"
+      ],
+      "tests": []
+    },
+    "P-002-04": {
+      "spec": "002-blasting",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-002-020"
+      ],
+      "tests": []
+    },
+    "P-002-05": {
+      "spec": "002-blasting",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-002-020"
+      ],
+      "tests": []
+    },
+    "P-002-06": {
+      "spec": "002-blasting",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-002-021"
+      ],
+      "tests": []
+    },
+    "P-002-07": {
+      "spec": "002-blasting",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-002-030"
+      ],
+      "tests": []
+    },
+    "P-002-08": {
+      "spec": "002-blasting",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-002-031"
+      ],
+      "tests": []
+    },
+    "P-002-09": {
+      "spec": "002-blasting",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-002-040"
+      ],
+      "tests": []
+    },
+    "P-002-10": {
+      "spec": "002-blasting",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-002-041"
+      ],
+      "tests": []
+    },
+    "NFR-002-01": {
+      "spec": "002-blasting",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-002-081"
+      ],
+      "tests": []
+    },
+    "NFR-002-02": {
+      "spec": "002-blasting",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-002-081"
+      ],
+      "tests": []
+    },
+    "DC-002-01": {
+      "spec": "002-blasting",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-002-001"
+      ],
+      "tests": []
+    },
+    "US-003-1": {
+      "spec": "003-geotech",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-003-020",
+        "T-003-021",
+        "T-003-022",
+        "T-003-023",
+        "T-003-024",
+        "T-003-080",
+        "T-003-081"
+      ],
+      "tests": []
+    },
+    "US-003-2": {
+      "spec": "003-geotech",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-003-031",
+        "T-003-032"
+      ],
+      "tests": []
+    },
+    "US-003-3": {
+      "spec": "003-geotech",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-003-030",
+        "T-003-040",
+        "T-003-041"
+      ],
+      "tests": []
+    },
+    "US-003-4": {
+      "spec": "003-geotech",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-003-010",
+        "T-003-011"
+      ],
+      "tests": []
+    },
+    "FR-003-01": {
+      "spec": "003-geotech",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-003-010"
+      ],
+      "tests": []
+    },
+    "FR-003-02": {
+      "spec": "003-geotech",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-003-010"
+      ],
+      "tests": []
+    },
+    "FR-003-03": {
+      "spec": "003-geotech",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-003-010"
+      ],
+      "tests": []
+    },
+    "FR-003-04": {
+      "spec": "003-geotech",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-003-011"
+      ],
+      "tests": []
+    },
+    "FR-003-05": {
+      "spec": "003-geotech",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-003-011"
+      ],
+      "tests": []
+    },
+    "FR-003-06": {
+      "spec": "003-geotech",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-003-010"
+      ],
+      "tests": []
+    },
+    "FR-003-07": {
+      "spec": "003-geotech",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-003-020"
+      ],
+      "tests": []
+    },
+    "FR-003-08": {
+      "spec": "003-geotech",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-003-020"
+      ],
+      "tests": []
+    },
+    "FR-003-09": {
+      "spec": "003-geotech",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-003-021",
+        "T-003-023"
+      ],
+      "tests": []
+    },
+    "FR-003-10": {
+      "spec": "003-geotech",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-003-022"
+      ],
+      "tests": []
+    },
+    "FR-003-11": {
+      "spec": "003-geotech",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-003-021",
+        "T-003-022"
+      ],
+      "tests": []
+    },
+    "FR-003-12": {
+      "spec": "003-geotech",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-003-024"
+      ],
+      "tests": []
+    },
+    "FR-003-13": {
+      "spec": "003-geotech",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-003-024"
+      ],
+      "tests": []
+    },
+    "FR-003-14": {
+      "spec": "003-geotech",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-003-030"
+      ],
+      "tests": []
+    },
+    "FR-003-15": {
+      "spec": "003-geotech",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-003-031"
+      ],
+      "tests": []
+    },
+    "FR-003-16": {
+      "spec": "003-geotech",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-003-031"
+      ],
+      "tests": []
+    },
+    "FR-003-17": {
+      "spec": "003-geotech",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-003-032"
+      ],
+      "tests": []
+    },
+    "FR-003-18": {
+      "spec": "003-geotech",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-003-040"
+      ],
+      "tests": []
+    },
+    "FR-003-19": {
+      "spec": "003-geotech",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-003-041"
+      ],
+      "tests": []
+    },
+    "FR-003-20": {
+      "spec": "003-geotech",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-003-080"
+      ],
+      "tests": []
+    },
+    "FR-003-21": {
+      "spec": "003-geotech",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-003-080"
+      ],
+      "tests": []
+    },
+    "FR-003-22": {
+      "spec": "003-geotech",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-003-021",
+        "T-003-022"
+      ],
+      "tests": []
+    },
+    "FR-003-23": {
+      "spec": "003-geotech",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-003-032",
+        "T-003-080"
+      ],
+      "tests": []
+    },
+    "FR-003-24": {
+      "spec": "003-geotech",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-003-024",
+        "T-003-080"
+      ],
+      "tests": []
+    },
+    "P-003-01": {
+      "spec": "003-geotech",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-003-010"
+      ],
+      "tests": []
+    },
+    "P-003-02": {
+      "spec": "003-geotech",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-003-010"
+      ],
+      "tests": []
+    },
+    "P-003-03": {
+      "spec": "003-geotech",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-003-010"
+      ],
+      "tests": []
+    },
+    "P-003-04": {
+      "spec": "003-geotech",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-003-021"
+      ],
+      "tests": []
+    },
+    "P-003-05": {
+      "spec": "003-geotech",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-003-021"
+      ],
+      "tests": []
+    },
+    "P-003-06": {
+      "spec": "003-geotech",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-003-021"
+      ],
+      "tests": []
+    },
+    "P-003-07": {
+      "spec": "003-geotech",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-003-021"
+      ],
+      "tests": []
+    },
+    "P-003-08": {
+      "spec": "003-geotech",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-003-024"
+      ],
+      "tests": []
+    },
+    "P-003-09": {
+      "spec": "003-geotech",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-003-031"
+      ],
+      "tests": []
+    },
+    "P-003-10": {
+      "spec": "003-geotech",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-003-032"
+      ],
+      "tests": []
+    },
+    "P-003-11": {
+      "spec": "003-geotech",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-003-040"
+      ],
+      "tests": []
+    },
+    "P-003-12": {
+      "spec": "003-geotech",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-003-041"
+      ],
+      "tests": []
+    },
+    "NFR-003-01": {
+      "spec": "003-geotech",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-003-081"
+      ],
+      "tests": []
+    },
+    "NFR-003-02": {
+      "spec": "003-geotech",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-003-081"
+      ],
+      "tests": []
+    },
+    "DC-003-01": {
+      "spec": "003-geotech",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-003-001"
+      ],
+      "tests": []
+    },
+    "US-004-1": {
+      "spec": "004-bulk",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-004-010",
+        "T-004-011",
+        "T-004-080"
+      ],
+      "tests": []
+    },
+    "US-004-2": {
+      "spec": "004-bulk",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-004-020",
+        "T-004-081"
+      ],
+      "tests": []
+    },
+    "US-004-3": {
+      "spec": "004-bulk",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-004-030",
+        "T-004-031"
+      ],
+      "tests": []
+    },
+    "FR-004-01": {
+      "spec": "004-bulk",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-004-010"
+      ],
+      "tests": []
+    },
+    "FR-004-02": {
+      "spec": "004-bulk",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-004-010"
+      ],
+      "tests": []
+    },
+    "FR-004-03": {
+      "spec": "004-bulk",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-004-011"
+      ],
+      "tests": []
+    },
+    "FR-004-04": {
+      "spec": "004-bulk",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-004-011"
+      ],
+      "tests": []
+    },
+    "FR-004-05": {
+      "spec": "004-bulk",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-004-020"
+      ],
+      "tests": []
+    },
+    "FR-004-06": {
+      "spec": "004-bulk",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-004-020"
+      ],
+      "tests": []
+    },
+    "FR-004-07": {
+      "spec": "004-bulk",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-004-020"
+      ],
+      "tests": []
+    },
+    "FR-004-08": {
+      "spec": "004-bulk",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-004-030"
+      ],
+      "tests": []
+    },
+    "FR-004-09": {
+      "spec": "004-bulk",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-004-031"
+      ],
+      "tests": []
+    },
+    "FR-004-10": {
+      "spec": "004-bulk",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-004-080"
+      ],
+      "tests": []
+    },
+    "FR-004-11": {
+      "spec": "004-bulk",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-004-080"
+      ],
+      "tests": []
+    },
+    "FR-004-12": {
+      "spec": "004-bulk",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-004-030",
+        "T-004-031"
+      ],
+      "tests": []
+    },
+    "P-004-01": {
+      "spec": "004-bulk",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-004-010"
+      ],
+      "tests": []
+    },
+    "P-004-02": {
+      "spec": "004-bulk",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-004-010"
+      ],
+      "tests": []
+    },
+    "P-004-03": {
+      "spec": "004-bulk",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-004-011"
+      ],
+      "tests": []
+    },
+    "P-004-04": {
+      "spec": "004-bulk",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-004-020"
+      ],
+      "tests": []
+    },
+    "P-004-05": {
+      "spec": "004-bulk",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-004-020"
+      ],
+      "tests": []
+    },
+    "P-004-06": {
+      "spec": "004-bulk",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-004-020"
+      ],
+      "tests": []
+    },
+    "P-004-07": {
+      "spec": "004-bulk",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-004-030"
+      ],
+      "tests": []
+    },
+    "P-004-08": {
+      "spec": "004-bulk",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-004-031"
+      ],
+      "tests": []
+    },
+    "NFR-004-01": {
+      "spec": "004-bulk",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-004-081"
+      ],
+      "tests": []
+    },
+    "DC-004-01": {
+      "spec": "004-bulk",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-004-001"
+      ],
+      "tests": []
+    },
+    "FR-005-01": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-010"
+      ],
+      "tests": []
+    },
+    "FR-005-02": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-010"
+      ],
+      "tests": []
+    },
+    "FR-005-03": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-010"
+      ],
+      "tests": []
+    },
+    "FR-005-04": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-011"
+      ],
+      "tests": []
+    },
+    "FR-005-05": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-012"
+      ],
+      "tests": []
+    },
+    "FR-005-06": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-012"
+      ],
+      "tests": []
+    },
+    "FR-005-07": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-012"
+      ],
+      "tests": []
+    },
+    "FR-005-08": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-012"
+      ],
+      "tests": []
+    },
+    "FR-005-09": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-012"
+      ],
+      "tests": []
+    },
+    "FR-005-10": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-012"
+      ],
+      "tests": []
+    },
+    "FR-005-11": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-012"
+      ],
+      "tests": []
+    },
+    "FR-005-12": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-013"
+      ],
+      "tests": []
+    },
+    "FR-005-13": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-020"
+      ],
+      "tests": []
+    },
+    "FR-005-14": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-021"
+      ],
+      "tests": []
+    },
+    "FR-005-15": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-023"
+      ],
+      "tests": []
+    },
+    "FR-005-16": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-022"
+      ],
+      "tests": []
+    },
+    "FR-005-17": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-022"
+      ],
+      "tests": []
+    },
+    "FR-005-18": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-023"
+      ],
+      "tests": []
+    },
+    "FR-005-19": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-030"
+      ],
+      "tests": []
+    },
+    "FR-005-20": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-030"
+      ],
+      "tests": []
+    },
+    "FR-005-21": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-030"
+      ],
+      "tests": []
+    },
+    "FR-005-22": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-031"
+      ],
+      "tests": []
+    },
+    "FR-005-23": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-032"
+      ],
+      "tests": []
+    },
+    "FR-005-24": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-040"
+      ],
+      "tests": []
+    },
+    "FR-005-25": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-040"
+      ],
+      "tests": []
+    },
+    "FR-005-26": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-041"
+      ],
+      "tests": []
+    },
+    "FR-005-27": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-042"
+      ],
+      "tests": []
+    },
+    "FR-005-28": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-042"
+      ],
+      "tests": []
+    },
+    "FR-005-29": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-043"
+      ],
+      "tests": []
+    },
+    "FR-005-30": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-044"
+      ],
+      "tests": []
+    },
+    "FR-005-31": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-045"
+      ],
+      "tests": []
+    },
+    "FR-005-32": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-014"
+      ],
+      "tests": []
+    },
+    "FR-005-33": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-014"
+      ],
+      "tests": []
+    },
+    "FR-005-34": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-050"
+      ],
+      "tests": []
+    },
+    "P-005-01": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-010"
+      ],
+      "tests": []
+    },
+    "P-005-02": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-010"
+      ],
+      "tests": []
+    },
+    "P-005-03": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-010",
+        "T-005-012"
+      ],
+      "tests": []
+    },
+    "P-005-04": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-012"
+      ],
+      "tests": []
+    },
+    "P-005-05": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-012"
+      ],
+      "tests": []
+    },
+    "P-005-06": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-020",
+        "T-005-021"
+      ],
+      "tests": []
+    },
+    "P-005-07": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-020"
+      ],
+      "tests": []
+    },
+    "P-005-08": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-020"
+      ],
+      "tests": []
+    },
+    "P-005-09": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-021"
+      ],
+      "tests": []
+    },
+    "P-005-10": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-030"
+      ],
+      "tests": []
+    },
+    "P-005-11": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-030"
+      ],
+      "tests": []
+    },
+    "P-005-12": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-031"
+      ],
+      "tests": []
+    },
+    "P-005-13": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-042"
+      ],
+      "tests": []
+    },
+    "P-005-14": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-040"
+      ],
+      "tests": []
+    },
+    "P-005-15": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-044"
+      ],
+      "tests": []
+    },
+    "NFR-005-01": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-060"
+      ],
+      "tests": []
+    },
+    "NFR-005-02": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-061"
+      ],
+      "tests": []
+    },
+    "NFR-005-03": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-062"
+      ],
+      "tests": []
+    },
+    "NFR-005-04": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-063"
+      ],
+      "tests": []
+    },
+    "SC-005-01": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-010",
+        "T-005-012"
+      ],
+      "tests": []
+    },
+    "SC-005-02": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-090"
+      ],
+      "tests": []
+    },
+    "DC-005-01": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-001"
+      ],
+      "tests": []
+    },
+    "DC-005-02": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-001"
+      ],
+      "tests": []
+    },
+    "US-005-1": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-010",
+        "T-005-011",
+        "T-005-012",
+        "T-005-013",
+        "T-005-014",
+        "T-005-064"
+      ],
+      "tests": []
+    },
+    "US-005-2": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-020",
+        "T-005-021",
+        "T-005-022",
+        "T-005-023"
+      ],
+      "tests": []
+    },
+    "US-005-3": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-030",
+        "T-005-031",
+        "T-005-032"
+      ],
+      "tests": []
+    },
+    "US-005-4": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-040",
+        "T-005-041",
+        "T-005-042",
+        "T-005-043",
+        "T-005-044",
+        "T-005-045"
+      ],
+      "tests": []
+    },
+    "US-005-5": {
+      "spec": "005-comminution",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-005-001",
+        "T-005-050"
+      ],
+      "tests": []
+    },
+    "FR-006-01": {
+      "spec": "006-environment",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-006-010"
+      ],
+      "tests": []
+    },
+    "FR-006-02": {
+      "spec": "006-environment",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-006-011"
+      ],
+      "tests": []
+    },
+    "FR-006-03": {
+      "spec": "006-environment",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-006-011"
+      ],
+      "tests": []
+    },
+    "FR-006-04": {
+      "spec": "006-environment",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-006-012"
+      ],
+      "tests": []
+    },
+    "FR-006-05": {
+      "spec": "006-environment",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-006-012"
+      ],
+      "tests": []
+    },
+    "FR-006-06": {
+      "spec": "006-environment",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-006-012"
+      ],
+      "tests": []
+    },
+    "FR-006-07": {
+      "spec": "006-environment",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-006-013"
+      ],
+      "tests": []
+    },
+    "FR-006-08": {
+      "spec": "006-environment",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-006-020"
+      ],
+      "tests": []
+    },
+    "FR-006-09": {
+      "spec": "006-environment",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-006-020"
+      ],
+      "tests": []
+    },
+    "FR-006-10": {
+      "spec": "006-environment",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-006-020"
+      ],
+      "tests": []
+    },
+    "FR-006-11": {
+      "spec": "006-environment",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-006-021"
+      ],
+      "tests": []
+    },
+    "FR-006-12": {
+      "spec": "006-environment",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-006-021"
+      ],
+      "tests": []
+    },
+    "FR-006-13": {
+      "spec": "006-environment",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-006-022"
+      ],
+      "tests": []
+    },
+    "FR-006-14": {
+      "spec": "006-environment",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-006-023"
+      ],
+      "tests": []
+    },
+    "FR-006-15": {
+      "spec": "006-environment",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-006-030"
+      ],
+      "tests": []
+    },
+    "FR-006-16": {
+      "spec": "006-environment",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-006-030"
+      ],
+      "tests": []
+    },
+    "FR-006-17": {
+      "spec": "006-environment",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-006-031"
+      ],
+      "tests": []
+    },
+    "FR-006-18": {
+      "spec": "006-environment",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-006-032"
+      ],
+      "tests": []
+    },
+    "FR-006-19": {
+      "spec": "006-environment",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-006-040"
+      ],
+      "tests": []
+    },
+    "P-006-01": {
+      "spec": "006-environment",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-006-010"
+      ],
+      "tests": []
+    },
+    "P-006-02": {
+      "spec": "006-environment",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-006-010"
+      ],
+      "tests": []
+    },
+    "P-006-03": {
+      "spec": "006-environment",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-006-010"
+      ],
+      "tests": []
+    },
+    "P-006-04": {
+      "spec": "006-environment",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-006-012"
+      ],
+      "tests": []
+    },
+    "P-006-05": {
+      "spec": "006-environment",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-006-021"
+      ],
+      "tests": []
+    },
+    "P-006-06": {
+      "spec": "006-environment",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-006-021"
+      ],
+      "tests": []
+    },
+    "P-006-07": {
+      "spec": "006-environment",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-006-021"
+      ],
+      "tests": []
+    },
+    "P-006-08": {
+      "spec": "006-environment",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-006-022"
+      ],
+      "tests": []
+    },
+    "P-006-09": {
+      "spec": "006-environment",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-006-020"
+      ],
+      "tests": []
+    },
+    "P-006-10": {
+      "spec": "006-environment",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-006-030"
+      ],
+      "tests": []
+    },
+    "P-006-11": {
+      "spec": "006-environment",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-006-030"
+      ],
+      "tests": []
+    },
+    "P-006-12": {
+      "spec": "006-environment",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-006-031"
+      ],
+      "tests": []
+    },
+    "NFR-006-01": {
+      "spec": "006-environment",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-006-050"
+      ],
+      "tests": []
+    },
+    "NFR-006-02": {
+      "spec": "006-environment",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-006-051"
+      ],
+      "tests": []
+    },
+    "NFR-006-03": {
+      "spec": "006-environment",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-006-052"
+      ],
+      "tests": []
+    },
+    "NFR-006-04": {
+      "spec": "006-environment",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-006-053"
+      ],
+      "tests": []
+    },
+    "SC-006-01": {
+      "spec": "006-environment",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-006-012"
+      ],
+      "tests": []
+    },
+    "SC-006-02": {
+      "spec": "006-environment",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-006-090"
+      ],
+      "tests": []
+    },
+    "DC-006-01": {
+      "spec": "006-environment",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-006-001"
+      ],
+      "tests": []
+    },
+    "DC-006-02": {
+      "spec": "006-environment",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-006-001"
+      ],
+      "tests": []
+    },
+    "US-006-1": {
+      "spec": "006-environment",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-006-010",
+        "T-006-011",
+        "T-006-012",
+        "T-006-013",
+        "T-006-054"
+      ],
+      "tests": []
+    },
+    "US-006-2": {
+      "spec": "006-environment",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-006-020",
+        "T-006-021",
+        "T-006-022",
+        "T-006-023"
+      ],
+      "tests": []
+    },
+    "US-006-3": {
+      "spec": "006-environment",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-006-030",
+        "T-006-031",
+        "T-006-032"
+      ],
+      "tests": []
+    },
+    "US-006-4": {
+      "spec": "006-environment",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-006-001",
+        "T-006-040"
+      ],
+      "tests": []
+    },
+    "FR-007-01": {
+      "spec": "007-planning",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-007-010"
+      ],
+      "tests": []
+    },
+    "FR-007-02": {
+      "spec": "007-planning",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-007-010"
+      ],
+      "tests": []
+    },
+    "FR-007-03": {
+      "spec": "007-planning",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-007-020"
+      ],
+      "tests": []
+    },
+    "FR-007-04": {
+      "spec": "007-planning",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-007-021"
+      ],
+      "tests": []
+    },
+    "FR-007-05": {
+      "spec": "007-planning",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-007-021"
+      ],
+      "tests": []
+    },
+    "FR-007-06": {
+      "spec": "007-planning",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-007-022"
+      ],
+      "tests": []
+    },
+    "FR-007-07": {
+      "spec": "007-planning",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-007-023"
+      ],
+      "tests": []
+    },
+    "FR-007-08": {
+      "spec": "007-planning",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-007-011"
+      ],
+      "tests": []
+    },
+    "FR-007-09": {
+      "spec": "007-planning",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-007-012"
+      ],
+      "tests": []
+    },
+    "FR-007-10": {
+      "spec": "007-planning",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-007-013"
+      ],
+      "tests": []
+    },
+    "FR-007-11": {
+      "spec": "007-planning",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-007-030"
+      ],
+      "tests": []
+    },
+    "FR-007-12": {
+      "spec": "007-planning",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-007-031"
+      ],
+      "tests": []
+    },
+    "FR-007-13": {
+      "spec": "007-planning",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-007-032"
+      ],
+      "tests": []
+    },
+    "FR-007-14": {
+      "spec": "007-planning",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-007-032"
+      ],
+      "tests": []
+    },
+    "FR-007-15": {
+      "spec": "007-planning",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-007-040"
+      ],
+      "tests": []
+    },
+    "FR-007-16": {
+      "spec": "007-planning",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-007-041"
+      ],
+      "tests": []
+    },
+    "FR-007-17": {
+      "spec": "007-planning",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-007-042"
+      ],
+      "tests": []
+    },
+    "P-007-01": {
+      "spec": "007-planning",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-007-010"
+      ],
+      "tests": []
+    },
+    "P-007-02": {
+      "spec": "007-planning",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-007-021"
+      ],
+      "tests": []
+    },
+    "P-007-03": {
+      "spec": "007-planning",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-007-021"
+      ],
+      "tests": []
+    },
+    "P-007-04": {
+      "spec": "007-planning",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-007-022"
+      ],
+      "tests": []
+    },
+    "P-007-05": {
+      "spec": "007-planning",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-007-012"
+      ],
+      "tests": []
+    },
+    "P-007-06": {
+      "spec": "007-planning",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-007-030"
+      ],
+      "tests": []
+    },
+    "P-007-07": {
+      "spec": "007-planning",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-007-031"
+      ],
+      "tests": []
+    },
+    "P-007-08": {
+      "spec": "007-planning",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-007-041"
+      ],
+      "tests": []
+    },
+    "P-007-10": {
+      "spec": "007-planning",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-007-056"
+      ],
+      "tests": []
+    },
+    "P-007-09": {
+      "spec": "007-planning",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-007-041"
+      ],
+      "tests": []
+    },
+    "NFR-007-01": {
+      "spec": "007-planning",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-007-050"
+      ],
+      "tests": []
+    },
+    "NFR-007-02": {
+      "spec": "007-planning",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-007-051"
+      ],
+      "tests": []
+    },
+    "NFR-007-03": {
+      "spec": "007-planning",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-007-052"
+      ],
+      "tests": []
+    },
+    "NFR-007-04": {
+      "spec": "007-planning",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-007-053"
+      ],
+      "tests": []
+    },
+    "NFR-007-05": {
+      "spec": "007-planning",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-007-055"
+      ],
+      "tests": []
+    },
+    "NFR-007-06": {
+      "spec": "007-planning",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-007-056"
+      ],
+      "tests": []
+    },
+    "SC-007-01": {
+      "spec": "007-planning",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-007-021"
+      ],
+      "tests": []
+    },
+    "SC-007-02": {
+      "spec": "007-planning",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-007-090"
+      ],
+      "tests": []
+    },
+    "DC-007-01": {
+      "spec": "007-planning",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-007-001"
+      ],
+      "tests": []
+    },
+    "US-007-1": {
+      "spec": "007-planning",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-007-020",
+        "T-007-021",
+        "T-007-022",
+        "T-007-023",
+        "T-007-054",
+        "T-007-056"
+      ],
+      "tests": []
+    },
+    "US-007-2": {
+      "spec": "007-planning",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-007-010",
+        "T-007-011",
+        "T-007-012",
+        "T-007-013"
+      ],
+      "tests": []
+    },
+    "US-007-3": {
+      "spec": "007-planning",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-007-030",
+        "T-007-031",
+        "T-007-032"
+      ],
+      "tests": []
+    },
+    "US-007-4": {
+      "spec": "007-planning",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-007-040",
+        "T-007-041",
+        "T-007-042"
+      ],
+      "tests": []
+    },
+    "FR-008-01": {
+      "spec": "008-knowledge",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-008-010"
+      ],
+      "tests": []
+    },
+    "FR-008-02": {
+      "spec": "008-knowledge",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-008-010"
+      ],
+      "tests": []
+    },
+    "FR-008-03": {
+      "spec": "008-knowledge",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-008-011"
+      ],
+      "tests": []
+    },
+    "FR-008-04": {
+      "spec": "008-knowledge",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-008-012"
+      ],
+      "tests": []
+    },
+    "FR-008-05": {
+      "spec": "008-knowledge",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-008-010"
+      ],
+      "tests": []
+    },
+    "FR-008-06": {
+      "spec": "008-knowledge",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-008-013"
+      ],
+      "tests": []
+    },
+    "FR-008-07": {
+      "spec": "008-knowledge",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-008-013"
+      ],
+      "tests": []
+    },
+    "FR-008-08": {
+      "spec": "008-knowledge",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-008-014"
+      ],
+      "tests": []
+    },
+    "FR-008-09": {
+      "spec": "008-knowledge",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-008-010"
+      ],
+      "tests": []
+    },
+    "FR-008-10": {
+      "spec": "008-knowledge",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-008-015"
+      ],
+      "tests": []
+    },
+    "FR-008-11": {
+      "spec": "008-knowledge",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-008-020"
+      ],
+      "tests": []
+    },
+    "FR-008-12": {
+      "spec": "008-knowledge",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-008-020"
+      ],
+      "tests": []
+    },
+    "FR-008-13": {
+      "spec": "008-knowledge",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-008-020"
+      ],
+      "tests": []
+    },
+    "FR-008-14": {
+      "spec": "008-knowledge",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-008-021"
+      ],
+      "tests": []
+    },
+    "FR-008-15": {
+      "spec": "008-knowledge",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-008-030"
+      ],
+      "tests": []
+    },
+    "FR-008-16": {
+      "spec": "008-knowledge",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-008-040"
+      ],
+      "tests": []
+    },
+    "FR-008-17": {
+      "spec": "008-knowledge",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-008-032"
+      ],
+      "tests": []
+    },
+    "FR-008-18": {
+      "spec": "008-knowledge",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-008-031"
+      ],
+      "tests": []
+    },
+    "FR-008-19": {
+      "spec": "008-knowledge",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-008-031"
+      ],
+      "tests": []
+    },
+    "FR-008-20": {
+      "spec": "008-knowledge",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-008-042"
+      ],
+      "tests": []
+    },
+    "FR-008-22": {
+      "spec": "008-knowledge",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-008-001",
+        "T-008-016"
+      ],
+      "tests": []
+    },
+    "FR-008-21": {
+      "spec": "008-knowledge",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-008-041"
+      ],
+      "tests": []
+    },
+    "P-008-01": {
+      "spec": "008-knowledge",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-008-010"
+      ],
+      "tests": []
+    },
+    "P-008-02": {
+      "spec": "008-knowledge",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-008-010"
+      ],
+      "tests": []
+    },
+    "P-008-03": {
+      "spec": "008-knowledge",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-008-030"
+      ],
+      "tests": []
+    },
+    "P-008-04": {
+      "spec": "008-knowledge",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-008-040"
+      ],
+      "tests": []
+    },
+    "P-008-05": {
+      "spec": "008-knowledge",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-008-011"
+      ],
+      "tests": []
+    },
+    "NFR-008-01": {
+      "spec": "008-knowledge",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-008-060"
+      ],
+      "tests": []
+    },
+    "NFR-008-02": {
+      "spec": "008-knowledge",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-008-061"
+      ],
+      "tests": []
+    },
+    "NFR-008-03": {
+      "spec": "008-knowledge",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-008-062"
+      ],
+      "tests": []
+    },
+    "NFR-008-04": {
+      "spec": "008-knowledge",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-008-063"
+      ],
+      "tests": []
+    },
+    "NFR-008-05": {
+      "spec": "008-knowledge",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-008-064"
+      ],
+      "tests": []
+    },
+    "SC-008-01": {
+      "spec": "008-knowledge",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-008-070"
+      ],
+      "tests": []
+    },
+    "SC-008-02": {
+      "spec": "008-knowledge",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-008-041"
+      ],
+      "tests": []
+    },
+    "DC-008-01": {
+      "spec": "008-knowledge",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-008-001"
+      ],
+      "tests": []
+    },
+    "DC-008-02": {
+      "spec": "008-knowledge",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-008-001"
+      ],
+      "tests": []
+    },
+    "DC-008-03": {
+      "spec": "008-knowledge",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-008-001"
+      ],
+      "tests": []
+    },
+    "US-008-1": {
+      "spec": "008-knowledge",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-008-010",
+        "T-008-011",
+        "T-008-013",
+        "T-008-014",
+        "T-008-015"
+      ],
+      "tests": []
+    },
+    "US-008-2": {
+      "spec": "008-knowledge",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-008-020",
+        "T-008-021",
+        "T-008-040",
+        "T-008-042"
+      ],
+      "tests": []
+    },
+    "US-008-3": {
+      "spec": "008-knowledge",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-008-030",
+        "T-008-031",
+        "T-008-032"
+      ],
+      "tests": []
+    },
+    "US-008-4": {
+      "spec": "008-knowledge",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-008-012",
+        "T-008-016",
+        "T-008-041"
+      ],
       "tests": []
     }
   },
-  "tasks": {},
+  "tasks": {
+    "T-000-001": [
+      "US-000-6",
+      "DC-000-02",
+      "DC-000-03",
+      "DC-000-04"
+    ],
+    "T-000-002": [
+      "US-000-5",
+      "FR-000-27",
+      "FR-000-32"
+    ],
+    "T-000-003": [
+      "US-000-2",
+      "FR-000-07",
+      "FR-000-10",
+      "FR-000-11",
+      "FR-000-12",
+      "FR-000-13",
+      "FR-000-14",
+      "FR-000-15",
+      "FR-000-16"
+    ],
+    "T-000-004": [
+      "US-000-2",
+      "FR-000-17"
+    ],
+    "T-000-005": [
+      "US-000-2",
+      "FR-000-18",
+      "P-000-04"
+    ],
+    "T-000-006": [
+      "US-000-5",
+      "P-000-05",
+      "FR-000-08"
+    ],
+    "T-000-010": [
+      "US-000-2",
+      "FR-000-05",
+      "FR-000-07",
+      "P-000-01",
+      "P-000-02",
+      "P-000-03"
+    ],
+    "T-000-011": [
+      "US-000-3",
+      "FR-000-06",
+      "NFR-000-03"
+    ],
+    "T-000-012": [
+      "US-000-5",
+      "FR-000-08",
+      "FR-000-09"
+    ],
+    "T-000-013": [
+      "US-000-6",
+      "FR-000-19"
+    ],
+    "T-000-014": [
+      "US-000-6",
+      "FR-000-20",
+      "FR-000-21",
+      "FR-000-22",
+      "FR-000-31"
+    ],
+    "T-000-015": [
+      "US-000-6",
+      "FR-000-23"
+    ],
+    "T-000-016": [
+      "US-000-5",
+      "FR-000-33",
+      "SC-000-02"
+    ],
+    "T-000-020": [
+      "US-000-4",
+      "FR-000-24",
+      "NFR-000-04",
+      "NFR-000-05"
+    ],
+    "T-000-021": [
+      "US-000-3",
+      "FR-000-25",
+      "NFR-000-06"
+    ],
+    "T-000-022": [
+      "US-000-2",
+      "FR-000-26"
+    ],
+    "T-000-023": [
+      "US-000-2",
+      "NFR-000-07"
+    ],
+    "T-000-024": [
+      "US-000-2",
+      "NFR-000-08",
+      "NFR-000-09"
+    ],
+    "T-000-030": [
+      "US-000-7",
+      "FR-000-28",
+      "FR-000-29",
+      "DC-000-04"
+    ],
+    "T-000-031": [
+      "US-000-7",
+      "FR-000-30"
+    ],
+    "T-000-032": [
+      "US-000-6",
+      "SC-000-03",
+      "SC-000-04"
+    ],
+    "T-000-090": [],
+    "T-000-091": [],
+    "T-001-001": [
+      "DC-001-01"
+    ],
+    "T-001-010": [
+      "US-001-2",
+      "FR-001-01",
+      "FR-001-02",
+      "P-001-01"
+    ],
+    "T-001-011": [
+      "US-001-2",
+      "FR-001-03"
+    ],
+    "T-001-012": [
+      "US-001-2",
+      "FR-001-04",
+      "FR-001-05",
+      "P-001-02",
+      "P-001-03"
+    ],
+    "T-001-013": [
+      "US-001-2",
+      "FR-001-06",
+      "P-001-04"
+    ],
+    "T-001-014": [
+      "US-001-2",
+      "FR-001-07"
+    ],
+    "T-001-015": [
+      "US-001-2",
+      "FR-001-10"
+    ],
+    "T-001-020": [
+      "US-001-4",
+      "FR-001-08",
+      "FR-001-09",
+      "P-001-13"
+    ],
+    "T-001-030": [
+      "US-001-1",
+      "FR-001-11",
+      "FR-001-12",
+      "P-001-05",
+      "P-001-06",
+      "P-001-07"
+    ],
+    "T-001-031": [
+      "US-001-1",
+      "FR-001-13",
+      "FR-001-14",
+      "FR-001-15"
+    ],
+    "T-001-032": [
+      "US-001-1",
+      "FR-001-16",
+      "FR-001-17",
+      "FR-001-25"
+    ],
+    "T-001-040": [
+      "US-001-3",
+      "FR-001-18",
+      "P-001-12"
+    ],
+    "T-001-041": [
+      "US-001-3",
+      "FR-001-19",
+      "FR-001-24",
+      "P-001-08",
+      "P-001-09"
+    ],
+    "T-001-042": [
+      "US-001-3",
+      "FR-001-20",
+      "P-001-10"
+    ],
+    "T-001-043": [
+      "US-001-3",
+      "FR-001-21",
+      "FR-001-26",
+      "P-001-11"
+    ],
+    "T-001-080": [
+      "US-001-2",
+      "FR-001-22",
+      "FR-001-23",
+      "FR-000-05",
+      "FR-000-07",
+      "FR-000-10",
+      "FR-000-11",
+      "FR-000-12",
+      "FR-000-13",
+      "P-000-01",
+      "P-000-02",
+      "P-000-03"
+    ],
+    "T-001-081": [
+      "US-001-2",
+      "NFR-001-01",
+      "NFR-001-02"
+    ],
+    "T-001-090": [],
+    "T-001-091": [],
+    "T-002-001": [
+      "DC-002-01"
+    ],
+    "T-002-002": [],
+    "T-002-010": [
+      "US-002-1",
+      "FR-002-01"
+    ],
+    "T-002-011": [
+      "US-002-1",
+      "FR-002-02",
+      "FR-002-18",
+      "P-002-01",
+      "P-002-02"
+    ],
+    "T-002-012": [
+      "US-002-1",
+      "FR-002-03"
+    ],
+    "T-002-013": [
+      "US-002-1",
+      "FR-002-04",
+      "FR-002-14",
+      "P-002-03"
+    ],
+    "T-002-020": [
+      "US-002-2",
+      "FR-002-05",
+      "FR-002-06",
+      "FR-002-15",
+      "P-002-04",
+      "P-002-05"
+    ],
+    "T-002-021": [
+      "US-002-2",
+      "FR-002-07",
+      "P-002-06"
+    ],
+    "T-002-030": [
+      "US-002-3",
+      "FR-002-08",
+      "P-002-07"
+    ],
+    "T-002-031": [
+      "US-002-3",
+      "FR-002-09",
+      "P-002-08"
+    ],
+    "T-002-040": [
+      "US-002-4",
+      "FR-002-10",
+      "FR-002-11",
+      "P-002-09"
+    ],
+    "T-002-041": [
+      "US-002-4",
+      "FR-002-12",
+      "FR-002-13",
+      "P-002-10"
+    ],
+    "T-002-080": [
+      "US-002-1",
+      "FR-002-16",
+      "FR-002-17",
+      "FR-002-18",
+      "FR-000-05",
+      "FR-000-07",
+      "FR-000-10",
+      "FR-000-11",
+      "FR-000-12",
+      "P-000-01",
+      "P-000-02",
+      "P-000-03"
+    ],
+    "T-002-081": [
+      "US-002-4",
+      "NFR-002-01",
+      "NFR-002-02"
+    ],
+    "T-002-090": [],
+    "T-002-091": [],
+    "T-003-001": [
+      "DC-003-01"
+    ],
+    "T-003-002": [],
+    "T-003-010": [
+      "US-003-4",
+      "FR-003-01",
+      "FR-003-02",
+      "FR-003-03",
+      "FR-003-06",
+      "P-003-01",
+      "P-003-02",
+      "P-003-03"
+    ],
+    "T-003-011": [
+      "US-003-4",
+      "FR-003-04",
+      "FR-003-05"
+    ],
+    "T-003-020": [
+      "US-003-1",
+      "FR-003-07",
+      "FR-003-08"
+    ],
+    "T-003-021": [
+      "US-003-1",
+      "FR-003-09",
+      "FR-003-11",
+      "FR-003-22",
+      "P-003-04",
+      "P-003-05",
+      "P-003-06",
+      "P-003-07"
+    ],
+    "T-003-022": [
+      "US-003-1",
+      "FR-003-10",
+      "FR-003-11",
+      "FR-003-22"
+    ],
+    "T-003-023": [
+      "US-003-1",
+      "FR-003-09"
+    ],
+    "T-003-024": [
+      "US-003-1",
+      "FR-003-12",
+      "FR-003-13",
+      "FR-003-24",
+      "P-003-08"
+    ],
+    "T-003-030": [
+      "US-003-3",
+      "FR-003-14"
+    ],
+    "T-003-031": [
+      "US-003-2",
+      "FR-003-15",
+      "FR-003-16",
+      "P-003-09"
+    ],
+    "T-003-032": [
+      "US-003-2",
+      "FR-003-17",
+      "FR-003-23",
+      "P-003-10"
+    ],
+    "T-003-040": [
+      "US-003-3",
+      "FR-003-18",
+      "P-003-11"
+    ],
+    "T-003-041": [
+      "US-003-3",
+      "FR-003-19",
+      "P-003-12"
+    ],
+    "T-003-080": [
+      "US-003-1",
+      "FR-003-20",
+      "FR-003-21",
+      "FR-003-23",
+      "FR-003-24",
+      "FR-000-05",
+      "FR-000-07",
+      "FR-000-10",
+      "FR-000-11",
+      "FR-000-12",
+      "FR-000-13",
+      "FR-000-18",
+      "P-000-01",
+      "P-000-02",
+      "P-000-03",
+      "P-000-04"
+    ],
+    "T-003-081": [
+      "US-003-1",
+      "NFR-003-01",
+      "NFR-003-02"
+    ],
+    "T-003-090": [],
+    "T-003-091": [],
+    "T-004-001": [
+      "DC-004-01"
+    ],
+    "T-004-010": [
+      "US-004-1",
+      "FR-004-01",
+      "FR-004-02",
+      "P-004-01",
+      "P-004-02"
+    ],
+    "T-004-011": [
+      "US-004-1",
+      "FR-004-03",
+      "FR-004-04",
+      "P-004-03"
+    ],
+    "T-004-020": [
+      "US-004-2",
+      "FR-004-05",
+      "FR-004-06",
+      "FR-004-07",
+      "P-004-04",
+      "P-004-05",
+      "P-004-06"
+    ],
+    "T-004-030": [
+      "US-004-3",
+      "FR-004-08",
+      "FR-004-12",
+      "P-004-07"
+    ],
+    "T-004-031": [
+      "US-004-3",
+      "FR-004-09",
+      "FR-004-12",
+      "P-004-08"
+    ],
+    "T-004-080": [
+      "US-004-1",
+      "FR-004-10",
+      "FR-004-11",
+      "FR-000-05",
+      "FR-000-07",
+      "FR-000-10",
+      "FR-000-11",
+      "FR-000-12",
+      "P-000-01",
+      "P-000-02",
+      "P-000-03"
+    ],
+    "T-004-081": [
+      "US-004-2",
+      "NFR-004-01"
+    ],
+    "T-004-090": [],
+    "T-004-091": [],
+    "T-005-001": [
+      "US-005-5",
+      "DC-005-01",
+      "DC-005-02"
+    ],
+    "T-005-010": [
+      "US-005-1",
+      "FR-005-01",
+      "FR-005-02",
+      "FR-005-03",
+      "P-005-01",
+      "P-005-02",
+      "P-005-03",
+      "SC-005-01"
+    ],
+    "T-005-011": [
+      "US-005-1",
+      "FR-005-04"
+    ],
+    "T-005-012": [
+      "US-005-1",
+      "FR-005-05",
+      "FR-005-06",
+      "FR-005-07",
+      "FR-005-08",
+      "FR-005-09",
+      "FR-005-10",
+      "FR-005-11",
+      "P-005-03",
+      "P-005-04",
+      "P-005-05",
+      "SC-005-01"
+    ],
+    "T-005-013": [
+      "US-005-1",
+      "FR-005-12"
+    ],
+    "T-005-014": [
+      "US-005-1",
+      "FR-005-32",
+      "FR-005-33"
+    ],
+    "T-005-020": [
+      "US-005-2",
+      "FR-005-13",
+      "P-005-06",
+      "P-005-07",
+      "P-005-08"
+    ],
+    "T-005-021": [
+      "US-005-2",
+      "FR-005-14",
+      "P-005-06",
+      "P-005-09"
+    ],
+    "T-005-022": [
+      "US-005-2",
+      "FR-005-16",
+      "FR-005-17"
+    ],
+    "T-005-023": [
+      "US-005-2",
+      "FR-005-15",
+      "FR-005-18"
+    ],
+    "T-005-030": [
+      "US-005-3",
+      "FR-005-19",
+      "FR-005-20",
+      "FR-005-21",
+      "P-005-10",
+      "P-005-11"
+    ],
+    "T-005-031": [
+      "US-005-3",
+      "FR-005-22",
+      "P-005-12"
+    ],
+    "T-005-032": [
+      "US-005-3",
+      "FR-005-23"
+    ],
+    "T-005-040": [
+      "US-005-4",
+      "FR-005-24",
+      "FR-005-25",
+      "P-005-14"
+    ],
+    "T-005-041": [
+      "US-005-4",
+      "FR-005-26"
+    ],
+    "T-005-042": [
+      "US-005-4",
+      "FR-005-27",
+      "FR-005-28",
+      "P-005-13"
+    ],
+    "T-005-043": [
+      "US-005-4",
+      "FR-005-29"
+    ],
+    "T-005-044": [
+      "US-005-4",
+      "FR-005-30",
+      "P-005-15"
+    ],
+    "T-005-045": [
+      "US-005-4",
+      "FR-005-31"
+    ],
+    "T-005-050": [
+      "US-005-5",
+      "FR-005-34"
+    ],
+    "T-005-060": [
+      "NFR-005-01"
+    ],
+    "T-005-061": [
+      "NFR-005-02"
+    ],
+    "T-005-062": [
+      "NFR-005-03"
+    ],
+    "T-005-063": [
+      "NFR-005-04"
+    ],
+    "T-005-064": [
+      "US-005-1",
+      "FR-000-05",
+      "FR-000-07",
+      "FR-000-10",
+      "FR-000-11",
+      "FR-000-12",
+      "FR-000-13",
+      "P-000-01",
+      "P-000-02",
+      "P-000-03"
+    ],
+    "T-005-090": [
+      "SC-005-02"
+    ],
+    "T-005-091": [],
+    "T-005-092": [],
+    "T-006-001": [
+      "US-006-4",
+      "DC-006-01",
+      "DC-006-02"
+    ],
+    "T-006-010": [
+      "US-006-1",
+      "FR-006-01",
+      "P-006-01",
+      "P-006-02",
+      "P-006-03"
+    ],
+    "T-006-011": [
+      "US-006-1",
+      "FR-006-02",
+      "FR-006-03"
+    ],
+    "T-006-012": [
+      "US-006-1",
+      "FR-006-04",
+      "FR-006-05",
+      "FR-006-06",
+      "P-006-04",
+      "SC-006-01"
+    ],
+    "T-006-013": [
+      "US-006-1",
+      "FR-006-07"
+    ],
+    "T-006-020": [
+      "US-006-2",
+      "FR-006-08",
+      "FR-006-09",
+      "FR-006-10",
+      "P-006-09"
+    ],
+    "T-006-021": [
+      "US-006-2",
+      "FR-006-11",
+      "FR-006-12",
+      "P-006-05",
+      "P-006-06",
+      "P-006-07"
+    ],
+    "T-006-022": [
+      "US-006-2",
+      "FR-006-13",
+      "P-006-08"
+    ],
+    "T-006-023": [
+      "US-006-2",
+      "FR-006-14"
+    ],
+    "T-006-030": [
+      "US-006-3",
+      "FR-006-15",
+      "FR-006-16",
+      "P-006-10",
+      "P-006-11"
+    ],
+    "T-006-031": [
+      "US-006-3",
+      "FR-006-17",
+      "P-006-12"
+    ],
+    "T-006-032": [
+      "US-006-3",
+      "FR-006-18"
+    ],
+    "T-006-040": [
+      "US-006-4",
+      "FR-006-19"
+    ],
+    "T-006-050": [
+      "NFR-006-01"
+    ],
+    "T-006-051": [
+      "NFR-006-02"
+    ],
+    "T-006-052": [
+      "NFR-006-03"
+    ],
+    "T-006-053": [
+      "NFR-006-04"
+    ],
+    "T-006-054": [
+      "US-006-1",
+      "FR-000-05",
+      "FR-000-07",
+      "FR-000-10",
+      "FR-000-11",
+      "FR-000-12",
+      "FR-000-13",
+      "P-000-01",
+      "P-000-02",
+      "P-000-03"
+    ],
+    "T-006-090": [
+      "SC-006-02"
+    ],
+    "T-006-091": [],
+    "T-006-092": [],
+    "T-007-001": [
+      "DC-007-01"
+    ],
+    "T-007-002": [],
+    "T-007-010": [
+      "US-007-2",
+      "FR-007-01",
+      "FR-007-02",
+      "P-007-01"
+    ],
+    "T-007-011": [
+      "US-007-2",
+      "FR-007-08"
+    ],
+    "T-007-012": [
+      "US-007-2",
+      "FR-007-09",
+      "P-007-05"
+    ],
+    "T-007-013": [
+      "US-007-2",
+      "FR-007-10"
+    ],
+    "T-007-020": [
+      "US-007-1",
+      "FR-007-03"
+    ],
+    "T-007-021": [
+      "US-007-1",
+      "FR-007-04",
+      "FR-007-05",
+      "P-007-02",
+      "P-007-03",
+      "SC-007-01"
+    ],
+    "T-007-022": [
+      "US-007-1",
+      "FR-007-06",
+      "P-007-04"
+    ],
+    "T-007-023": [
+      "US-007-1",
+      "FR-007-07"
+    ],
+    "T-007-030": [
+      "US-007-3",
+      "FR-007-11",
+      "P-007-06"
+    ],
+    "T-007-031": [
+      "US-007-3",
+      "FR-007-12",
+      "P-007-07"
+    ],
+    "T-007-032": [
+      "US-007-3",
+      "FR-007-13",
+      "FR-007-14"
+    ],
+    "T-007-040": [
+      "US-007-4",
+      "FR-007-15"
+    ],
+    "T-007-041": [
+      "US-007-4",
+      "FR-007-16",
+      "P-007-08",
+      "P-007-09"
+    ],
+    "T-007-042": [
+      "US-007-4",
+      "FR-007-17"
+    ],
+    "T-007-050": [
+      "NFR-007-01"
+    ],
+    "T-007-051": [
+      "NFR-007-02"
+    ],
+    "T-007-052": [
+      "NFR-007-03"
+    ],
+    "T-007-053": [
+      "NFR-007-04"
+    ],
+    "T-007-054": [
+      "US-007-1",
+      "FR-000-05",
+      "FR-000-07",
+      "FR-000-10",
+      "FR-000-11",
+      "FR-000-12",
+      "FR-000-13",
+      "P-000-01",
+      "P-000-02",
+      "P-000-03"
+    ],
+    "T-007-055": [
+      "NFR-007-05"
+    ],
+    "T-007-056": [
+      "US-007-1",
+      "NFR-007-06",
+      "P-007-10"
+    ],
+    "T-007-090": [
+      "SC-007-02"
+    ],
+    "T-007-091": [],
+    "T-007-092": [],
+    "T-008-001": [
+      "DC-008-01",
+      "DC-008-02",
+      "DC-008-03",
+      "FR-008-22"
+    ],
+    "T-008-002": [],
+    "T-008-010": [
+      "US-008-1",
+      "FR-008-01",
+      "FR-008-02",
+      "FR-008-05",
+      "FR-008-09",
+      "P-008-01",
+      "P-008-02",
+      "DC-000-02"
+    ],
+    "T-008-011": [
+      "US-008-1",
+      "FR-008-03",
+      "P-008-05",
+      "DC-000-03"
+    ],
+    "T-008-012": [
+      "US-008-4",
+      "FR-008-04"
+    ],
+    "T-008-013": [
+      "US-008-1",
+      "FR-008-06",
+      "FR-008-07"
+    ],
+    "T-008-014": [
+      "US-008-1",
+      "FR-008-08"
+    ],
+    "T-008-015": [
+      "US-008-1",
+      "FR-008-10"
+    ],
+    "T-008-016": [
+      "US-008-4",
+      "FR-008-22"
+    ],
+    "T-008-020": [
+      "US-008-2",
+      "FR-008-11",
+      "FR-008-12",
+      "FR-008-13"
+    ],
+    "T-008-021": [
+      "US-008-2",
+      "FR-008-14"
+    ],
+    "T-008-030": [
+      "US-008-3",
+      "FR-008-15",
+      "P-008-03"
+    ],
+    "T-008-031": [
+      "US-008-3",
+      "FR-008-18",
+      "FR-008-19"
+    ],
+    "T-008-032": [
+      "US-008-3",
+      "FR-008-17"
+    ],
+    "T-008-040": [
+      "US-008-2",
+      "FR-008-16",
+      "P-008-04"
+    ],
+    "T-008-041": [
+      "US-008-4",
+      "FR-008-21",
+      "SC-008-02"
+    ],
+    "T-008-042": [
+      "US-008-2",
+      "FR-008-20"
+    ],
+    "T-008-060": [
+      "NFR-008-01"
+    ],
+    "T-008-061": [
+      "NFR-008-02"
+    ],
+    "T-008-062": [
+      "NFR-008-03"
+    ],
+    "T-008-063": [
+      "NFR-008-04"
+    ],
+    "T-008-064": [
+      "NFR-008-05"
+    ],
+    "T-008-070": [
+      "SC-008-01"
+    ],
+    "T-008-090": [],
+    "T-008-091": [],
+    "T-008-092": []
+  },
   "unknown": []
 }

@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "table": "units",
+  "title": "Exact unit definitions and defined constants",
+  "licence": "CC-BY-4.0",
+  "rows": [
+    {
+      "id": "kilowatt_hour",
+      "quantity": "kilowatt hour in joules",
+      "value": 3600000.0,
+      "units": "J",
+      "role": "conversion",
+      "citation": "nist2008sp811",
+      "page": "Appendix B.8",
+      "verification": "verified",
+      "verified_on": "2026-10-07",
+      "symbol": "minephys.units.kwh_to_j",
+      "notes": "exact"
+    },
+    {
+      "id": "standard_gravity",
+      "quantity": "standard acceleration of free fall",
+      "value": 9.80665,
+      "units": "m/s²",
+      "role": "conversion",
+      "citation": "nist2008sp811",
+      "page": "Appendix B.8",
+      "verification": "verified",
+      "verified_on": "2026-10-07",
+      "symbol": [
+        "minephys.haulage.required_force",
+        "minephys.haulage.segment_energy"
+      ],
+      "notes": "exact defined value"
+    },
+    {
+      "id": "us_gallon_cubic_inches",
+      "quantity": "US liquid gallon in cubic inches",
+      "value": 231,
+      "units": "in³",
+      "role": "conversion",
+      "citation": "nist2026hb44",
+      "page": "Appendix C, p. 25",
+      "verification": "verified",
+      "verified_on": "2026-10-07",
+      "symbol": "minephys.units.us_gal_to_m3",
+      "notes": "231 cubic inches (exactly)"
+    }
+  ]
+}

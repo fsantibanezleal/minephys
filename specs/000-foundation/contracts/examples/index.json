@@ -1,0 +1,691 @@
+{
+  "spec": "000-foundation",
+  "examples": [
+    {
+      "file": "knowledge-table.valid.json",
+      "schema": "knowledge-table.schema.json",
+      "target": "#",
+      "valid": true,
+      "note": "haulage table: a verified parameter, an UNVERIFIED parameter and an UNVERIFIED tripwire limit with two symbols"
+    },
+    {
+      "file": "knowledge-table.valid-blasting.json",
+      "schema": "knowledge-table.schema.json",
+      "target": "#",
+      "valid": true,
+      "note": "blasting rows: a regulatory limit, a range, a negative exponent and an exact rational string"
+    },
+    {
+      "file": "knowledge-table.valid-units.json",
+      "schema": "knowledge-table.schema.json",
+      "target": "#",
+      "valid": true,
+      "note": "units table of spec 000 A7: exact conversions, integer and large values"
+    },
+    {
+      "file": "bibliography-entry.valid.json",
+      "schema": "bibliography-entry.schema.json",
+      "target": "#",
+      "valid": true,
+      "note": "journal article with DOI (paywalled)"
+    },
+    {
+      "file": "bibliography-entry.valid-techreport.json",
+      "schema": "bibliography-entry.schema.json",
+      "target": "#",
+      "valid": true,
+      "note": "government report with organization and URL (regulation)"
+    },
+    {
+      "file": "bibliography-entry.valid-share-alike.json",
+      "schema": "bibliography-entry.schema.json",
+      "target": "#",
+      "valid": true,
+      "note": "share-alike source carrying its licence"
+    },
+    {
+      "file": "api-snapshot.valid.json",
+      "schema": "api-snapshot.schema.json",
+      "target": "#",
+      "valid": true,
+      "note": "classes, a constant, a module and a function with parameters"
+    },
+    {
+      "file": "api-snapshot.valid-deprecated.json",
+      "schema": "api-snapshot.schema.json",
+      "target": "#",
+      "valid": true,
+      "note": "a deprecated function and its replacement"
+    },
+    {
+      "file": "knowledge-table.hostile-unknown-field.json",
+      "schema": "knowledge-table.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "unknown field in a row",
+      "rule": "FR-000-20",
+      "pointer": "/rows/0",
+      "keyword": "additionalProperties"
+    },
+    {
+      "file": "knowledge-table.hostile-unknown-verification.json",
+      "schema": "knowledge-table.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "unknown verification status (case variant)",
+      "rule": "FR-000-20",
+      "pointer": "/rows/1/verification",
+      "keyword": "enum"
+    },
+    {
+      "file": "knowledge-table.hostile-missing-citation.json",
+      "schema": "knowledge-table.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "row without citation",
+      "rule": "FR-000-20",
+      "pointer": "/rows/1",
+      "keyword": "required"
+    },
+    {
+      "file": "knowledge-table.hostile-missing-page.json",
+      "schema": "knowledge-table.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "row without page locator",
+      "rule": "FR-000-20",
+      "pointer": "/rows/0",
+      "keyword": "required"
+    },
+    {
+      "file": "knowledge-table.hostile-blank-page.json",
+      "schema": "knowledge-table.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "whitespace-only page locator",
+      "rule": "FR-000-20",
+      "pointer": "/rows/0/page",
+      "keyword": "pattern"
+    },
+    {
+      "file": "knowledge-table.hostile-conditional-unverified-as-verified.json",
+      "schema": "knowledge-table.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "UNVERIFIED row presented as verified (verified_on on an UNVERIFIED row)",
+      "rule": "FR-000-20",
+      "pointer": "/rows/1",
+      "keyword": "not"
+    },
+    {
+      "file": "knowledge-table.hostile-conditional-verified-without-date.json",
+      "schema": "knowledge-table.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "verified row without verified_on",
+      "rule": "FR-000-20",
+      "pointer": "/rows/0",
+      "keyword": "required"
+    },
+    {
+      "file": "knowledge-table.hostile-wrong-unit.json",
+      "schema": "knowledge-table.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "dimensionless units not written as \"1\"",
+      "rule": "FR-000-20",
+      "pointer": "/rows/1/units",
+      "keyword": "not"
+    },
+    {
+      "file": "knowledge-table.hostile-empty.json",
+      "schema": "knowledge-table.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "table without rows",
+      "rule": "FR-000-20",
+      "pointer": "/rows",
+      "keyword": "minItems"
+    },
+    {
+      "file": "knowledge-table.hostile-oversized.json",
+      "schema": "knowledge-table.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "quantity longer than 200 characters",
+      "rule": "FR-000-20",
+      "pointer": "/rows/0/quantity",
+      "keyword": "maxLength"
+    },
+    {
+      "file": "knowledge-table.hostile-value-and-range.json",
+      "schema": "knowledge-table.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "both value and range",
+      "rule": "FR-000-20",
+      "pointer": "/rows/0",
+      "keyword": "oneOf"
+    },
+    {
+      "file": "knowledge-table.hostile-missing-value.json",
+      "schema": "knowledge-table.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "neither value nor range",
+      "rule": "FR-000-20",
+      "pointer": "/rows/2",
+      "keyword": "oneOf"
+    },
+    {
+      "file": "knowledge-table.hostile-rounded-rational.json",
+      "schema": "knowledge-table.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "rounded decimal string instead of an exact p/q rational",
+      "rule": "FR-000-20",
+      "pointer": "/rows/3/value",
+      "keyword": "anyOf"
+    },
+    {
+      "file": "knowledge-table.hostile-zero-denominator.json",
+      "schema": "knowledge-table.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "rational with a zero denominator",
+      "rule": "FR-000-20",
+      "pointer": "/rows/3/value",
+      "keyword": "anyOf"
+    },
+    {
+      "file": "knowledge-table.hostile-wrong-type.json",
+      "schema": "knowledge-table.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "range bound given as a string",
+      "rule": "FR-000-20",
+      "pointer": "/rows/1/range/max",
+      "keyword": "type"
+    },
+    {
+      "file": "knowledge-table.hostile-unknown-licence.json",
+      "schema": "knowledge-table.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "licence outside the table allowlist",
+      "rule": "FR-000-31",
+      "pointer": "/licence",
+      "keyword": "enum"
+    },
+    {
+      "file": "knowledge-table.hostile-unknown-role.json",
+      "schema": "knowledge-table.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "unknown role",
+      "rule": "FR-000-20",
+      "pointer": "/rows/0/role",
+      "keyword": "enum"
+    },
+    {
+      "file": "knowledge-table.hostile-bad-pattern.json",
+      "schema": "knowledge-table.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "table name not matching ^[a-z][a-z0-9_]*$",
+      "rule": "FR-000-20",
+      "pointer": "/table",
+      "keyword": "pattern"
+    },
+    {
+      "file": "knowledge-table.hostile-bad-row-id.json",
+      "schema": "knowledge-table.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "row id not matching ^[a-z][a-z0-9_]*$",
+      "rule": "FR-000-20",
+      "pointer": "/rows/0/id",
+      "keyword": "pattern"
+    },
+    {
+      "file": "knowledge-table.hostile-malformed-citation.json",
+      "schema": "knowledge-table.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "citation that is not a BibTeX key",
+      "rule": "FR-000-21",
+      "pointer": "/rows/0/citation",
+      "keyword": "pattern"
+    },
+    {
+      "file": "knowledge-table.hostile-bad-symbol.json",
+      "schema": "knowledge-table.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "symbol that is not a minephys.<module>.<name> path",
+      "rule": "FR-000-21",
+      "pointer": "/rows/0/symbol",
+      "keyword": "anyOf"
+    },
+    {
+      "file": "knowledge-table.hostile-wrong-schema-version.json",
+      "schema": "knowledge-table.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "unknown schema_version",
+      "rule": "FR-000-20",
+      "pointer": "/schema_version",
+      "keyword": "const"
+    },
+    {
+      "file": "knowledge-table.hostile-bad-date.json",
+      "schema": "knowledge-table.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "verified_on not in YYYY-MM-DD form",
+      "rule": "FR-000-20",
+      "pointer": "/rows/0/verified_on",
+      "keyword": "pattern"
+    },
+    {
+      "file": "bibliography-entry.hostile-unknown-field.json",
+      "schema": "bibliography-entry.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "unknown BibTeX field",
+      "rule": "FR-000-20",
+      "pointer": "",
+      "keyword": "additionalProperties"
+    },
+    {
+      "file": "bibliography-entry.hostile-typo-field.json",
+      "schema": "bibliography-entry.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "misspelt BibTeX field",
+      "rule": "FR-000-20",
+      "pointer": "",
+      "keyword": "additionalProperties"
+    },
+    {
+      "file": "bibliography-entry.hostile-unknown-entry-type.json",
+      "schema": "bibliography-entry.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "unsupported entry type",
+      "rule": "FR-000-20",
+      "pointer": "/entry_type",
+      "keyword": "enum"
+    },
+    {
+      "file": "bibliography-entry.hostile-missing-doi-and-url.json",
+      "schema": "bibliography-entry.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "entry without DOI and without URL",
+      "rule": "FR-000-20",
+      "pointer": "",
+      "keyword": "anyOf"
+    },
+    {
+      "file": "bibliography-entry.hostile-missing-author-and-organization.json",
+      "schema": "bibliography-entry.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "entry without author and without organization",
+      "rule": "FR-000-20",
+      "pointer": "",
+      "keyword": "anyOf"
+    },
+    {
+      "file": "bibliography-entry.hostile-malformed-doi.json",
+      "schema": "bibliography-entry.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "DOI written as a resolver URL",
+      "rule": "FR-000-20",
+      "pointer": "/doi",
+      "keyword": "pattern"
+    },
+    {
+      "file": "bibliography-entry.hostile-malformed-url.json",
+      "schema": "bibliography-entry.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "URL with embedded credentials",
+      "rule": "FR-000-20",
+      "pointer": "/url",
+      "keyword": "pattern"
+    },
+    {
+      "file": "bibliography-entry.hostile-non-http-url.json",
+      "schema": "bibliography-entry.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "URL whose scheme is neither https nor http",
+      "rule": "FR-000-20",
+      "pointer": "/url",
+      "keyword": "pattern"
+    },
+    {
+      "file": "bibliography-entry.hostile-out-of-range.json",
+      "schema": "bibliography-entry.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "year before 1800",
+      "rule": "FR-000-20",
+      "pointer": "/year",
+      "keyword": "minimum"
+    },
+    {
+      "file": "bibliography-entry.hostile-wrong-type.json",
+      "schema": "bibliography-entry.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "year given as a string",
+      "rule": "FR-000-20",
+      "pointer": "/year",
+      "keyword": "type"
+    },
+    {
+      "file": "bibliography-entry.hostile-unknown-access.json",
+      "schema": "bibliography-entry.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "unknown access class",
+      "rule": "FR-000-20",
+      "pointer": "/access",
+      "keyword": "enum"
+    },
+    {
+      "file": "bibliography-entry.hostile-bad-key.json",
+      "schema": "bibliography-entry.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "key not matching ^[a-z][a-z0-9_:-]*$",
+      "rule": "FR-000-20",
+      "pointer": "/key",
+      "keyword": "pattern"
+    },
+    {
+      "file": "bibliography-entry.hostile-unknown-licence.json",
+      "schema": "bibliography-entry.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "licence that is not an allowed SPDX id",
+      "rule": "FR-000-31",
+      "pointer": "/licence",
+      "keyword": "enum"
+    },
+    {
+      "file": "bibliography-entry.hostile-oversized.json",
+      "schema": "bibliography-entry.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "title longer than 500 characters",
+      "rule": "FR-000-20",
+      "pointer": "/title",
+      "keyword": "maxLength"
+    },
+    {
+      "file": "bibliography-entry.hostile-empty.json",
+      "schema": "bibliography-entry.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "empty title",
+      "rule": "FR-000-20",
+      "pointer": "/title",
+      "keyword": "minLength"
+    },
+    {
+      "file": "api-snapshot.hostile-unknown-enum.json",
+      "schema": "api-snapshot.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "unknown object kind",
+      "rule": "FR-000-28",
+      "pointer": "/objects/0/kind",
+      "keyword": "enum"
+    },
+    {
+      "file": "api-snapshot.hostile-unknown-field.json",
+      "schema": "api-snapshot.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "unknown field in an object",
+      "rule": "FR-000-28",
+      "pointer": "/objects/0",
+      "keyword": "additionalProperties"
+    },
+    {
+      "file": "api-snapshot.hostile-bad-version.json",
+      "schema": "api-snapshot.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "version not in X.YY.ZZZ form",
+      "rule": "FR-000-28",
+      "pointer": "/version",
+      "keyword": "pattern"
+    },
+    {
+      "file": "api-snapshot.hostile-conditional-function-without-parameters.json",
+      "schema": "api-snapshot.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "function without its parameter list",
+      "rule": "FR-000-28",
+      "pointer": "/objects/4",
+      "keyword": "required"
+    },
+    {
+      "file": "api-snapshot.hostile-conditional-parameters-on-class.json",
+      "schema": "api-snapshot.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "parameter list on a non-function object",
+      "rule": "FR-000-28",
+      "pointer": "/objects/0",
+      "keyword": "not"
+    },
+    {
+      "file": "api-snapshot.hostile-wrong-unit.json",
+      "schema": "api-snapshot.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "unit recorded with its docstring brackets",
+      "rule": "FR-000-28",
+      "pointer": "/objects/4/parameters/0/unit",
+      "keyword": "pattern"
+    },
+    {
+      "file": "api-snapshot.hostile-unknown-parameter-kind.json",
+      "schema": "api-snapshot.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "unknown parameter kind",
+      "rule": "FR-000-28",
+      "pointer": "/objects/4/parameters/1/kind",
+      "keyword": "enum"
+    },
+    {
+      "file": "api-snapshot.hostile-missing-required.json",
+      "schema": "api-snapshot.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "object without its deprecated member",
+      "rule": "FR-000-28",
+      "pointer": "/objects/0",
+      "keyword": "required"
+    },
+    {
+      "file": "api-snapshot.hostile-empty.json",
+      "schema": "api-snapshot.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "snapshot without objects",
+      "rule": "FR-000-28",
+      "pointer": "/objects",
+      "keyword": "minItems"
+    },
+    {
+      "file": "api-snapshot.hostile-bad-name.json",
+      "schema": "api-snapshot.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "name that is not a minephys dotted path",
+      "rule": "FR-000-28",
+      "pointer": "/objects/3/name",
+      "keyword": "pattern"
+    },
+    {
+      "file": "api-snapshot.hostile-oversized.json",
+      "schema": "api-snapshot.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "default repr longer than 200 characters",
+      "rule": "FR-000-28",
+      "pointer": "/objects/4/parameters/1/default",
+      "keyword": "maxLength"
+    },
+    {
+      "file": "api-snapshot.hostile-deprecation-without-replacement.json",
+      "schema": "api-snapshot.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "deprecation without its replacement",
+      "rule": "FR-000-29",
+      "pointer": "/objects/1/deprecated",
+      "keyword": "required"
+    }
+  ],
+  "not_schema_checkable": [
+    {
+      "schema": "knowledge-table.schema.json",
+      "class": "row id duplicated within a table or across tables",
+      "by": "checker",
+      "rule": "FR-008-05"
+    },
+    {
+      "schema": "knowledge-table.schema.json",
+      "class": "table name differs from the file stem",
+      "by": "checker",
+      "rule": "FR-008-02"
+    },
+    {
+      "schema": "knowledge-table.schema.json",
+      "class": "share-alike-derived rows outside knowledge/share-alike/ (licence vs folder)",
+      "by": "checker",
+      "rule": "FR-000-31"
+    },
+    {
+      "schema": "knowledge-table.schema.json",
+      "class": "CC-BY-4.0 table citing a share-alike bibliography entry",
+      "by": "checker",
+      "rule": "FR-000-31"
+    },
+    {
+      "schema": "knowledge-table.schema.json",
+      "class": "citation key absent from references.bib",
+      "by": "checker",
+      "rule": "FR-000-21"
+    },
+    {
+      "schema": "knowledge-table.schema.json",
+      "class": "symbol not resolving to an exported object",
+      "by": "checker",
+      "rule": "FR-000-21"
+    },
+    {
+      "schema": "knowledge-table.schema.json",
+      "class": "verified row without a knowledge test marker",
+      "by": "checker",
+      "rule": "FR-000-21"
+    },
+    {
+      "schema": "knowledge-table.schema.json",
+      "class": "UNVERIFIED parameter row listed as a model-card default",
+      "by": "checker",
+      "rule": "FR-000-22"
+    },
+    {
+      "schema": "knowledge-table.schema.json",
+      "class": "range with min greater than max",
+      "by": "checker",
+      "rule": "FR-008-02"
+    },
+    {
+      "schema": "knowledge-table.schema.json",
+      "class": "calendar-invalid verified_on (for example 2026-02-30)",
+      "by": "checker",
+      "rule": "FR-000-20"
+    },
+    {
+      "schema": "knowledge-table.schema.json",
+      "class": "value, range or verification changed without a CHANGELOG entry",
+      "by": "checker",
+      "rule": "FR-000-30"
+    },
+    {
+      "schema": "knowledge-table.schema.json",
+      "class": "non-finite number (YAML .nan or .inf)",
+      "by": "loader",
+      "rule": "FR-008-02"
+    },
+    {
+      "schema": "knowledge-table.schema.json",
+      "class": "YAML anchor or alias, non-core tag, duplicate key, depth over 8, non-mapping top level, over 1 MiB or invalid UTF-8",
+      "by": "loader",
+      "rule": "FR-008-07"
+    },
+    {
+      "schema": "bibliography-entry.schema.json",
+      "class": "duplicate entry key",
+      "by": "loader",
+      "rule": "FR-008-08"
+    },
+    {
+      "schema": "bibliography-entry.schema.json",
+      "class": "field repeated within an entry",
+      "by": "loader",
+      "rule": "FR-008-08"
+    },
+    {
+      "schema": "bibliography-entry.schema.json",
+      "class": "unbalanced braces or quotes, @string, @preamble or @comment, file over 1 MiB",
+      "by": "loader",
+      "rule": "FR-008-08"
+    },
+    {
+      "schema": "bibliography-entry.schema.json",
+      "class": "share-alike source without its licence field",
+      "by": "checker",
+      "rule": "-",
+      "note": "the licence field is the only share-alike marker of an entry; no file-level rule can detect its absence (review only)"
+    },
+    {
+      "schema": "api-snapshot.schema.json",
+      "class": "objects not sorted by name, or a name listed twice",
+      "by": "checker",
+      "rule": "FR-000-28"
+    },
+    {
+      "schema": "api-snapshot.schema.json",
+      "class": "parameters not in signature order, or a name that is not exported",
+      "by": "checker",
+      "rule": "FR-000-28"
+    },
+    {
+      "schema": "api-snapshot.schema.json",
+      "class": "deprecation removal version not later than its since version",
+      "by": "checker",
+      "rule": "FR-000-29"
+    },
+    {
+      "schema": "api-snapshot.schema.json",
+      "class": "duplicate JSON key or non-finite number in the snapshot file",
+      "by": "loader",
+      "rule": "-",
+      "note": "no requirement names a strict JSON reader for tools/check_api.py"
+    }
+  ]
+}

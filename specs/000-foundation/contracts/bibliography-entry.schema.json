@@ -1,0 +1,174 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/fsantibanezleal/minephys/contracts/bibliography-entry.schema.json",
+  "title": "minephys bibliography entry",
+  "description": "One parsed entry of src/minephys/knowledge/references.bib (DC-000-03, spec 000-foundation).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "key",
+    "entry_type",
+    "title",
+    "year",
+    "access"
+  ],
+  "properties": {
+    "key": {
+      "$ref": "#/$defs/bib_key"
+    },
+    "entry_type": {
+      "$ref": "#/$defs/entry_type"
+    },
+    "author": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2000
+    },
+    "organization": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 300
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 500
+    },
+    "year": {
+      "type": "integer",
+      "minimum": 1800,
+      "maximum": 2100
+    },
+    "doi": {
+      "$ref": "#/$defs/doi"
+    },
+    "url": {
+      "$ref": "#/$defs/url"
+    },
+    "access": {
+      "$ref": "#/$defs/access"
+    },
+    "licence": {
+      "$ref": "#/$defs/source_licence"
+    },
+    "journal": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 300
+    },
+    "booktitle": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 500
+    },
+    "volume": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 32
+    },
+    "number": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 32
+    },
+    "pages": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 32
+    },
+    "publisher": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 300
+    },
+    "edition": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 64
+    },
+    "note": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1000
+    }
+  },
+  "allOf": [
+    {
+      "anyOf": [
+        {
+          "required": [
+            "author"
+          ]
+        },
+        {
+          "required": [
+            "organization"
+          ]
+        }
+      ]
+    },
+    {
+      "anyOf": [
+        {
+          "required": [
+            "doi"
+          ]
+        },
+        {
+          "required": [
+            "url"
+          ]
+        }
+      ]
+    }
+  ],
+  "$defs": {
+    "bib_key": {
+      "type": "string",
+      "maxLength": 64,
+      "pattern": "^[a-z][a-z0-9_:-]*$"
+    },
+    "entry_type": {
+      "enum": [
+        "article",
+        "book",
+        "inbook",
+        "inproceedings",
+        "techreport",
+        "manual",
+        "misc"
+      ]
+    },
+    "doi": {
+      "type": "string",
+      "maxLength": 256,
+      "pattern": "^10\\.[0-9]{4,9}/[!-~]+$"
+    },
+    "url": {
+      "type": "string",
+      "maxLength": 2048,
+      "pattern": "^https?://[A-Za-z0-9.-]+(:[0-9]{1,5})?(/[A-Za-z0-9._~%!$&'()*+,;=:@/-]*)?(\\?[A-Za-z0-9._~%!$&'()*+,;=:@/?-]*)?$"
+    },
+    "access": {
+      "enum": [
+        "open",
+        "paywalled",
+        "regulation",
+        "bibliographic-only"
+      ]
+    },
+    "source_licence": {
+      "enum": [
+        "CC0-1.0",
+        "CC-BY-3.0",
+        "CC-BY-4.0",
+        "CC-BY-SA-3.0",
+        "CC-BY-SA-4.0",
+        "CC-BY-ND-4.0",
+        "CC-BY-NC-4.0",
+        "CC-BY-NC-SA-4.0",
+        "CC-BY-NC-ND-4.0"
+      ]
+    }
+  }
+}

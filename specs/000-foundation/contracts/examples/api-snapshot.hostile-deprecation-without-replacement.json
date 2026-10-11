@@ -1,0 +1,46 @@
+{
+  "version": "1.04.000",
+  "objects": [
+    {
+      "name": "minephys.haulage.co2_from_diesel",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "fuel_volume",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m³"
+        },
+        {
+          "name": "emission_factor",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "kg/m³"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.haulage.diesel_co2",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "fuel_volume",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m³"
+        },
+        {
+          "name": "emission_factor",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "kg/m³"
+        }
+      ],
+      "deprecated": {
+        "since": "1.03.000",
+        "removal": "2.00.000"
+      }
+    }
+  ]
+}

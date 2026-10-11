@@ -1,0 +1,10 @@
+{
+  "key": "epa2006ap42s1322",
+  "entry_type": "techreport",
+  "organization": "US Environmental Protection Agency",
+  "title": "AP-42, Fifth Edition, Volume I, Section 13.2.2: Unpaved Roads",
+  "year": 2006,
+  "url": "ftp://example.org/13.2.2.pdf",
+  "access": "regulation",
+  "note": "November 2006 revision"
+}
