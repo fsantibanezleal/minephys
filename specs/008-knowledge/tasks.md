@@ -6,7 +6,7 @@ Order: after the foundation's schemas and honesty checks (T-000-001, T-000-014);
 knowledge task of every module spec (001–007).
 
 ## Phase 1 — Setup
-- [ ] T-008-001 (DC-008-01, DC-008-02, DC-008-03) `contracts/knowledge-equations.schema.json`, `knowledge-glossary.schema.json`, `knowledge-export.schema.json` with valid and invalid fixtures (no catalogue file is created here: the first entry of each catalogue is written by a module knowledge task, FR-008-22) — test: tests/contract/test_t_008_001_catalogue_schemas.py
+- [x] T-008-001 (DC-008-01, DC-008-02, DC-008-03) `contracts/knowledge-equations.schema.json`, `knowledge-glossary.schema.json`, `knowledge-export.schema.json` with valid and invalid fixtures (no catalogue file is created here: the first entry of each catalogue is written by a module knowledge task, FR-008-22) — test: tests/contract/test_t_008_001_catalogue_schemas.py
 - [ ] T-008-002 add `jsonschema` to the `dev` dependency group (test-only reference validator), lock, and record the version; no runtime change
 
 ## Phase 2 — US-008-1 (P1) Validated tables and bibliography

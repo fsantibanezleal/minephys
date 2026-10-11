@@ -1,0 +1,188 @@
+{
+  "version": "0.01.000",
+  "tables": [
+    {
+      "schema_version": 1,
+      "table": "bulk",
+      "title": "Bulk handling constants and parameters",
+      "licence": "CC-BY-4.0",
+      "rows": [
+        {
+          "id": "beverloo_exponent",
+          "quantity": "Beverloo exponent of the effective orifice size",
+          "value": "5/2",
+          "units": "1",
+          "role": "model_constant",
+          "citation": "beverloo1961flow",
+          "page": "not read (primary paywalled)",
+          "verification": "UNVERIFIED",
+          "symbol": "minephys.bulk.beverloo_discharge",
+          "notes": "transcription read on `mankoc2007beverloo` p. 1 (eq. 1); also fixed by dimensional analysis",
+          "verified_on": "2026-10-07"
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "table": "units",
+      "title": "Exact unit definitions and defined constants",
+      "licence": "CC-BY-4.0",
+      "rows": [
+        {
+          "id": "foot",
+          "quantity": "international foot in metres",
+          "value": 0.3048,
+          "units": "m",
+          "role": "conversion",
+          "citation": "nist2008sp811",
+          "page": "Appendix B.8",
+          "verification": "verified",
+          "verified_on": "2026-10-07",
+          "symbol": "minephys.units.ft_to_m",
+          "notes": "exact"
+        },
+        {
+          "id": "standard_gravity",
+          "quantity": "standard acceleration of free fall",
+          "value": 9.80665,
+          "units": "m/s²",
+          "role": "conversion",
+          "citation": "nist2008sp811",
+          "page": "Appendix B.8",
+          "verification": "verified",
+          "verified_on": "2026-10-07",
+          "symbol": "minephys.bulk.beverloo_discharge",
+          "notes": "exact defined value"
+        }
+      ]
+    }
+  ],
+  "equations": [
+    {
+      "id": "beverloo_discharge",
+      "title": "Beverloo mass discharge rate through a circular orifice",
+      "domain": "bulk",
+      "latex": "W = C\\,\\rho_b\\,\\sqrt{g}\\,(D - k\\,d)^{5/2}",
+      "symbols": [
+        {
+          "symbol": "W",
+          "meaning": "mass discharge rate",
+          "units": "kg/s"
+        },
+        {
+          "symbol": "C",
+          "meaning": "discharge coefficient (bulk-density form)",
+          "units": "1"
+        },
+        {
+          "symbol": "\\rho_b",
+          "meaning": "bulk density",
+          "units": "kg/m³"
+        },
+        {
+          "symbol": "g",
+          "meaning": "acceleration of gravity",
+          "units": "m/s²"
+        },
+        {
+          "symbol": "D",
+          "meaning": "orifice diameter",
+          "units": "m"
+        },
+        {
+          "symbol": "k",
+          "meaning": "empty-annulus coefficient",
+          "units": "1"
+        },
+        {
+          "symbol": "d",
+          "meaning": "particle diameter",
+          "units": "m"
+        }
+      ],
+      "function": "minephys.bulk.beverloo_discharge",
+      "citation": "beverloo1961flow",
+      "page": "not read (primary paywalled)",
+      "verification": "UNVERIFIED",
+      "rows": [
+        "beverloo_exponent",
+        "standard_gravity"
+      ],
+      "notes": "form printed by `mankoc2007beverloo` (eq. 1, p. 1)"
+    }
+  ],
+  "glossary": [
+    {
+      "id": "angle_of_repose",
+      "domain": "bulk",
+      "term_en": "angle of repose",
+      "term_es": "ángulo de reposo",
+      "definition_en": "Steepest angle, measured from the horizontal, at which a pile of loose granular material stays stable.",
+      "definition_es": "Ángulo máximo, medido desde la horizontal, con el que una pila de material granular suelto permanece estable."
+    }
+  ],
+  "bibliography": [
+    {
+      "key": "beverloo1961flow",
+      "entry_type": "article",
+      "author": "Beverloo, W. A. and Leniger, H. A. and van de Velde, J.",
+      "title": "The flow of granular solids through orifices",
+      "journal": "Chemical Engineering Science",
+      "volume": "15",
+      "number": "3--4",
+      "pages": "260--269",
+      "year": 1961,
+      "doi": "10.1016/0009-2509(61)85030-6",
+      "access": "paywalled"
+    },
+    {
+      "key": "nist2008sp811",
+      "entry_type": "techreport",
+      "organization": "National Institute of Standards and Technology",
+      "title": "Guide for the Use of the International System of Units (SI), NIST Special Publication 811, 2008 edition",
+      "year": 2008,
+      "doi": "10.6028/NIST.SP.811e2008",
+      "access": "open"
+    }
+  ],
+  "summary": {
+    "rows": {
+      "total": 3,
+      "unverified": 1
+    },
+    "equations": {
+      "total": 1,
+      "unverified": 1
+    },
+    "terms": 1,
+    "references": 2,
+    "per_table": {
+      "bulk": {
+        "total": 1,
+        "unverified": 1
+      },
+      "units": {
+        "total": 2,
+        "unverified": 0
+      }
+    },
+    "per_role": {
+      "model_constant": {
+        "total": 1,
+        "unverified": 1
+      },
+      "parameter": {
+        "total": 0,
+        "unverified": 0
+      },
+      "limit": {
+        "total": 0,
+        "unverified": 0
+      },
+      "conversion": {
+        "total": 2,
+        "unverified": 0
+      }
+    }
+  }
+}
