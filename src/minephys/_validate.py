@@ -19,6 +19,9 @@ from ._errors import InputError, InputTypeError, ValidityWarning
 FloatArray = npt.NDArray[np.float64]
 
 __all__ = [
+    "as_checked",
+    "as_count",
+    "as_scalar",
     "as_float_array",
     "broadcast_all",
     "check_bool",
@@ -170,7 +173,7 @@ def finalize(result: Any, *inputs: Any) -> Any:
     return res
 
 
-def warn_validity(arr: FloatArray, name: str, lo: float, hi: float, row: str) -> None:
+def warn_validity(arr: FloatArray, name: str, lo: float, hi: float, row: str, *, stacklevel: int = 3) -> None:
     """Emit ValidityWarning when any element lies outside [lo, hi]; execution continues."""
     if arr.size == 0:
         return
@@ -186,5 +189,38 @@ def warn_validity(arr: FloatArray, name: str, lo: float, hi: float, row: str) ->
             bounds=(lo, hi),
             row=row,
         ),
-        stacklevel=3,
+        stacklevel=stacklevel,
     )
+
+
+def as_checked(
+    value: Any,
+    name: str,
+    *,
+    lo: float | None = None,
+    hi: float | None = None,
+    lo_open: bool = False,
+    hi_open: bool = False,
+    allow_posinf: bool = False,
+) -> FloatArray:
+    """`as_float_array`, `check_finite` and `check_domain` in one call (the usual boundary of a numeric argument)."""
+    arr = check_finite(as_float_array(value, name), name, allow_posinf=allow_posinf)
+    return check_domain(arr, name, lo=lo, hi=hi, lo_open=lo_open, hi_open=hi_open)
+
+
+def as_count(value: Any, name: str, *, lo: int = 1, hi: int | None = None) -> FloatArray:
+    """A count: integer-valued real numbers in [lo, hi] (floats such as 6.0 are accepted, 2.5 is an InputError)."""
+    arr = as_checked(value, name, lo=lo, hi=hi)
+    if np.any(arr != np.rint(arr)):
+        idx = _first(arr != np.rint(arr))
+        raise InputError(f"argument '{name}' must be a whole number, got {float(arr.ravel()[idx])!r}", argument=name)
+    return arr
+
+
+def as_scalar(arr: FloatArray, name: str) -> float:
+    """The Python float of a rank-0 argument; an array is a rank error (scalar-only functions)."""
+    if arr.ndim != 0:
+        raise InputError(
+            f"argument '{name}' must be a scalar, got an array of shape {tuple(arr.shape)}", argument=name
+        )
+    return float(arr)
