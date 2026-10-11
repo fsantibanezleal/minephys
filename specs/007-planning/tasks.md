@@ -24,7 +24,7 @@ precedes every task that uses the `networkx` oracle.
 ## Phase 4 — US-007-3 (P1) Schedule NPV
 - [x] T-007-030 [US-007-3] (FR-007-11, P-007-06) NPV of a cash-flow series — test: tests/unit/test_t_007_030_npv.py, tests/property/test_t_007_030_npv_properties.py
 - [x] T-007-031 [US-007-3] (FR-007-12, P-007-07) schedule NPV and cash-flow aggregation — test: tests/unit/test_t_007_031_schedule_npv.py, tests/property/test_t_007_031_schedule_properties.py
-- [ ] T-007-032 [US-007-3] (FR-007-13, FR-007-14) infeasible schedules and NPV guards — test: tests/unit/test_t_007_032_schedule_guards.py
+- [x] T-007-032 [US-007-3] (FR-007-13, FR-007-14) infeasible schedules and NPV guards — test: tests/unit/test_t_007_032_schedule_guards.py
 
 ## Phase 5 — US-007-4 (P2) Lane cut-off grades
 - [ ] T-007-040 [US-007-4] (FR-007-15) limiting and balancing cut-offs on analytical histograms — test: tests/unit/test_t_007_040_lane_cutoffs.py
