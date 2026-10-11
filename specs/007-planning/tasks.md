@@ -28,7 +28,7 @@ precedes every task that uses the `networkx` oracle.
 
 ## Phase 5 — US-007-4 (P2) Lane cut-off grades
 - [x] T-007-040 [US-007-4] (FR-007-15) limiting and balancing cut-offs on analytical histograms — test: tests/unit/test_t_007_040_lane_cutoffs.py
-- [ ] T-007-041 [US-007-4] (FR-007-16, P-007-08, P-007-09) optimum cut-off against the brute-force grid, binding capacity and unit invariance — test: tests/unit/test_t_007_041_lane_optimum.py, tests/property/test_t_007_041_lane_properties.py
+- [x] T-007-041 [US-007-4] (FR-007-16, P-007-08, P-007-09) optimum cut-off against the brute-force grid, binding capacity and unit invariance — test: tests/unit/test_t_007_041_lane_optimum.py, tests/property/test_t_007_041_lane_properties.py
 - [ ] T-007-042 [US-007-4] (FR-007-17) Lane guards — test: tests/unit/test_t_007_042_lane_guards.py
 
 ## Phase 6 — Non-functional and cross-cutting contract
