@@ -82,6 +82,7 @@ first error and its total error count). Tests carry `@pytest.mark.oracle(...)` (
 | NFR-008-04 | contract | wheel listing (`zipfile`) on the CI-built wheel | pytest (wheel job) |
 | NFR-008-05 | contract | fresh-interpreter import audit | pytest (subprocess) |
 | SC-008-01, 02 | CI | `validate` exit 0; the pinning check; the generator `--check` | CI jobs |
+| FR-008-22 | unit | hand calculation: a package tree with no catalogue files reads as empty tuples; a present table or catalogue file with no row or entry is rejected | pytest |
 
 ## Risks and complexity tracking
 

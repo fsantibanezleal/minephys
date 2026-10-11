@@ -36,6 +36,6 @@ row with the value printed in the source (transcribed into the test); the worked
 - [ ] T-006-054 [US-006-1] (FR-000-05, FR-000-07, FR-000-10, FR-000-11, FR-000-12, FR-000-13, P-000-01, P-000-02, P-000-03) the foundation cross-cutting contract checks (T-000-010) on every `minephys.environment` function — test: tests/property/test_t_006_054_environment_contract.py
 
 ## Phase 6 — Polish and review
-- [ ] T-006-090 (SC-006-02) mutation run on `src/minephys/environment/`; record the score
+- [ ] T-006-090 (SC-006-02) mutation run on `src/minephys/environment/`; record the score and fail below `mutation.numerical_core_min` — test: tests/unit/test_t_006_090_mutation_score.py
 - [ ] T-006-091 independent review of the diff against this spec; append tasks for gaps
 - [ ] T-006-092 method pages `docs/methods/ap42-unpaved-roads.md`, `gaussian-plume.md`, `dust-lidar.md`, and the reference-page names added by this spec

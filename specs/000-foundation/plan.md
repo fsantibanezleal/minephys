@@ -78,6 +78,10 @@ in-domain. Markers registered in `pyproject.toml`: `req`, `oracle`, `knowledge`,
 | NFR-000-08 | CI | measurement | pytest-cov, mutation tool, Hypothesis profile |
 | NFR-000-09 | CI | measurement | mypy |
 | FR-000-34 | unit (hostile) | hand calculation: snapshot fixtures with a repeated key, `NaN` and a lone `0xff` byte give a non-zero exit naming the file and pointer; a clean file passes | pytest |
+| FR-000-32 | unit | hand calculation: each exported class is a subclass of its stated base, carries `argument` (`None` for `ConvergenceError`), and `__version__` equals the package metadata (`importlib.metadata`) | pytest |
+| NFR-000-06 | CI matrix | reference implementation: the CI matrix result on CPython 3.12, 3.13 and 3.14, the built wheel and the Pyodide job | CI matrix + pyodide job |
+| SC-000-03 | release check | hand calculation: a fixture table set with one UNVERIFIED `parameter` row used as a default fails; a table whose verified rows are all pinned by a test passes | pytest |
+| SC-000-04 | release check | reference implementation: the smoke subset result on every supported runtime at release, read from the CI matrix | CI at release |
 
 ## Risks and complexity tracking
 

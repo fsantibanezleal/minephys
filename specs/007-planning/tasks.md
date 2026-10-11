@@ -41,6 +41,6 @@ precedes every task that uses the `networkx` oracle.
 - [ ] T-007-056 [US-007-1] (NFR-007-06, P-007-10) minimal maximum closure at the 10⁵-block cap: `networkx` agreement, ≤ 60 s and ≤ 2 GB (`slow`), and the penalised-problem relation on CI-size grids — test: tests/metamorphic/test_t_007_056_minimal_closure_at_scale.py
 
 ## Phase 7 — Polish and review
-- [ ] T-007-090 (SC-007-02) mutation run on `minephys.planning`; record the score in the task log
+- [ ] T-007-090 (SC-007-02) mutation run on `minephys.planning`; record the score in the task log and fail below `mutation.numerical_core_min` — test: tests/unit/test_t_007_090_mutation_score.py
 - [ ] T-007-091 independent review of the diff against this spec; append tasks for gaps
 - [ ] T-007-092 method pages `docs/methods/ultimate-pit-mincut.md` and `lane-cutoff.md`, and the reference-page names added by this spec
