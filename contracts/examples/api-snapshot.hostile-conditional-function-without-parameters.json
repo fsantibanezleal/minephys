@@ -1,0 +1,30 @@
+{
+  "version": "0.01.000",
+  "objects": [
+    {
+      "name": "minephys.ConvergenceError",
+      "kind": "class",
+      "deprecated": null
+    },
+    {
+      "name": "minephys.InputError",
+      "kind": "class",
+      "deprecated": null
+    },
+    {
+      "name": "minephys.__version__",
+      "kind": "constant",
+      "deprecated": null
+    },
+    {
+      "name": "minephys.haulage",
+      "kind": "module",
+      "deprecated": null
+    },
+    {
+      "name": "minephys.haulage.grade_resistance",
+      "kind": "function",
+      "deprecated": null
+    }
+  ]
+}

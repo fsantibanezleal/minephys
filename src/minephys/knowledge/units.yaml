@@ -1,0 +1,83 @@
+schema_version: 1
+table: units
+title: Unit definitions and defined physical constants
+licence: CC-BY-4.0
+rows:
+  - id: standard_gravity
+    quantity: standard acceleration of free fall (exact defined value)
+    value: 9.80665
+    units: m/s²
+    role: conversion
+    citation: nistsp811
+    page: Appendix B.8
+    verification: verified
+    verified_on: "2026-10-07"
+    symbol: minephys.units.us_gal_to_m3
+    notes: acceleration of free fall, standard, exact; the models take it as the default of their g argument
+  - id: inch
+    quantity: length of one international inch in metres (exact)
+    value: 0.0254
+    units: m
+    role: conversion
+    citation: nistsp811
+    page: Appendix B.8; NIST Handbook 44 (2026), Appendix C, p. 21 ("2.54 centimeters (exactly)")
+    verification: verified
+    verified_on: "2026-10-07"
+    symbol:
+      - minephys.units.in_per_s_to_m_per_s
+      - minephys.units.m_per_s_to_in_per_s
+      - minephys.units.us_gal_to_m3
+      - minephys.units.m3_to_us_gal
+    notes: exact by definition
+  - id: foot
+    quantity: length of one international foot in metres (exact)
+    value: 0.3048
+    units: m
+    role: conversion
+    citation: nistsp811
+    page: Appendix B.8
+    verification: verified
+    verified_on: "2026-10-07"
+    symbol:
+      - minephys.units.ft_to_m
+      - minephys.units.m_to_ft
+    notes: exact by definition
+  - id: pound
+    quantity: mass of one avoirdupois pound in kilograms (exact)
+    value: 0.45359237
+    units: kg
+    role: conversion
+    citation: nisthb44
+    page: Appendix C, p. 17 (avoirdupois pound)
+    verification: verified
+    verified_on: "2026-10-07"
+    symbol:
+      - minephys.units.lb_to_kg
+      - minephys.units.kg_to_lb
+    notes: exact by definition
+  - id: us_gallon_cubic_inches
+    quantity: volume of one US liquid gallon in cubic inches (exact)
+    value: 231
+    units: in³
+    role: conversion
+    citation: nisthb44
+    page: Appendix C, p. 25 ("231 cubic inches (exactly)")
+    verification: verified
+    verified_on: "2026-10-07"
+    symbol:
+      - minephys.units.us_gal_to_m3
+      - minephys.units.m3_to_us_gal
+    notes: with 1 in = 0.0254 m the US gallon is 3.785411784e-3 m³, derived exactly in code
+  - id: kilowatt_hour
+    quantity: energy of one kilowatt-hour in joules (exact)
+    value: 3600000.0
+    units: J
+    role: conversion
+    citation: nistsp811
+    page: Appendix B.8
+    verification: verified
+    verified_on: "2026-10-07"
+    symbol:
+      - minephys.units.kwh_to_j
+      - minephys.units.j_to_kwh
+    notes: 3.6e6 J, exact by definition (written as a decimal because YAML 1.1 reads 3.6e6 as a string)
