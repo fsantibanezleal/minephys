@@ -25,3 +25,15 @@ path = ["data/sources.yaml", "CITATION.cff", ".gitattributes", ".editorconfig", 
 precedence = "override"
 SPDX-FileCopyrightText = "2026 Felipe A. Santibanez-Leal"
 SPDX-License-Identifier = "CC0-1.0"
+
+[[annotations]]
+path = ["src/minephys/knowledge/*.yaml", "src/minephys/knowledge/references.bib"]
+precedence = "override"
+SPDX-FileCopyrightText = "2026 Felipe A. Santibanez-Leal"
+SPDX-License-Identifier = "CC-BY-4.0"
+
+[[annotations]]
+path = ["src/minephys/knowledge/share-alike/*.yaml"]
+precedence = "override"
+SPDX-FileCopyrightText = "2026 Felipe A. Santibanez-Leal"
+SPDX-License-Identifier = "CC-BY-SA-4.0"
