@@ -234,13 +234,23 @@ def export_json() -> str:
     return json.dumps(export(), sort_keys=True, indent=2, ensure_ascii=False) + "\n"
 
 
-def render_pages(out_dir: str | os.PathLike[str]) -> None:
+def render_pages(out_dir: str | os.PathLike[str], source: str | os.PathLike[str] | None = None) -> None:
     """Write one Markdown page per table plus `equations.md`, `bibliography.md` and `glossary.md` into an existing
-    folder."""
+    folder; `source` renders a knowledge folder with the layout of the package instead of the packaged knowledge (an
+    invalid folder raises `KnowledgeSchemaError`)."""
     from ._render import build_pages
 
     folder = _directory(out_dir, "out_dir")
-    pages = build_pages(_knowledge())
+    if source is None:
+        knowledge = _knowledge()
+    else:
+        root = _directory(source, "source")
+        loaded = read_folder(root, lambda rel: str(root / rel))
+        if loaded.knowledge is None:
+            first = loaded.errors[0]
+            raise KnowledgeSchemaError(str(first), file=first.file, index=first.index, field=first.field)
+        knowledge = loaded.knowledge
+    pages = build_pages(knowledge)
     for name, text in pages.items():
         (folder / name).write_bytes(text.encode("utf-8"))
 

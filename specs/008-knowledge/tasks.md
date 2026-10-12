@@ -29,7 +29,7 @@ knowledge task of every module spec (001–007).
 
 ## Phase 5 — US-008-2/US-008-4 Pages and changes
 - [x] T-008-040 [US-008-2] (FR-008-16, P-008-04) Markdown pages with counts, UNVERIFIED labels, roles, licences and the EN/ES glossary — test: tests/unit/test_t_008_040_render.py, tests/property/test_t_008_040_label_counts.py
-- [ ] T-008-041 [US-008-4] (FR-008-21, SC-008-02) the foundation docs generator calls `render_pages` — test: tests/unit/test_t_008_041_generator_uses_renderer.py
+- [x] T-008-041 [US-008-4] (FR-008-21, SC-008-02) the foundation docs generator calls `render_pages` — test: tests/unit/test_t_008_041_generator_uses_renderer.py
 - [x] T-008-042 [US-008-2] (FR-008-20) `knowledge_changes` for the foundation's release check — test: tests/unit/test_t_008_042_knowledge_changes.py
 
 ## Phase 6 — Non-functional and integrity
