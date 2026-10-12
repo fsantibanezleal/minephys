@@ -288,6 +288,31 @@ rows:
     verified_on: "2026-10-06"
     symbol: minephys.environment.watering_control_efficiency
     notes: the vector path of the figure gives 94.99 % at the end of the axis; 95 % is used
+  - id: ap42_mile_in_m
+    quantity: length of the international mile in metres (exact)
+    value: 1609.344
+    units: "m"
+    role: conversion
+    citation: nisthb44
+    page: Appendix C, PDF page 531 (1 mile = 1 609.344 m)
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol:
+      - minephys.environment.ap42_unpaved_emission_factor
+      - minephys.environment.ap42_unpaved_validity
+    notes: AP-42 gives the vehicle mile travelled; 5280 international feet
+  - id: ap42_short_ton_in_kg
+    quantity: mass of the short ton (2000 lb) in kilograms
+    value: 907.18474
+    units: "kg"
+    role: conversion
+    citation: nisthb44
+    page: Appendix C (the figure 907.18474 kg was not located in the extracted text)
+    verification: UNVERIFIED
+    symbol:
+      - minephys.environment.ap42_unpaved_emission_factor
+      - minephys.environment.ap42_unpaved_validity
+    notes: exact by the definition 2000 lb x 0.45359237 kg/lb; kept as its own row so that the weight conversion does not move with the pound row
   - id: isc3_sigma_y_scale
     quantity: scale of the ISC3 Pasquill-Gifford lateral dispersion coefficient
     value: 465.11628
@@ -1939,7 +1964,7 @@ rows:
     units: "1"
     role: limit
     citation: phillips2017dust
-    page: abstract
+    page: abstract, J. Field Robotics 34(5)
     verification: verified
     verified_on: "2026-10-06"
     symbol: minephys.environment.lidar_dust_return
@@ -1950,7 +1975,7 @@ rows:
     units: "1"
     role: limit
     citation: phillips2017dust
-    page: abstract
+    page: abstract, J. Field Robotics 34(5)
     verification: verified
     verified_on: "2026-10-06"
     symbol: minephys.environment.lidar_dust_return
@@ -1960,7 +1985,7 @@ rows:
     units: "1"
     role: limit
     citation: phillips2017dust
-    page: abstract
+    page: abstract, J. Field Robotics 34(5)
     verification: verified
     verified_on: "2026-10-06"
     symbol: minephys.environment.lidar_dust_return

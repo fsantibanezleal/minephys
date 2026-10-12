@@ -8,7 +8,7 @@ Verified rows are pinned from T-006-001 on: its contract test carries `@pytest.m
 row with the value printed in the source (transcribed into the test); the worked-example tests add further pins.
 
 ## Phase 1 — Setup
-- [ ] T-006-001 [US-006-4] (DC-006-01, DC-006-02) `knowledge/environment.yaml` rows of spec §7 (AP-42 constants and ranges, watering vertices, ISC3 coefficients, lidar thresholds), the environment entries of `knowledge/catalogue/equations.yaml` and the §7 bibliography entries; transcription pins of every verified row — test: tests/contract/test_t_006_001_environment_knowledge.py
+- [x] T-006-001 [US-006-4] (DC-006-01, DC-006-02) `knowledge/environment.yaml` rows of spec §7 (AP-42 constants and ranges, watering vertices, ISC3 coefficients, lidar thresholds), the environment entries of `knowledge/catalogue/equations.yaml` and the §7 bibliography entries; transcription pins of every verified row — test: tests/contract/test_t_006_001_environment_knowledge.py
 
 ## Phase 2 — US-006-1 (P1) Haul-road emission factor
 - [ ] T-006-010 [US-006-1] (FR-006-01, P-006-01, P-006-02, P-006-03) AP-42 equation 1a with SI arguments, against the published-unit form — test: tests/unit/test_t_006_010_ap42.py, tests/property/test_t_006_010_ap42_properties.py

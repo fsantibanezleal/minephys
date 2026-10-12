@@ -489,3 +489,141 @@ equations:
     page: composition of the component functions (spec 005 FR-005-30)
     verification: UNVERIFIED
     notes: a composition of the equations above; its components carry their own status
+  - id: environment_ap42_unpaved_emission_factor
+    title: AP-42 unpaved industrial road emission factor
+    domain: environment
+    latex: 'E = k\left(\frac{s}{12}\right)^{a}\left(\frac{W}{3}\right)^{b}'
+    symbols:
+      - {symbol: E, meaning: size-specific emission factor, units: g/VKT}
+      - {symbol: k, meaning: particle size multiplier, units: lb/VMT}
+      - {symbol: s, meaning: surface material silt content, units: percent}
+      - {symbol: W, meaning: mean vehicle weight, units: short tons}
+      - {symbol: a, meaning: silt exponent, units: "1"}
+      - {symbol: b, meaning: weight exponent, units: "1"}
+    function: minephys.environment.ap42_unpaved_emission_factor
+    citation: epa2006ap42s1322
+    page: section 13.2.2, unpaved roads at industrial sites
+    verification: UNVERIFIED
+    rows: [ap42_industrial_k_pm25, ap42_industrial_a_pm25, ap42_industrial_b_pm25, ap42_silt_reference, ap42_weight_reference]
+    notes: coefficient rows are read from the section; the assembled form is pinned against the section worked values in the tests
+  - id: environment_precipitation_correction
+    title: AP-42 wet-day correction of an annual emission factor
+    domain: environment
+    latex: 'E_{ext} = E\,\frac{365 - P}{365}'
+    symbols:
+      - {symbol: E_ext, meaning: annual average emission factor, units: g/VKT}
+      - {symbol: E, meaning: dry-condition emission factor, units: g/VKT}
+      - {symbol: P, meaning: number of days with at least 0.254 mm of precipitation, units: d}
+    function: minephys.environment.precipitation_correction
+    citation: epa2006ap42s1322
+    page: section 13.2.2, extrapolation to annual averages
+    verification: UNVERIFIED
+    rows: [ap42_wet_day_threshold, ap42_days_per_year]
+  - id: environment_watering_control_efficiency
+    title: Control efficiency of watering by the moisture ratio
+    domain: environment
+    latex: 'C = \mathrm{interp}(M;\ m_i,\ c_i)'
+    symbols:
+      - {symbol: C, meaning: control efficiency, units: percent}
+      - {symbol: M, meaning: ratio of watered to uncontrolled surface moisture, units: "1"}
+    function: minephys.environment.watering_control_efficiency
+    citation: epa2006ap42s1322
+    page: section 13.2.2, control efficiency versus moisture ratio
+    verification: UNVERIFIED
+    rows: [ap42_watering_m_1, ap42_watering_m_2, ap42_watering_m_3, ap42_watering_m_4, ap42_watering_ce_1, ap42_watering_ce_2, ap42_watering_ce_3, ap42_watering_ce_4]
+    notes: the interpolation between the tabulated points is a spec 006 choice
+  - id: environment_pasquill_sigmas
+    title: Pasquill-Gifford dispersion coefficients
+    domain: environment
+    latex: '\sigma_y = 465.11628\,x\,\tan(0.017453293\,(c - d \ln x)), \qquad \sigma_z = a\,x^{b}'
+    symbols:
+      - {symbol: '\sigma_y', meaning: lateral dispersion coefficient, units: m}
+      - {symbol: '\sigma_z', meaning: vertical dispersion coefficient, units: m}
+      - {symbol: x, meaning: downwind distance, units: km}
+      - {symbol: a, meaning: sigma z coefficient of the distance band, units: "1"}
+      - {symbol: b, meaning: sigma z exponent of the distance band, units: "1"}
+    function: minephys.environment.pasquill_sigmas
+    citation: epa1995isc3v2
+    page: Tables 1-1 to 1-4
+    verification: UNVERIFIED
+    rows: [isc3_sigma_y_scale, isc3_deg_to_rad, isc3_sigma_z_cap, isc3_urban_min_distance]
+    notes: the coefficient rows are read from the tables; the assembled form is UNVERIFIED until checked against the tabulated values
+  - id: environment_gaussian_plume
+    title: Gaussian point-source plume with ground reflection
+    domain: environment
+    latex: 'C = \frac{Q}{2\pi u \sigma_y \sigma_z}\exp\left(-\frac{y^2}{2\sigma_y^2}\right)\left[\exp\left(-\frac{(z-h)^2}{2\sigma_z^2}\right) + \exp\left(-\frac{(z+h)^2}{2\sigma_z^2}\right)\right]'
+    symbols:
+      - {symbol: C, meaning: concentration, units: kg/m^3}
+      - {symbol: Q, meaning: emission rate, units: kg/s}
+      - {symbol: u, meaning: wind speed, units: m/s}
+      - {symbol: h, meaning: source height, units: m}
+    function: minephys.environment.gaussian_plume
+    citation: turner1970workbook
+    page: not read (bibliographic)
+    verification: UNVERIFIED
+  - id: environment_line_source_plume
+    title: Infinite crosswind line-source plume
+    domain: environment
+    latex: 'C = \frac{Q_l}{\sqrt{2\pi}\,u\,\sigma_z}\left[\exp\left(-\frac{(z-h)^2}{2\sigma_z^2}\right) + \exp\left(-\frac{(z+h)^2}{2\sigma_z^2}\right)\right]'
+    symbols:
+      - {symbol: C, meaning: concentration, units: kg/m^3}
+      - {symbol: 'Q_l', meaning: emission rate per unit length, units: kg/(s m)}
+      - {symbol: u, meaning: wind speed, units: m/s}
+    function: minephys.environment.line_source_plume
+    citation: turner1970workbook
+    page: not read (bibliographic)
+    verification: UNVERIFIED
+  - id: environment_finite_line_source_plume
+    title: Finite line-source plume by crosswind integration
+    domain: environment
+    latex: 'C = \frac{Q_l}{2\sqrt{2\pi}\,u\,\sigma_z}\left[\mathrm{erf}\!\left(\frac{y_2 - y}{\sqrt{2}\sigma_y}\right) - \mathrm{erf}\!\left(\frac{y_1 - y}{\sqrt{2}\sigma_y}\right)\right]\left[\exp\left(-\frac{(z-h)^2}{2\sigma_z^2}\right) + \exp\left(-\frac{(z+h)^2}{2\sigma_z^2}\right)\right]'
+    symbols:
+      - {symbol: C, meaning: concentration, units: kg/m^3}
+      - {symbol: 'Q_l', meaning: emission rate per unit length, units: kg/(s m)}
+      - {symbol: 'y_1, y_2', meaning: crosswind ends of the segment, units: m}
+    function: minephys.environment.finite_line_source_plume
+    citation: turner1970workbook
+    page: not read (bibliographic)
+    verification: UNVERIFIED
+    rows: [isc3_lid_uniform_ratio]
+  - id: environment_mass_extinction_coefficient
+    title: Mass extinction coefficient of spherical particles
+    domain: environment
+    latex: 'k_m = \frac{3 Q_{ext}}{2 \rho_p D}'
+    symbols:
+      - {symbol: 'k_m', meaning: mass extinction coefficient, units: m^2/kg}
+      - {symbol: 'Q_{ext}', meaning: extinction efficiency, units: "1"}
+      - {symbol: '\rho_p', meaning: particle density, units: kg/m^3}
+      - {symbol: D, meaning: particle diameter, units: m}
+    function: minephys.environment.mass_extinction_coefficient
+    citation: bohren1983absorption
+    page: not read (bibliographic)
+    verification: UNVERIFIED
+    rows: [extinction_efficiency_large_particle]
+    notes: the large-particle limit Q_ext = 2 is UNVERIFIED
+  - id: environment_beer_lambert_transmittance
+    title: Beer-Lambert transmittance
+    domain: environment
+    latex: 'T = \exp(-\beta L)'
+    symbols:
+      - {symbol: T, meaning: one-way transmittance, units: "1"}
+      - {symbol: '\beta', meaning: extinction coefficient, units: 1/m}
+      - {symbol: L, meaning: path length, units: m}
+    function: minephys.environment.beer_lambert_transmittance
+    citation: bohren1983absorption
+    page: not read (bibliographic)
+    verification: UNVERIFIED
+  - id: environment_lidar_dust_return
+    title: Lidar return state through dust
+    domain: environment
+    latex: 'T = \exp\left(-\int_0^D \beta\,ds\right), \quad \mathrm{state} = \begin{cases} \mathrm{unaffected} & T \ge T_{onset} \\ \mathrm{degraded} & T_{min} \le T < T_{onset} \\ \mathrm{lost} & T < T_{min} \end{cases}'
+    symbols:
+      - {symbol: T, meaning: one-way transmittance, units: "1"}
+      - {symbol: 'T_{onset}', meaning: transmittance below which dust affects the lidar, units: "1"}
+      - {symbol: 'T_{min}', meaning: transmittance below which the target is lost, units: "1"}
+    function: minephys.environment.lidar_dust_return
+    citation: phillips2017dust
+    page: abstract, J. Field Robotics 34(5)
+    verification: UNVERIFIED
+    rows: [lidar_dust_onset_transmittance, lidar_dust_min_transmittance_retroreflective, lidar_dust_min_transmittance_low_reflectivity]
+    notes: applying the published thresholds to the one-way transmittance is an UNVERIFIED interpretation

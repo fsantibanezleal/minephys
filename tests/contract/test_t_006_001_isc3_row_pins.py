@@ -27,7 +27,14 @@ def _row(row_id: str) -> dict[str, Any]:
 def _check(row_id: str, printed: float) -> None:
     row = _row(row_id)
     assert row["value"] == printed
-    assert row["verification"] == "verified" and row["citation"] == "epa1995isc3v2"
+    assert row["verification"] == "verified" and row["citation"] in {"epa1995isc3v2", "nisthb44"}
+
+
+@pytest.mark.req("DC-006-01")
+@pytest.mark.oracle("hand-calculation", "value printed in the ISC3 volume II table, transcribed by hand")
+@pytest.mark.knowledge("ap42_mile_in_m")
+def test_pin_ap42_mile_in_m() -> None:
+    _check("ap42_mile_in_m", 1609.344)
 
 
 @pytest.mark.req("DC-006-01")
