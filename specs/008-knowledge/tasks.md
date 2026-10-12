@@ -19,7 +19,7 @@ knowledge task of every module spec (001–007).
 - [x] T-008-016 [US-008-4] (FR-008-22) absent catalogue read as empty; a present table or catalogue file with no row or entry rejected — test: tests/unit/test_t_008_016_absent_catalogues.py
 
 ## Phase 3 — US-008-2 (P1) UNVERIFIED rows surfaced
-- [ ] T-008-020 [US-008-2] (FR-008-11, FR-008-12, FR-008-13) `get_value` kinds, `UnverifiedParameterWarning` by role, no default filtering — test: tests/unit/test_t_008_020_values_and_warnings.py
+- [x] T-008-020 [US-008-2] (FR-008-11, FR-008-12, FR-008-13) `get_value` kinds, `UnverifiedParameterWarning` by role, no default filtering — test: tests/unit/test_t_008_020_values_and_warnings.py
 - [ ] T-008-021 [US-008-2] (FR-008-14) extend the foundation pinning check to verified equation ids — test: tests/contract/test_t_008_021_equation_pins.py
 
 ## Phase 4 — US-008-3 (P1) One export for consumers
