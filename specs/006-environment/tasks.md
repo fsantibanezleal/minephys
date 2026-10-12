@@ -23,7 +23,7 @@ row with the value printed in the source (transcribed into the test); the worked
 - [x] T-006-023 [US-006-2] (FR-006-14) dispersion and plume guards — test: tests/unit/test_t_006_023_plume_guards.py
 
 ## Phase 4 — US-006-3 (P2) Dust and lidar
-- [ ] T-006-030 [US-006-3] (FR-006-15, FR-006-16, P-006-10, P-006-11) mass extinction, extinction coefficient and path transmittance — test: tests/unit/test_t_006_030_beer_lambert.py, tests/property/test_t_006_030_beer_lambert_properties.py
+- [x] T-006-030 [US-006-3] (FR-006-15, FR-006-16, P-006-10, P-006-11) mass extinction, extinction coefficient and path transmittance — test: tests/unit/test_t_006_030_beer_lambert.py, tests/property/test_t_006_030_beer_lambert_properties.py
 - [ ] T-006-031 [US-006-3] (FR-006-17, P-006-12) lidar return state at the published thresholds and the leading edge of a profile — test: tests/unit/test_t_006_031_lidar_dust.py, tests/property/test_t_006_031_lidar_properties.py
 - [ ] T-006-032 [US-006-3] (FR-006-18) optics and lidar guards — test: tests/unit/test_t_006_032_optics_guards.py
 
