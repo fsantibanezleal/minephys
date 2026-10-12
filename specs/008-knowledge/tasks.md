@@ -20,7 +20,7 @@ knowledge task of every module spec (001–007).
 
 ## Phase 3 — US-008-2 (P1) UNVERIFIED rows surfaced
 - [x] T-008-020 [US-008-2] (FR-008-11, FR-008-12, FR-008-13) `get_value` kinds, `UnverifiedParameterWarning` by role, no default filtering — test: tests/unit/test_t_008_020_values_and_warnings.py
-- [ ] T-008-021 [US-008-2] (FR-008-14) extend the foundation pinning check to verified equation ids — test: tests/contract/test_t_008_021_equation_pins.py
+- [x] T-008-021 [US-008-2] (FR-008-14) extend the foundation pinning check to verified equation ids — test: tests/contract/test_t_008_021_equation_pins.py
 
 ## Phase 4 — US-008-3 (P1) One export for consumers
 - [x] T-008-030 [US-008-3] (FR-008-15, P-008-03) deterministic export valid against the export schema — test: tests/unit/test_t_008_030_export.py, tests/property/test_t_008_030_export_determinism.py
