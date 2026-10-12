@@ -51,7 +51,9 @@ def _polyline(surface_x: Any, surface_z: Any) -> tuple[FloatArray, FloatArray]:
         )
     if np.any(np.diff(x) <= 0):
         at = int(np.argmax(np.diff(x) <= 0))
-        raise InputError(f"argument 'surface_x' must be strictly increasing (first violation after index {at})", argument="surface_x")
+        raise InputError(
+            f"argument 'surface_x' must be strictly increasing (first violation after index {at})", argument="surface_x"
+        )
     return x, z
 
 
@@ -140,7 +142,9 @@ def circular_slices(
     n = int(as_scalar(as_count(n_slices, "n_slices", lo=_MIN_SLICES, hi=_MAX_SLICES), "n_slices"))
     gamma_arr = as_checked(unit_weight, "unit_weight", lo=0, lo_open=True)
     gamma = as_scalar(gamma_arr, "unit_weight")
-    ru = as_scalar(as_checked(pore_pressure_ratio, "pore_pressure_ratio", lo=0, hi=1, hi_open=True), "pore_pressure_ratio")
+    ru = as_scalar(
+        as_checked(pore_pressure_ratio, "pore_pressure_ratio", lo=0, hi=1, hi_open=True), "pore_pressure_ratio"
+    )
     tw.warn_min(gamma_arr, "unit_weight", "tripwire_unit_weight_min")
     points = _intersections(x, z, cx, cz, r)
     if len(points) != 2:

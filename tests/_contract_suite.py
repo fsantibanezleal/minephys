@@ -144,7 +144,7 @@ def _expect(fn: Fn, kwargs: dict[str, Any], argument: str, error: type[Exception
     try:
         fn(**kwargs)
     except error as err:
-        assert getattr(err, "argument", None) == argument, f"{what}: argument attribute is {err.argument!r}"
+        assert getattr(err, "argument", None) == argument, f"{what}: argument attribute is {err.argument!r}"  # noqa: PT017
         return err
     except Exception as err:
         raise AssertionError(f"{what}: raised {type(err).__name__} instead of {error.__name__}: {err}") from err

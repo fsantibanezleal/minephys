@@ -78,7 +78,8 @@ def mmc_queue(arrival_rate: Any, service_rate: Any, servers: Any) -> MMCResult:
 
     Equation
     --------
-    a = lambda / mu, rho = a / c; C = B / (1 - rho (1 - B)) with the Erlang-B recursion B_k = a B_(k-1) / (k + a B_(k-1));
+    a = lambda / mu, rho = a / c; C = B / (1 - rho (1 - B)) with the Erlang-B recursion
+    B_k = a B_(k-1) / (k + a B_(k-1));
     W_q = C / (c mu - lambda), L_q = lambda W_q, W = W_q + 1 / mu, L = lambda W.
 
     Source
@@ -236,7 +237,8 @@ def mean_value_analysis(population: Any, service_time: Any, visit_ratio: Any, st
     kinds = list(station_type)
     if len(kinds) > _MAX_STATIONS:
         raise InputError(
-            f"argument 'station_type' allows at most {_MAX_STATIONS} stations, got {len(kinds)}", argument="station_type"
+            f"argument 'station_type' allows at most {_MAX_STATIONS} stations, got {len(kinds)}",
+            argument="station_type",
         )
     for kind in kinds:
         check_option(kind, "station_type", ("queue", "delay"))

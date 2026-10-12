@@ -438,10 +438,12 @@ def exported_names(root: Path, module: str) -> set[str] | None:
             names: set[str] = set()
             for node in ast.walk(tree):
                 target = None
-                if isinstance(node, ast.Assign) and any(isinstance(t, ast.Name) and t.id == "__all__" for t in node.targets):
-                    target = node.value
-                elif isinstance(node, ast.AnnAssign | ast.AugAssign) and (
-                    isinstance(node.target, ast.Name) and node.target.id == "__all__"
+                if (
+                    isinstance(node, ast.Assign)
+                    and any(isinstance(t, ast.Name) and t.id == "__all__" for t in node.targets)
+                ) or (
+                    isinstance(node, ast.AnnAssign | ast.AugAssign)
+                    and (isinstance(node.target, ast.Name) and node.target.id == "__all__")
                 ):
                     target = node.value
                 if isinstance(target, ast.List | ast.Tuple):

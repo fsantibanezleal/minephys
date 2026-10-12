@@ -1,3 +1,4 @@
+# ruff: noqa: E402
 """Pyodide smoke subset (spec 000 FR-000-25): import every public subpackage and check one worked value of each.
 
 Runs inside Pyodide (see run_smoke.mjs) and also under CPython. Each module prints `SMOKE OK <module>`; the runner

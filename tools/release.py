@@ -85,10 +85,14 @@ def check_knowledge(previous: Path, current: Path, changelog: Path) -> int:
     unnamed = [
         row_id
         for row_id in sorted(before.keys() & after.keys())
-        if before[row_id] != after[row_id] and not re.search(rf"(?<![A-Za-z0-9_]){re.escape(row_id)}(?![A-Za-z0-9_])", unreleased)
+        if before[row_id] != after[row_id]
+        and not re.search(rf"(?<![A-Za-z0-9_]){re.escape(row_id)}(?![A-Za-z0-9_])", unreleased)
     ]
     for row_id in unnamed:
-        print(f"{row_id}: value, range or verification changed since the previous release; name it under [Unreleased] in {changelog.name}")
+        print(
+            f"{row_id}: value, range or verification changed since the previous release; "
+            f"name it under [Unreleased] in {changelog.name}"
+        )
     if unnamed:
         return 1
     print("OK")

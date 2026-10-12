@@ -79,6 +79,9 @@ build-backend = "setuptools.build_meta"
 [tool.ruff.lint.per-file-ignores]
 "tests/**" = ["E501", "PT018", "RUF001", "RUF007", "UP031", "SIM102", "RUF005", "PERF401", "F401"]
 
+[tool.ruff.lint.extend-per-file-ignores]
+"tests/**" = ["RUF100", "I001"]
+
 [tool.ruff.format]
 exclude = ["tests/**"]
 

@@ -64,7 +64,12 @@ def slice_arrays(
 
 
 def strengths(
-    cohesion: Any, friction_angle: Any, size: int, *, cohesion_name: str = "cohesion", friction_name: str = "friction_angle"
+    cohesion: Any,
+    friction_angle: Any,
+    size: int,
+    *,
+    cohesion_name: str = "cohesion",
+    friction_name: str = "friction_angle",
 ) -> tuple[FloatArray, FloatArray]:
     """Per-slice cohesion and friction angle (scalars broadcast); emits the tripwires of section 7.3."""
     c = as_checked(cohesion, cohesion_name, lo=0)
@@ -79,7 +84,7 @@ def strengths(
 
 
 def warn_strengths(c: FloatArray, phi: FloatArray, cohesion_name: str, friction_name: str) -> None:
-    """Tripwires: 0 < cohesion < tripwire_cohesion_min (kPa passed as Pa) and friction above tripwire_friction_angle_max."""
+    """Tripwires: 0 < cohesion < tripwire_cohesion_min (kPa passed as Pa), friction above its maximum."""
     limit = tw.limit("tripwire_cohesion_min")
     tw.warn_min(np.where(c > 0, c, limit), cohesion_name, "tripwire_cohesion_min")
     tw.warn_max(phi, friction_name, "tripwire_friction_angle_max")
@@ -210,7 +215,14 @@ def bishop_simplified_fos(
 
 
 def _spencer_terms(
-    f: float, theta: float, ell: FloatArray, w: FloatArray, alpha: FloatArray, u: FloatArray, c: FloatArray, tan_phi: FloatArray
+    f: float,
+    theta: float,
+    ell: FloatArray,
+    w: FloatArray,
+    alpha: FloatArray,
+    u: FloatArray,
+    c: FloatArray,
+    tan_phi: FloatArray,
 ) -> FloatArray:
     """Interslice terms Q_i of Spencer's method for (F, theta); a non-positive denominator names the first slice."""
     den = np.cos(alpha - theta) + np.sin(alpha - theta) * tan_phi / f
@@ -235,7 +247,14 @@ def _residuals(f: float, theta: float, *args: Any) -> tuple[float, float, float]
 
 
 def spencer_core(
-    b: FloatArray, w: FloatArray, alpha: FloatArray, u: FloatArray, c: FloatArray, phi: FloatArray, tol: float, max_iter: int
+    b: FloatArray,
+    w: FloatArray,
+    alpha: FloatArray,
+    u: FloatArray,
+    c: FloatArray,
+    phi: FloatArray,
+    tol: float,
+    max_iter: int,
 ) -> tuple[float, float]:
     """Spencer's (F, theta) by a damped Newton iteration on the force and moment equations."""
     ell = b / np.cos(alpha)
@@ -362,4 +381,3 @@ def spencer_fos(
     t, n = iteration_controls(tol, max_iter)
     fos, theta = spencer_core(b, w, alpha, u, c, phi, t, n)
     return np.float64(fos), np.float64(theta)
-

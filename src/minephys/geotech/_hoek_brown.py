@@ -322,7 +322,10 @@ def equivalent_mohr_coulomb(sigma_ci: Any, mb: Any, s: Any, a: Any, sigma3_max: 
     x = 6 * av * m * power
     phi = np.arcsin(x / (2 * (1 + av) * (2 + av) + x))
     cohesion = (
-        ci * ((1 + 2 * av) * sv + (1 - av) * m * s3n) * power / ((1 + av) * (2 + av) * np.sqrt(1 + x / ((1 + av) * (2 + av))))
+        ci
+        * ((1 + 2 * av) * sv + (1 - av) * m * s3n)
+        * power
+        / ((1 + av) * (2 + av) * np.sqrt(1 + x / ((1 + av) * (2 + av))))
     )
     return finalize(cohesion, ci, m, sv, av, s3), finalize(phi, ci, m, sv, av, s3)
 

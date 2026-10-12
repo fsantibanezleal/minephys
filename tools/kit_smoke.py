@@ -68,7 +68,9 @@ def main(argv: list[str] | None = None) -> int:
     if path is not None:
         prelude += f"sys.path.insert(0, {str(path)!r}); "
     code = prelude + f"exec(compile(open({str(SMOKE)!r}, encoding='utf-8').read(), 'smoke.py', 'exec'))"
-    run = subprocess.run([str(kit), "-c", code], capture_output=True, text=True, encoding="utf-8", errors="replace", check=False)
+    run = subprocess.run(
+        [str(kit), "-c", code], capture_output=True, text=True, encoding="utf-8", errors="replace", check=False
+    )
     sys.stdout.write(run.stdout)
     if run.returncode != 0:
         print(run.stderr, file=sys.stderr)

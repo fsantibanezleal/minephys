@@ -31,7 +31,9 @@ def _vectors(displacement: Any, radar_position: Any, target_position: Any) -> tu
     ):
         arr = as_float_array(value, name)
         if arr.ndim < 1 or arr.shape[-1] != 3:
-            raise InputError(f"argument '{name}' needs 3-vectors in its last axis, got shape {tuple(arr.shape)}", argument=name)
+            raise InputError(
+                f"argument '{name}' needs 3-vectors in its last axis, got shape {tuple(arr.shape)}", argument=name
+            )
         arrays[name] = check_finite(arr, name)
     return arrays["displacement"], arrays["radar_position"], arrays["target_position"]
 
@@ -253,4 +255,3 @@ def max_unambiguous_los_step(wavelength: Any) -> Any:
     """
     lam = _wavelength(wavelength)
     return finalize(lam / 4, lam)
-

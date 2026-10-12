@@ -219,6 +219,7 @@ def required_samples(pof: Any, relative_error: Any) -> Any:
     if np.any(~np.isfinite(quotient) | (quotient > float(2**62))):
         raise InputError("the target needs more than 2**62 samples", argument="pof")
     nearest = np.rint(quotient)
-    count = np.where(np.abs(quotient - nearest) <= _INTEGER_RULE * quotient, nearest, np.ceil(quotient)).astype(np.int64)
+    count = np.where(np.abs(quotient - nearest) <= _INTEGER_RULE * quotient, nearest, np.ceil(quotient)).astype(
+        np.int64
+    )
     return np.int64(count[()]) if count.ndim == 0 else count
-

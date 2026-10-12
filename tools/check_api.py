@@ -154,7 +154,12 @@ def _unit_of(doc: str, name: str) -> str | None:
             in_params = True
             continue
         if in_params:
-            if i + 1 < len(lines) and line.strip() and set(lines[i + 1].strip()) == {"-"} and len(lines[i + 1].strip()) >= 3:
+            if (
+                i + 1 < len(lines)
+                and line.strip()
+                and set(lines[i + 1].strip()) == {"-"}
+                and len(lines[i + 1].strip()) >= 3
+            ):
                 return None
             m = re.match(rf"^{re.escape(name)}\s*:\s*(.*)$", line)
             if m:
@@ -172,23 +177,20 @@ def _describe(dotted: str, obj: Any) -> dict[str, Any]:
     elif callable(obj):
         entry["kind"] = "function"
         doc = inspect.getdoc(obj) or ""
-        params = []
-        for p in inspect.signature(obj).parameters.values():
-            params.append(
-                {
-                    "name": p.name,
-                    "kind": p.kind.name.lower(),
-                    "default": None if p.default is inspect.Parameter.empty else repr(p.default),
-                    "unit": _unit_of(doc, p.name),
-                }
-            )
+        params = [
+            {
+                "name": p.name,
+                "kind": p.kind.name.lower(),
+                "default": None if p.default is inspect.Parameter.empty else repr(p.default),
+                "unit": _unit_of(doc, p.name),
+            }
+            for p in inspect.signature(obj).parameters.values()
+        ]
         entry["parameters"] = params
     else:
         entry["kind"] = "constant"
     dep = getattr(obj, "__minephys_deprecated__", None)
-    entry["deprecated"] = (
-        {k: dep[k] for k in ("since", "removal", "replacement")} if isinstance(dep, dict) else None
-    )
+    entry["deprecated"] = {k: dep[k] for k in ("since", "removal", "replacement")} if isinstance(dep, dict) else None
     return entry
 
 

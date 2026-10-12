@@ -80,14 +80,16 @@ def _read_yaml(text: str, file: str) -> Any:
 
     loader = getattr(yaml, "CSafeLoader", yaml.SafeLoader)
     try:
-        return yaml.load(text, Loader=loader)  # noqa: S506  (a safe loader)
+        return yaml.load(text, Loader=loader)
     except yaml.YAMLError as err:
         raise KnowledgeSchemaError(f"{file}: not valid YAML: {err}", file=file) from None
 
 
 def _number(value: Any, file: str, index: int, field: str) -> float:
     if isinstance(value, bool) or not isinstance(value, int | float):
-        raise KnowledgeSchemaError(f"{file}: row {index}: {field} must be a number", file=file, index=index, field=field)
+        raise KnowledgeSchemaError(
+            f"{file}: row {index}: {field} must be a number", file=file, index=index, field=field
+        )
     return float(value)
 
 
@@ -98,7 +100,9 @@ def _row(raw: Any, name: str, file: str, index: int) -> Row:
         if key not in raw:
             raise KnowledgeSchemaError(f"{file}: row {index}: field {key} missing", file=file, index=index, field=key)
     if raw["role"] not in _ROLES:
-        raise KnowledgeSchemaError(f"{file}: row {index}: field role: unknown role", file=file, index=index, field="role")
+        raise KnowledgeSchemaError(
+            f"{file}: row {index}: field role: unknown role", file=file, index=index, field="role"
+        )
     value: float | None = None
     span: tuple[float, float] | None = None
     if "value" in raw:
@@ -116,7 +120,9 @@ def _row(raw: Any, name: str, file: str, index: int) -> Row:
         bounds = raw["range"]
         span = (_number(bounds["min"], file, index, "range"), _number(bounds["max"], file, index, "range"))
     else:
-        raise KnowledgeSchemaError(f"{file}: row {index}: value or range missing", file=file, index=index, field="value")
+        raise KnowledgeSchemaError(
+            f"{file}: row {index}: value or range missing", file=file, index=index, field="value"
+        )
     symbol = raw["symbol"]
     return Row(
         id=raw["id"],
@@ -186,7 +192,7 @@ def load_table(table: str) -> Table:
     return tables[table]
 
 
-def get_parameter(id: str) -> Row:  # noqa: A002  (the name is the spec 008 FR-008-09 signature)
+def get_parameter(id: str) -> Row:
     """The row with this id; an unknown id raises `minephys.InputError`."""
     from .._errors import InputError, InputTypeError
 
@@ -212,7 +218,7 @@ def list_parameters(
     )
 
 
-def get_value(id: str) -> float | tuple[float, float]:  # noqa: A002
+def get_value(id: str) -> float | tuple[float, float]:
     """The value of a row as a float (a `p/q` string evaluated in float64) or the `(min, max)` of a range row.
 
     An UNVERIFIED row of role `model_constant` or `parameter` emits `UnverifiedParameterWarning` naming the row id and
