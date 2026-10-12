@@ -29,7 +29,7 @@ row with the value printed in the source (transcribed into the test); the worked
 - [x] T-005-032 [US-005-3] (FR-005-23) flotation and two-product guards — test: tests/unit/test_t_005_032_flotation_guards.py
 
 ## Phase 5 — US-005-4 (P1) Mine-to-mill chain
-- [ ] T-005-040 [US-005-4] (FR-005-24, FR-005-25, P-005-14) passing size, class masses and cumulative passing against the Swebrec closed form — test: tests/unit/test_t_005_040_psd.py, tests/property/test_t_005_040_psd_properties.py
+- [x] T-005-040 [US-005-4] (FR-005-24, FR-005-25, P-005-14) passing size, class masses and cumulative passing against the Swebrec closed form — test: tests/unit/test_t_005_040_psd.py, tests/property/test_t_005_040_psd_properties.py
 - [ ] T-005-041 [US-005-4] (FR-005-26) PSD helper guards — test: tests/unit/test_t_005_041_psd_guards.py
 - [ ] T-005-042 [US-005-4] (FR-005-27, FR-005-28, P-005-13) crusher matrix model and classification function — test: tests/unit/test_t_005_042_crusher.py, tests/property/test_t_005_042_crusher_properties.py
 - [ ] T-005-043 [US-005-4] (FR-005-29) crusher guards — test: tests/unit/test_t_005_043_crusher_guards.py
