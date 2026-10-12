@@ -12,7 +12,7 @@ row with the value printed in the source (transcribed into the test); the worked
 
 ## Phase 2 — US-006-1 (P1) Haul-road emission factor
 - [x] T-006-010 [US-006-1] (FR-006-01, P-006-01, P-006-02, P-006-03) AP-42 equation 1a with SI arguments, against the published-unit form — test: tests/unit/test_t_006_010_ap42.py, tests/property/test_t_006_010_ap42_properties.py
-- [ ] T-006-011 [US-006-1] (FR-006-02, FR-006-03) validity flags, `ValidityWarning` and strict mode at the Table 13.2.2-3 bounds — test: tests/unit/test_t_006_011_ap42_validity.py
+- [x] T-006-011 [US-006-1] (FR-006-02, FR-006-03) validity flags, `ValidityWarning` and strict mode at the Table 13.2.2-3 bounds — test: tests/unit/test_t_006_011_ap42_validity.py
 - [ ] T-006-012 [US-006-1] (FR-006-04, FR-006-05, FR-006-06, P-006-04, SC-006-01) fleet-mean weight, precipitation correction, watering control efficiency and controlled factor against AP-42's printed numbers — test: tests/unit/test_t_006_012_ap42_corrections.py, tests/property/test_t_006_012_corrections_properties.py
 - [ ] T-006-013 [US-006-1] (FR-006-07) AP-42 guards — test: tests/unit/test_t_006_013_ap42_guards.py
 
