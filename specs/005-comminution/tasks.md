@@ -26,7 +26,7 @@ row with the value printed in the source (transcribed into the test); the worked
 ## Phase 4 — US-005-3 (P2) Flotation kinetics and recovery
 - [x] T-005-030 [US-005-3] (FR-005-19, FR-005-20, FR-005-21, P-005-10, P-005-11) first-order, Klimpel (quadrature and small-kt series) and cells-in-series recovery — test: tests/unit/test_t_005_030_flotation.py, tests/property/test_t_005_030_flotation_properties.py
 - [x] T-005-031 [US-005-3] (FR-005-22, P-005-12) two-product formula — test: tests/unit/test_t_005_031_two_product.py
-- [ ] T-005-032 [US-005-3] (FR-005-23) flotation and two-product guards — test: tests/unit/test_t_005_032_flotation_guards.py
+- [x] T-005-032 [US-005-3] (FR-005-23) flotation and two-product guards — test: tests/unit/test_t_005_032_flotation_guards.py
 
 ## Phase 5 — US-005-4 (P1) Mine-to-mill chain
 - [ ] T-005-040 [US-005-4] (FR-005-24, FR-005-25, P-005-14) passing size, class masses and cumulative passing against the Swebrec closed form — test: tests/unit/test_t_005_040_psd.py, tests/property/test_t_005_040_psd_properties.py
