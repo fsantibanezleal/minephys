@@ -1,0 +1,132 @@
+schema_version: 1
+title: minephys glossary
+licence: CC-BY-4.0
+terms:
+  - id: work_index
+    domain: comminution
+    term_en: Bond work index
+    term_es: índice de trabajo de Bond
+    definition_en: "Energy per unit mass needed to reduce a material from a very large feed to 80 % passing 100 micrometres; the scale factor of Bond's third law of comminution."
+    definition_es: "Energía por unidad de masa necesaria para reducir un material desde una alimentación muy gruesa hasta 80 % pasante en 100 micrómetros; el factor de escala de la tercera ley de conminución de Bond."
+    see_also: [p80, specific_energy]
+  - id: p80
+    domain: comminution
+    term_en: P80 (80 % passing size)
+    term_es: P80 (tamaño 80 % pasante)
+    definition_en: "Particle size below which 80 % of the mass of a product lies; F80 is the same measure of a feed."
+    definition_es: "Tamaño de partícula bajo el cual se encuentra el 80 % de la masa de un producto; F80 es la misma medida aplicada a una alimentación."
+  - id: specific_energy
+    domain: comminution
+    term_en: specific comminution energy
+    term_es: energía específica de conminución
+    definition_en: "Energy consumed per unit mass of ore processed, in J/kg in minephys (kWh/t in most of the literature)."
+    definition_es: "Energía consumida por unidad de masa de mineral procesado, en J/kg en minephys (kWh/t en la mayor parte de la literatura)."
+  - id: population_balance
+    domain: comminution
+    term_en: population balance model
+    term_es: modelo de balance poblacional
+    definition_en: "Mass balance of a mill written per size class, with a selection function (rate of breakage of each class) and a breakage function (how a broken class is distributed over the finer ones)."
+    definition_es: "Balance de masa de un molino escrito por clase de tamaño, con una función de selección (tasa de quiebre de cada clase) y una función de quiebre (cómo se reparte una clase quebrada entre las más finas)."
+    see_also: [selection_function, breakage_function]
+  - id: selection_function
+    domain: comminution
+    term_en: selection function
+    term_es: función de selección
+    definition_en: "Rate at which material of one size class is selected for breakage in a mill, in 1/s."
+    definition_es: "Tasa a la que el material de una clase de tamaño es seleccionado para quiebre en un molino, en 1/s."
+  - id: breakage_function
+    domain: comminution
+    term_en: breakage function
+    term_es: función de quiebre
+    definition_en: "Fraction of the material broken from one size class that falls into each finer class."
+    definition_es: "Fracción del material quebrado de una clase de tamaño que cae en cada clase más fina."
+  - id: flotation_recovery
+    domain: comminution
+    term_en: flotation recovery
+    term_es: recuperación en flotación
+    definition_en: "Fraction of the valuable mineral in the feed that reports to the concentrate."
+    definition_es: "Fracción del mineral valioso de la alimentación que se reporta al concentrado."
+  - id: emission_factor
+    domain: environment
+    term_en: emission factor
+    term_es: factor de emisión
+    definition_en: "Mass of a pollutant emitted per unit of activity, here grams of dust per vehicle kilometre travelled on an unpaved road."
+    definition_es: "Masa de un contaminante emitida por unidad de actividad, aquí gramos de polvo por kilómetro recorrido por un vehículo en un camino sin pavimentar."
+    see_also: [silt_content]
+  - id: silt_content
+    domain: environment
+    term_en: silt content
+    term_es: contenido de limo
+    definition_en: "Mass fraction of a road surface material that passes a 75 micrometre sieve; the main surface input of the unpaved-road emission factor."
+    definition_es: "Fracción en masa de un material de superficie de camino que pasa una malla de 75 micrómetros; la principal variable de superficie del factor de emisión de caminos sin pavimentar."
+  - id: stability_class
+    domain: environment
+    term_en: Pasquill stability class
+    term_es: clase de estabilidad de Pasquill
+    definition_en: "Letter A (very unstable) to F (very stable) that sorts the turbulence of the atmosphere and selects the dispersion coefficients of a plume."
+    definition_es: "Letra A (muy inestable) a F (muy estable) que clasifica la turbulencia de la atmósfera y selecciona los coeficientes de dispersión de una pluma."
+    see_also: [gaussian_plume]
+  - id: gaussian_plume
+    domain: environment
+    term_en: Gaussian plume
+    term_es: pluma gaussiana
+    definition_en: "Steady-state model in which the concentration downwind of a source is normally distributed across the wind and in height, with spreads that grow with distance."
+    definition_es: "Modelo estacionario en que la concentración a sotavento de una fuente se distribuye normalmente transversal al viento y en altura, con dispersiones que crecen con la distancia."
+  - id: transmittance
+    domain: environment
+    term_en: transmittance
+    term_es: transmitancia
+    definition_en: "Fraction of the light that crosses a path through a medium; for a uniform dusty path it is exp(-beta L) (Beer-Lambert law)."
+    definition_es: "Fracción de la luz que atraviesa una trayectoria en un medio; para una trayectoria uniforme con polvo es exp(-beta L) (ley de Beer-Lambert)."
+  - id: extinction_coefficient
+    domain: environment
+    term_en: extinction coefficient
+    term_es: coeficiente de extinción
+    definition_en: "Rate at which a beam is attenuated by absorption and scattering along a path, in 1/m."
+    definition_es: "Tasa a la que un haz se atenúa por absorción y dispersión a lo largo de una trayectoria, en 1/m."
+    see_also: [transmittance]
+  - id: block_model
+    domain: planning
+    term_en: block model
+    term_es: modelo de bloques
+    definition_en: "Regular three-dimensional grid of blocks of an orebody, each with a tonnage, grade and the cost and revenue figures derived from them."
+    definition_es: "Grilla tridimensional regular de bloques de un yacimiento, cada uno con tonelaje, ley y las cifras de costo e ingreso derivadas de ellos."
+    see_also: [ultimate_pit]
+  - id: ultimate_pit
+    domain: planning
+    term_en: ultimate pit
+    term_es: pit final
+    definition_en: "The set of blocks whose extraction maximises the undiscounted value subject to the slope (precedence) constraints; found as a maximum closure by a minimum cut."
+    definition_es: "El conjunto de bloques cuya extracción maximiza el valor sin descontar sujeto a las restricciones de talud (precedencia); se obtiene como clausura máxima mediante un corte mínimo."
+    see_also: [block_model, cutoff_grade]
+  - id: cutoff_grade
+    domain: planning
+    term_en: cut-off grade
+    term_es: ley de corte
+    definition_en: "Grade that separates the material sent to the plant from the material treated as waste; the breakeven grade is the one at which a block pays its own processing cost."
+    definition_es: "Ley que separa el material enviado a la planta del material tratado como estéril; la ley de equilibrio es aquella en que un bloque paga su propio costo de procesamiento."
+  - id: npv
+    domain: planning
+    term_en: net present value
+    term_es: valor actual neto
+    definition_en: "Sum of the cash flows of a schedule, each divided by (1 + r) raised to the period in which it occurs."
+    definition_es: "Suma de los flujos de caja de un programa, cada uno dividido por (1 + r) elevado al período en que ocurre."
+  - id: strip_ratio
+    domain: planning
+    term_en: strip ratio
+    term_es: razón de lastre
+    definition_en: "Mass or volume of waste that has to be moved to obtain one unit of ore."
+    definition_es: "Masa o volumen de estéril que debe moverse para obtener una unidad de mineral."
+  - id: precedence
+    domain: planning
+    term_en: precedence constraint
+    term_es: restricción de precedencia
+    definition_en: "Rule that a block cannot be mined before the blocks above it that the slope angle requires to be removed first, written as arcs between blocks."
+    definition_es: "Regla según la cual un bloque no puede extraerse antes que los bloques sobre él que el ángulo de talud exige retirar primero, escrita como arcos entre bloques."
+    see_also: [ultimate_pit]
+  - id: unverified
+    domain: general
+    term_en: UNVERIFIED
+    term_es: SIN VERIFICAR
+    definition_en: "Label of a value, equation or page reference that was not confirmed against its primary source; every UNVERIFIED item raises a warning when it is used."
+    definition_es: "Etiqueta de un valor, ecuación o referencia de página que no se confirmó contra su fuente primaria; todo elemento SIN VERIFICAR emite una advertencia al usarse."

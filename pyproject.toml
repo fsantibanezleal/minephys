@@ -83,3 +83,12 @@ tests_dir = ["tests/unit/", "tests/property/"]
 [build-system]
 requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
+
+[tool.setuptools.package-data]
+minephys = [
+  "py.typed",
+  "knowledge/*.yaml",
+  "knowledge/*.bib",
+  "knowledge/share-alike/*.yaml",
+  "knowledge/catalogue/*.yaml",
+]

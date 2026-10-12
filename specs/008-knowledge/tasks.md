@@ -36,7 +36,7 @@ knowledge task of every module spec (001–007).
 - [x] T-008-060 (NFR-008-01) no knowledge file read at import (audit hook) — test: tests/unit/test_t_008_060_no_import_io.py
 - [x] T-008-061 (NFR-008-02) register the cold and warm load in `tools/bench.py` — test: tests/unit/test_t_008_061_bench_registry.py
 - [x] T-008-062 (NFR-008-03) knowledge smoke tests in the Pyodide job — test: tests/pyodide/test_t_008_062_knowledge_smoke.py
-- [ ] T-008-063 (NFR-008-04) wheel contains the catalogue files — test: tests/contract/test_t_008_063_wheel_catalogue.py
+- [x] T-008-063 (NFR-008-04) wheel contains the catalogue files — test: tests/contract/test_t_008_063_wheel_catalogue.py
 - [x] T-008-064 (NFR-008-05) import audit of `minephys.knowledge` — test: tests/contract/test_t_008_064_imports.py
 - [ ] T-008-070 (SC-008-01) CI step running `python -m minephys.knowledge validate` on every push — test: tests/contract/test_t_008_070_integrity_step.py
 
