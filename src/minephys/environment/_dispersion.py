@@ -222,18 +222,22 @@ def gaussian_plume(
     --------------
     isc3_lid_uniform_ratio
     """
-    qa, ua, ya, za, ha, sy, sz = broadcast_all(
-        q=non_negative(q, "q"),
-        u=positive(u, "u"),
-        y=_real(y, "y"),
-        z=non_negative(z, "z"),
-        h=non_negative(h, "h"),
-        sigma_y=positive(sigma_y, "sigma_y"),
-        sigma_z=positive(sigma_z, "sigma_z"),
-    )
-    base = qa / (2 * np.pi * ua * sy * sz) * np.exp(-(ya**2) / (2 * sy**2))
+    parts = {
+        "q": non_negative(q, "q"),
+        "u": positive(u, "u"),
+        "y": _real(y, "y"),
+        "z": non_negative(z, "z"),
+        "h": non_negative(h, "h"),
+        "sigma_y": positive(sigma_y, "sigma_y"),
+        "sigma_z": positive(sigma_z, "sigma_z"),
+    }
+    qa, ua, ya, za, ha, sy, sz = broadcast_all(**parts)
     if mixing_height is None:
-        return finalize(base * _v_term(za, ha, sz), qa, ua, ya, za, ha, sy, sz)
+        # the exponentials run on the un-broadcast shapes (a receptor grid has y along one axis and z along the
+        # other), so the grid costs two products instead of four exponentials of the full size
+        q0, u0, y0, z0, h0, sy0, sz0 = parts.values()
+        base = q0 / (2 * np.pi * u0 * sy0 * sz0) * np.exp(-(y0**2) / (2 * sy0**2))
+        return finalize(base * _v_term(z0, h0, sz0), qa, ua, ya, za, ha, sy, sz)
     zi = positive(mixing_height, "mixing_height")
     qa, ua, ya, za, ha, sy, sz, zi = broadcast_all(
         q=qa, u=ua, y=ya, z=za, h=ha, sigma_y=sy, sigma_z=sz, mixing_height=zi
