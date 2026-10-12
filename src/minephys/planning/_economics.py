@@ -311,7 +311,7 @@ def _periods(value: Any) -> npt.NDArray[np.int64]:
     arr = np.asarray(value)
     if arr.dtype.kind not in "iu":
         raise InputTypeError(f"argument 'periods' must be an integer array, got dtype {arr.dtype}", argument="periods")
-    check_rank(arr, "periods", 1)  # type: ignore[arg-type]
+    check_rank(arr, "periods", 1)
     if arr.size and int(arr.max()) > np.iinfo(np.int64).max:
         raise InputError("argument 'periods' is out of range", argument="periods")
     if arr.size and int(arr.min()) < -1:
