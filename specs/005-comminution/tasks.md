@@ -15,7 +15,7 @@ row with the value printed in the source (transcribed into the test); the worked
 - [x] T-005-011 [US-005-1] (FR-005-04) Bond functions reject NaN/inf/non-positive/unordered/unbroadcastable/non-numeric inputs — test: tests/unit/test_t_005_011_bond_guards.py
 - [x] T-005-012 [US-005-1] (FR-005-05, FR-005-06, FR-005-07, FR-005-08, FR-005-09, FR-005-10, FR-005-11, P-005-03, P-005-04, P-005-05, SC-005-01) Morrell relation and circuit terms against the Morrell-method guideline Annex C — test: tests/unit/test_t_005_012_morrell.py, tests/property/test_t_005_012_morrell_properties.py
 - [x] T-005-013 [US-005-1] (FR-005-12) Morrell functions reject hostile inputs, sizes on the wrong side of 750 µm and unknown stages — test: tests/unit/test_t_005_013_morrell_guards.py
-- [ ] T-005-014 [US-005-1] (FR-005-32, FR-005-33) validity warnings below 70 µm (Bond) and 45 µm (Morrell fine term) — test: tests/unit/test_t_005_014_validity_warnings.py
+- [x] T-005-014 [US-005-1] (FR-005-32, FR-005-33) validity warnings below 70 µm (Bond) and 45 µm (Morrell fine term) — test: tests/unit/test_t_005_014_validity_warnings.py
 
 ## Phase 3 — US-005-2 (P1) Population balance grinding
 - [ ] T-005-020 [US-005-2] (FR-005-13, P-005-06, P-005-07, P-005-08) batch grinding against the analytical three-class solution, the repeated-rate solution and a Runge–Kutta reference — test: tests/unit/test_t_005_020_pbm_batch.py, tests/property/test_t_005_020_pbm_batch_properties.py
