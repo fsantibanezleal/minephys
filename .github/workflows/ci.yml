@@ -26,6 +26,7 @@ jobs:
       - run: uv sync --all-groups --locked
       - run: uv run ruff check . && uv run ruff format --check .
       - run: uv run mypy src
+      - run: uv run python -m minephys.knowledge validate
       - run: uv run python tools/trace.py --check
       - run: uv run python tools/check_tdd.py --replay
       - run: uv run python tools/check_repo.py

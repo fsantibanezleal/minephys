@@ -38,7 +38,7 @@ knowledge task of every module spec (001–007).
 - [x] T-008-062 (NFR-008-03) knowledge smoke tests in the Pyodide job — test: tests/pyodide/test_t_008_062_knowledge_smoke.py
 - [x] T-008-063 (NFR-008-04) wheel contains the catalogue files — test: tests/contract/test_t_008_063_wheel_catalogue.py
 - [x] T-008-064 (NFR-008-05) import audit of `minephys.knowledge` — test: tests/contract/test_t_008_064_imports.py
-- [ ] T-008-070 (SC-008-01) CI step running `python -m minephys.knowledge validate` on every push — test: tests/contract/test_t_008_070_integrity_step.py
+- [x] T-008-070 (SC-008-01) CI step running `python -m minephys.knowledge validate` on every push — test: tests/contract/test_t_008_070_integrity_step.py
 
 ## Phase 7 — Polish and review
 - [ ] T-008-090 mutation run on `src/minephys/knowledge/` (target `mutation.other_min` of `thresholds.yaml`); record the score
