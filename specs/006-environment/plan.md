@@ -59,14 +59,14 @@ P-006-07 (trapezoid on a 4,001 × 4,001 grid over ± 10 σ; discretisation error
 
 | Requirement | Level | Oracle | Tool |
 |---|---|---|---|
-| FR-006-01 | unit | hand calculation in published units, then converted: silt 0.10, 263,083.57 kg (290 short tons) → 0.995870 / 9.958701 / 33.739896 lb/VMT (PM2.5/PM10/PM30) = 2.806822 × 10⁻³ kg/m for PM10; silt 0.08, 181,436.95 kg (200 short tons) → PM10 6.892362 lb/VMT; reference point silt 0.12, 2,721.55 kg (3 short tons) → exactly $k$ (analytical) | pytest |
+| FR-006-01 | unit | hand calculation in published units, then converted: silt 0.10, 263,083.57 kg (290 short tons) → 0.995870 / 9.958701 / 33.739896 lb/VMT (PM2.5/PM10/PM30) = 2.806852 × 10⁻³ kg/m for PM10; silt 0.08, 181,436.95 kg (200 short tons) → PM10 6.892362 lb/VMT; reference point silt 0.12, 2,721.55 kg (3 short tons) → exactly $k$ (analytical) | pytest |
 | FR-006-02 | unit | Table 13.2.2-3 bounds (inclusive) at the bounds, just inside and just outside (± 1 ulp of the converted bound) | pytest |
 | FR-006-03 | unit | 320 short tons (290,299.12 kg) → `pytest.warns(ValidityWarning)` naming `mean_weight` and `ap42_range_weight`, value equal to the closed form; `strict=True` → `InputError` naming each failed argument | pytest |
 | FR-006-04 | unit | AP-42 example (p. 13.2.2-6): 98 % 2-ton and 2 % 20-ton vehicles → 2.36 short tons, printed "2.4 tons" (TC-2) | pytest |
 | FR-006-05 | unit | hand calculation: 9.958701 × 215/365 = 5.866084 lb/VMT at $P$ = 150 | pytest |
 | FR-006-06 | unit | Figure 13.2.2-2 vertices and hand interpolation: $M$ = 1.5 → 0.375, 3.5 → 0.85, 5 → 0.95; AP-42 Table 13.2.2-5 (p. 13.2.2-16): 7.1 lb/VMT at 0/62/68/74/80 % → printed 7.1/2.7/2.3/1.8/1.4 (TC-2) | pytest |
 | FR-006-07, 14, 18 | unit (hostile) | each hostile class of the row → `InputError` (non-numeric: `InputTypeError`) with the `argument` attribute; plus the foundation cross-cutting contract checks (T-006-054) | pytest parametrised + Hypothesis |
-| FR-006-08 | unit | hand calculation: 2.806822 × 10⁻³ kg/m × 200/86,400 s⁻¹ = 6.497274 × 10⁻⁶ kg/(m·s) | pytest |
+| FR-006-08 | unit | hand calculation: 2.806852 × 10⁻³ kg/m × 200/86,400 s⁻¹ = 6.497343 × 10⁻⁶ kg/(m·s) | pytest |
 | FR-006-09 | unit | ISC3 Tables 1-1/1-2 by hand: class D at 1 km → σ_y = 68.126741 m, σ_z = 32.093 m; D at 0.5 km → 36.146194, 18.296893; C at 1 km → 103.113800, 61.141; F at 2 km → 63.675319, 21.627177; A at 0.2 km → 49.971379, 29.301954; A at 3.5 km → σ_z = 5,000 m; urban D at 1,000 m (Tables 1-3/1-4) → 135.224681, 122.788123; band-edge convention at 0.30 km (D) and 3.11 km (A) | pytest |
 | FR-006-10 | unit | urban class D at 50 m → `pytest.warns(ValidityWarning)` with `argument == "x"`; at 100 m no warning | pytest |
 | FR-006-11 | unit + property | hand calculation: $q$ = 10⁻³ kg/s, $u$ = 3 m/s, σ_y = 36 m, σ_z = 20 m, ground-level centreline: $h$ = 0 → $q/(\pi u \sigma_y \sigma_z)$ = 1.47365688 × 10⁻⁷ kg/m³; $h$ = 10 m → 1.30049763 × 10⁻⁷ kg/m³; P-006-07 by quadrature | pytest + Hypothesis |
