@@ -28,10 +28,36 @@ class YamlRejected(ValueError):
     """The file violates a hardening rule; the message names the rule."""
 
 
+def _check_event(event: Any, depth: int) -> int:
+    """The hardening rules that act on one parser event; returns the nesting depth after it."""
+    import yaml
+
+    if isinstance(event, yaml.events.AliasEvent):
+        raise YamlRejected("aliases are not allowed")
+    if getattr(event, "anchor", None) is not None:
+        raise YamlRejected("anchors are not allowed")
+    tag = getattr(event, "tag", None)
+    if tag is not None and tag not in _CORE_TAGS:
+        raise YamlRejected(f"tag {tag!r} is outside the YAML core schema")
+    if isinstance(event, yaml.events.MappingStartEvent | yaml.events.SequenceStartEvent):
+        depth += 1
+        if depth > MAX_DEPTH:
+            raise YamlRejected(f"nesting is deeper than {MAX_DEPTH} levels")
+    elif isinstance(event, yaml.events.MappingEndEvent | yaml.events.SequenceEndEvent):
+        depth -= 1
+    return depth
+
+
 def _make_loader() -> type:
     import yaml
 
-    class _KnowledgeLoader(yaml.SafeLoader):
+    # libyaml (the C parser) is used when the wheel has it: the cold load of all packaged knowledge is then a few
+    # tens of milliseconds instead of a second. The event rules run in a first pass over the C parser; the value
+    # rules (repeated keys, merge keys) run on the constructed mappings, so both parsers reject the same files.
+    fast = bool(getattr(yaml, "__with_libyaml__", False))
+    base: Any = yaml.CSafeLoader if fast else yaml.SafeLoader
+
+    class _KnowledgeLoader(base):  # type: ignore[misc]
         yaml_implicit_resolvers = {  # noqa: RUF012
             first: [(tag, regexp) for tag, regexp in entries if tag != "tag:yaml.org,2002:timestamp"]
             for first, entries in yaml.SafeLoader.yaml_implicit_resolvers.items()
@@ -41,19 +67,11 @@ def _make_loader() -> type:
             super().__init__(stream)
             self._depth = 0
 
-        def compose_node(self, parent: Any, index: Any) -> Any:
-            if self.check_event(yaml.events.AliasEvent):
-                raise YamlRejected("aliases are not allowed")
+        def compose_node(self, parent: Any, index: Any) -> Any:  # used by the pure-Python parser only
             event = self.peek_event()
-            if event.anchor is not None:
-                raise YamlRejected("anchors are not allowed")
-            if event.tag is not None and event.tag not in _CORE_TAGS:
-                raise YamlRejected(f"tag {event.tag!r} is outside the YAML core schema")
-            collection = isinstance(event, yaml.events.MappingStartEvent | yaml.events.SequenceStartEvent)
-            if collection:
-                self._depth += 1
-                if self._depth > MAX_DEPTH:
-                    raise YamlRejected(f"nesting is deeper than {MAX_DEPTH} levels")
+            depth = _check_event(event, self._depth)
+            collection = depth != self._depth
+            self._depth = depth
             try:
                 return super().compose_node(parent, index)
             finally:
@@ -91,12 +109,20 @@ def load_document(raw: bytes) -> Any:
 
     if _loader_class is None:
         _loader_class = _make_loader()
+    try:
+        if getattr(yaml, "__with_libyaml__", False):
+            scan = yaml.cyaml.CParser(text)
+            try:
+                depth = 0
+                while scan.check_event():
+                    depth = _check_event(scan.get_event(), depth)
+            finally:
+                scan.dispose()
+    except yaml.YAMLError as err:
+        raise YamlRejected(f"not valid YAML: {str(err).splitlines()[0] if str(err) else type(err).__name__}") from None
     loader = _loader_class(text)
     try:
-        node = loader.get_single_node()
-        if node is None:
-            return None
-        return loader.construct_document(node)
+        return loader.get_single_data()
     except YamlRejected:
         raise
     except yaml.YAMLError as err:
