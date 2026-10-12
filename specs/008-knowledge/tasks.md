@@ -13,7 +13,7 @@ knowledge task of every module spec (001–007).
 - [x] T-008-010 [US-008-1] (FR-008-01, FR-008-02, FR-008-05, FR-008-09, P-008-01, P-008-02) table loading, DC-000-02 rules, cross-file integrity, cached immutable API, agreement with the JSON Schema — test: tests/unit/test_t_008_010_tables.py, tests/property/test_t_008_010_schema_agreement.py
 - [x] T-008-011 [US-008-1] (FR-008-03, P-008-05) BibTeX-subset parser and renderer with DC-000-03 rules — test: tests/unit/test_t_008_011_bibtex.py, tests/property/test_t_008_011_bibtex_roundtrip.py
 - [x] T-008-012 [US-008-4] (FR-008-04) equation and glossary catalogue rules — test: tests/unit/test_t_008_012_catalogues.py
-- [ ] T-008-013 [US-008-1] (FR-008-06, FR-008-07) schema errors and hostile YAML (size, encoding, tags, aliases, duplicates, depth) — test: tests/unit/test_t_008_013_yaml_guards.py
+- [x] T-008-013 [US-008-1] (FR-008-06, FR-008-07) schema errors and hostile YAML (size, encoding, tags, aliases, duplicates, depth) — test: tests/unit/test_t_008_013_yaml_guards.py
 - [ ] T-008-014 [US-008-1] (FR-008-08) hostile BibTeX — test: tests/unit/test_t_008_014_bibtex_guards.py
 - [ ] T-008-015 [US-008-1] (FR-008-10) hostile table names and unknown ids (path traversal, no file opened) — test: tests/unit/test_t_008_015_name_guards.py
 - [ ] T-008-016 [US-008-4] (FR-008-22) absent catalogue read as empty; a present table or catalogue file with no row or entry rejected — test: tests/unit/test_t_008_016_absent_catalogues.py
