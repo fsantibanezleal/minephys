@@ -57,7 +57,7 @@ def _make_loader() -> type:
     fast = bool(getattr(yaml, "__with_libyaml__", False))
     base: Any = yaml.CSafeLoader if fast else yaml.SafeLoader
 
-    class _KnowledgeLoader(base):  # type: ignore[misc]
+    class _KnowledgeLoader(base):
         yaml_implicit_resolvers = {  # noqa: RUF012
             first: [(tag, regexp) for tag, regexp in entries if tag != "tag:yaml.org,2002:timestamp"]
             for first, entries in yaml.SafeLoader.yaml_implicit_resolvers.items()
@@ -111,7 +111,7 @@ def load_document(raw: bytes) -> Any:
         _loader_class = _make_loader()
     try:
         if getattr(yaml, "__with_libyaml__", False):
-            scan = yaml.cyaml.CParser(text)
+            scan = yaml.cyaml.CParser(text)  # type: ignore[attr-defined]
             try:
                 depth = 0
                 while scan.check_event():
