@@ -11,7 +11,7 @@ row with the value printed in the source (transcribed into the test); the worked
 - [x] T-005-001 [US-005-5] (DC-005-01, DC-005-02) `knowledge/comminution.yaml` rows of spec §7, the comminution entries of `knowledge/catalogue/equations.yaml` and the §7 bibliography entries; transcription pins of every verified row — test: tests/contract/test_t_005_001_comminution_knowledge.py
 
 ## Phase 2 — US-005-1 (P1) Energy–size laws
-- [ ] T-005-010 [US-005-1] (FR-005-01, FR-005-02, FR-005-03, P-005-01, P-005-02, P-005-03, SC-005-01) Bond's law, operating work index and ball-mill test work index against the Bond-efficiency guideline examples — test: tests/unit/test_t_005_010_bond.py, tests/property/test_t_005_010_bond_properties.py
+- [x] T-005-010 [US-005-1] (FR-005-01, FR-005-02, FR-005-03, P-005-01, P-005-02, P-005-03, SC-005-01) Bond's law, operating work index and ball-mill test work index against the Bond-efficiency guideline examples — test: tests/unit/test_t_005_010_bond.py, tests/property/test_t_005_010_bond_properties.py
 - [ ] T-005-011 [US-005-1] (FR-005-04) Bond functions reject NaN/inf/non-positive/unordered/unbroadcastable/non-numeric inputs — test: tests/unit/test_t_005_011_bond_guards.py
 - [ ] T-005-012 [US-005-1] (FR-005-05, FR-005-06, FR-005-07, FR-005-08, FR-005-09, FR-005-10, FR-005-11, P-005-03, P-005-04, P-005-05, SC-005-01) Morrell relation and circuit terms against the Morrell-method guideline Annex C — test: tests/unit/test_t_005_012_morrell.py, tests/property/test_t_005_012_morrell_properties.py
 - [ ] T-005-013 [US-005-1] (FR-005-12) Morrell functions reject hostile inputs, sizes on the wrong side of 750 µm and unknown stages — test: tests/unit/test_t_005_013_morrell_guards.py
