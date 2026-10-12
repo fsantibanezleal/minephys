@@ -21,7 +21,7 @@ row with the value printed in the source (transcribed into the test); the worked
 - [x] T-005-020 [US-005-2] (FR-005-13, P-005-06, P-005-07, P-005-08) batch grinding against the analytical three-class solution, the repeated-rate solution and a Runge–Kutta reference — test: tests/unit/test_t_005_020_pbm_batch.py, tests/property/test_t_005_020_pbm_batch_properties.py
 - [x] T-005-021 [US-005-2] (FR-005-14, P-005-06, P-005-09) continuous perfectly mixed mill with N tanks — test: tests/unit/test_t_005_021_pbm_continuous.py, tests/property/test_t_005_021_pbm_continuous_properties.py
 - [x] T-005-022 [US-005-2] (FR-005-16, FR-005-17) Austin selection and breakage forms — test: tests/unit/test_t_005_022_austin_forms.py
-- [ ] T-005-023 [US-005-2] (FR-005-15, FR-005-18) PBM and Austin guards (shapes, triangularity, column sums, sink class, oversized n) — test: tests/unit/test_t_005_023_pbm_guards.py
+- [x] T-005-023 [US-005-2] (FR-005-15, FR-005-18) PBM and Austin guards (shapes, triangularity, column sums, sink class, oversized n) — test: tests/unit/test_t_005_023_pbm_guards.py
 
 ## Phase 4 — US-005-3 (P2) Flotation kinetics and recovery
 - [ ] T-005-030 [US-005-3] (FR-005-19, FR-005-20, FR-005-21, P-005-10, P-005-11) first-order, Klimpel (quadrature and small-kt series) and cells-in-series recovery — test: tests/unit/test_t_005_030_flotation.py, tests/property/test_t_005_030_flotation_properties.py
