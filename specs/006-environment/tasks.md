@@ -17,7 +17,7 @@ row with the value printed in the source (transcribed into the test); the worked
 - [x] T-006-013 [US-006-1] (FR-006-07) AP-42 guards — test: tests/unit/test_t_006_013_ap42_guards.py
 
 ## Phase 3 — US-006-2 (P1) Plume dispersion
-- [ ] T-006-020 [US-006-2] (FR-006-08, FR-006-09, FR-006-10, P-006-09) line emission rate and ISC3 dispersion coefficients (rural bands, caps, urban Briggs, band-edge convention, urban near-field warning) — test: tests/unit/test_t_006_020_sigmas.py, tests/property/test_t_006_020_sigmas_properties.py
+- [x] T-006-020 [US-006-2] (FR-006-08, FR-006-09, FR-006-10, P-006-09) line emission rate and ISC3 dispersion coefficients (rural bands, caps, urban Briggs, band-edge convention, urban near-field warning) — test: tests/unit/test_t_006_020_sigmas.py, tests/property/test_t_006_020_sigmas_properties.py
 - [ ] T-006-021 [US-006-2] (FR-006-11, FR-006-12, P-006-05, P-006-06, P-006-07) point-source plume with ground reflection and the optional mixing lid — test: tests/unit/test_t_006_021_plume.py, tests/metamorphic/test_t_006_021_plume_mr.py
 - [ ] T-006-022 [US-006-2] (FR-006-13, P-006-08) infinite and finite crosswind line sources — test: tests/unit/test_t_006_022_line_source.py, tests/metamorphic/test_t_006_022_line_source_mr.py
 - [ ] T-006-023 [US-006-2] (FR-006-14) dispersion and plume guards — test: tests/unit/test_t_006_023_plume_guards.py
