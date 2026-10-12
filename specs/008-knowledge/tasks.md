@@ -33,7 +33,7 @@ knowledge task of every module spec (001–007).
 - [x] T-008-042 [US-008-2] (FR-008-20) `knowledge_changes` for the foundation's release check — test: tests/unit/test_t_008_042_knowledge_changes.py
 
 ## Phase 6 — Non-functional and integrity
-- [ ] T-008-060 (NFR-008-01) no knowledge file read at import (audit hook) — test: tests/unit/test_t_008_060_no_import_io.py
+- [x] T-008-060 (NFR-008-01) no knowledge file read at import (audit hook) — test: tests/unit/test_t_008_060_no_import_io.py
 - [ ] T-008-061 (NFR-008-02) register the cold and warm load in `tools/bench.py` — test: tests/unit/test_t_008_061_bench_registry.py
 - [ ] T-008-062 (NFR-008-03) knowledge smoke tests in the Pyodide job — test: tests/pyodide/test_t_008_062_knowledge_smoke.py
 - [ ] T-008-063 (NFR-008-04) wheel contains the catalogue files — test: tests/contract/test_t_008_063_wheel_catalogue.py
