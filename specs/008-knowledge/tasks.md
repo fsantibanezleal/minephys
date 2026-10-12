@@ -16,7 +16,7 @@ knowledge task of every module spec (001–007).
 - [x] T-008-013 [US-008-1] (FR-008-06, FR-008-07) schema errors and hostile YAML (size, encoding, tags, aliases, duplicates, depth) — test: tests/unit/test_t_008_013_yaml_guards.py
 - [x] T-008-014 [US-008-1] (FR-008-08) hostile BibTeX — test: tests/unit/test_t_008_014_bibtex_guards.py
 - [x] T-008-015 [US-008-1] (FR-008-10) hostile table names and unknown ids (path traversal, no file opened) — test: tests/unit/test_t_008_015_name_guards.py
-- [ ] T-008-016 [US-008-4] (FR-008-22) absent catalogue read as empty; a present table or catalogue file with no row or entry rejected — test: tests/unit/test_t_008_016_absent_catalogues.py
+- [x] T-008-016 [US-008-4] (FR-008-22) absent catalogue read as empty; a present table or catalogue file with no row or entry rejected — test: tests/unit/test_t_008_016_absent_catalogues.py
 
 ## Phase 3 — US-008-2 (P1) UNVERIFIED rows surfaced
 - [ ] T-008-020 [US-008-2] (FR-008-11, FR-008-12, FR-008-13) `get_value` kinds, `UnverifiedParameterWarning` by role, no default filtering — test: tests/unit/test_t_008_020_values_and_warnings.py
