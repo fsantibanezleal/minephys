@@ -4,8 +4,8 @@ Usage:  python tools/gen_knowledge_docs.py [--root PATH] [--check]
 Writes `<root>/docs/reference/knowledge/*.md`: one page per knowledge table plus `equations.md`, `bibliography.md` and
 `glossary.md`, exactly as `minephys.knowledge.render_pages` renders them (this tool has no renderer of its own: one code
 path serves the pages, the export and the API). The pages are deterministic (no time stamp). With `--check` nothing is
-written and the exit status is 1 when a page is missing, differs or is no longer generated (stdout names the page). Knowledge
-that does not validate exits 2 naming each error, and writes nothing.
+written and the exit status is 1 when a page is missing, differs or is no longer generated (stdout names the page).
+Knowledge that does not validate exits 2 naming each error, and writes nothing.
 """
 
 from __future__ import annotations
@@ -35,7 +35,8 @@ def main(argv: list[str]) -> int:
     args = ap.parse_args(argv[1:])
     root = args.root.resolve()
     knowledge = _knowledge(root)
-    # the knowledge of the repository the tool sits in when it has one (`<root>/src/minephys/knowledge`), else the packaged one
+    # the knowledge of the repository the tool sits in when it has one (`<root>/src/minephys/knowledge`), else the
+    # packaged knowledge
     source = root / "src" / "minephys" / "knowledge"
     folder = source if source.is_dir() else None
     report = knowledge.validate_tables(folder)
@@ -56,9 +57,8 @@ def main(argv: list[str]) -> int:
             current = page.read_bytes().replace(b"\r\n", b"\n") if page.is_file() else None
             if current != data:
                 differing += 1
-                print(
-                    f"{(PAGES / name).as_posix()}: {'missing' if current is None else 'differs from the generated page'}"
-                )
+                state = "missing" if current is None else "differs from the generated page"
+                print(f"{(PAGES / name).as_posix()}: {state}")
         for page in sorted(target.glob("*.md")) if target.is_dir() else []:
             if page.name not in generated:
                 differing += 1
