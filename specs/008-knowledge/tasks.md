@@ -7,7 +7,7 @@ knowledge task of every module spec (001–007).
 
 ## Phase 1 — Setup
 - [x] T-008-001 (DC-008-01, DC-008-02, DC-008-03) `contracts/knowledge-equations.schema.json`, `knowledge-glossary.schema.json`, `knowledge-export.schema.json` with valid and invalid fixtures (no catalogue file is created here: the first entry of each catalogue is written by a module knowledge task, FR-008-22) — test: tests/contract/test_t_008_001_catalogue_schemas.py
-- [ ] T-008-002 add `jsonschema` to the `dev` dependency group (test-only reference validator), lock, and record the version; no runtime change
+- [x] T-008-002 add `jsonschema` to the `dev` dependency group (test-only reference validator), lock, and record the version; no runtime change
 
 ## Phase 2 — US-008-1 (P1) Validated tables and bibliography
 - [x] T-008-010 [US-008-1] (FR-008-01, FR-008-02, FR-008-05, FR-008-09, P-008-01, P-008-02) table loading, DC-000-02 rules, cross-file integrity, cached immutable API, agreement with the JSON Schema — test: tests/unit/test_t_008_010_tables.py, tests/property/test_t_008_010_schema_agreement.py
