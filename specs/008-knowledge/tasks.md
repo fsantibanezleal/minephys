@@ -24,7 +24,7 @@ knowledge task of every module spec (001–007).
 
 ## Phase 4 — US-008-3 (P1) One export for consumers
 - [x] T-008-030 [US-008-3] (FR-008-15, P-008-03) deterministic export valid against the export schema — test: tests/unit/test_t_008_030_export.py, tests/property/test_t_008_030_export_determinism.py
-- [ ] T-008-031 [US-008-3] (FR-008-18, FR-008-19) CLI and validation report — test: tests/unit/test_t_008_031_cli.py
+- [x] T-008-031 [US-008-3] (FR-008-18, FR-008-19) CLI and validation report — test: tests/unit/test_t_008_031_cli.py
 - [ ] T-008-032 [US-008-3] (FR-008-17) hostile output paths and CLI usage errors — test: tests/unit/test_t_008_032_output_guards.py
 
 ## Phase 5 — US-008-2/US-008-4 Pages and changes
