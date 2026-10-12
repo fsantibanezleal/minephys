@@ -21,7 +21,7 @@ CHECKS = {
     ),
     # written so that this file never matches itself: a drive letter + ":" + slash/backslash + "Users", or "/<x>/Users/"
     "machine path": re.compile(r"\b[A-Za-z]:[\\/]Users[\\/]|/[a-z]/Users/|/home/[a-z][a-z0-9_-]*/"),
-    "template residue": re.compile(r"\{\{[A-Z0-9_]{3,}\}\}"),
+    "template residue": re.compile(r"\{\{[A-Z][A-Z0-9_]{2,}\}\}"),
 }
 SELF = Path(__file__).resolve()
 

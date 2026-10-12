@@ -1,0 +1,76 @@
+# Mutation scores of the numerical modules of specs 001-008 and of the foundation (tasks T-00X-090). mutmut forks the
+# test process, so it runs on Linux only. Manual trigger only (workflow_dispatch): never scheduled. The score of each
+# module group is uploaded as an artifact; it is then recorded by hand on the T-00X-090 line of the spec's tasks.md.
+# Every action is pinned to a full commit SHA (same pins as ci.yml).
+name: Mutation
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  mutation:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 360
+    strategy:
+      fail-fast: false
+      matrix:
+        group:
+          - { id: "000-foundation", paths: "src/minephys/_validate.py,src/minephys/_solve.py,src/minephys/_random.py,src/minephys/units.py" }
+          - { id: "001-haulage", paths: "src/minephys/haulage/" }
+          - { id: "002-blasting", paths: "src/minephys/blasting/" }
+          - { id: "003-geotech", paths: "src/minephys/geotech/" }
+          - { id: "004-bulk", paths: "src/minephys/bulk/" }
+          - { id: "005-comminution", paths: "src/minephys/comminution/" }
+          - { id: "006-environment", paths: "src/minephys/environment/" }
+          - { id: "007-planning", paths: "src/minephys/planning/" }
+          - { id: "008-knowledge", paths: "src/minephys/knowledge/" }
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with: { persist-credentials: false }
+      - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
+      - run: uv sync --all-groups --locked
+      - name: Point mutmut at this group
+        env:
+          MUTATE_PATHS: ${{ matrix.group.paths }}
+        run: |
+          uv run python - <<'PY'
+          import os
+          import re
+          from pathlib import Path
+
+          paths = [p for p in os.environ["MUTATE_PATHS"].split(",") if p]
+          text = Path("pyproject.toml").read_text(encoding="utf-8")
+          line = "paths_to_mutate = [" + ", ".join(f'"{p}"' for p in paths) + "]"
+          new, n = re.subn(r"^paths_to_mutate = .*$", line, text, flags=re.M)
+          assert n == 1, "paths_to_mutate not found in pyproject.toml"
+          Path("pyproject.toml").write_text(new, encoding="utf-8")
+          PY
+      - run: uv run mutmut run
+        env:
+          HYPOTHESIS_PROFILE: ci
+      - run: uv run mutmut export-cicd-stats
+      - name: Score report
+        env:
+          GROUP: ${{ matrix.group.id }}
+        run: |
+          uv run python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          stats = json.loads(Path("mutants/mutmut-cicd-stats.json").read_text(encoding="utf-8"))
+          tested = int(stats["total"]) - int(stats.get("skipped", 0))
+          killed = int(stats.get("killed", 0)) + int(stats.get("timeout", 0))
+          score = killed / tested if tested else 0.0
+          report = {"group": os.environ["GROUP"], "score": round(score, 4), "killed_or_timeout": killed, "tested": tested, "stats": stats}
+          Path("mutation-report.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
+          print(f"mutation score {os.environ['GROUP']}: {score:.4f} ({killed}/{tested})")
+          PY
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: mutation-${{ matrix.group.id }}
+          path: |
+            mutation-report.json
+            mutants/mutmut-cicd-stats.json

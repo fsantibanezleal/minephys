@@ -120,23 +120,29 @@ def bishop_core(
     # m_alpha > 0 for every slice exactly when F > critical
     f = np.ones(c.shape[0])
     active = np.arange(c.shape[0])
-    res_a, shear_a, crit_a = resisting, shear, critical
+    # the iteration runs on (slices, samples) arrays: the slice sum is then a run of contiguous vector additions
+    res_a = np.ascontiguousarray(resisting.T)
+    shear_a = np.ascontiguousarray(np.broadcast_to(shear, resisting.shape).T)
+    crit_a = critical
+    cos_col = cos_a[:, None]
+    work = np.empty_like(res_a)
     for iteration in range(1, max_iter + 1):
         f_a = f[active]
         if np.any(f_a <= crit_a):
-            m = cos_a + shear_a / f_a[:, None]
+            m = cos_col + shear_a / f_a
             if np.any(m <= 0):
-                slice_index = int(np.argmax((m <= 0).any(axis=0)))
+                slice_index = int(np.argmax((m <= 0).any(axis=1)))
                 raise ConvergenceError(
                     f"m_alpha <= 0 at slice {slice_index} during iteration {iteration}: no factor of safety",
                     last_iterate=float(f_a[0]),
                     residual=math.inf,
                     iterations=iteration,
                 )
-        m = shear_a / f_a[:, None]
-        m += cos_a
+        m = work[:, : active.size]
+        np.divide(shear_a, f_a, out=m)
+        m += cos_col
         np.divide(res_a, m, out=m)
-        new = m.sum(axis=1) / drive
+        new = m.sum(axis=0) / drive
         step = np.abs(new - f_a)
         f[active] = new
         done = step <= tol * np.abs(new)
@@ -145,7 +151,8 @@ def bishop_core(
         if done.any():
             keep = ~done
             active = active[keep]
-            res_a, shear_a, crit_a = res_a[keep], shear_a[keep], crit_a[keep]
+            res_a, shear_a, crit_a = res_a[:, keep], shear_a[:, keep], crit_a[keep]
+            work = np.empty_like(res_a)
     raise ConvergenceError(
         f"no convergence to tol={tol!r} in {max_iter} iterations",
         last_iterate=float(f[active[0]]),
