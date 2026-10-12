@@ -1,0 +1,259 @@
+schema_version: 1
+table: comminution
+title: Comminution constants and limits (Bond, Morrell, Austin)
+licence: CC-BY-4.0
+rows:
+  - id: bond_law_coefficient
+    quantity: coefficient of Bond's third law of comminution (sizes in micrometres)
+    value: 10
+    units: 1 (with sizes in µm)
+    role: model_constant
+    citation: mcivor2016bondgmsg
+    page: p. 1, "Calculations"; worked examples p. 2
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol:
+      - minephys.comminution.bond_energy
+      - minephys.comminution.bond_operating_work_index
+      - minephys.comminution.bond_ball_mill_work_index
+    notes: W = 10 Wi (1/sqrt(P80) - 1/sqrt(F80)) with P80 and F80 in micrometres; the law is homogeneous in the work index
+  - id: bond_min_product_size
+    quantity: smallest product size to which Bond's law applies (approximate lower validity bound)
+    value: 70
+    units: µm
+    role: limit
+    citation: mcivor2016bondgmsg
+    page: p. 1 ("applies down to approximately 70 µm")
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol:
+      - minephys.comminution.bond_energy
+      - minephys.comminution.bond_operating_work_index
+    notes: a product P80 below this size emits a ValidityWarning and the result is still returned
+  - id: bond_bm_constant
+    quantity: constant of the Bond ball-mill work index test equation
+    value: 44.5
+    units: kWh/short ton
+    role: model_constant
+    citation: mcivor2016bondgmsg
+    page: p. 10, Annex C1 "Calculations"
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.comminution.bond_ball_mill_work_index
+  - id: bond_bm_exponent_screen
+    quantity: exponent of the closing screen size in the Bond ball-mill work index test equation
+    value: 0.23
+    units: "1"
+    role: model_constant
+    citation: mcivor2016bondgmsg
+    page: p. 10, Annex C1 "Calculations"
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.comminution.bond_ball_mill_work_index
+  - id: bond_bm_exponent_grindability
+    quantity: exponent of the grindability (net grams per revolution) in the Bond ball-mill work index test equation
+    value: 0.82
+    units: "1"
+    role: model_constant
+    citation: mcivor2016bondgmsg
+    page: p. 10, Annex C1 "Calculations"
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.comminution.bond_ball_mill_work_index
+  - id: bond_short_ton_to_metric
+    quantity: published factor from kWh per short ton to kWh per metric tonne
+    value: 1.1025
+    units: (kWh/t)/(kWh/short ton)
+    role: conversion
+    citation: mcivor2016bondgmsg
+    page: p. 10, Annex C1 ("Multiply by 1.1025 for kWh/mt")
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.comminution.bond_ball_mill_work_index
+    notes: the exact factor is 1.10231; the 0.01 % difference is below the resolution of the test
+  - id: morrell_coefficient
+    quantity: coefficient of the Morrell energy-size relation
+    value: 4
+    units: "1"
+    role: model_constant
+    citation: gmsg2016morrell
+    page: eq. 2, p. 2
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol:
+      - minephys.comminution.morrell_energy
+      - minephys.comminution.morrell_tumbling_coarse
+      - minephys.comminution.morrell_tumbling_fine
+      - minephys.comminution.morrell_crusher
+      - minephys.comminution.morrell_hpgr
+      - minephys.comminution.morrell_size_distribution_correction
+  - id: morrell_f_constant
+    quantity: constant of the size exponent f(x) = -(0.295 + x/10^6) of the Morrell relation
+    value: 0.295
+    units: "1"
+    role: model_constant
+    citation: gmsg2016morrell
+    page: eq. 2, p. 2
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol:
+      - minephys.comminution.morrell_energy
+      - minephys.comminution.morrell_tumbling_coarse
+      - minephys.comminution.morrell_tumbling_fine
+      - minephys.comminution.morrell_crusher
+      - minephys.comminution.morrell_hpgr
+      - minephys.comminution.morrell_size_distribution_correction
+      - minephys.comminution.morrell_mib
+  - id: morrell_f_scale
+    quantity: size scale of the size exponent f(x) = -(0.295 + x/10^6) of the Morrell relation
+    value: 1000000
+    units: µm
+    role: model_constant
+    citation: gmsg2016morrell
+    page: eq. 2, p. 2
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol:
+      - minephys.comminution.morrell_energy
+      - minephys.comminution.morrell_tumbling_coarse
+      - minephys.comminution.morrell_tumbling_fine
+      - minephys.comminution.morrell_crusher
+      - minephys.comminution.morrell_hpgr
+      - minephys.comminution.morrell_size_distribution_correction
+      - minephys.comminution.morrell_mib
+  - id: morrell_coarse_fine_boundary
+    quantity: size separating the coarse (Mia) and fine (Mib) tumbling-mill terms of the Morrell method
+    value: 750
+    units: µm
+    role: model_constant
+    citation: gmsg2016morrell
+    page: eqs. B2-B3, p. 6
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol:
+      - minephys.comminution.morrell_tumbling_coarse
+      - minephys.comminution.morrell_tumbling_fine
+  - id: morrell_fine_grind_limit
+    quantity: finest final grind for which the Morrell fine term is stated to apply (approximate)
+    value: 45
+    units: µm
+    role: limit
+    citation: gmsg2016morrell
+    page: section B.1, p. 6 ("approximately 45 µm")
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.comminution.morrell_tumbling_fine
+    notes: a final grind P80 below this size emits a ValidityWarning and the result is still returned
+  - id: morrell_k1_pebble_crusher
+    quantity: factor on the coarse tumbling-mill energy when a pebble crusher is in the circuit
+    value: 0.95
+    units: "1"
+    role: model_constant
+    citation: gmsg2016morrell
+    page: eq. B2, p. 6
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.comminution.morrell_tumbling_coarse
+  - id: morrell_k2_open_circuit
+    quantity: open-circuit factor of the Morrell crushing energy
+    value: 1.19
+    units: "1"
+    role: model_constant
+    citation: gmsg2016morrell
+    page: eq. B4, p. 6
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.comminution.morrell_crusher
+  - id: morrell_k3_open_circuit
+    quantity: open-circuit factor of the Morrell HPGR energy
+    value: 1.19
+    units: "1"
+    role: model_constant
+    citation: gmsg2016morrell
+    page: eq. B6, p. 7
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.comminution.morrell_hpgr
+  - id: morrell_ks_crusher
+    quantity: coefficient of the crusher size-dependent factor Sc = min(55 (x1 x2)^-0.2, 1)
+    value: 55
+    units: "1"
+    role: model_constant
+    citation: gmsg2016morrell
+    page: eq. B5, p. 7
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.comminution.morrell_crusher
+  - id: morrell_ks_hpgr
+    quantity: coefficient of the HPGR size-dependent factor Sh = min(35 (x1 x2)^-0.2, 1)
+    value: 35
+    units: "1"
+    role: model_constant
+    citation: gmsg2016morrell
+    page: section B.2.3, p. 7
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.comminution.morrell_hpgr
+  - id: morrell_s_exponent
+    quantity: exponent of the product of feed and product sizes in the crusher and HPGR size-dependent factors
+    value: -0.2
+    units: "1"
+    role: model_constant
+    citation: gmsg2016morrell
+    page: eq. B5, p. 7
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol:
+      - minephys.comminution.morrell_crusher
+      - minephys.comminution.morrell_hpgr
+  - id: morrell_ws_factor
+    quantity: factor of the Morrell size-distribution correction energy
+    value: 0.19
+    units: "1"
+    role: model_constant
+    citation: gmsg2016morrell
+    page: section B.2.4, p. 8
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.comminution.morrell_size_distribution_correction
+  - id: morrell_mib_constant
+    quantity: constant of the Morrell fine-grinding index Mib from the Bond ball-mill test
+    value: 18.18
+    units: kWh/t
+    role: model_constant
+    citation: gmsg2016morrell
+    page: eq. 1, p. 2
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.comminution.morrell_mib
+  - id: morrell_mib_screen_exponent
+    quantity: exponent of the closing screen size in the Morrell Mib relation
+    value: 0.295
+    units: "1"
+    role: model_constant
+    citation: gmsg2016morrell
+    page: eq. 1, p. 2
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.comminution.morrell_mib
+  - id: morrell_relative_error_sd
+    quantity: one standard deviation of the relative error of the Morrell method
+    value: 0.065
+    units: "1"
+    role: limit
+    citation: gmsg2016morrell
+    page: p. 3 ("1 standard deviation is 6.5 % of the relative errors")
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.comminution.morrell_energy
+    notes: stated in the model card of the energy functions; not used in a computation
+  - id: austin_reference_size
+    quantity: reference size x0 of the Austin selection function (default of its x0 argument)
+    value: 0.001
+    units: m
+    role: model_constant
+    citation: austin1984ballmilling
+    page: not read (bibliographic, 1984 edition)
+    verification: UNVERIFIED
+    symbol: minephys.comminution.austin_selection
+    notes: 1 mm; the attribution of the selection-function form to Austin is UNVERIFIED, so the row warns when it is read

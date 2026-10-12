@@ -132,3 +132,360 @@ equations:
     page: not read (bibliographic); derived forms
     verification: UNVERIFIED
     notes: derived from the controlling-capacity rule read on cetin2013gridsearch pp. 660 and 663; the brute-force grid is the test oracle
+  - id: comminution_bond_energy
+    title: Bond's third law of comminution
+    domain: comminution
+    latex: 'W = 10\,W_i\left(\frac{1}{\sqrt{P_{80}}} - \frac{1}{\sqrt{F_{80}}}\right)'
+    symbols:
+      - {symbol: W, meaning: specific comminution energy, units: J/kg}
+      - {symbol: W_i, meaning: Bond work index, units: J/kg}
+      - {symbol: 'P_{80}', meaning: product 80 % passing size (micrometres inside the formula), units: m}
+      - {symbol: 'F_{80}', meaning: feed 80 % passing size (micrometres inside the formula), units: m}
+    function: minephys.comminution.bond_energy
+    citation: mcivor2016bondgmsg
+    page: p. 1, "Calculations"; worked examples p. 2
+    verification: verified
+    verified_on: "2026-10-06"
+    rows: [bond_law_coefficient, bond_min_product_size]
+    notes: the law is homogeneous in the work index, so the result is in the unit of the index
+  - id: comminution_bond_operating_work_index
+    title: Bond operating work index
+    domain: comminution
+    latex: 'W_{io} = \frac{W}{10/\sqrt{P_{80}} - 10/\sqrt{F_{80}}}'
+    symbols:
+      - {symbol: 'W_{io}', meaning: operating work index, units: J/kg}
+      - {symbol: W, meaning: measured specific energy, units: J/kg}
+      - {symbol: 'P_{80}', meaning: product 80 % passing size, units: m}
+      - {symbol: 'F_{80}', meaning: feed 80 % passing size, units: m}
+    function: minephys.comminution.bond_operating_work_index
+    citation: mcivor2016bondgmsg
+    page: p. 1, "Calculations"; worked examples pp. 1-2
+    verification: verified
+    verified_on: "2026-10-06"
+    rows: [bond_law_coefficient, bond_min_product_size]
+  - id: comminution_bond_ball_mill_work_index
+    title: Bond ball-mill test work index
+    domain: comminution
+    latex: 'W_i = \frac{1.1025 \times 44.5}{P_1^{0.23}\,G_{bp}^{0.82}\left(10/\sqrt{P_{80}} - 10/\sqrt{F_{80}}\right)}'
+    symbols:
+      - {symbol: W_i, meaning: ball-mill work index per metric tonne, units: J/kg}
+      - {symbol: P_1, meaning: closing screen size, units: m}
+      - {symbol: 'G_{bp}', meaning: grindability (net mass finer than the screen per revolution), units: kg}
+      - {symbol: 'P_{80}', meaning: test product 80 % passing size, units: m}
+      - {symbol: 'F_{80}', meaning: test feed 80 % passing size, units: m}
+    function: minephys.comminution.bond_ball_mill_work_index
+    citation: mcivor2016bondgmsg
+    page: p. 10, Annex C1 "Calculations"; test sheet p. 11
+    verification: verified
+    verified_on: "2026-10-06"
+    rows: [bond_bm_constant, bond_bm_exponent_screen, bond_bm_exponent_grindability, bond_short_ton_to_metric, bond_law_coefficient]
+    notes: sizes in micrometres and grindability in g/rev inside the published formula, kWh/t converted to J/kg
+  - id: comminution_morrell_energy
+    title: Morrell energy-size relation
+    domain: comminution
+    latex: 'W = M_i \cdot 4\left(x_2^{f(x_2)} - x_1^{f(x_1)}\right), \quad f(x) = -\left(0.295 + \frac{x}{10^6}\right)'
+    symbols:
+      - {symbol: W, meaning: specific energy, units: J/kg}
+      - {symbol: M_i, meaning: Morrell index of the stage, units: J/kg}
+      - {symbol: x_1, meaning: feed 80 % passing size (micrometres inside the formula), units: m}
+      - {symbol: x_2, meaning: product 80 % passing size (micrometres inside the formula), units: m}
+    function: minephys.comminution.morrell_energy
+    citation: gmsg2016morrell
+    page: eq. 2, p. 2
+    verification: verified
+    verified_on: "2026-10-06"
+    rows: [morrell_coefficient, morrell_f_constant, morrell_f_scale, morrell_relative_error_sd]
+  - id: comminution_morrell_tumbling_coarse
+    title: Morrell coarse tumbling-mill energy
+    domain: comminution
+    latex: 'W_a = K_1 M_{ia}\,4\left(750^{f(750)} - x_1^{f(x_1)}\right)'
+    symbols:
+      - {symbol: W_a, meaning: coarse tumbling-mill energy, units: J/kg}
+      - {symbol: K_1, meaning: 0.95 with a pebble crusher and 1 otherwise, units: "1"}
+      - {symbol: 'M_{ia}', meaning: Morrell index Mia, units: J/kg}
+      - {symbol: x_1, meaning: tumbling-mill feed 80 % passing size, units: m}
+    function: minephys.comminution.morrell_tumbling_coarse
+    citation: gmsg2016morrell
+    page: eqs. B2-B3, p. 6
+    verification: verified
+    verified_on: "2026-10-06"
+    rows: [morrell_coefficient, morrell_f_constant, morrell_f_scale, morrell_coarse_fine_boundary, morrell_k1_pebble_crusher]
+  - id: comminution_morrell_tumbling_fine
+    title: Morrell fine tumbling-mill energy
+    domain: comminution
+    latex: 'W_b = M_{ib}\,4\left(P_{80}^{f(P_{80})} - 750^{f(750)}\right)'
+    symbols:
+      - {symbol: W_b, meaning: fine tumbling-mill energy, units: J/kg}
+      - {symbol: 'M_{ib}', meaning: Morrell index Mib, units: J/kg}
+      - {symbol: 'P_{80}', meaning: final grind 80 % passing size, units: m}
+    function: minephys.comminution.morrell_tumbling_fine
+    citation: gmsg2016morrell
+    page: eqs. B2-B3, p. 6; section B.1, p. 6
+    verification: verified
+    verified_on: "2026-10-06"
+    rows: [morrell_coefficient, morrell_f_constant, morrell_f_scale, morrell_coarse_fine_boundary, morrell_fine_grind_limit]
+  - id: comminution_morrell_crusher
+    title: Morrell crushing energy
+    domain: comminution
+    latex: 'W_c = S_c K_2 M_{ic}\,4\left(x_2^{f(x_2)} - x_1^{f(x_1)}\right), \quad S_c = \min\left(55\,(x_1 x_2)^{-0.2},\ 1\right)'
+    symbols:
+      - {symbol: W_c, meaning: crushing energy per tonne through the crusher, units: J/kg}
+      - {symbol: S_c, meaning: size-dependent factor (1 for tertiary and pebble stages), units: "1"}
+      - {symbol: K_2, meaning: 1 for a closed circuit and 1.19 for an open one, units: "1"}
+      - {symbol: 'M_{ic}', meaning: Morrell index Mic, units: J/kg}
+      - {symbol: x_1, meaning: feed 80 % passing size, units: m}
+      - {symbol: x_2, meaning: product 80 % passing size, units: m}
+    function: minephys.comminution.morrell_crusher
+    citation: gmsg2016morrell
+    page: eqs. B4-B5, pp. 6-7
+    verification: verified
+    verified_on: "2026-10-06"
+    rows: [morrell_coefficient, morrell_f_constant, morrell_f_scale, morrell_k2_open_circuit, morrell_ks_crusher, morrell_s_exponent]
+  - id: comminution_morrell_hpgr
+    title: Morrell high-pressure grinding roll energy
+    domain: comminution
+    latex: 'W_h = S_h K_3 M_{ih}\,4\left(x_2^{f(x_2)} - x_1^{f(x_1)}\right), \quad S_h = \min\left(35\,(x_1 x_2)^{-0.2},\ 1\right)'
+    symbols:
+      - {symbol: W_h, meaning: HPGR energy, units: J/kg}
+      - {symbol: S_h, meaning: size-dependent factor, units: "1"}
+      - {symbol: K_3, meaning: 1 for a closed circuit and 1.19 for an open one, units: "1"}
+      - {symbol: 'M_{ih}', meaning: Morrell index Mih, units: J/kg}
+      - {symbol: x_1, meaning: feed 80 % passing size, units: m}
+      - {symbol: x_2, meaning: product 80 % passing size, units: m}
+    function: minephys.comminution.morrell_hpgr
+    citation: gmsg2016morrell
+    page: eq. B6, p. 7; section B.2.3, p. 7
+    verification: verified
+    verified_on: "2026-10-06"
+    rows: [morrell_coefficient, morrell_f_constant, morrell_f_scale, morrell_k3_open_circuit, morrell_ks_hpgr, morrell_s_exponent]
+  - id: comminution_morrell_size_distribution_correction
+    title: Morrell size-distribution correction energy
+    domain: comminution
+    latex: 'W_s = 0.19\,M_{ia}\,4\left(x_2^{f(x_2)} - x_1^{f(x_1)}\right)'
+    symbols:
+      - {symbol: W_s, meaning: size-distribution correction energy, units: J/kg}
+      - {symbol: 'M_{ia}', meaning: Morrell index Mia, units: J/kg}
+      - {symbol: x_1, meaning: circuit feed 80 % passing size, units: m}
+      - {symbol: x_2, meaning: ball-mill circuit feed 80 % passing size, units: m}
+    function: minephys.comminution.morrell_size_distribution_correction
+    citation: gmsg2016morrell
+    page: section B.2.4, p. 8
+    verification: verified
+    verified_on: "2026-10-06"
+    rows: [morrell_coefficient, morrell_f_constant, morrell_f_scale, morrell_ws_factor]
+  - id: comminution_morrell_mib
+    title: Morrell fine-grinding index from the Bond ball-mill test
+    domain: comminution
+    latex: 'M_{ib} = \frac{18.18}{P_{100}^{0.295}\,G_{bp}\left(P_{80}^{f(P_{80})} - F_{80}^{f(F_{80})}\right)}'
+    symbols:
+      - {symbol: 'M_{ib}', meaning: Morrell index Mib, units: J/kg}
+      - {symbol: 'P_{100}', meaning: closing screen size, units: m}
+      - {symbol: 'G_{bp}', meaning: grindability (net mass finer than the screen per revolution), units: kg}
+      - {symbol: 'P_{80}', meaning: test product 80 % passing size, units: m}
+      - {symbol: 'F_{80}', meaning: test feed 80 % passing size, units: m}
+    function: minephys.comminution.morrell_mib
+    citation: gmsg2016morrell
+    page: eq. 1, p. 2
+    verification: verified
+    verified_on: "2026-10-06"
+    rows: [morrell_mib_constant, morrell_mib_screen_exponent, morrell_f_constant, morrell_f_scale]
+    notes: kWh/t and g/rev inside the published formula, converted to J/kg
+  - id: comminution_pbm_batch_grinding
+    title: Batch grinding population balance
+    domain: comminution
+    latex: '\mathbf{m}(t) = e^{At}\,\mathbf{m}(0), \quad A = -\operatorname{diag}(S) + B\operatorname{diag}(S)'
+    symbols:
+      - {symbol: '\mathbf{m}', meaning: class masses coarse to fine, units: kg}
+      - {symbol: S, meaning: selection (breakage rate) of each class, units: 1/s}
+      - {symbol: B, meaning: breakage matrix (strictly lower triangular), units: "1"}
+      - {symbol: t, meaning: grinding time, units: s}
+    function: minephys.comminution.pbm_batch_grinding
+    citation: reid1965batch
+    page: not read (bibliographic)
+    verification: UNVERIFIED
+    notes: the analytical three-class solution is derived in spec 005 section 7 and is the test oracle
+  - id: comminution_pbm_continuous_mill
+    title: Perfectly mixed continuous mill, tanks in series
+    domain: comminution
+    latex: '\mathbf{m}_{out} = \left(I - \frac{\tau}{N}A\right)^{-N}\mathbf{m}_{in}'
+    symbols:
+      - {symbol: '\mathbf{m}', meaning: class mass flows coarse to fine, units: kg/s}
+      - {symbol: A, meaning: rate matrix -diag(S) + B diag(S), units: 1/s}
+      - {symbol: '\tau', meaning: total mean residence time, units: s}
+      - {symbol: N, meaning: number of equal tanks in series, units: "1"}
+    function: minephys.comminution.pbm_continuous_mill
+    citation: austin1984ballmilling
+    page: not read (bibliographic, 1984 edition)
+    verification: UNVERIFIED
+    notes: derived in spec 005 section 7 from the steady balance of one tank
+  - id: comminution_austin_selection
+    title: Austin selection function
+    domain: comminution
+    latex: 'S_i = \frac{a\,(x_i/x_0)^{\alpha}}{1 + (x_i/\mu)^{\Lambda}}'
+    symbols:
+      - {symbol: S_i, meaning: selection of class i, units: 1/s}
+      - {symbol: a, meaning: selection rate at the reference size, units: 1/s}
+      - {symbol: x_i, meaning: representative class size, units: m}
+      - {symbol: x_0, meaning: reference size, units: m}
+      - {symbol: '\alpha', meaning: size-ratio exponent, units: "1"}
+      - {symbol: '\mu', meaning: size above which the rate falls, units: m}
+      - {symbol: '\Lambda', meaning: steepness of the fall, units: "1"}
+    function: minephys.comminution.austin_selection
+    citation: austin1984ballmilling
+    page: not read (bibliographic, 1984 edition)
+    verification: UNVERIFIED
+    rows: [austin_reference_size]
+    notes: the attribution of the form to Austin is UNVERIFIED; the oracle is the form itself
+  - id: comminution_austin_breakage
+    title: Austin breakage distribution matrix
+    domain: comminution
+    latex: 'b_{ij} = B_j(s_i) - B_j(s_{i+1}), \quad B_j(s) = \phi\left(\frac{s}{s_{j+1}}\right)^{\gamma} + (1 - \phi)\left(\frac{s}{s_{j+1}}\right)^{\beta}'
+    symbols:
+      - {symbol: 'b_{ij}', meaning: fraction of broken class-j material entering finer class i, units: "1"}
+      - {symbol: s_i, meaning: upper size of class i, units: m}
+      - {symbol: '\phi', meaning: weight of the first term, units: "1"}
+      - {symbol: '\gamma', meaning: exponent of the first term, units: "1"}
+      - {symbol: '\beta', meaning: exponent of the second term, units: "1"}
+    function: minephys.comminution.austin_breakage
+    citation: austin1984ballmilling
+    page: not read (bibliographic, 1984 edition)
+    verification: UNVERIFIED
+    notes: the attribution of the form to Austin is UNVERIFIED; the oracle is the form itself and the column sums
+  - id: comminution_flotation_first_order
+    title: First-order flotation recovery
+    domain: comminution
+    latex: 'R = R_\infty\left(1 - e^{-kt}\right)'
+    symbols:
+      - {symbol: R, meaning: recovery, units: "1"}
+      - {symbol: R_\infty, meaning: ultimate recovery, units: "1"}
+      - {symbol: k, meaning: rate constant, units: 1/s}
+      - {symbol: t, meaning: flotation time, units: s}
+    function: minephys.comminution.flotation_first_order
+    citation: wills2016
+    page: not read (textbook form)
+    verification: UNVERIFIED
+  - id: comminution_klimpel_recovery
+    title: Klimpel flotation recovery
+    domain: comminution
+    latex: 'R = R_\infty\left[1 - \frac{1 - e^{-kt}}{kt}\right]'
+    symbols:
+      - {symbol: R, meaning: recovery, units: "1"}
+      - {symbol: R_\infty, meaning: ultimate recovery, units: "1"}
+      - {symbol: k, meaning: maximum rate constant, units: 1/s}
+      - {symbol: t, meaning: flotation time, units: s}
+    function: minephys.comminution.klimpel_recovery
+    citation: gharai2016flotation
+    page: not read (review transcription)
+    verification: UNVERIFIED
+    notes: derived in spec 005 section 7 as the mean of the first-order recovery over a uniform rate distribution on [0, k]
+  - id: comminution_flotation_cell_recovery
+    title: Recovery of perfectly mixed flotation cells in series
+    domain: comminution
+    latex: 'R = R_\infty\left[1 - (1 + k\tau)^{-N}\right]'
+    symbols:
+      - {symbol: R, meaning: recovery of the bank, units: "1"}
+      - {symbol: R_\infty, meaning: ultimate recovery, units: "1"}
+      - {symbol: k, meaning: rate constant, units: 1/s}
+      - {symbol: '\tau', meaning: mean residence time of one cell, units: s}
+      - {symbol: N, meaning: number of cells in series, units: "1"}
+    function: minephys.comminution.flotation_cell_recovery
+    citation: wills2016
+    page: not read (textbook form)
+    verification: UNVERIFIED
+    notes: derived in spec 005 section 7 by integrating the first-order law against an exponential residence-time distribution
+  - id: comminution_two_product_recovery
+    title: Two-product formula
+    domain: comminution
+    latex: '\frac{C}{F} = \frac{f - t}{c - t}, \quad R = \frac{c\,(f - t)}{f\,(c - t)}'
+    symbols:
+      - {symbol: C/F, meaning: mass yield of the concentrate, units: "1"}
+      - {symbol: R, meaning: recovery of the valuable component, units: "1"}
+      - {symbol: f, meaning: feed grade, units: "1"}
+      - {symbol: c, meaning: concentrate grade, units: "1"}
+      - {symbol: t, meaning: tailings grade, units: "1"}
+    function: minephys.comminution.two_product_recovery
+    citation: wills2016
+    page: not read (textbook form)
+    verification: UNVERIFIED
+    notes: the grades share any one unit
+  - id: comminution_passing_size
+    title: Passing size by log-log interpolation
+    domain: comminution
+    latex: '\ln x_p = \ln x_i + \left(\ln p - \ln P_i\right)\frac{\ln x_{i+1} - \ln x_i}{\ln P_{i+1} - \ln P_i}'
+    symbols:
+      - {symbol: x_p, meaning: size at the wanted passing fraction, units: m}
+      - {symbol: p, meaning: wanted passing fraction, units: "1"}
+      - {symbol: x_i, meaning: bracketing curve sizes, units: m}
+      - {symbol: P_i, meaning: cumulative passing at the bracketing sizes, units: "1"}
+    function: minephys.comminution.passing_size
+    citation: ouchterlony2005swebrec
+    page: not read (the Swebrec closed form is the test oracle)
+    verification: UNVERIFIED
+  - id: comminution_class_masses
+    title: Class masses from a cumulative passing curve
+    domain: comminution
+    latex: 'm_i = P(s_i) - P(s_{i+1}) \ (i < n), \qquad m_n = P(s_n)'
+    symbols:
+      - {symbol: m_i, meaning: mass fraction of class i, units: "1"}
+      - {symbol: P, meaning: cumulative passing, units: "1"}
+      - {symbol: s_i, meaning: upper size of class i, units: m}
+    function: minephys.comminution.class_masses
+    citation: ouchterlony2005swebrec
+    page: not read (definition)
+    verification: UNVERIFIED
+  - id: comminution_cumulative_passing
+    title: Cumulative passing from class masses
+    domain: comminution
+    latex: 'P_i = \sum_{k \ge i} m_k'
+    symbols:
+      - {symbol: P_i, meaning: cumulative passing at the upper size of class i, units: "1"}
+      - {symbol: m_k, meaning: mass of class k, units: "1"}
+    function: minephys.comminution.cumulative_passing
+    citation: ouchterlony2005swebrec
+    page: not read (definition)
+    verification: UNVERIFIED
+  - id: comminution_crusher_matrix_model
+    title: Steady-state crusher matrix model
+    domain: comminution
+    latex: '\mathbf{p} = (I - C)(I - BC)^{-1}\mathbf{f}'
+    symbols:
+      - {symbol: '\mathbf{p}', meaning: product mass of each class, units: kg}
+      - {symbol: '\mathbf{f}', meaning: feed mass of each class, units: kg}
+      - {symbol: C, meaning: diagonal matrix of classification probabilities, units: "1"}
+      - {symbol: B, meaning: breakage matrix (strictly lower triangular), units: "1"}
+    function: minephys.comminution.crusher_matrix_model
+    citation: whiten1972crushing
+    page: not read (bibliographic)
+    verification: UNVERIFIED
+    notes: follows from the steady balance x = f + BCx, p = (I - C)x; the attribution to Whiten is UNVERIFIED
+  - id: comminution_whiten_classification
+    title: Whiten classification function
+    domain: comminution
+    latex: 'c(x) = \begin{cases} 0 & x < k_1 \\ 1 - \left(\frac{k_2 - x}{k_2 - k_1}\right)^{k_3} & k_1 \le x < k_2 \\ 1 & x \ge k_2 \end{cases}'
+    symbols:
+      - {symbol: c, meaning: probability that a particle is broken, units: "1"}
+      - {symbol: x, meaning: particle size, units: m}
+      - {symbol: k_1, meaning: size below which nothing is broken, units: m}
+      - {symbol: k_2, meaning: size above which everything is broken, units: m}
+      - {symbol: k_3, meaning: shape exponent, units: "1"}
+    function: minephys.comminution.whiten_classification
+    citation: whiten1972crushing
+    page: not read (bibliographic)
+    verification: UNVERIFIED
+    notes: the form and its attribution to Whiten are UNVERIFIED
+  - id: comminution_mine_to_mill_chain
+    title: Mine-to-mill chain
+    domain: comminution
+    latex: 'P_{crusher} = \mathrm{cumulative}(\mathrm{crusher}(\mathrm{masses}(P_{blast}))), \quad \dot{m} = \frac{P}{W(F_{80} \to P_{80})}'
+    symbols:
+      - {symbol: 'P_{blast}', meaning: cumulative passing of the blast, units: "1"}
+      - {symbol: 'F_{80}', meaning: crusher product 80 % passing size, units: m}
+      - {symbol: 'P_{80}', meaning: target final grind, units: m}
+      - {symbol: W, meaning: specific energy from F80 to P80, units: J/kg}
+      - {symbol: P, meaning: installed power, units: W}
+      - {symbol: '\dot{m}', meaning: throughput, units: kg/s}
+    function: minephys.comminution.mine_to_mill_chain
+    citation: mcivor2016bondgmsg
+    page: composition of the component functions (spec 005 FR-005-30)
+    verification: UNVERIFIED
+    notes: a composition of the equations above; its components carry their own status
