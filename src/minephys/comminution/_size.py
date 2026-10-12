@@ -111,7 +111,7 @@ def passing_size(sizes: Any, passing: Any, fraction: Any = 4 / 5) -> Any:
     Source
     ------
     ouchterlony2005swebrec (closed-form Swebrec x80 used as the test oracle); interpolation rule from spec 005
-    FR-005-24.
+    FR-005-24 (section 7).
 
     Validity
     --------
@@ -151,7 +151,7 @@ def class_masses(sizes: Any, passing: Any) -> FloatArray:
     Source
     ------
     ouchterlony2005swebrec (Swebrec curve used as the test oracle); the conversion is the definition in spec 005
-    FR-005-25.
+    FR-005-25 (section 7).
 
     Validity
     --------
@@ -187,7 +187,8 @@ def cumulative_passing(masses: Any) -> FloatArray:
 
     Source
     ------
-    ouchterlony2005swebrec (Swebrec curve used as the test oracle); the sum is the definition in spec 005 FR-005-25.
+    ouchterlony2005swebrec (Swebrec curve used as the test oracle); the sum is the definition in spec 005 FR-005-25
+    (section 7).
 
     Validity
     --------
@@ -228,7 +229,7 @@ def crusher_matrix_model(feed: Any, classification: Any, breakage: Any) -> Float
     Source
     ------
     whiten1972crushing (bibliographic, not read; the attribution is UNVERIFIED: the oracle is the steady balance
-    itself).
+    itself, spec 005 section 7).
 
     Validity
     --------
@@ -285,7 +286,7 @@ def whiten_classification(sizes: Any, k1: Any, k2: Any, k3: Any) -> Any:
 
     Source
     ------
-    whiten1972crushing (bibliographic, not read; the form and its attribution are UNVERIFIED).
+    whiten1972crushing (bibliographic, not read; the form and its attribution are UNVERIFIED; spec 005 section 7).
 
     Validity
     --------

@@ -61,7 +61,8 @@ def mass_extinction_coefficient(diameter: Any, particle_density: Any, extinction
 
     Source
     ------
-    bohren1983absorption (the large-particle limit Q_ext = 2, page not read: UNVERIFIED); geometry derived in spec 006.
+    bohren1983absorption (the large-particle limit Q_ext = 2, page not read: UNVERIFIED); geometry derived in
+    spec 006 section 7.
 
     Validity
     --------
@@ -101,7 +102,8 @@ def extinction_coefficient(mass_concentration: Any, mass_extinction: Any) -> Any
 
     Source
     ------
-    bohren1983absorption (definition of the extinction coefficient, not read); product defined in spec 006 FR-006-15.
+    bohren1983absorption (definition of the extinction coefficient, not read); product defined in spec 006 FR-006-15
+    (oracle in section 7).
 
     Validity
     --------
@@ -139,7 +141,7 @@ def beer_lambert_transmittance(extinction: Any, path_length: Any) -> Any:
 
     Source
     ------
-    bohren1983absorption (Beer-Lambert law, not read); definition in spec 006 FR-006-16.
+    bohren1983absorption (Beer-Lambert law, not read); definition in spec 006 FR-006-16 (oracle in section 7).
 
     Validity
     --------
@@ -205,7 +207,7 @@ def path_transmittance(positions: Any, extinction_profile: Any) -> Any:
 
     Source
     ------
-    bohren1983absorption (Beer-Lambert law, not read); trapezoid rule in spec 006 FR-006-16.
+    bohren1983absorption (Beer-Lambert law, not read); trapezoid rule in spec 006 FR-006-16 (oracle in section 7).
 
     Validity
     --------

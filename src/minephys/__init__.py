@@ -20,9 +20,12 @@ __all__ = [
     "__version__",
     "blasting",
     "bulk",
+    "comminution",
+    "environment",
     "geotech",
     "haulage",
     "knowledge",
+    "planning",
     "units",
 ]
 

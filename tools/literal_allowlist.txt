@@ -2,6 +2,7 @@
 # one entry per line: <literal> | <reason>. Physical and empirical constants live in knowledge rows instead.
 0.0 | structural constant of a formula (small exact integer or simple fraction)
 1e-300 | numerical tolerance or tiny guard
+1e-16 | numerical tolerance or tiny guard
 1e-15 | decimal SI prefix or power of ten used as a numerical guard
 1e-13 | numerical tolerance or tiny guard
 1e-12 | decimal SI prefix or power of ten used as a numerical guard

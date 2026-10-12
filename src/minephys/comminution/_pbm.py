@@ -229,7 +229,8 @@ def austin_selection(sizes: Any, a: Any, alpha: Any, mu: Any, lam: Any, x0: Any 
 
     Source
     ------
-    austin1984ballmilling (bibliographic, not read; the attribution of the form is UNVERIFIED); austin1971rate.
+    austin1984ballmilling (bibliographic, not read; the attribution of the form is UNVERIFIED); austin1971rate;
+    form stated in spec 005 section 7.
 
     Validity
     --------
@@ -274,7 +275,8 @@ def austin_breakage(sizes: Any, phi: Any, gamma: Any, beta: Any) -> FloatArray:
 
     Source
     ------
-    austin1984ballmilling (bibliographic, not read; the attribution of the form is UNVERIFIED); austin1971rate.
+    austin1984ballmilling (bibliographic, not read; the attribution of the form is UNVERIFIED); austin1971rate;
+    form stated in spec 005 section 7.
 
     Validity
     --------

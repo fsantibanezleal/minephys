@@ -173,7 +173,7 @@ def two_product_recovery(feed_grade: Any, concentrate_grade: Any, tail_grade: An
 
     Returns
     -------
-    TwoProduct
+    TwoProduct [1]
         `mass_yield` C/F and `recovery` R, both dimensionless fractions.
 
     Equation
