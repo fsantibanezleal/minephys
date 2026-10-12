@@ -104,7 +104,9 @@ def _series(t: Any, velocity: Any, window: Any) -> _Series:
         raise InputError(f"t has {times.size} samples but velocity has {v.size}", argument="velocity")
     check_size(times, "t", min_size=_MIN_USED)
     as_checked(v, "velocity", lo=0, lo_open=True)
-    keep = None if window is None else int(as_scalar(as_count(window, "window", lo=_MIN_USED, hi=_MAX_SAMPLES), "window"))
+    keep = (
+        None if window is None else int(as_scalar(as_count(window, "window", lo=_MIN_USED, hi=_MAX_SAMPLES), "window"))
+    )
     if np.any(np.diff(times) <= 0):
         raise InputError("argument 't' must be strictly increasing", argument="t")
     tw.warn_max(v, "velocity", "tripwire_slope_velocity_max")
@@ -258,8 +260,13 @@ def bayesian_ttf(
     if cov0 is not None:
         if mu0 is None:
             raise InputError("argument 'prior_mean' is required together with prior_cov", argument="prior_mean")
-        if not np.allclose(cov0, cov0.T, rtol=_SYMMETRY_RTOL, atol=0) or float(np.linalg.eigvalsh((cov0 + cov0.T) / 2)[0]) <= 0:
-            raise InputError("argument 'prior_cov' must be a symmetric positive-definite 2 x 2 matrix", argument="prior_cov")
+        if (
+            not np.allclose(cov0, cov0.T, rtol=_SYMMETRY_RTOL, atol=0)
+            or float(np.linalg.eigvalsh((cov0 + cov0.T) / 2)[0]) <= 0
+        ):
+            raise InputError(
+                "argument 'prior_cov' must be a symmetric positive-definite 2 x 2 matrix", argument="prior_cov"
+            )
     draws = int(as_scalar(as_count(n_draws, "n_draws", lo=_MIN_DRAWS, hi=_MAX_SAMPLES), "n_draws"))
     level = as_scalar(as_checked(credible, "credible", lo=0, hi=1, lo_open=True, hi_open=True), "credible")
     generator = as_generator(rng)

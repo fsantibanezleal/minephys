@@ -240,7 +240,12 @@ def _builtin() -> list[Case]:
     def trolley() -> dict[str, Any]:
         import numpy as np
 
-        return {**_haulage_segments(1000), "on_trolley": np.arange(1000) % 2 == 0, "diesel_efficiency": 0.35, "electric_efficiency": 0.9}
+        return {
+            **_haulage_segments(1000),
+            "on_trolley": np.arange(1000) % 2 == 0,
+            "diesel_efficiency": 0.35,
+            "electric_efficiency": 0.9,
+        }
 
     def mva() -> dict[str, Any]:
         import numpy as np
@@ -257,11 +262,28 @@ def _builtin() -> list[Case]:
         "haulage.total_resistance": {"rolling_resistance": 0.02, "grade": 0.1},
         "haulage.required_force": {"mass": 4e5, "total_resistance": 0.12},
         "haulage.rimpull_limited_speed": {"power": 1.8e6, "mass": 4e5, "total_resistance": 0.12},
-        "haulage.retarder_limited_speed": {"retarder_power": 2.5e6, "mass": 4e5, "rolling_resistance": 0.02, "grade": -0.1},
+        "haulage.retarder_limited_speed": {
+            "retarder_power": 2.5e6,
+            "mass": 4e5,
+            "rolling_resistance": 0.02,
+            "grade": -0.1,
+        },
         "haulage.loose_density": {"bank_density": 2700.0, "swell": 0.35},
-        "haulage.loading_passes": {"target_payload": 216000.0, "bucket_volume": 40.0, "fill_factor": 0.9, "loose_density": 2000.0},
+        "haulage.loading_passes": {
+            "target_payload": 216000.0,
+            "bucket_volume": 40.0,
+            "fill_factor": 0.9,
+            "loose_density": 2000.0,
+        },
         "haulage.segment_travel_time": {"length": 3000.0, "speed": 4.0},
-        "haulage.cycle_time": {"spot_load": 60.0, "load": 240.0, "haul_travel": 900.0, "spot_dump": 90.0, "dump": 45.0, "return_travel": 600.0},
+        "haulage.cycle_time": {
+            "spot_load": 60.0,
+            "load": 240.0,
+            "haul_travel": 900.0,
+            "spot_dump": 90.0,
+            "dump": 45.0,
+            "return_travel": 600.0,
+        },
         "haulage.segment_energy": {"mass": 4e5, "length": 3000.0, "rolling_resistance": 0.02, "grade": 0.1},
         "haulage.fuel_use": {"source_energy": 4e9, "fuel_energy_density": 36e9},
         "haulage.co2_from_diesel": {"fuel_volume": 0.112},
@@ -273,11 +295,24 @@ def _builtin() -> list[Case]:
     blasting = {
         "blasting.charge_per_hole": {"explosive_density": 850.0, "hole_diameter": 0.25, "charge_length": 7.2},
         "blasting.powder_factor": {"charge": 300.4, "burden": 6.0, "spacing": 7.0, "bench_height": 12.0},
-        "blasting.kuznetsov_x50": {"rock_factor": 7.0, "powder_factor": 0.596, "charge": 300.4, "rws": 100.0, "variant": "cunningham2005"},
+        "blasting.kuznetsov_x50": {
+            "rock_factor": 7.0,
+            "powder_factor": 0.596,
+            "charge": 300.4,
+            "rws": 100.0,
+            "variant": "cunningham2005",
+        },
         "blasting.rock_factor": {"rmd": 50.0, "rdi": 17.5, "hf": 10.0},
         "blasting.hardness_factor": {"youngs_modulus": 30e9, "ucs": 150e6},
         "blasting.rock_density_influence": {"density": 2700.0},
-        "blasting.uniformity_index": {"burden": 6.0, "spacing": 7.0, "hole_diameter": 0.25, "drilling_deviation": 0.3, "charge_length": 7.2, "bench_height": 12.0},
+        "blasting.uniformity_index": {
+            "burden": 6.0,
+            "spacing": 7.0,
+            "hole_diameter": 0.25,
+            "drilling_deviation": 0.3,
+            "charge_length": 7.2,
+            "bench_height": 12.0,
+        },
         "blasting.rosin_rammler_passing": {"size": 0.5, "x50": 0.3, "n": 1.1},
         "blasting.rosin_rammler_size": {"passing": 0.8, "x50": 0.3, "n": 1.1},
         "blasting.swebrec_passing": {"size": 0.5, "x50": 0.3, "xmax": 1.5, "b": 2.5},
@@ -310,11 +345,23 @@ def _builtin() -> list[Case]:
     )
     geotech = {
         "geotech.hoek_brown_parameters": {"gsi": 50.0, "mi": 10.0, "disturbance": 0.0},
-        "geotech.hoek_brown_sigma1": {"sigma3": 1.0e6, "sigma_ci": 50.0e6, "mb": 1.676772, "s": 3.86592e-3, "a": 0.505734},
+        "geotech.hoek_brown_sigma1": {
+            "sigma3": 1.0e6,
+            "sigma_ci": 50.0e6,
+            "mb": 1.676772,
+            "s": 3.86592e-3,
+            "a": 0.505734,
+        },
         "geotech.hoek_brown_uniaxial_strength": {"sigma_ci": 50.0e6, "s": 3.86592e-3, "a": 0.505734},
         "geotech.hoek_brown_tensile_strength": {"sigma_ci": 50.0e6, "mb": 1.676772, "s": 3.86592e-3},
         "geotech.hoek_brown_rock_mass_strength": {"sigma_ci": 50.0e6, "mb": 1.676772, "s": 3.86592e-3, "a": 0.505734},
-        "geotech.equivalent_mohr_coulomb": {"sigma_ci": 50.0e6, "mb": 1.676772, "s": 3.86592e-3, "a": 0.505734, "sigma3_max": 2.0e6},
+        "geotech.equivalent_mohr_coulomb": {
+            "sigma_ci": 50.0e6,
+            "mb": 1.676772,
+            "s": 3.86592e-3,
+            "a": 0.505734,
+            "sigma3_max": 2.0e6,
+        },
         "geotech.sigma3_max": {"sigma_cm": 3.0e6, "unit_weight": 27000.0, "height": 100.0, "application": "slope"},
         "geotech.required_samples": {"pof": 0.05, "relative_error": 0.1},
         "geotech.los_phase": {"los_displacement": 0.002, "wavelength": 0.0175},
@@ -329,24 +376,93 @@ def _builtin() -> list[Case]:
     add(_case("geotech.monte_carlo_fos", "sampling", {"samples": 10000, "slices": 50}, _geotech_monte_carlo))
     add(_case("geotech.bayesian_ttf", "sampling", {"draws": 10000, "samples": 7}, _geotech_bayesian))
     bulk = {
-        "bulk.beverloo_discharge": {"orifice_diameter": 0.3, "particle_diameter": 0.02, "bulk_density": 1600.0, "discharge_coefficient": 0.56, "annulus_coefficient": 1.5},
+        "bulk.beverloo_discharge": {
+            "orifice_diameter": 0.3,
+            "particle_diameter": 0.02,
+            "bulk_density": 1600.0,
+            "discharge_coefficient": 0.56,
+            "annulus_coefficient": 1.5,
+        },
         "bulk.repose_cone_height": {"base_radius": 30.0, "repose_angle": 0.6457718232379019},
         "bulk.repose_cone_volume": {"base_radius": 30.0, "repose_angle": 0.6457718232379019},
-        "bulk.repose_ridge_volume": {"base_half_width": 30.0, "repose_angle": 0.6457718232379019, "length": 100.0, "end_cones": True},
+        "bulk.repose_ridge_volume": {
+            "base_half_width": 30.0,
+            "repose_angle": 0.6457718232379019,
+            "length": 100.0,
+            "end_cones": True,
+        },
         "bulk.conveyor_capacity": {"load_area": 0.25, "belt_speed": 4.0, "bulk_density": 1600.0},
-        "bulk.cema_effective_tension": {"length": 1000.0, "lift": 30.0, "belt_weight": 300.0, "material_weight": 1362.0347, "kt": 1.0, "kx": 10.0, "ky": 0.03},
+        "bulk.cema_effective_tension": {
+            "length": 1000.0,
+            "lift": 30.0,
+            "belt_weight": 300.0,
+            "material_weight": 1362.0347,
+            "kt": 1.0,
+            "kx": 10.0,
+            "ky": 0.03,
+        },
         "bulk.conveyor_power": {"effective_tension": 105222.08, "belt_speed": 4.0, "drive_efficiency": 0.9},
-        "bulk.gy_fundamental_sampling_error": {"sample_mass": 1.0, "lot_mass": 1000.0, "top_size": 0.01, "mineralogical_factor": 1.0e4, "shape_factor": 0.5, "granulometric_factor": 0.25, "liberation_factor": 0.1},
+        "bulk.gy_fundamental_sampling_error": {
+            "sample_mass": 1.0,
+            "lot_mass": 1000.0,
+            "top_size": 0.01,
+            "mineralogical_factor": 1.0e4,
+            "shape_factor": 0.5,
+            "granulometric_factor": 0.25,
+            "liberation_factor": 0.1,
+        },
     }
     for name, kwargs in bulk.items():
         add(_case(name, "closed_form", {"inputs": "scalar"}, kwargs))
-    add(_case("bulk.gy_blending_variance", "closed_form", {"inputs": "scalar", "n_layers": 10000000}, {"input_variance": 1.0, "n_layers": 10000000, "lag1_correlation": 0.9}))
-    add(_case("bulk.variance_reduction_ratio", "closed_form", {"inputs": "scalar", "n_layers": 10000000}, {"n_layers": 10000000, "lag1_correlation": 0.9}))
-    add(_case("haulage.cycle_energy", "iterative", {"segments": 1000}, lambda: {**_haulage_segments(1000), "efficiency": 0.35}))
-    add(_case("haulage.bev_cycle_energy", "iterative", {"segments": 1000}, lambda: {**_haulage_segments(1000), "drive_efficiency": 0.85, "regen_efficiency": 0.6}))
+    add(
+        _case(
+            "bulk.gy_blending_variance",
+            "closed_form",
+            {"inputs": "scalar", "n_layers": 10000000},
+            {"input_variance": 1.0, "n_layers": 10000000, "lag1_correlation": 0.9},
+        )
+    )
+    add(
+        _case(
+            "bulk.variance_reduction_ratio",
+            "closed_form",
+            {"inputs": "scalar", "n_layers": 10000000},
+            {"n_layers": 10000000, "lag1_correlation": 0.9},
+        )
+    )
+    add(
+        _case(
+            "haulage.cycle_energy",
+            "iterative",
+            {"segments": 1000},
+            lambda: {**_haulage_segments(1000), "efficiency": 0.35},
+        )
+    )
+    add(
+        _case(
+            "haulage.bev_cycle_energy",
+            "iterative",
+            {"segments": 1000},
+            lambda: {**_haulage_segments(1000), "drive_efficiency": 0.85, "regen_efficiency": 0.6},
+        )
+    )
     add(_case("haulage.trolley_cycle_energy", "iterative", {"segments": 1000}, trolley))
-    add(_case("haulage.mmc_queue", "iterative", {"servers": 10000}, {"arrival_rate": 90.0, "service_rate": 0.01, "servers": 10000}))
-    add(_case("haulage.finite_source_queue", "iterative", {"trucks": 100000}, {"n_trucks": 100000, "travel_rate": 0.001, "service_rate": 1.0}))
+    add(
+        _case(
+            "haulage.mmc_queue",
+            "iterative",
+            {"servers": 10000},
+            {"arrival_rate": 90.0, "service_rate": 0.01, "servers": 10000},
+        )
+    )
+    add(
+        _case(
+            "haulage.finite_source_queue",
+            "iterative",
+            {"trucks": 100000},
+            {"n_trucks": 100000, "travel_rate": 0.001, "service_rate": 1.0},
+        )
+    )
     add(_case("haulage.mean_value_analysis", "iterative", {"population": 200, "stations": 10}, mva))
     comminution = {
         "comminution.bond_energy": {"work_index": 5.4e7, "f80": 1.0e-2, "p80": 1.0e-4},
@@ -495,7 +611,13 @@ def run_case(case: Case, repeat: int) -> Case:
             samples.append((time.perf_counter() - start) * 1000.0)
     median = statistics.median(samples)
     budget = BUDGET_MS[case["kind"]]
-    return {"name": case["name"], "repeat": repeat, "median_ms": median, "budget_ms": budget, "passed": median <= budget}
+    return {
+        "name": case["name"],
+        "repeat": repeat,
+        "median_ms": median,
+        "budget_ms": budget,
+        "passed": median <= budget,
+    }
 
 
 def main(argv: list[str]) -> int:
@@ -515,14 +637,22 @@ def main(argv: list[str]) -> int:
         cases = load_registry(args.registry)
         if args.list:
             out: Any = [describe(c) for c in cases]
-            print(json.dumps(out, indent=2) if args.json else "\n".join(f"{c['name']}  {c['kind']}  {c['budget_ms']} ms" for c in out))
+            print(
+                json.dumps(out, indent=2)
+                if args.json
+                else "\n".join(f"{c['name']}  {c['kind']}  {c['budget_ms']} ms" for c in out)
+            )
             return 0
         if args.run:
             match = [c for c in cases if c["name"] == args.run]
             if not match:
                 raise UsageError(f"unknown case {args.run!r}; use --list")
             result = run_case(match[0], args.repeat)
-            print(json.dumps(result) if args.json else f"{result['name']}: median {result['median_ms']:.4f} ms (budget {result['budget_ms']} ms)")
+            print(
+                json.dumps(result)
+                if args.json
+                else f"{result['name']}: median {result['median_ms']:.4f} ms (budget {result['budget_ms']} ms)"
+            )
             return 0
         results = [run_case(c, args.repeat) for c in cases]
         ok = all(r["passed"] for r in results)
@@ -530,7 +660,10 @@ def main(argv: list[str]) -> int:
             print(json.dumps({"results": results, "passed": ok}, indent=2))
         else:
             for r in results:
-                print(f"{'ok  ' if r['passed'] else 'FAIL'} {r['name']}: {r['median_ms']:.4f} ms (budget {r['budget_ms']} ms)")
+                print(
+                    f"{'ok  ' if r['passed'] else 'FAIL'} {r['name']}: {r['median_ms']:.4f} ms "
+                    f"(budget {r['budget_ms']} ms)"
+                )
         return 0 if ok else 1
     except UsageError as err:
         print(f"bench: {err}", file=sys.stderr)

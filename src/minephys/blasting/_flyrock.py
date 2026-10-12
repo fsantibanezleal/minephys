@@ -121,9 +121,7 @@ def _hermite(s: float, p0: float, d0: float, p1: float, d1: float, dt: float) ->
     """Cubic Hermite interpolation at the fraction s of a step (values p0, p1 and derivatives d0, d1 per unit time)."""
     s2 = s * s
     s3 = s2 * s
-    return (
-        (2 * s3 - 3 * s2 + 1) * p0 + (s3 - 2 * s2 + s) * dt * d0 + (3 * s2 - 2 * s3) * p1 + (s3 - s2) * dt * d1
-    )
+    return (2 * s3 - 3 * s2 + 1) * p0 + (s3 - 2 * s2 + s) * dt * d0 + (3 * s2 - 2 * s3) * p1 + (s3 - s2) * dt * d1
 
 
 def flyrock_trajectory(
@@ -201,7 +199,8 @@ def flyrock_trajectory(
     grav = as_scalar(as_checked(g, "g", lo=0, lo_open=True), "g")
     if t_max / dt > _MAX_STEPS:
         raise InputError(
-            f"max_time / time_step = {t_max / dt:.6g} exceeds {_MAX_STEPS} steps: shorten max_time or enlarge time_step",
+            f"max_time / time_step = {t_max / dt:.6g} exceeds {_MAX_STEPS} steps: "
+            "shorten max_time or enlarge time_step",
             argument="max_time",
         )
     tw.warn_max(np.asarray(v0), "launch_speed", "tripwire_launch_speed_max")
@@ -249,7 +248,8 @@ def flyrock_trajectory(
         _land(ts, xs, zs, vxs, vzs, dt, c, grav)
     arrays = [np.array(a, dtype=np.float64) for a in (ts, xs, zs, vxs, vzs)]
     apex = _apex(arrays, dt, c, grav)
-    return FlyrockTrajectory(*arrays, float(xs[-1]), float(ts[-1]), apex)
+    t_arr, x_arr, z_arr, vx_arr, vz_arr = arrays
+    return FlyrockTrajectory(t_arr, x_arr, z_arr, vx_arr, vz_arr, float(xs[-1]), float(ts[-1]), apex)
 
 
 def _accel(vx: float, vz: float, c: float, grav: float) -> tuple[float, float]:
@@ -257,7 +257,16 @@ def _accel(vx: float, vz: float, c: float, grav: float) -> tuple[float, float]:
     return -c * speed * vx, -grav - c * speed * vz
 
 
-def _land(ts: list[float], xs: list[float], zs: list[float], vxs: list[float], vzs: list[float], dt: float, c: float, grav: float) -> None:
+def _land(
+    ts: list[float],
+    xs: list[float],
+    zs: list[float],
+    vxs: list[float],
+    vzs: list[float],
+    dt: float,
+    c: float,
+    grav: float,
+) -> None:
     """Replace the last (below ground) sample by the landing point found by Hermite interpolation of z."""
     t0, x0, z0, vx0, vz0 = ts[-2], xs[-2], zs[-2], vxs[-2], vzs[-2]
     x1, z1, vx1, vz1 = xs[-1], zs[-1], vxs[-1], vzs[-1]

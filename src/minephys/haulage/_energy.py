@@ -28,7 +28,9 @@ _MAX_SEGMENTS = 100_000
 _SEGMENT_ARGS = ("mass", "length", "rolling_resistance", "grade")
 
 
-def _wheel_energy(m: FloatArray, ln: FloatArray, rr: FloatArray, gr: FloatArray, flag: Any, g: FloatArray) -> FloatArray:
+def _wheel_energy(
+    m: FloatArray, ln: FloatArray, rr: FloatArray, gr: FloatArray, flag: Any, g: FloatArray
+) -> FloatArray:
     """Wheel energy m g TR L of segments (positive uphill, negative when the road drives the truck)."""
     return m * g * (rr + np.where(flag, gr, _exact_grade_resistance(gr))) * ln
 
@@ -269,7 +271,14 @@ def bev_cycle_energy(
     tripwire_grade_abs_max, tripwire_rolling_resistance_max, tripwire_truck_mass_min, tripwire_truck_mass_max
     """
     return _sum_segments(
-        mass, length, rolling_resistance, grade, drive_efficiency, regen_efficiency, small_angle, g,
+        mass,
+        length,
+        rolling_resistance,
+        grade,
+        drive_efficiency,
+        regen_efficiency,
+        small_angle,
+        g,
         efficiency_name="drive_efficiency",
     )
 

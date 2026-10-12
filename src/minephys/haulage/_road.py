@@ -172,7 +172,14 @@ def required_force(
     v = as_checked(speed, "speed", lo=0)
     grav = as_checked(g, "g", lo=0, lo_open=True)
     m, tr, a, m_eff, cda, rho, v, grav = broadcast_all(
-        mass=m, total_resistance=tr, acceleration=a, effective_mass=m_eff, drag_area=cda, air_density=rho, speed=v, g=grav
+        mass=m,
+        total_resistance=tr,
+        acceleration=a,
+        effective_mass=m_eff,
+        drag_area=cda,
+        air_density=rho,
+        speed=v,
+        g=grav,
     )
     tw.warn_min(m, "mass", "tripwire_truck_mass_min")
     tw.warn_max(m, "mass", "tripwire_truck_mass_max")

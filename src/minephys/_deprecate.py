@@ -32,8 +32,7 @@ def deprecated(*, since: str, removal: str, replacement: str) -> Callable[[_F], 
 
     def decorate(function: _F) -> _F:
         message = (
-            f"{function.__name__}() is deprecated since {since} and will be removed in {removal}; "
-            f"use {replacement}"
+            f"{function.__name__}() is deprecated since {since} and will be removed in {removal}; use {replacement}"
         )
 
         @functools.wraps(function)

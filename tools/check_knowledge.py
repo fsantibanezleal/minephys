@@ -82,7 +82,9 @@ def check(root: Path) -> list[str]:
             _, module, name = symbol.split(".")
             exported = kio.exported_names(root, module)
             if exported is not None and name not in exported:
-                problems.append(f"{tf.label}: row {row['id']}: field symbol: {symbol} is not exported by minephys.{module}")
+                problems.append(
+                    f"{tf.label}: row {row['id']}: field symbol: {symbol} is not exported by minephys.{module}"
+                )
         if row.get("verification") == "verified" and row["id"] not in pinned:
             problems.append(
                 f"{tf.label}: row {row['id']}: verified but no @pytest.mark.knowledge({row['id']!r}) test pins it"

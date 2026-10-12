@@ -74,7 +74,11 @@ def main(argv: list[str] | None = None) -> int:
         if args.branch_coverage is not None:
             gate("branch coverage", fraction(args.branch_coverage, "--branch-coverage"), limits["branch"])
         if args.changed_lines_coverage is not None:
-            gate("changed-lines coverage", fraction(args.changed_lines_coverage, "--changed-lines-coverage"), limits["changed"])
+            gate(
+                "changed-lines coverage",
+                fraction(args.changed_lines_coverage, "--changed-lines-coverage"),
+                limits["changed"],
+            )
         if args.mutation_score is not None:
             score = fraction(args.mutation_score, "--mutation-score")
             if score < limits["mutation_fail"]:

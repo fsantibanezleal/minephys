@@ -277,4 +277,3 @@ def j_to_kwh(x: Any) -> Any:
         The energy in kilowatt-hours.
     """
     return _scale(x, "x", "kilowatt_hour", divide=True)
-

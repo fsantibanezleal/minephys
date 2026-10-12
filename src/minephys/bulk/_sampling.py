@@ -152,7 +152,7 @@ def gy_blending_variance(input_variance: Any, n_layers: Any, lag1_correlation: A
 
     Source
     ------
-    minephys:spec-004-bulk, section 7.4 (the sum is arithmetic: derived on the theory page; rho = 0 is Gy's idealised 1/N)
+    minephys:spec-004-bulk, section 7.4 (the sum is arithmetic, derived on the theory page; rho = 0 is Gy's 1/N)
 
     Validity
     --------
@@ -191,7 +191,7 @@ def variance_reduction_ratio(n_layers: Any, lag1_correlation: Any = 0) -> Any:
 
     Source
     ------
-    minephys:spec-004-bulk, section 7.4 (the sum is arithmetic: derived on the theory page; rho = 0 is Gy's idealised 1/N)
+    minephys:spec-004-bulk, section 7.4 (the sum is arithmetic, derived on the theory page; rho = 0 is Gy's 1/N)
 
     Validity
     --------

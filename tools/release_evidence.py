@@ -33,7 +33,9 @@ def load_matrix(path: Path) -> dict[str, str]:
         raise ValueError(f"{path}: the matrix must be an object with a 'smoke' mapping")
     for runtime, status in smoke.items():
         if status not in STATUSES:
-            raise ValueError(f"{path}: runtime {runtime!r} has status {status!r}; expected one of {', '.join(STATUSES)}")
+            raise ValueError(
+                f"{path}: runtime {runtime!r} has status {status!r}; expected one of {', '.join(STATUSES)}"
+            )
     return smoke
 
 
@@ -41,7 +43,9 @@ def honesty(root: Path) -> dict[str, Any]:
     rows: list[dict[str, Any]] = []
     for tf in kio.table_files(root):
         rows.extend(kio.rows_of(kio.read_table(tf)))
-    unverified_parameters = {r["id"] for r in rows if r.get("role") == "parameter" and r.get("verification") != "verified"}
+    unverified_parameters = {
+        r["id"] for r in rows if r.get("role") == "parameter" and r.get("verification") != "verified"
+    }
     defaults = [
         {"function": name, "row": word}
         for _, name, words in kio.knowledge_rows_of_functions(root)
@@ -88,7 +92,9 @@ def main(argv: list[str] | None = None) -> int:
     if args.json:
         print(json.dumps(report, indent=2))
     else:
-        print(f"honesty: {h['verified_rows_pinned']}/{h['verified_rows']} verified rows pinned ({h['pinned_pct']:.1f} %)")
+        print(
+            f"honesty: {h['verified_rows_pinned']}/{h['verified_rows']} verified rows pinned ({h['pinned_pct']:.1f} %)"
+        )
         for d in h["unverified_parameter_defaults"]:
             print(f"  UNVERIFIED parameter {d['row']} listed by {d['function']}")
         print(f"portability: passed {p['passed']}, failed {p['failed']}, missing {p['missing']}")

@@ -110,9 +110,7 @@ def powder_factor(charge: Any, burden: Any, spacing: Any, bench_height: Any) -> 
     return finalize(q / (b * s * h), q, b, s, h)
 
 
-def kuznetsov_x50(
-    rock_factor: Any, powder_factor: Any, charge: Any, rws: Any, variant: str = "cunningham1983"
-) -> Any:
+def kuznetsov_x50(rock_factor: Any, powder_factor: Any, charge: Any, rws: Any, variant: str = "cunningham1983") -> Any:
     """Kuznetsov mean fragment size (Kuz-Ram), with the 1983/1987 or the 2005 strength exponent.
 
     Parameters
@@ -369,7 +367,9 @@ def uniformity_index(
     )
     first = _row("cunningham_n_constant") - _row("cunningham_n_burden_coefficient") * b / (d * _MM_PER_M)
     if np.any(first <= 0):
-        raise InputError("the burden is too large for the hole diameter: 14 B / d must stay below 2.2", argument="burden")
+        raise InputError(
+            "the burden is too large for the hole diameter: 14 B / d must stay below 2.2", argument="burden"
+        )
     if np.any(w >= b):
         raise InputError("argument 'drilling_deviation' must be smaller than the burden", argument="drilling_deviation")
     if not single and np.any(bcl + ccl > length):

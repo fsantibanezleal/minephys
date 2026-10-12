@@ -21,8 +21,8 @@ FloatArray = npt.NDArray[np.float64]
 __all__ = [
     "as_checked",
     "as_count",
-    "as_scalar",
     "as_float_array",
+    "as_scalar",
     "broadcast_all",
     "check_bool",
     "check_domain",
@@ -220,7 +220,5 @@ def as_count(value: Any, name: str, *, lo: int = 1, hi: int | None = None) -> Fl
 def as_scalar(arr: FloatArray, name: str) -> float:
     """The Python float of a rank-0 argument; an array is a rank error (scalar-only functions)."""
     if arr.ndim != 0:
-        raise InputError(
-            f"argument '{name}' must be a scalar, got an array of shape {tuple(arr.shape)}", argument=name
-        )
+        raise InputError(f"argument '{name}' must be a scalar, got an array of shape {tuple(arr.shape)}", argument=name)
     return float(arr)
