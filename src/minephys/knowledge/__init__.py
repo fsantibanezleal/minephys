@@ -1,222 +1,147 @@
-"""Reader of the packaged knowledge tables (DC-000-02), loaded lazily on first use (spec 000 FR-000-06, FR-000-20).
+"""Loader, validator, lookup, catalogues, export and page renderer of the knowledge base (spec 008).
 
-The tables are YAML files next to this module (`<table>.yaml`, `share-alike/<table>.yaml`). Importing the package
-reads no file; the first call that needs a row loads and validates every table once and caches the result. The rows
-are immutable. Reading an UNVERIFIED `model_constant` or `parameter` row through `get_value` emits
-`UnverifiedParameterWarning` (spec 008 FR-008-12), so that no unverified constant is used silently.
+The package data are the parameter tables (`<table>.yaml`, `share-alike/<table>.yaml`), the bibliography
+`references.bib` and the
+catalogues `catalogue/equations.yaml` and `catalogue/glossary.yaml`. Importing the package reads no file; the first
+call that
+needs knowledge reads, validates and caches every file once (through `importlib.resources`), and the objects returned
+are
+immutable. A file that breaks a rule makes every call raise `KnowledgeSchemaError` (no partially validated data is
+served).
+Reading an UNVERIFIED `model_constant` or `parameter` row through `get_value` warns with
+`UnverifiedParameterWarning`, so
+that nothing unverified is used silently. PyYAML is imported only when a file is read.
 """
 
 from __future__ import annotations
 
-import functools
 import importlib.resources
-import re
+import json
+import os
 import warnings
-from dataclasses import dataclass
+from pathlib import Path
 from typing import Any
 
+from .._errors import InputError, InputTypeError
+from ._load import Knowledge, Loaded, read_folder, read_tables
+from ._model import (
+    Equation,
+    KnowledgeSchemaError,
+    Reference,
+    Row,
+    Table,
+    Term,
+    UnverifiedParameterWarning,
+    ValidationError,
+    ValidationReport,
+)
+
 __all__ = [
+    "Equation",
     "KnowledgeSchemaError",
+    "Reference",
     "Row",
     "Table",
+    "Term",
     "UnverifiedParameterWarning",
+    "ValidationError",
+    "ValidationReport",
+    "bibliography",
+    "equations",
+    "export",
+    "export_json",
     "get_parameter",
     "get_value",
+    "glossary",
+    "knowledge_changes",
     "list_parameters",
     "list_tables",
     "load_table",
+    "render_pages",
+    "validate_tables",
 ]
 
-_RATIONAL = re.compile(r"^-?[0-9]+/[0-9]+$")
-_ROLES = ("model_constant", "parameter", "limit", "conversion")
 _WARNING_ROLES = ("model_constant", "parameter")
+_loaded: Loaded | None = None
+_export_cache: dict[str, Any] | None = None
 
 
-class UnverifiedParameterWarning(UserWarning):
-    """A model read an UNVERIFIED knowledge row of role `model_constant` or `parameter`."""
+def _packaged_root() -> Any:
+    return importlib.resources.files("minephys.knowledge")
 
 
-class KnowledgeSchemaError(ValueError):
-    """A packaged knowledge table violates DC-000-02."""
-
-    def __init__(self, message: str, *, file: str, index: int | None = None, field: str | None = None) -> None:
-        super().__init__(message)
-        self.file = file
-        self.index = index
-        self.field = field
+def _packaged_label(relative: str) -> str:
+    return f"knowledge/{relative}"
 
 
-@dataclass(frozen=True)
-class Row:
-    """One knowledge row (data model section 1); `value` is a float, `range` a (min, max) pair, one of them None."""
-
-    id: str
-    table: str
-    quantity: str
-    value: float | None
-    range: tuple[float, float] | None
-    units: str
-    role: str
-    citation: str
-    page: str
-    verification: str
-    verified_on: str | None
-    symbol: tuple[str, ...]
-    notes: str | None
+def _packaged() -> Loaded:
+    """The packaged knowledge read and validated once; the result (errors included) is cached."""
+    global _loaded
+    if _loaded is None:
+        _loaded = read_folder(_packaged_root(), _packaged_label)
+    return _loaded
 
 
-@dataclass(frozen=True)
-class Table:
-    """One knowledge table: header and rows in file order."""
-
-    name: str
-    title: str
-    licence: str
-    rows: tuple[Row, ...]
-
-
-def _read_yaml(text: str, file: str) -> Any:
-    import yaml  # PyYAML is a runtime dependency; imported on first use to keep `import minephys` cheap
-
-    loader = getattr(yaml, "CSafeLoader", yaml.SafeLoader)
-    try:
-        return yaml.load(text, Loader=loader)  # noqa: S506  (a safe loader)
-    except yaml.YAMLError as err:
-        raise KnowledgeSchemaError(f"{file}: not valid YAML: {err}", file=file) from None
+def _knowledge() -> Knowledge:
+    """The validated packaged knowledge; if it is invalid every call raises the first error (no partial data is
+    served)."""
+    loaded = _packaged()
+    if loaded.knowledge is None:
+        first = loaded.errors[0]
+        raise KnowledgeSchemaError(str(first), file=first.file, index=first.index, field=first.field)
+    return loaded.knowledge
 
 
-def _number(value: Any, file: str, index: int, field: str) -> float:
-    if isinstance(value, bool) or not isinstance(value, int | float):
-        raise KnowledgeSchemaError(f"{file}: row {index}: {field} must be a number", file=file, index=index, field=field)
-    return float(value)
-
-
-def _row(raw: Any, name: str, file: str, index: int) -> Row:
-    if not isinstance(raw, dict):
-        raise KnowledgeSchemaError(f"{file}: row {index} is not a mapping", file=file, index=index)
-    for key in ("id", "quantity", "units", "role", "citation", "page", "verification", "symbol"):
-        if key not in raw:
-            raise KnowledgeSchemaError(f"{file}: row {index}: field {key} missing", file=file, index=index, field=key)
-    if raw["role"] not in _ROLES:
-        raise KnowledgeSchemaError(f"{file}: row {index}: field role: unknown role", file=file, index=index, field="role")
-    value: float | None = None
-    span: tuple[float, float] | None = None
-    if "value" in raw:
-        raw_value = raw["value"]
-        if isinstance(raw_value, str):
-            if not _RATIONAL.match(raw_value):
-                raise KnowledgeSchemaError(
-                    f"{file}: row {index}: field value: not a number or p/q", file=file, index=index, field="value"
-                )
-            numerator, denominator = raw_value.split("/")
-            value = int(numerator) / int(denominator)
-        else:
-            value = _number(raw_value, file, index, "value")
-    elif "range" in raw:
-        bounds = raw["range"]
-        span = (_number(bounds["min"], file, index, "range"), _number(bounds["max"], file, index, "range"))
-    else:
-        raise KnowledgeSchemaError(f"{file}: row {index}: value or range missing", file=file, index=index, field="value")
-    symbol = raw["symbol"]
-    return Row(
-        id=raw["id"],
-        table=name,
-        quantity=raw["quantity"],
-        value=value,
-        range=span,
-        units=raw["units"],
-        role=raw["role"],
-        citation=raw["citation"],
-        page=raw["page"],
-        verification=raw["verification"],
-        verified_on=raw.get("verified_on"),
-        symbol=(symbol,) if isinstance(symbol, str) else tuple(symbol),
-        notes=raw.get("notes"),
-    )
-
-
-def _build(text: str, name: str, file: str) -> Table:
-    doc = _read_yaml(text, file)
-    if not isinstance(doc, dict) or doc.get("table") != name or not isinstance(doc.get("rows"), list):
-        raise KnowledgeSchemaError(f"{file}: not a knowledge table named {name!r}", file=file)
-    rows = tuple(_row(raw, name, file, i) for i, raw in enumerate(doc["rows"], start=1))
-    return Table(name=name, title=str(doc.get("title", "")), licence=str(doc.get("licence", "")), rows=rows)
-
-
-@functools.cache
-def _tables() -> dict[str, Table]:
-    root = importlib.resources.files(__name__)
-    sources = [(p.name[: -len(".yaml")], p) for p in root.iterdir() if p.name.endswith(".yaml")]
-    shared = root.joinpath("share-alike")
-    if shared.is_dir():
-        sources += [(p.name[: -len(".yaml")], p) for p in shared.iterdir() if p.name.endswith(".yaml")]
-    tables: dict[str, Table] = {}
-    for name, path in sorted(sources, key=lambda item: item[0]):
-        tables[name] = _build(path.read_text(encoding="utf-8"), name, f"knowledge/{name}.yaml")
-    return tables
-
-
-@functools.cache
-def _rows() -> dict[str, Row]:
-    index: dict[str, Row] = {}
-    for table in _tables().values():
-        for row in table.rows:
-            if row.id in index:
-                raise KnowledgeSchemaError(
-                    f"knowledge/{table.name}.yaml: duplicate row id {row.id}", file=f"knowledge/{table.name}.yaml"
-                )
-            index[row.id] = row
-    return index
+def _name(value: Any, argument: str) -> str:
+    if not isinstance(value, str):
+        raise InputTypeError(f"argument '{argument}' must be a string, got {type(value).__name__}", argument=argument)
+    return value
 
 
 def list_tables() -> tuple[str, ...]:
-    """Names of the packaged tables, sorted."""
-    return tuple(sorted(_tables()))
+    """Names of the packaged tables (file stems of `knowledge/*.yaml` and `knowledge/share-alike/*.yaml`), sorted."""
+    return tuple(_knowledge().tables)
 
 
 def load_table(table: str) -> Table:
-    """The table named `table`; an unknown name raises `minephys.InputError`."""
-    from .._errors import InputError, InputTypeError
-
-    if not isinstance(table, str):
-        raise InputTypeError(f"argument 'table' must be a string, got {type(table).__name__}", argument="table")
-    tables = _tables()
-    if table not in tables:
-        raise InputError(f"argument 'table' must be one of {sorted(tables)}, got {table!r}", argument="table")
-    return tables[table]
+    """The table named `table`; a name that is not in `list_tables()` raises `minephys.InputError` without opening a
+    file."""
+    name = _name(table, "table")
+    tables = _knowledge().tables
+    if name not in tables:
+        raise InputError(f"argument 'table' must be one of {sorted(tables)}, got {name[:60]!r}", argument="table")
+    return tables[name]
 
 
-def get_parameter(id: str) -> Row:  # noqa: A002  (the name is the spec 008 FR-008-09 signature)
-    """The row with this id; an unknown id raises `minephys.InputError`."""
-    from .._errors import InputError, InputTypeError
-
-    if not isinstance(id, str):
-        raise InputTypeError(f"argument 'id' must be a string, got {type(id).__name__}", argument="id")
-    rows = _rows()
-    if id not in rows:
-        raise InputError(f"argument 'id': unknown knowledge row {id!r}", argument="id")
-    return rows[id]
+def get_parameter(id: str) -> Row:
+    """The row with this id; an unknown id raises `minephys.InputError`, a non-string `minephys.InputTypeError`."""
+    row_id = _name(id, "id")
+    rows = _knowledge().rows
+    if row_id not in rows:
+        raise InputError(f"argument 'id': unknown knowledge row {row_id[:60]!r}", argument="id")
+    return rows[row_id]
 
 
 def list_parameters(
     table: str | None = None, role: str | None = None, verification: str | None = None
 ) -> tuple[Row, ...]:
-    """Every row, optionally filtered by table, role and verification status (UNVERIFIED rows are never hidden)."""
-    rows = _rows().values()
+    """Every row (UNVERIFIED ones included), optionally filtered by table, role and verification status."""
     return tuple(
         r
-        for r in rows
+        for r in _knowledge().rows.values()
         if (table is None or r.table == table)
         and (role is None or r.role == role)
         and (verification is None or r.verification == verification)
     )
 
 
-def get_value(id: str) -> float | tuple[float, float]:  # noqa: A002
-    """The value of a row as a float (a `p/q` string evaluated in float64) or the `(min, max)` of a range row.
+def get_value(id: str) -> float | tuple[float, float]:
+    """The value of a row as a float (a `"p/q"` string evaluated as p / q in float64) or the `(min, max)` of a range
+    row.
 
-    An UNVERIFIED row of role `model_constant` or `parameter` emits `UnverifiedParameterWarning` naming the row id and
-    its citation key; `limit` and `conversion` rows never warn.
+    An UNVERIFIED row of role `model_constant` or `parameter` emits `UnverifiedParameterWarning` naming the row id
+    and its
+    citation key; `limit` and `conversion` rows never warn.
     """
     row = get_parameter(id)
     if row.verification != "verified" and row.role in _WARNING_ROLES:
@@ -225,7 +150,122 @@ def get_value(id: str) -> float | tuple[float, float]:  # noqa: A002
             UnverifiedParameterWarning,
             stacklevel=2,
         )
-    if row.value is not None:
-        return row.value
-    assert row.range is not None
-    return row.range
+    if row.range is not None:
+        return row.range
+    return _numeric(row.value)
+
+
+def _numeric(value: Any) -> float:
+    if isinstance(value, str):
+        numerator, denominator = value.split("/")
+        return int(numerator) / int(denominator)
+    return float(value)
+
+
+def bibliography() -> tuple[Reference, ...]:
+    """Every parsed bibliography entry, sorted by key."""
+    return _knowledge().references
+
+
+def equations(domain: str | None = None) -> tuple[Equation, ...]:
+    """The equations catalogue (empty when none is shipped), optionally for one domain."""
+    items = _knowledge().equations
+    return items if domain is None else tuple(e for e in items if e.domain == domain)
+
+
+def glossary(domain: str | None = None) -> tuple[Term, ...]:
+    """The bilingual glossary (empty when none is shipped), optionally for one domain."""
+    items = _knowledge().glossary
+    return items if domain is None else tuple(t for t in items if t.domain == domain)
+
+
+def _directory(value: Any, argument: str) -> Path:
+    if not isinstance(value, str | os.PathLike) or isinstance(value, bytes):
+        raise InputTypeError(
+            f"argument '{argument}' must be a folder path, got {type(value).__name__}", argument=argument
+        )
+    path = Path(value)
+    if not path.is_dir():
+        raise InputError(
+            f"argument '{argument}' must be an existing directory, got {str(path)[:80]!r}", argument=argument
+        )
+    return path
+
+
+def validate_tables(path: str | os.PathLike[str] | None = None) -> ValidationReport:
+    """Validate the packaged knowledge, or a folder with the same layout, and report every error with the counts."""
+    if path is None:
+        loaded = _packaged()
+    else:
+        folder = _directory(path, "path")
+        loaded = read_folder(folder, lambda rel: str(folder / rel))
+    return ValidationReport(
+        errors=tuple(loaded.errors),
+        rows=loaded.rows,
+        unverified=loaded.unverified,
+        equations=loaded.equations,
+        terms=loaded.terms,
+        references=loaded.references,
+        tables=loaded.tables,
+    )
+
+
+def _version() -> str:
+    from .. import __version__
+
+    return __version__
+
+
+def export() -> dict[str, Any]:
+    """Every table, equation, term and reference with a summary of counts (FR-008-15); a new mapping on each call."""
+    import copy
+
+    global _export_cache
+    if _export_cache is None:
+        from ._render import build_export
+
+        _export_cache = build_export(_knowledge(), _version())
+    return copy.deepcopy(_export_cache)
+
+
+def export_json() -> str:
+    """`export()` as deterministic JSON: sorted keys, two-space indent, UTF-8 characters, LF line ends, trailing
+    newline."""
+    return json.dumps(export(), sort_keys=True, indent=2, ensure_ascii=False) + "\n"
+
+
+def render_pages(out_dir: str | os.PathLike[str]) -> None:
+    """Write one Markdown page per table plus `equations.md`, `bibliography.md` and `glossary.md` into an existing
+    folder."""
+    from ._render import build_pages
+
+    folder = _directory(out_dir, "out_dir")
+    pages = build_pages(_knowledge())
+    for name, text in pages.items():
+        (folder / name).write_bytes(text.encode("utf-8"))
+
+
+def _signatures(path: Path) -> dict[str, tuple[str, Any, str]]:
+    documents, errors = read_tables(path, lambda rel: str(path / rel))
+    if errors:
+        first = errors[0]
+        raise KnowledgeSchemaError(str(first), file=first.file, index=first.index, field=first.field)
+    out: dict[str, tuple[str, Any, str]] = {}
+    for doc in documents.values():
+        for raw in doc["rows"]:
+            kind: str
+            number: Any
+            if "range" in raw:
+                kind, number = "range", (float(raw["range"]["min"]), float(raw["range"]["max"]))
+            else:
+                kind, number = "value", _numeric(raw["value"])
+            out[raw["id"]] = (kind, number, raw["verification"])
+    return out
+
+
+def knowledge_changes(old_dir: str | os.PathLike[str], new_dir: str | os.PathLike[str]) -> tuple[str, ...]:
+    """Sorted ids of the rows whose value, range or verification differ between two knowledge folders (added and
+    removed too)."""
+    old = _signatures(_directory(old_dir, "old_dir"))
+    new = _signatures(_directory(new_dir, "new_dir"))
+    return tuple(sorted(i for i in old.keys() | new.keys() if old.get(i) != new.get(i)))

@@ -125,7 +125,7 @@ equations:
       - {symbol: m, meaning: mining cost per kg of material, units: currency/kg}
       - {symbol: f, meaning: fixed cost per unit time, units: currency/s}
       - {symbol: F, meaning: opportunity cost per unit time, units: currency/s}
-      - {symbol: 'M, C, R', meaning: mine, plant and market capacities, units: kg/s}
+      - {symbol: 'M, C, R', meaning: 'mine, plant and market capacities', units: kg/s}
       - {symbol: 'x(g), q(g)', meaning: ore fraction and recovered metal per unit of material, units: "1"}
     function: minephys.planning.lane_cutoff_grades
     citation: lane1964choosing
