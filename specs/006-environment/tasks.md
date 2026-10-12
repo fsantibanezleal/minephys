@@ -28,7 +28,7 @@ row with the value printed in the source (transcribed into the test); the worked
 - [x] T-006-032 [US-006-3] (FR-006-18) optics and lidar guards — test: tests/unit/test_t_006_032_optics_guards.py
 
 ## Phase 5 — US-006-4 (P2) Cited constants and cross-cutting contract
-- [ ] T-006-040 [US-006-4] (FR-006-19) constants come from the knowledge rows (fixture layout changes results analytically) — test: tests/contract/test_t_006_040_constants_from_knowledge.py
+- [x] T-006-040 [US-006-4] (FR-006-19) constants come from the knowledge rows (fixture layout changes results analytically) — test: tests/contract/test_t_006_040_constants_from_knowledge.py
 - [ ] T-006-050 (NFR-006-01) import audit of `minephys.environment` — test: tests/contract/test_t_006_050_imports.py
 - [ ] T-006-051 (NFR-006-02) register the reference sizes in `tools/bench.py` — test: tests/unit/test_t_006_051_bench_registry.py
 - [ ] T-006-052 (NFR-006-03) one worked-example oracle per family in the Pyodide smoke subset — test: tests/pyodide/test_t_006_052_environment_smoke.py
