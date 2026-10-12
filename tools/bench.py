@@ -98,6 +98,130 @@ def _geotech_bayesian() -> dict[str, Any]:
     return {"t": t, "velocity": 1.0 / (10.0 * (864000.0 - t)), "rng": 20261011, "noise_sd": 43200.0, "n_draws": 10000}
 
 
+def _comminution_pbm(n_classes: int) -> dict[str, Any]:
+    """A population-balance mill of `n_classes` size classes (Austin selection and breakage)."""
+    import numpy as np
+
+    from minephys import comminution
+
+    sizes = np.geomspace(1e-3, 1e-5, n_classes)
+    selection = comminution.austin_selection(sizes, 0.5, 0.9, 1e-4, 2.0)
+    selection[-1] = 0.0
+    return {
+        "mass": np.full(n_classes, 1.0 / n_classes),
+        "selection": selection,
+        "breakage": comminution.austin_breakage(sizes, 0.4, 0.8, 3.0),
+    }
+
+
+def _comminution_batch() -> dict[str, Any]:
+    import numpy as np
+
+    return {**_comminution_pbm(30), "times": np.array([60.0])}
+
+
+def _comminution_continuous() -> dict[str, Any]:
+    pbm = _comminution_pbm(30)
+    return {
+        "feed": pbm["mass"],
+        "selection": pbm["selection"],
+        "breakage": pbm["breakage"],
+        "residence_time": 100.0,
+        "n_tanks": 10,
+    }
+
+
+def _comminution_chain() -> dict[str, Any]:
+    """The mine-to-mill chain over 400 sizes (identity crusher, Bond energy)."""
+    import numpy as np
+
+    sizes = np.geomspace(2.0, 1e-5, 400)
+    passing = 1.0 / (1.0 + (np.log(2.0 / sizes) / np.log(8.0)) ** 2)
+    return {
+        "sizes": sizes,
+        "blast_passing": passing,
+        "classification": np.zeros(400),
+        "breakage": np.zeros((400, 400)),
+        "target_p80": 1e-4,
+        "installed_power": 1e7,
+        "energy_model": "bond",
+        "work_index": 5.4e7,
+        "fines_size": float(sizes[200]),
+    }
+
+
+def _environment_plume_grid() -> dict[str, Any]:
+    """Gaussian plume over a 1,000 x 1,000 receptor grid."""
+    import numpy as np
+
+    return {
+        "q": 1e-3,
+        "u": 3.0,
+        "y": np.linspace(-500.0, 500.0, 1000)[:, None],
+        "z": np.linspace(0.0, 100.0, 1000)[None, :],
+        "h": 5.0,
+        "sigma_y": 40.0,
+        "sigma_z": 20.0,
+    }
+
+
+def _planning_grid() -> dict[str, Any]:
+    """A 6 x 6 x 6 block grid with the '1-5' precedence pattern."""
+    import numpy as np
+
+    from minephys import planning
+
+    shape = (6, 6, 6)
+    n = 6 * 6 * 6
+    return {
+        "arcs": planning.regular_grid_precedence(shape, "1-5"),
+        "n": n,
+        "values": np.linspace(-2.0, 3.0, n),
+    }
+
+
+def _planning_mincut() -> dict[str, Any]:
+    grid = _planning_grid()
+    return {"values": grid["values"], "arcs": grid["arcs"]}
+
+
+def _planning_nested() -> dict[str, Any]:
+    import numpy as np
+
+    grid = _planning_grid()
+    n = grid["n"]
+    return {
+        "tonnage": np.full(n, 1000.0),
+        "grade": np.linspace(0.0, 0.02, n),
+        "price": 8000.0,
+        "selling_cost": 500.0,
+        "recovery": 0.9,
+        "processing_cost": 10.0,
+        "mining_cost": 2.0,
+        "arcs": grid["arcs"],
+        "revenue_factors": np.array([0.5, 0.7, 0.9, 1.1, 1.3]),
+    }
+
+
+def _planning_lane() -> dict[str, Any]:
+    """Lane's cut-off grades over 50 grade bins."""
+    import numpy as np
+
+    return {
+        "grade_edges": np.linspace(0.0, 0.025, 51),
+        "tonnage": np.full(50, 2.0e5),
+        "price": 8000.0,
+        "selling_cost": 500.0,
+        "recovery": 0.9,
+        "processing_cost": 10.0,
+        "mining_cost": 2.0,
+        "fixed_cost": 1.0e6,
+        "mine_capacity": 8.0e6,
+        "plant_capacity": 6.0e6,
+        "market_capacity": 1.0e5,
+    }
+
+
 def _case(name: str, kind: str, size: dict[str, Any], kwargs: Callable[[], dict[str, Any]] | dict[str, Any]) -> Case:
     module, function = name.split(".", 1)
     return {
@@ -224,6 +348,63 @@ def _builtin() -> list[Case]:
     add(_case("haulage.mmc_queue", "iterative", {"servers": 10000}, {"arrival_rate": 90.0, "service_rate": 0.01, "servers": 10000}))
     add(_case("haulage.finite_source_queue", "iterative", {"trucks": 100000}, {"n_trucks": 100000, "travel_rate": 0.001, "service_rate": 1.0}))
     add(_case("haulage.mean_value_analysis", "iterative", {"population": 200, "stations": 10}, mva))
+    comminution = {
+        "comminution.bond_energy": {"work_index": 5.4e7, "f80": 1.0e-2, "p80": 1.0e-4},
+        "comminution.morrell_energy": {"m_index": 7.0e7, "x1": 1.0e-2, "x2": 1.0e-4},
+        "comminution.flotation_first_order": {"r_inf": 0.9, "k": 0.005, "t": 600.0},
+    }
+    for name, kwargs in comminution.items():
+        add(_case(name, "closed_form", {"inputs": "scalar"}, kwargs))
+    add(_case("comminution.pbm_batch_grinding", "iterative", {"classes": 30, "times": 1}, _comminution_batch))
+    add(_case("comminution.pbm_continuous_mill", "iterative", {"classes": 30, "tanks": 10}, _comminution_continuous))
+    add(_case("comminution.mine_to_mill_chain", "iterative", {"sizes": 400}, _comminution_chain))
+    environment = {
+        "environment.ap42_unpaved_emission_factor": {
+            "silt_fraction": 0.1,
+            "mean_weight": 263083.57,
+            "size_class": "PM10",
+        },
+        "environment.precipitation_correction": {"emission_factor": 0.0028, "wet_days": 100},
+        "environment.beer_lambert_transmittance": {"extinction": 0.01, "path_length": 30.0},
+    }
+    for name, kwargs in environment.items():
+        add(_case(name, "closed_form", {"inputs": "scalar"}, kwargs))
+    add(_case("environment.gaussian_plume", "iterative", {"receptors": "1000 x 1000"}, _environment_plume_grid))
+    planning = {
+        "planning.block_economic_value": {
+            "tonnage": 1000.0,
+            "grade": 0.01,
+            "price": 8000.0,
+            "selling_cost": 500.0,
+            "recovery": 0.9,
+            "processing_cost": 10.0,
+            "mining_cost": 2.0,
+        },
+        "planning.npv": {"cash_flows": [-100.0, 40.0, 50.0, 60.0], "rate": 0.1},
+    }
+    for name, kwargs in planning.items():
+        add(_case(name, "closed_form", {"inputs": "scalar"}, kwargs))
+    add(_case("planning.ultimate_pit_mincut", "iterative", {"grid": "6 x 6 x 6", "arcs": "1-5"}, _planning_mincut))
+    add(
+        _case(
+            "planning.nested_pits",
+            "iterative",
+            {"grid": "6 x 6 x 6", "arcs": "1-5", "revenue_factors": 5},
+            _planning_nested,
+        )
+    )
+    add(_case("planning.lane_cutoff_grades", "iterative", {"bins": 50}, _planning_lane))
+    # Knowledge (spec 008 NFR-008-02): the warm call is registered here (closed form, <= 1 ms, served from the cache);
+    # the cold load-and-validate of all packaged knowledge has a 0.5 s budget that this registry has no kind for, so it
+    # is measured by tests/unit/test_t_008_061_bench_registry.py in fresh interpreters (cold <= 0.5 s, warm <= 1 ms).
+    add(
+        _case(
+            "knowledge.get_parameter",
+            "closed_form",
+            {"inputs": "scalar", "cache": "warm"},
+            {"id": "bond_law_coefficient"},
+        )
+    )
     return cases
 
 
