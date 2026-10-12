@@ -1,0 +1,169 @@
+schema_version: 1
+table: bulk
+title: Bulk-handling constants, limits and parameters
+licence: CC-BY-4.0
+rows:
+- id: beverloo_exponent
+  quantity: exponent of the free opening in Beverloo's discharge law
+  value: 5/2
+  units: '1'
+  role: model_constant
+  citation: beverloo1961flow
+  page: read in mankoc2007beverloo, eq. 1, p. 1 (secondary)
+  verification: UNVERIFIED
+  symbol: minephys.bulk.beverloo_discharge
+  notes: primary source paywalled and not read; the exponent also follows from dimensional analysis, which is the test oracle
+- id: beverloo_discharge_coefficient_range
+  quantity: range of the discharge coefficient C (bulk-density form)
+  range:
+    min: 0.55
+    max: 0.65
+  units: '1'
+  role: parameter
+  citation: mankoc2007beverloo
+  page: p. 1 (Beverloo et al. 1961 as quoted)
+  verification: UNVERIFIED
+  symbol: minephys.bulk.beverloo_discharge
+  notes: secondary source only; documented, never a default
+- id: beverloo_annulus_coefficient_range
+  quantity: range of the annulus coefficient k
+  range:
+    min: 1
+    max: 2
+  units: '1'
+  role: parameter
+  citation: mankoc2007beverloo
+  page: p. 1; darias2020 p. 1 reports 1.4 to 3
+  verification: UNVERIFIED
+  symbol: minephys.bulk.beverloo_discharge
+  notes: secondary sources only; documented, never a default
+- id: beverloo_discharge_coefficient_dem
+  quantity: discharge coefficient C fitted to a DEM study with the particle density
+  value: 0.56
+  units: '1'
+  role: parameter
+  citation: dasilva2025
+  page: p. 9
+  verification: verified
+  verified_on: '2026-10-06'
+  symbol: minephys.bulk.beverloo_discharge
+  notes: fitted with the particle density of 3000 kg/m3, exponent 2.5 and g = 9.8 m/s2; not interchangeable with the bulk-density C; documented, never a default
+- id: cema_return_belt_coefficient
+  quantity: return-belt coefficient of the CEMA effective tension
+  value: 0.015
+  units: '1'
+  role: model_constant
+  citation: cema_belt_conveyors_7th
+  page: effective tension equation; printed in pdhonline_m344, p. 13
+  verification: UNVERIFIED
+  symbol: minephys.bulk.cema_effective_tension
+  notes: secondary source only; the standard is paywalled and its errata page was unreachable
+- id: cema_ky_typical_range
+  quantity: typical range of the factor Ky
+  range:
+    min: 0.016
+    max: 0.035
+  units: '1'
+  role: parameter
+  citation: pdhonline_m344
+  page: p. 13 (normal selection 0.022)
+  verification: UNVERIFIED
+  symbol: minephys.bulk.cema_effective_tension
+  notes: secondary source only; documented, never a default
+- id: gy_fse_shape_factor_default
+  quantity: shape factor f of Gy's formula
+  value: 0.5
+  units: '1'
+  role: parameter
+  citation: minkkinen2008
+  page: p. 6
+  verification: UNVERIFIED
+  symbol: minephys.bulk.gy_fundamental_sampling_error
+  notes: Gy's own text not read; documented, never a default
+- id: gy_fse_granulometric_factor_wide
+  quantity: granulometric factor g of Gy's formula for wide size distributions
+  value: 0.25
+  units: '1'
+  role: parameter
+  citation: minkkinen2008
+  page: p. 7
+  verification: UNVERIFIED
+  symbol: minephys.bulk.gy_fundamental_sampling_error
+  notes: Gy's own text not read; documented, never a default
+- id: tripwire_orifice_diameter_max
+  quantity: 'unit tripwire: largest plausible orifice diameter (mm passed as m)'
+  value: 10.0
+  units: m
+  role: limit
+  citation: minephys:spec-004-bulk
+  page: §7.3
+  verification: UNVERIFIED
+  symbol: minephys.bulk.beverloo_discharge
+  notes: design choice of the specification, not a measurement
+- id: tripwire_particle_diameter_max
+  quantity: 'unit tripwire: largest plausible particle diameter (mm passed as m)'
+  value: 1.0
+  units: m
+  role: limit
+  citation: minephys:spec-004-bulk
+  page: §7.3
+  verification: UNVERIFIED
+  symbol: minephys.bulk.beverloo_discharge
+  notes: design choice of the specification, not a measurement
+- id: tripwire_bulk_density_min
+  quantity: 'unit tripwire: smallest plausible bulk density (t/m3 passed as kg/m3)'
+  value: 100.0
+  units: kg/m³
+  role: limit
+  citation: minephys:spec-004-bulk
+  page: §7.3
+  verification: UNVERIFIED
+  symbol:
+  - minephys.bulk.beverloo_discharge
+  - minephys.bulk.conveyor_capacity
+  notes: design choice of the specification, not a measurement
+- id: tripwire_repose_angle_max
+  quantity: 'unit tripwire: largest plausible angle of repose'
+  value: 1.05
+  units: rad
+  role: limit
+  citation: minephys:spec-004-bulk
+  page: §7.3
+  verification: UNVERIFIED
+  symbol:
+  - minephys.bulk.repose_cone_height
+  - minephys.bulk.repose_cone_volume
+  - minephys.bulk.repose_ridge_volume
+  notes: design choice of the specification, not a measurement
+- id: tripwire_belt_speed_max
+  quantity: 'unit tripwire: largest plausible belt speed (ft/min or km/h passed as m/s)'
+  value: 15.0
+  units: m/s
+  role: limit
+  citation: minephys:spec-004-bulk
+  page: §7.3
+  verification: UNVERIFIED
+  symbol:
+  - minephys.bulk.conveyor_capacity
+  - minephys.bulk.conveyor_power
+  notes: design choice of the specification, not a measurement
+- id: tripwire_mineralogical_factor_min
+  quantity: 'unit tripwire: smallest plausible mineralogical factor (g/cm3 passed as kg/m3)'
+  value: 100.0
+  units: kg/m³
+  role: limit
+  citation: minephys:spec-004-bulk
+  page: §7.3
+  verification: UNVERIFIED
+  symbol: minephys.bulk.gy_fundamental_sampling_error
+  notes: design choice of the specification, not a measurement
+- id: tripwire_top_size_max
+  quantity: 'unit tripwire: largest plausible top size (cm passed as m)'
+  value: 0.5
+  units: m
+  role: limit
+  citation: minephys:spec-004-bulk
+  page: §7.3
+  verification: UNVERIFIED
+  symbol: minephys.bulk.gy_fundamental_sampling_error
+  notes: design choice of the specification, not a measurement

@@ -41,7 +41,7 @@ def scaled_distance(distance: Any, charge_per_delay: Any) -> Any:
 
     Source
     ------
-    cfr30_816_67, § 816.67(d)(3)
+    cfr30_816_67, section 816.67(d)(3)
 
     Validity
     --------
@@ -82,7 +82,7 @@ def ppv_scaled_distance(distance: Any, charge_per_delay: Any, k_site: Any, beta:
 
     Source
     ------
-    cfr30_816_67, § 816.67(d)(3)
+    cfr30_816_67, section 816.67(d)(3)
 
     Validity
     --------
@@ -132,7 +132,7 @@ def ppv_limit(distance: Any, standard: str = "30cfr816.67") -> Any:
 
     Source
     ------
-    cfr30_816_67, § 816.67(d)(2)(i)
+    cfr30_816_67, section 816.67(d)(2)(i)
 
     Validity
     --------
@@ -175,7 +175,7 @@ def max_charge_per_delay(distance: Any, standard: str = "30cfr816.67") -> Any:
 
     Source
     ------
-    cfr30_816_67, § 816.67(d)(3)(i)
+    cfr30_816_67, section 816.67(d)(3)(i)
 
     Validity
     --------
