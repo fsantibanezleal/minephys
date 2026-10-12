@@ -40,7 +40,7 @@ row with the value printed in the source (transcribed into the test); the worked
 - [x] T-005-050 [US-005-5] (FR-005-34) constants come from the knowledge rows (fixture layout changes results analytically) — test: tests/contract/test_t_005_050_constants_from_knowledge.py
 - [x] T-005-060 (NFR-005-01) import audit of `minephys.comminution` — test: tests/contract/test_t_005_060_imports.py
 - [ ] T-005-061 (NFR-005-02) register the reference sizes in `tools/bench.py` — test: tests/unit/test_t_005_061_bench_registry.py
-- [ ] T-005-062 (NFR-005-03) one worked-example oracle per family in the Pyodide smoke subset — test: tests/pyodide/test_t_005_062_comminution_smoke.py
+- [x] T-005-062 (NFR-005-03) one worked-example oracle per family in the Pyodide smoke subset — test: tests/pyodide/test_t_005_062_comminution_smoke.py
 - [ ] T-005-063 (NFR-005-04) model-card audit over `minephys.comminution.__all__` — test: tests/contract/test_t_005_063_model_cards.py
 - [ ] T-005-064 [US-005-1] (FR-000-05, FR-000-07, FR-000-10, FR-000-11, FR-000-12, FR-000-13, P-000-01, P-000-02, P-000-03) the foundation cross-cutting contract checks (T-000-010) on every `minephys.comminution` function — test: tests/property/test_t_005_064_comminution_contract.py
 
