@@ -25,7 +25,7 @@ row with the value printed in the source (transcribed into the test); the worked
 ## Phase 4 — US-006-3 (P2) Dust and lidar
 - [x] T-006-030 [US-006-3] (FR-006-15, FR-006-16, P-006-10, P-006-11) mass extinction, extinction coefficient and path transmittance — test: tests/unit/test_t_006_030_beer_lambert.py, tests/property/test_t_006_030_beer_lambert_properties.py
 - [x] T-006-031 [US-006-3] (FR-006-17, P-006-12) lidar return state at the published thresholds and the leading edge of a profile — test: tests/unit/test_t_006_031_lidar_dust.py, tests/property/test_t_006_031_lidar_properties.py
-- [ ] T-006-032 [US-006-3] (FR-006-18) optics and lidar guards — test: tests/unit/test_t_006_032_optics_guards.py
+- [x] T-006-032 [US-006-3] (FR-006-18) optics and lidar guards — test: tests/unit/test_t_006_032_optics_guards.py
 
 ## Phase 5 — US-006-4 (P2) Cited constants and cross-cutting contract
 - [ ] T-006-040 [US-006-4] (FR-006-19) constants come from the knowledge rows (fixture layout changes results analytically) — test: tests/contract/test_t_006_040_constants_from_knowledge.py
