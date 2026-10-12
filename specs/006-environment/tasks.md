@@ -33,7 +33,7 @@ row with the value printed in the source (transcribed into the test); the worked
 - [ ] T-006-051 (NFR-006-02) register the reference sizes in `tools/bench.py` — test: tests/unit/test_t_006_051_bench_registry.py
 - [x] T-006-052 (NFR-006-03) one worked-example oracle per family in the Pyodide smoke subset — test: tests/pyodide/test_t_006_052_environment_smoke.py
 - [ ] T-006-053 (NFR-006-04) model-card audit over `minephys.environment.__all__` — test: tests/contract/test_t_006_053_model_cards.py
-- [ ] T-006-054 [US-006-1] (FR-000-05, FR-000-07, FR-000-10, FR-000-11, FR-000-12, FR-000-13, P-000-01, P-000-02, P-000-03) the foundation cross-cutting contract checks (T-000-010) on every `minephys.environment` function — test: tests/property/test_t_006_054_environment_contract.py
+- [x] T-006-054 [US-006-1] (FR-000-05, FR-000-07, FR-000-10, FR-000-11, FR-000-12, FR-000-13, P-000-01, P-000-02, P-000-03) the foundation cross-cutting contract checks (T-000-010) on every `minephys.environment` function — test: tests/property/test_t_006_054_environment_contract.py
 
 ## Phase 6 — Polish and review
 - [ ] T-006-090 (SC-006-02) mutation run on `src/minephys/environment/`; record the score and fail below `mutation.numerical_core_min` — test: tests/unit/test_t_006_090_mutation_score.py
