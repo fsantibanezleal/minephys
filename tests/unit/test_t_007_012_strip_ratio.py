@@ -22,7 +22,7 @@ def _p():
 
 
 @pytest.mark.req("FR-007-09")
-@pytest.mark.oracle("worked-example", "plan 007: three waste blocks over one ore block of 1,000 t each: strip ratio 3")
+@pytest.mark.oracle("hand-calculation", "plan 007: three waste blocks over one ore block of 1,000 t each: strip ratio 3")
 def test_fr_007_09_worked_example() -> None:
     p = _p()
     tonnage = np.full(4, 1.0e6)  # 1,000 t in kg
