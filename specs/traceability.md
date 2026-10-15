@@ -1,4 +1,4 @@
-# Traceability matrix — generated 2026-10-12 by tools/trace.py (do not edit)
+# Traceability matrix — generated 2026-10-15 by tools/trace.py (do not edit)
 
 | Req ID | Spec | Status | Tasks | Tests |
 |---|---|---|---|---|
@@ -18,12 +18,12 @@
 | DC-008-01 | 008-knowledge | draft | T-008-001 | tests/contract/test_t_008_001_catalogue_schemas.py |
 | DC-008-02 | 008-knowledge | draft | T-008-001 | tests/contract/test_t_008_001_catalogue_schemas.py |
 | DC-008-03 | 008-knowledge | draft | T-008-001 | tests/contract/test_t_008_001_catalogue_schemas.py |
-| FR-000-01 | 000-foundation | retired | - | tests/contract/test_t_000_016_oracle_markers.py |
-| FR-000-02 | 000-foundation | retired | - | tests/contract/test_t_000_016_oracle_markers.py |
+| FR-000-01 | 000-foundation | retired | - | - |
+| FR-000-02 | 000-foundation | retired | - | - |
 | FR-000-03 | 000-foundation | retired | - | - |
 | FR-000-04 | 000-foundation | retired | - | - |
-| FR-000-05 | 000-foundation | draft | T-000-010, T-001-080, T-002-080, T-003-080, T-004-080, T-005-064, T-006-054, T-007-054 | tests/property/test_t_000_010_contract_suite.py, tests/property/test_t_001_080_haulage_contract.py, tests/property/test_t_002_080_blasting_contract.py, tests/property/test_t_003_080_geotech_contract.py, tests/property/test_t_004_080_bulk_contract.py, tests/property/test_t_005_064_comminution_contract.py, tests/property/test_t_006_054_environment_contract.py, tests/property/test_t_007_054_planning_contract.py |
-| FR-000-06 | 000-foundation | draft | T-000-011 | tests/unit/test_t_000_011_import_purity.py |
+| FR-000-05 | 000-foundation | draft | T-000-010, T-001-080, T-002-080, T-003-080, T-004-080, T-005-064, T-006-054, T-007-054 | tests/contract/test_t_000_016_oracle_markers.py, tests/property/test_t_000_010_contract_suite.py, tests/property/test_t_001_080_haulage_contract.py, tests/property/test_t_002_080_blasting_contract.py, tests/property/test_t_003_080_geotech_contract.py, tests/property/test_t_004_080_bulk_contract.py, tests/property/test_t_005_064_comminution_contract.py, tests/property/test_t_006_054_environment_contract.py, tests/property/test_t_007_054_planning_contract.py |
+| FR-000-06 | 000-foundation | draft | T-000-011 | tests/contract/test_t_000_016_oracle_markers.py, tests/unit/test_t_000_011_import_purity.py |
 | FR-000-07 | 000-foundation | draft | T-000-003, T-000-010, T-001-080, T-002-080, T-003-080, T-004-080, T-005-064, T-006-054, T-007-054 | tests/property/test_t_000_006_unit_conversions.py, tests/property/test_t_000_010_contract_suite.py, tests/property/test_t_001_080_haulage_contract.py, tests/property/test_t_002_080_blasting_contract.py, tests/property/test_t_003_080_geotech_contract.py, tests/property/test_t_004_080_bulk_contract.py, tests/property/test_t_005_064_comminution_contract.py, tests/property/test_t_006_054_environment_contract.py, tests/property/test_t_007_054_planning_contract.py, tests/unit/test_t_000_003_validation_helpers.py |
 | FR-000-08 | 000-foundation | draft | T-000-006, T-000-012 | tests/contract/test_t_000_012_model_cards.py, tests/contract/test_t_005_063_model_cards.py, tests/contract/test_t_006_053_model_cards.py, tests/contract/test_t_007_053_model_cards.py, tests/property/test_t_000_006_unit_conversions.py |
 | FR-000-09 | 000-foundation | draft | T-000-012 | tests/contract/test_t_000_012_model_cards.py |
@@ -401,6 +401,4 @@
 | US-008-3 | 008-knowledge | draft | T-008-030, T-008-031, T-008-032 | - |
 | US-008-4 | 008-knowledge | draft | T-008-012, T-008-016, T-008-041 | - |
 
-Problems: 2
-- retired FR-000-01 is still referenced by tests ['tests/contract/test_t_000_016_oracle_markers.py']
-- retired FR-000-02 is still referenced by tests ['tests/contract/test_t_000_016_oracle_markers.py']
+Problems: 0

@@ -52,7 +52,7 @@ def case(decorators: list[str], name: str = "test_a", body: str = "    assert f(
     return "\n".join(decorators) + f"\ndef {name}():\n{body}"
 
 
-REQ = '@pytest.mark.req("FR-000-01")'
+REQ = '@pytest.mark.req("FR-000-05")'
 
 
 def build(tmp: Path, files: dict[str, str], *, exceptions: str | None = None) -> Path:
@@ -135,7 +135,7 @@ def test_marker_defects_are_violations(tmp_path: Path, marker: str, needle: str)
 def test_class_methods_and_stacked_markers(tmp_path: Path) -> None:
     text = (
         "import pytest\n\n\nclass TestK:\n"
-        '    @pytest.mark.req("FR-000-01")\n    @pytest.mark.req("FR-000-02")\n'
+        '    @pytest.mark.req("FR-000-05")\n    @pytest.mark.req("FR-000-06")\n'
         '    @pytest.mark.oracle("analytical", "closed form")\n'
         "    def test_m(self):\n        assert True\n"
     )

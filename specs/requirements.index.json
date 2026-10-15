@@ -91,6 +91,7 @@
         "T-007-054"
       ],
       "tests": [
+        "tests/contract/test_t_000_016_oracle_markers.py",
         "tests/property/test_t_000_010_contract_suite.py",
         "tests/property/test_t_001_080_haulage_contract.py",
         "tests/property/test_t_002_080_blasting_contract.py",
@@ -110,6 +111,7 @@
         "T-000-011"
       ],
       "tests": [
+        "tests/contract/test_t_000_016_oracle_markers.py",
         "tests/unit/test_t_000_011_import_purity.py"
       ]
     },
@@ -832,9 +834,7 @@
       "draft": true,
       "phase": "clarified",
       "tasks": [],
-      "tests": [
-        "tests/contract/test_t_000_016_oracle_markers.py"
-      ]
+      "tests": []
     },
     "FR-000-02": {
       "spec": "000-foundation",
@@ -842,9 +842,7 @@
       "draft": true,
       "phase": "clarified",
       "tasks": [],
-      "tests": [
-        "tests/contract/test_t_000_016_oracle_markers.py"
-      ]
+      "tests": []
     },
     "FR-000-03": {
       "spec": "000-foundation",
