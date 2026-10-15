@@ -5,6 +5,7 @@
 | Diagram | Shows |
 |---|---|
 | [minephys-modules.svg](minephys-modules.svg) | The planned domain modules, the knowledge tables they read, and the runtimes that use them |
+| [minephys-comminution.svg](minephys-comminution.svg) | The mine-to-mill chain of `minephys.comminution` and its stand-alone models |
 
 Every diagram is a hand-written SVG with no colour literals in drawing elements: fills and strokes use the palette
 tokens declared once in its `<style>` block (light by default, dark under `prefers-color-scheme: dark`), with

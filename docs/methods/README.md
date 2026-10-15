@@ -5,3 +5,9 @@
 
 **Status: filled in the build phase**, one page per model as it is implemented test-first. The list of models is in
 [theory](../theory/README.md).
+
+## Pages
+
+| Page | Module | Models |
+|---|---|---|
+| [comminution](comminution.md) | `minephys.comminution` | Bond, Morrell, population balance, flotation kinetics, crusher matrix model, mine-to-mill chain |
