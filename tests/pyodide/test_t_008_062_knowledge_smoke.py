@@ -28,7 +28,7 @@ def _k():
     return importlib.import_module("minephys.knowledge")
 
 
-@pytest.mark.oracle("published", "NIST SP 811 Appendix B.8 and NIST Handbook 44 (2026) Appendix C exact values")
+@pytest.mark.oracle("analytical", "NIST SP 811 Appendix B.8 and NIST Handbook 44 (2026) Appendix C exact values")
 def test_nfr_008_03_unit_constants_are_the_published_exact_values() -> None:
     k = _k()
     with warnings.catch_warnings():
