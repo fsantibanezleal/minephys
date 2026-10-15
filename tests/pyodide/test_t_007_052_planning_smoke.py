@@ -36,7 +36,7 @@ def test_nfr_007_03_block_value_family() -> None:
     assert p.breakeven_cutoff_grade(0.01, 10.0, 2.0, 0.85) == pytest.approx(1.470588e-3, abs=6e-10)
 
 
-@pytest.mark.oracle("worked-example", "PitStudio planning theory: three waste blocks over one ore block")
+@pytest.mark.oracle("hand-calculation", "PitStudio planning theory: three waste blocks over one ore block")
 def test_nfr_007_03_precedence_and_min_cut_family() -> None:
     p = _p()
     assert p.regular_grid_precedence((3, 3, 2)).shape == (33, 2)
@@ -46,7 +46,7 @@ def test_nfr_007_03_precedence_and_min_cut_family() -> None:
     assert not np.asarray(tie.mask).any() and float(tie.value) == 0.0
 
 
-@pytest.mark.oracle("worked-example", "v_d(lambda) = 6 lambda - 1")
+@pytest.mark.oracle("hand-calculation", "v_d(lambda) = 6 lambda - 1")
 def test_nfr_007_03_nested_pits_family() -> None:
     p = _p()
     masks = np.asarray(
@@ -55,7 +55,7 @@ def test_nfr_007_03_nested_pits_family() -> None:
     assert not masks[0].any() and masks[1].all()
 
 
-@pytest.mark.oracle("worked-example", "3,000 t waste over 1,000 t ore")
+@pytest.mark.oracle("hand-calculation", "3,000 t waste over 1,000 t ore")
 def test_nfr_007_03_strip_ratio_family() -> None:
     p = _p()
     assert p.strip_ratio(np.ones(4, dtype=bool), np.full(4, 1e6), np.array([False, False, False, True])) == pytest.approx(3.0)
