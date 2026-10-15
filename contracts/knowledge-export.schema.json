@@ -1,0 +1,866 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/fsantibanezleal/minephys/contracts/knowledge-export.schema.json",
+  "title": "minephys knowledge export",
+  "description": "Deterministic JSON export written by python -m minephys.knowledge export (DC-008-03, spec 008-knowledge).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "tables",
+    "equations",
+    "glossary",
+    "bibliography",
+    "summary"
+  ],
+  "properties": {
+    "version": {
+      "$ref": "#/$defs/release_version"
+    },
+    "tables": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 64,
+      "items": {
+        "$ref": "#/$defs/table_root"
+      }
+    },
+    "equations": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 500,
+      "items": {
+        "$ref": "#/$defs/eqs_equation"
+      }
+    },
+    "glossary": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 1000,
+      "items": {
+        "$ref": "#/$defs/gl_term"
+      }
+    },
+    "bibliography": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 1000,
+      "items": {
+        "$ref": "#/$defs/bib_root"
+      }
+    },
+    "summary": {
+      "$ref": "#/$defs/summary"
+    }
+  },
+  "$defs": {
+    "summary": {
+      "description": "Counts of rows and equations (total and UNVERIFIED), terms and references, per table and per role.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rows",
+        "equations",
+        "terms",
+        "references",
+        "per_table",
+        "per_role"
+      ],
+      "properties": {
+        "rows": {
+          "$ref": "#/$defs/count"
+        },
+        "equations": {
+          "$ref": "#/$defs/count"
+        },
+        "terms": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "references": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "per_table": {
+          "type": "object",
+          "minProperties": 1,
+          "maxProperties": 64,
+          "propertyNames": {
+            "type": "string",
+            "maxLength": 64,
+            "pattern": "^[a-z][a-z0-9_]*$"
+          },
+          "additionalProperties": {
+            "$ref": "#/$defs/count"
+          }
+        },
+        "per_role": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "model_constant",
+            "parameter",
+            "limit",
+            "conversion"
+          ],
+          "properties": {
+            "model_constant": {
+              "$ref": "#/$defs/count"
+            },
+            "parameter": {
+              "$ref": "#/$defs/count"
+            },
+            "limit": {
+              "$ref": "#/$defs/count"
+            },
+            "conversion": {
+              "$ref": "#/$defs/count"
+            }
+          }
+        }
+      }
+    },
+    "count": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "total",
+        "unverified"
+      ],
+      "properties": {
+        "total": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unverified": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "release_version": {
+      "type": "string",
+      "maxLength": 16,
+      "pattern": "^[0-9]+\\.[0-9]{2}\\.[0-9]{3}$"
+    },
+    "table_row": {
+      "description": "One cited number: a value or a range with its units, role, citation, page, verification status and the exported symbols that read it.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "quantity",
+        "units",
+        "role",
+        "citation",
+        "page",
+        "verification",
+        "symbol"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/table_identifier"
+        },
+        "quantity": {
+          "$ref": "#/$defs/table_text_line"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "$ref": "#/$defs/table_rational"
+            }
+          ]
+        },
+        "range": {
+          "$ref": "#/$defs/table_range"
+        },
+        "units": {
+          "$ref": "#/$defs/table_units"
+        },
+        "role": {
+          "$ref": "#/$defs/table_role"
+        },
+        "citation": {
+          "$ref": "#/$defs/table_bib_key"
+        },
+        "page": {
+          "$ref": "#/$defs/table_text_line"
+        },
+        "verification": {
+          "$ref": "#/$defs/table_verification"
+        },
+        "verified_on": {
+          "$ref": "#/$defs/table_date"
+        },
+        "symbol": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/table_dotted_symbol"
+            },
+            {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 32,
+              "uniqueItems": true,
+              "items": {
+                "$ref": "#/$defs/table_dotted_symbol"
+              }
+            }
+          ]
+        },
+        "notes": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000
+        }
+      },
+      "oneOf": [
+        {
+          "required": [
+            "value"
+          ]
+        },
+        {
+          "required": [
+            "range"
+          ]
+        }
+      ],
+      "if": {
+        "properties": {
+          "verification": {
+            "const": "verified"
+          }
+        },
+        "required": [
+          "verification"
+        ]
+      },
+      "then": {
+        "required": [
+          "verified_on"
+        ]
+      },
+      "else": {
+        "not": {
+          "required": [
+            "verified_on"
+          ]
+        }
+      }
+    },
+    "table_range": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "min",
+        "max"
+      ],
+      "properties": {
+        "min": {
+          "type": "number"
+        },
+        "max": {
+          "type": "number"
+        }
+      }
+    },
+    "table_identifier": {
+      "type": "string",
+      "maxLength": 64,
+      "pattern": "^[a-z][a-z0-9_]*$"
+    },
+    "table_bib_key": {
+      "type": "string",
+      "maxLength": 64,
+      "pattern": "^[a-z][a-z0-9_:-]*$"
+    },
+    "table_rational": {
+      "type": "string",
+      "maxLength": 32,
+      "pattern": "^-?[0-9]+/[0-9]*[1-9][0-9]*$"
+    },
+    "table_text_line": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200,
+      "pattern": "^[^ \\t\\r\\n]([^\\r\\n]*[^ \\t\\r\\n])?$"
+    },
+    "table_units": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 64,
+      "pattern": "^[^ \\t\\r\\n]([^\\r\\n]*[^ \\t\\r\\n])?$",
+      "not": {
+        "enum": [
+          "-",
+          "none",
+          "None",
+          "dimensionless",
+          "unitless",
+          "n/a",
+          "N/A"
+        ]
+      }
+    },
+    "table_verification": {
+      "enum": [
+        "verified",
+        "UNVERIFIED"
+      ]
+    },
+    "table_date": {
+      "type": "string",
+      "maxLength": 10,
+      "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$"
+    },
+    "table_role": {
+      "enum": [
+        "model_constant",
+        "parameter",
+        "limit",
+        "conversion"
+      ]
+    },
+    "table_table_licence": {
+      "enum": [
+        "CC-BY-4.0",
+        "CC-BY-SA-4.0",
+        "CC-BY-SA-3.0"
+      ]
+    },
+    "table_dotted_symbol": {
+      "type": "string",
+      "maxLength": 128,
+      "pattern": "^minephys\\.[a-z][a-z0-9_]*\\.[A-Za-z_][A-Za-z0-9_]*$"
+    },
+    "table_root": {
+      "title": "minephys knowledge table",
+      "description": "One knowledge table file, src/minephys/knowledge/<table>.yaml or src/minephys/knowledge/share-alike/<table>.yaml (DC-000-02, spec 000-foundation).",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "table",
+        "title",
+        "licence",
+        "rows"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": 1
+        },
+        "table": {
+          "$ref": "#/$defs/table_identifier"
+        },
+        "title": {
+          "$ref": "#/$defs/table_text_line"
+        },
+        "licence": {
+          "$ref": "#/$defs/table_table_licence"
+        },
+        "rows": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1000,
+          "items": {
+            "$ref": "#/$defs/table_row"
+          }
+        }
+      }
+    },
+    "bib_bib_key": {
+      "type": "string",
+      "maxLength": 64,
+      "pattern": "^[a-z][a-z0-9_:-]*$"
+    },
+    "bib_entry_type": {
+      "enum": [
+        "article",
+        "book",
+        "inbook",
+        "inproceedings",
+        "techreport",
+        "manual",
+        "misc"
+      ]
+    },
+    "bib_doi": {
+      "type": "string",
+      "maxLength": 256,
+      "pattern": "^10\\.[0-9]{4,9}/[!-~]+$"
+    },
+    "bib_url": {
+      "type": "string",
+      "maxLength": 2048,
+      "pattern": "^https?://[A-Za-z0-9.-]+(:[0-9]{1,5})?(/[A-Za-z0-9._~%!$&'()*+,;=:@/-]*)?(\\?[A-Za-z0-9._~%!$&'()*+,;=:@/?-]*)?$"
+    },
+    "bib_access": {
+      "enum": [
+        "open",
+        "paywalled",
+        "regulation",
+        "bibliographic-only"
+      ]
+    },
+    "bib_source_licence": {
+      "enum": [
+        "CC0-1.0",
+        "CC-BY-3.0",
+        "CC-BY-4.0",
+        "CC-BY-SA-3.0",
+        "CC-BY-SA-4.0",
+        "CC-BY-ND-4.0",
+        "CC-BY-NC-4.0",
+        "CC-BY-NC-SA-4.0",
+        "CC-BY-NC-ND-4.0"
+      ]
+    },
+    "bib_root": {
+      "title": "minephys bibliography entry",
+      "description": "One parsed entry of src/minephys/knowledge/references.bib (DC-000-03, spec 000-foundation).",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "key",
+        "entry_type",
+        "title",
+        "year",
+        "access"
+      ],
+      "properties": {
+        "key": {
+          "$ref": "#/$defs/bib_bib_key"
+        },
+        "entry_type": {
+          "$ref": "#/$defs/bib_entry_type"
+        },
+        "author": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "organization": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "year": {
+          "type": "integer",
+          "minimum": 1800,
+          "maximum": 2100
+        },
+        "doi": {
+          "$ref": "#/$defs/bib_doi"
+        },
+        "url": {
+          "$ref": "#/$defs/bib_url"
+        },
+        "access": {
+          "$ref": "#/$defs/bib_access"
+        },
+        "licence": {
+          "$ref": "#/$defs/bib_source_licence"
+        },
+        "journal": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300
+        },
+        "booktitle": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "volume": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 32
+        },
+        "number": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 32
+        },
+        "pages": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 32
+        },
+        "publisher": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300
+        },
+        "edition": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000
+        }
+      },
+      "allOf": [
+        {
+          "anyOf": [
+            {
+              "required": [
+                "author"
+              ]
+            },
+            {
+              "required": [
+                "organization"
+              ]
+            }
+          ]
+        },
+        {
+          "anyOf": [
+            {
+              "required": [
+                "doi"
+              ]
+            },
+            {
+              "required": [
+                "url"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "eqs_equation": {
+      "description": "One model equation with its symbols and units, function, citation, page and status.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "title",
+        "domain",
+        "latex",
+        "symbols",
+        "function",
+        "citation",
+        "page",
+        "verification"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/eqs_identifier"
+        },
+        "title": {
+          "$ref": "#/$defs/eqs_text_line"
+        },
+        "domain": {
+          "$ref": "#/$defs/eqs_domain"
+        },
+        "latex": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2000
+        },
+        "symbols": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 64,
+          "items": {
+            "$ref": "#/$defs/eqs_symbol_entry"
+          }
+        },
+        "function": {
+          "$ref": "#/$defs/eqs_dotted_symbol"
+        },
+        "citation": {
+          "$ref": "#/$defs/eqs_bib_key"
+        },
+        "page": {
+          "$ref": "#/$defs/eqs_text_line"
+        },
+        "verification": {
+          "$ref": "#/$defs/eqs_verification"
+        },
+        "verified_on": {
+          "$ref": "#/$defs/eqs_date"
+        },
+        "rows": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 64,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/eqs_identifier"
+          }
+        },
+        "notes": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000
+        }
+      },
+      "if": {
+        "properties": {
+          "verification": {
+            "const": "verified"
+          }
+        },
+        "required": [
+          "verification"
+        ]
+      },
+      "then": {
+        "required": [
+          "verified_on"
+        ]
+      },
+      "else": {
+        "not": {
+          "required": [
+            "verified_on"
+          ]
+        }
+      }
+    },
+    "eqs_symbol_entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "symbol",
+        "meaning",
+        "units"
+      ],
+      "properties": {
+        "symbol": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64,
+          "pattern": "^[^ \\t\\r\\n]([^\\r\\n]*[^ \\t\\r\\n])?$"
+        },
+        "meaning": {
+          "$ref": "#/$defs/eqs_text_line"
+        },
+        "units": {
+          "$ref": "#/$defs/eqs_units"
+        }
+      }
+    },
+    "eqs_identifier": {
+      "type": "string",
+      "maxLength": 64,
+      "pattern": "^[a-z][a-z0-9_]*$"
+    },
+    "eqs_bib_key": {
+      "type": "string",
+      "maxLength": 64,
+      "pattern": "^[a-z][a-z0-9_:-]*$"
+    },
+    "eqs_text_line": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200,
+      "pattern": "^[^ \\t\\r\\n]([^\\r\\n]*[^ \\t\\r\\n])?$"
+    },
+    "eqs_units": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 64,
+      "pattern": "^[^ \\t\\r\\n]([^\\r\\n]*[^ \\t\\r\\n])?$",
+      "not": {
+        "enum": [
+          "-",
+          "none",
+          "None",
+          "dimensionless",
+          "unitless",
+          "n/a",
+          "N/A"
+        ]
+      }
+    },
+    "eqs_verification": {
+      "enum": [
+        "verified",
+        "UNVERIFIED"
+      ]
+    },
+    "eqs_date": {
+      "type": "string",
+      "maxLength": 10,
+      "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$"
+    },
+    "eqs_dotted_symbol": {
+      "type": "string",
+      "maxLength": 128,
+      "pattern": "^minephys\\.[a-z][a-z0-9_]*\\.[A-Za-z_][A-Za-z0-9_]*$"
+    },
+    "eqs_domain": {
+      "enum": [
+        "haulage",
+        "blasting",
+        "geotech",
+        "bulk",
+        "comminution",
+        "environment",
+        "planning"
+      ]
+    },
+    "eqs_root": {
+      "title": "minephys equations catalogue",
+      "description": "Equations catalogue src/minephys/knowledge/catalogue/equations.yaml (DC-008-01, spec 008-knowledge).",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "title",
+        "licence",
+        "equations"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": 1
+        },
+        "title": {
+          "$ref": "#/$defs/eqs_text_line"
+        },
+        "licence": {
+          "const": "CC-BY-4.0"
+        },
+        "equations": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 500,
+          "items": {
+            "$ref": "#/$defs/eqs_equation"
+          }
+        }
+      }
+    },
+    "gl_term": {
+      "description": "One term with its English and Spanish name and definition.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "domain",
+        "term_en",
+        "term_es",
+        "definition_en",
+        "definition_es"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/gl_identifier"
+        },
+        "domain": {
+          "$ref": "#/$defs/gl_glossary_domain"
+        },
+        "term_en": {
+          "$ref": "#/$defs/gl_term_text"
+        },
+        "term_es": {
+          "$ref": "#/$defs/gl_term_text"
+        },
+        "definition_en": {
+          "$ref": "#/$defs/gl_definition_text"
+        },
+        "definition_es": {
+          "$ref": "#/$defs/gl_definition_text"
+        },
+        "citation": {
+          "$ref": "#/$defs/gl_bib_key"
+        },
+        "see_also": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 16,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/gl_identifier"
+          }
+        }
+      }
+    },
+    "gl_term_text": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1000,
+      "pattern": "^[^ \\t\\r\\n]([^\\r\\n]*[^ \\t\\r\\n])?$"
+    },
+    "gl_definition_text": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1000
+    },
+    "gl_identifier": {
+      "type": "string",
+      "maxLength": 64,
+      "pattern": "^[a-z][a-z0-9_]*$"
+    },
+    "gl_bib_key": {
+      "type": "string",
+      "maxLength": 64,
+      "pattern": "^[a-z][a-z0-9_:-]*$"
+    },
+    "gl_text_line": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200,
+      "pattern": "^[^ \\t\\r\\n]([^\\r\\n]*[^ \\t\\r\\n])?$"
+    },
+    "gl_glossary_domain": {
+      "enum": [
+        "haulage",
+        "blasting",
+        "geotech",
+        "bulk",
+        "comminution",
+        "environment",
+        "planning",
+        "general"
+      ]
+    },
+    "gl_root": {
+      "title": "minephys bilingual glossary",
+      "description": "English and Spanish glossary src/minephys/knowledge/catalogue/glossary.yaml (DC-008-02, spec 008-knowledge).",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema_version",
+        "title",
+        "licence",
+        "terms"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": 1
+        },
+        "title": {
+          "$ref": "#/$defs/gl_text_line"
+        },
+        "licence": {
+          "const": "CC-BY-4.0"
+        },
+        "terms": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1000,
+          "items": {
+            "$ref": "#/$defs/gl_term"
+          }
+        }
+      }
+    }
+  }
+}

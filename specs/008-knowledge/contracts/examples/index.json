@@ -1,0 +1,502 @@
+{
+  "spec": "008-knowledge",
+  "examples": [
+    {
+      "file": "knowledge-equations.valid.json",
+      "schema": "knowledge-equations.schema.json",
+      "target": "#",
+      "valid": true,
+      "note": "a verified blasting equation with rows and an UNVERIFIED planning equation"
+    },
+    {
+      "file": "knowledge-glossary.valid.json",
+      "schema": "knowledge-glossary.schema.json",
+      "target": "#",
+      "valid": true,
+      "note": "three terms in English and Spanish (accents), with see_also and citation"
+    },
+    {
+      "file": "knowledge-export.valid.json",
+      "schema": "knowledge-export.schema.json",
+      "target": "#",
+      "valid": true,
+      "note": "two tables, one equation, one term, two references and consistent counts"
+    },
+    {
+      "file": "knowledge-equations.hostile-unknown-field.json",
+      "schema": "knowledge-equations.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "unknown field in an equation",
+      "rule": "FR-008-04",
+      "pointer": "/equations/0",
+      "keyword": "additionalProperties"
+    },
+    {
+      "file": "knowledge-equations.hostile-unknown-domain.json",
+      "schema": "knowledge-equations.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "unknown domain",
+      "rule": "FR-008-04",
+      "pointer": "/equations/0/domain",
+      "keyword": "enum"
+    },
+    {
+      "file": "knowledge-equations.hostile-missing-latex.json",
+      "schema": "knowledge-equations.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "equation without LaTeX",
+      "rule": "FR-008-04",
+      "pointer": "/equations/1",
+      "keyword": "required"
+    },
+    {
+      "file": "knowledge-equations.hostile-missing-citation.json",
+      "schema": "knowledge-equations.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "equation without citation",
+      "rule": "FR-008-04",
+      "pointer": "/equations/1",
+      "keyword": "required"
+    },
+    {
+      "file": "knowledge-equations.hostile-empty-latex.json",
+      "schema": "knowledge-equations.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "empty LaTeX",
+      "rule": "FR-008-04",
+      "pointer": "/equations/0/latex",
+      "keyword": "minLength"
+    },
+    {
+      "file": "knowledge-equations.hostile-conditional-unverified-as-verified.json",
+      "schema": "knowledge-equations.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "UNVERIFIED equation presented as verified (verified_on on an UNVERIFIED entry)",
+      "rule": "FR-008-04",
+      "pointer": "/equations/1",
+      "keyword": "not"
+    },
+    {
+      "file": "knowledge-equations.hostile-conditional-verified-without-date.json",
+      "schema": "knowledge-equations.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "verified equation without verified_on",
+      "rule": "FR-008-04",
+      "pointer": "/equations/0",
+      "keyword": "required"
+    },
+    {
+      "file": "knowledge-equations.hostile-unknown-verification.json",
+      "schema": "knowledge-equations.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "unknown verification status",
+      "rule": "FR-008-04",
+      "pointer": "/equations/1/verification",
+      "keyword": "enum"
+    },
+    {
+      "file": "knowledge-equations.hostile-empty-symbols.json",
+      "schema": "knowledge-equations.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "equation without symbols",
+      "rule": "FR-008-04",
+      "pointer": "/equations/0/symbols",
+      "keyword": "minItems"
+    },
+    {
+      "file": "knowledge-equations.hostile-wrong-unit.json",
+      "schema": "knowledge-equations.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "dimensionless symbol units not written as \"1\"",
+      "rule": "FR-008-04",
+      "pointer": "/equations/0/symbols/1/units",
+      "keyword": "not"
+    },
+    {
+      "file": "knowledge-equations.hostile-missing-units.json",
+      "schema": "knowledge-equations.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "symbol without units",
+      "rule": "FR-008-04",
+      "pointer": "/equations/0/symbols/2",
+      "keyword": "required"
+    },
+    {
+      "file": "knowledge-equations.hostile-bad-function.json",
+      "schema": "knowledge-equations.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "function that is not a minephys.<module>.<name> path",
+      "rule": "FR-008-04",
+      "pointer": "/equations/0/function",
+      "keyword": "pattern"
+    },
+    {
+      "file": "knowledge-equations.hostile-wrong-licence.json",
+      "schema": "knowledge-equations.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "catalogue licence other than CC-BY-4.0",
+      "rule": "FR-008-04",
+      "pointer": "/licence",
+      "keyword": "const"
+    },
+    {
+      "file": "knowledge-equations.hostile-empty.json",
+      "schema": "knowledge-equations.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "catalogue without equations",
+      "rule": "FR-008-04",
+      "pointer": "/equations",
+      "keyword": "minItems"
+    },
+    {
+      "file": "knowledge-equations.hostile-oversized.json",
+      "schema": "knowledge-equations.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "title longer than 200 characters",
+      "rule": "FR-008-04",
+      "pointer": "/equations/0/title",
+      "keyword": "maxLength"
+    },
+    {
+      "file": "knowledge-equations.hostile-bad-row-id.json",
+      "schema": "knowledge-equations.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "row reference that is not a row id",
+      "rule": "FR-008-04",
+      "pointer": "/equations/0/rows/0",
+      "keyword": "pattern"
+    },
+    {
+      "file": "knowledge-glossary.hostile-missing-term-es.json",
+      "schema": "knowledge-glossary.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "term without its Spanish name",
+      "rule": "FR-008-04",
+      "pointer": "/terms/0",
+      "keyword": "required"
+    },
+    {
+      "file": "knowledge-glossary.hostile-missing-definition-en.json",
+      "schema": "knowledge-glossary.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "term without its English definition",
+      "rule": "FR-008-04",
+      "pointer": "/terms/2",
+      "keyword": "required"
+    },
+    {
+      "file": "knowledge-glossary.hostile-empty-definition.json",
+      "schema": "knowledge-glossary.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "empty Spanish definition",
+      "rule": "FR-008-04",
+      "pointer": "/terms/0/definition_es",
+      "keyword": "minLength"
+    },
+    {
+      "file": "knowledge-glossary.hostile-oversized.json",
+      "schema": "knowledge-glossary.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "definition longer than 1,000 characters",
+      "rule": "FR-008-04",
+      "pointer": "/terms/0/definition_en",
+      "keyword": "maxLength"
+    },
+    {
+      "file": "knowledge-glossary.hostile-blank-term.json",
+      "schema": "knowledge-glossary.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "whitespace-only English term",
+      "rule": "FR-008-04",
+      "pointer": "/terms/1/term_en",
+      "keyword": "pattern"
+    },
+    {
+      "file": "knowledge-glossary.hostile-unknown-domain.json",
+      "schema": "knowledge-glossary.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "unknown domain",
+      "rule": "FR-008-04",
+      "pointer": "/terms/2/domain",
+      "keyword": "enum"
+    },
+    {
+      "file": "knowledge-glossary.hostile-unknown-field.json",
+      "schema": "knowledge-glossary.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "unknown field (a third language)",
+      "rule": "FR-008-04",
+      "pointer": "/terms/0",
+      "keyword": "additionalProperties"
+    },
+    {
+      "file": "knowledge-glossary.hostile-bad-see-also.json",
+      "schema": "knowledge-glossary.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "see_also entry that is not a term id",
+      "rule": "FR-008-04",
+      "pointer": "/terms/0/see_also/0",
+      "keyword": "pattern"
+    },
+    {
+      "file": "knowledge-glossary.hostile-wrong-licence.json",
+      "schema": "knowledge-glossary.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "glossary licence other than CC-BY-4.0",
+      "rule": "FR-008-04",
+      "pointer": "/licence",
+      "keyword": "const"
+    },
+    {
+      "file": "knowledge-glossary.hostile-empty.json",
+      "schema": "knowledge-glossary.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "glossary without terms",
+      "rule": "FR-008-04",
+      "pointer": "/terms",
+      "keyword": "minItems"
+    },
+    {
+      "file": "knowledge-glossary.hostile-malformed-citation.json",
+      "schema": "knowledge-glossary.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "citation that is not a BibTeX key",
+      "rule": "FR-008-04",
+      "pointer": "/terms/1/citation",
+      "keyword": "pattern"
+    },
+    {
+      "file": "knowledge-export.hostile-unknown-field.json",
+      "schema": "knowledge-export.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "unknown top-level field (a timestamp breaks determinism)",
+      "rule": "FR-008-15",
+      "pointer": "",
+      "keyword": "additionalProperties"
+    },
+    {
+      "file": "knowledge-export.hostile-missing-summary.json",
+      "schema": "knowledge-export.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "export without the summary of counts",
+      "rule": "FR-008-15",
+      "pointer": "",
+      "keyword": "required"
+    },
+    {
+      "file": "knowledge-export.hostile-unverified-as-verified.json",
+      "schema": "knowledge-export.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "UNVERIFIED row presented as verified in the export",
+      "rule": "FR-008-13",
+      "pointer": "/tables/0/rows/0",
+      "keyword": "not"
+    },
+    {
+      "file": "knowledge-export.hostile-unverified-equation-as-verified.json",
+      "schema": "knowledge-export.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "UNVERIFIED equation presented as verified in the export",
+      "rule": "FR-008-13",
+      "pointer": "/equations/0",
+      "keyword": "not"
+    },
+    {
+      "file": "knowledge-export.hostile-row-without-citation.json",
+      "schema": "knowledge-export.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "exported row without citation",
+      "rule": "FR-008-15",
+      "pointer": "/tables/1/rows/0",
+      "keyword": "required"
+    },
+    {
+      "file": "knowledge-export.hostile-bad-version.json",
+      "schema": "knowledge-export.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "package version not in X.YY.ZZZ form",
+      "rule": "FR-008-15",
+      "pointer": "/version",
+      "keyword": "pattern"
+    },
+    {
+      "file": "knowledge-export.hostile-out-of-range.json",
+      "schema": "knowledge-export.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "negative count",
+      "rule": "FR-008-15",
+      "pointer": "/summary/rows/unverified",
+      "keyword": "minimum"
+    },
+    {
+      "file": "knowledge-export.hostile-unknown-role.json",
+      "schema": "knowledge-export.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "per-role count for an unknown role",
+      "rule": "FR-008-15",
+      "pointer": "/summary/per_role",
+      "keyword": "additionalProperties"
+    },
+    {
+      "file": "knowledge-export.hostile-bad-table-key.json",
+      "schema": "knowledge-export.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "per-table key that is not a table name",
+      "rule": "FR-008-15",
+      "pointer": "/summary/per_table",
+      "keyword": "pattern"
+    },
+    {
+      "file": "knowledge-export.hostile-bibliography-without-doi-or-url.json",
+      "schema": "knowledge-export.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "exported bibliography entry without DOI and URL",
+      "rule": "FR-008-15",
+      "pointer": "/bibliography/1",
+      "keyword": "anyOf"
+    },
+    {
+      "file": "knowledge-export.hostile-glossary-without-spanish.json",
+      "schema": "knowledge-export.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "exported term without its Spanish name",
+      "rule": "FR-008-15",
+      "pointer": "/glossary/0",
+      "keyword": "required"
+    },
+    {
+      "file": "knowledge-export.hostile-empty.json",
+      "schema": "knowledge-export.schema.json",
+      "target": "#",
+      "valid": false,
+      "class": "export without tables",
+      "rule": "FR-008-15",
+      "pointer": "/tables",
+      "keyword": "minItems"
+    }
+  ],
+  "not_schema_checkable": [
+    {
+      "schema": "knowledge-equations.schema.json",
+      "class": "equation id duplicated",
+      "by": "checker",
+      "rule": "FR-008-05"
+    },
+    {
+      "schema": "knowledge-equations.schema.json",
+      "class": "function not resolving to an exported object",
+      "by": "checker",
+      "rule": "FR-008-04"
+    },
+    {
+      "schema": "knowledge-equations.schema.json",
+      "class": "rows id or citation key not resolving",
+      "by": "checker",
+      "rule": "FR-008-05"
+    },
+    {
+      "schema": "knowledge-equations.schema.json",
+      "class": "verified equation without a knowledge test marker",
+      "by": "checker",
+      "rule": "FR-008-14"
+    },
+    {
+      "schema": "knowledge-equations.schema.json",
+      "class": "calendar-invalid verified_on",
+      "by": "checker",
+      "rule": "FR-008-04"
+    },
+    {
+      "schema": "knowledge-equations.schema.json",
+      "class": "YAML anchor or alias, non-core tag, duplicate key, depth over 8, over 1 MiB or invalid UTF-8",
+      "by": "loader",
+      "rule": "FR-008-07"
+    },
+    {
+      "schema": "knowledge-glossary.schema.json",
+      "class": "term id duplicated",
+      "by": "checker",
+      "rule": "FR-008-05"
+    },
+    {
+      "schema": "knowledge-glossary.schema.json",
+      "class": "see_also id or citation key not resolving",
+      "by": "checker",
+      "rule": "FR-008-05"
+    },
+    {
+      "schema": "knowledge-glossary.schema.json",
+      "class": "YAML anchor or alias, non-core tag, duplicate key, depth over 8, over 1 MiB or invalid UTF-8",
+      "by": "loader",
+      "rule": "FR-008-07"
+    },
+    {
+      "schema": "knowledge-export.schema.json",
+      "class": "summary counts differ from the exported rows, equations, terms and references",
+      "by": "checker",
+      "rule": "P-008-04"
+    },
+    {
+      "schema": "knowledge-export.schema.json",
+      "class": "tables, rows or bibliography not sorted by id or key",
+      "by": "checker",
+      "rule": "FR-008-15"
+    },
+    {
+      "schema": "knowledge-export.schema.json",
+      "class": "output not byte-identical across runs (key order, indent, LF, final newline)",
+      "by": "checker",
+      "rule": "P-008-03"
+    },
+    {
+      "schema": "knowledge-export.schema.json",
+      "class": "duplicate ids or keys, or citations not resolving inside the export",
+      "by": "checker",
+      "rule": "FR-008-05"
+    },
+    {
+      "schema": "knowledge-export.schema.json",
+      "class": "non-finite number or duplicate JSON key",
+      "by": "loader",
+      "rule": "FR-008-15"
+    }
+  ]
+}

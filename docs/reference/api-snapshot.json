@@ -1,0 +1,2688 @@
+{
+  "version": "0.00.000",
+  "objects": [
+    {
+      "name": "minephys.ConvergenceError",
+      "kind": "class",
+      "deprecated": null
+    },
+    {
+      "name": "minephys.InputError",
+      "kind": "class",
+      "deprecated": null
+    },
+    {
+      "name": "minephys.InputTypeError",
+      "kind": "class",
+      "deprecated": null
+    },
+    {
+      "name": "minephys.ValidityWarning",
+      "kind": "class",
+      "deprecated": null
+    },
+    {
+      "name": "minephys.__version__",
+      "kind": "constant",
+      "deprecated": null
+    },
+    {
+      "name": "minephys.blasting",
+      "kind": "module",
+      "deprecated": null
+    },
+    {
+      "name": "minephys.blasting.FlyrockTrajectory",
+      "kind": "class",
+      "deprecated": null
+    },
+    {
+      "name": "minephys.blasting.charge_per_hole",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "explosive_density",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "kg/m^3"
+        },
+        {
+          "name": "hole_diameter",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        },
+        {
+          "name": "charge_length",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.blasting.flyrock_range_lundborg",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "hole_diameter",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.blasting.flyrock_range_no_drag",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "launch_speed",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m/s"
+        },
+        {
+          "name": "launch_angle",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "rad"
+        },
+        {
+          "name": "g",
+          "kind": "positional_or_keyword",
+          "default": "9.80665",
+          "unit": "m/s^2"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.blasting.flyrock_trajectory",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "launch_speed",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m/s"
+        },
+        {
+          "name": "launch_angle",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "rad"
+        },
+        {
+          "name": "diameter",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        },
+        {
+          "name": "rock_density",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "kg/m^3"
+        },
+        {
+          "name": "drag_coefficient",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        },
+        {
+          "name": "air_density",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "kg/m^3"
+        },
+        {
+          "name": "launch_height",
+          "kind": "positional_or_keyword",
+          "default": "0",
+          "unit": "m"
+        },
+        {
+          "name": "time_step",
+          "kind": "positional_or_keyword",
+          "default": "0.001",
+          "unit": "s"
+        },
+        {
+          "name": "max_time",
+          "kind": "positional_or_keyword",
+          "default": "600",
+          "unit": "s"
+        },
+        {
+          "name": "g",
+          "kind": "positional_or_keyword",
+          "default": "9.80665",
+          "unit": "m/s^2"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.blasting.hardness_factor",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "youngs_modulus",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "Pa"
+        },
+        {
+          "name": "ucs",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "Pa"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.blasting.kco_distribution",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "size",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        },
+        {
+          "name": "x50",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        },
+        {
+          "name": "xmax",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        },
+        {
+          "name": "n",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.blasting.kco_undulation",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "n",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        },
+        {
+          "name": "x50",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        },
+        {
+          "name": "xmax",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.blasting.kuznetsov_x50",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "rock_factor",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        },
+        {
+          "name": "powder_factor",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "kg/m^3"
+        },
+        {
+          "name": "charge",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "kg"
+        },
+        {
+          "name": "rws",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        },
+        {
+          "name": "variant",
+          "kind": "positional_or_keyword",
+          "default": "'cunningham1983'",
+          "unit": null
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.blasting.max_charge_per_delay",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "distance",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        },
+        {
+          "name": "standard",
+          "kind": "positional_or_keyword",
+          "default": "'30cfr816.67'",
+          "unit": null
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.blasting.powder_factor",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "charge",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "kg"
+        },
+        {
+          "name": "burden",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        },
+        {
+          "name": "spacing",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        },
+        {
+          "name": "bench_height",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.blasting.ppv_limit",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "distance",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        },
+        {
+          "name": "standard",
+          "kind": "positional_or_keyword",
+          "default": "'30cfr816.67'",
+          "unit": null
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.blasting.ppv_scaled_distance",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "distance",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        },
+        {
+          "name": "charge_per_delay",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "kg"
+        },
+        {
+          "name": "k_site",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m/s"
+        },
+        {
+          "name": "beta",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.blasting.rock_density_influence",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "density",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "kg/m^3"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.blasting.rock_factor",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "rmd",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        },
+        {
+          "name": "rdi",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        },
+        {
+          "name": "hf",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.blasting.rosin_rammler_passing",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "size",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        },
+        {
+          "name": "x50",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        },
+        {
+          "name": "n",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.blasting.rosin_rammler_size",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "passing",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        },
+        {
+          "name": "x50",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        },
+        {
+          "name": "n",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.blasting.scaled_distance",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "distance",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        },
+        {
+          "name": "charge_per_delay",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "kg"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.blasting.swebrec_passing",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "size",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        },
+        {
+          "name": "x50",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        },
+        {
+          "name": "xmax",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        },
+        {
+          "name": "b",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.blasting.swebrec_size",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "passing",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        },
+        {
+          "name": "x50",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        },
+        {
+          "name": "xmax",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        },
+        {
+          "name": "b",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.blasting.uniformity_index",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "burden",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        },
+        {
+          "name": "spacing",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        },
+        {
+          "name": "hole_diameter",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        },
+        {
+          "name": "drilling_deviation",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        },
+        {
+          "name": "charge_length",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        },
+        {
+          "name": "bench_height",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        },
+        {
+          "name": "bottom_charge_length",
+          "kind": "positional_or_keyword",
+          "default": "None",
+          "unit": "m"
+        },
+        {
+          "name": "column_charge_length",
+          "kind": "positional_or_keyword",
+          "default": "None",
+          "unit": "m"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.bulk",
+      "kind": "module",
+      "deprecated": null
+    },
+    {
+      "name": "minephys.bulk.beverloo_discharge",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "orifice_diameter",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        },
+        {
+          "name": "particle_diameter",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        },
+        {
+          "name": "bulk_density",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "kg/m^3"
+        },
+        {
+          "name": "discharge_coefficient",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        },
+        {
+          "name": "annulus_coefficient",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        },
+        {
+          "name": "g",
+          "kind": "positional_or_keyword",
+          "default": "9.80665",
+          "unit": "m/s^2"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.bulk.cema_effective_tension",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "length",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        },
+        {
+          "name": "lift",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        },
+        {
+          "name": "belt_weight",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "N/m"
+        },
+        {
+          "name": "material_weight",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "N/m"
+        },
+        {
+          "name": "kt",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        },
+        {
+          "name": "kx",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "N/m"
+        },
+        {
+          "name": "ky",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        },
+        {
+          "name": "pulley_tension",
+          "kind": "positional_or_keyword",
+          "default": "0",
+          "unit": "N"
+        },
+        {
+          "name": "acceleration_tension",
+          "kind": "positional_or_keyword",
+          "default": "0",
+          "unit": "N"
+        },
+        {
+          "name": "accessory_tension",
+          "kind": "positional_or_keyword",
+          "default": "0",
+          "unit": "N"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.bulk.conveyor_capacity",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "load_area",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m^2"
+        },
+        {
+          "name": "belt_speed",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m/s"
+        },
+        {
+          "name": "bulk_density",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "kg/m^3"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.bulk.conveyor_power",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "effective_tension",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "N"
+        },
+        {
+          "name": "belt_speed",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m/s"
+        },
+        {
+          "name": "drive_efficiency",
+          "kind": "positional_or_keyword",
+          "default": "1",
+          "unit": "1"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.bulk.gy_blending_variance",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "input_variance",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        },
+        {
+          "name": "n_layers",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        },
+        {
+          "name": "lag1_correlation",
+          "kind": "positional_or_keyword",
+          "default": "0",
+          "unit": "1"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.bulk.gy_fundamental_sampling_error",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "sample_mass",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "kg"
+        },
+        {
+          "name": "lot_mass",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "kg"
+        },
+        {
+          "name": "top_size",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        },
+        {
+          "name": "mineralogical_factor",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "kg/m^3"
+        },
+        {
+          "name": "shape_factor",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        },
+        {
+          "name": "granulometric_factor",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        },
+        {
+          "name": "liberation_factor",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.bulk.repose_cone_height",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "base_radius",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        },
+        {
+          "name": "repose_angle",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "rad"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.bulk.repose_cone_volume",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "base_radius",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        },
+        {
+          "name": "repose_angle",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "rad"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.bulk.repose_ridge_volume",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "base_half_width",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        },
+        {
+          "name": "repose_angle",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "rad"
+        },
+        {
+          "name": "length",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        },
+        {
+          "name": "end_cones",
+          "kind": "positional_or_keyword",
+          "default": "False",
+          "unit": null
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.bulk.variance_reduction_ratio",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "n_layers",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        },
+        {
+          "name": "lag1_correlation",
+          "kind": "positional_or_keyword",
+          "default": "0",
+          "unit": "1"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.geotech",
+      "kind": "module",
+      "deprecated": null
+    },
+    {
+      "name": "minephys.geotech.BayesianTTF",
+      "kind": "class",
+      "deprecated": null
+    },
+    {
+      "name": "minephys.geotech.InverseVelocityResult",
+      "kind": "class",
+      "deprecated": null
+    },
+    {
+      "name": "minephys.geotech.Slices",
+      "kind": "class",
+      "deprecated": null
+    },
+    {
+      "name": "minephys.geotech.bayesian_ttf",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "t",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "s"
+        },
+        {
+          "name": "velocity",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m/s"
+        },
+        {
+          "name": "rng",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": null
+        },
+        {
+          "name": "noise_sd",
+          "kind": "positional_or_keyword",
+          "default": "None",
+          "unit": "s/m"
+        },
+        {
+          "name": "prior_mean",
+          "kind": "positional_or_keyword",
+          "default": "None",
+          "unit": "s/m"
+        },
+        {
+          "name": "prior_cov",
+          "kind": "positional_or_keyword",
+          "default": "None",
+          "unit": "1"
+        },
+        {
+          "name": "n_draws",
+          "kind": "positional_or_keyword",
+          "default": "10000",
+          "unit": "count"
+        },
+        {
+          "name": "credible",
+          "kind": "positional_or_keyword",
+          "default": "0.9",
+          "unit": "1"
+        },
+        {
+          "name": "window",
+          "kind": "positional_or_keyword",
+          "default": "None",
+          "unit": "count"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.geotech.bishop_simplified_fos",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "width",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        },
+        {
+          "name": "weight",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "N/m"
+        },
+        {
+          "name": "base_angle",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "rad"
+        },
+        {
+          "name": "pore_pressure",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "Pa"
+        },
+        {
+          "name": "cohesion",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "Pa"
+        },
+        {
+          "name": "friction_angle",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "rad"
+        },
+        {
+          "name": "tol",
+          "kind": "positional_or_keyword",
+          "default": "1e-12",
+          "unit": "1"
+        },
+        {
+          "name": "max_iter",
+          "kind": "positional_or_keyword",
+          "default": "200",
+          "unit": "count"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.geotech.circular_slices",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "surface_x",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        },
+        {
+          "name": "surface_z",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        },
+        {
+          "name": "center_x",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        },
+        {
+          "name": "center_z",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        },
+        {
+          "name": "radius",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        },
+        {
+          "name": "n_slices",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "count"
+        },
+        {
+          "name": "unit_weight",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "N/m^3"
+        },
+        {
+          "name": "pore_pressure_ratio",
+          "kind": "positional_or_keyword",
+          "default": "0",
+          "unit": "1"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.geotech.equivalent_mohr_coulomb",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "sigma_ci",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "Pa"
+        },
+        {
+          "name": "mb",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        },
+        {
+          "name": "s",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        },
+        {
+          "name": "a",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        },
+        {
+          "name": "sigma3_max",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "Pa"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.geotech.hoek_brown_parameters",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "gsi",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        },
+        {
+          "name": "mi",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        },
+        {
+          "name": "disturbance",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.geotech.hoek_brown_rock_mass_strength",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "sigma_ci",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "Pa"
+        },
+        {
+          "name": "mb",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        },
+        {
+          "name": "s",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        },
+        {
+          "name": "a",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.geotech.hoek_brown_sigma1",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "sigma3",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "Pa"
+        },
+        {
+          "name": "sigma_ci",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "Pa"
+        },
+        {
+          "name": "mb",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        },
+        {
+          "name": "s",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        },
+        {
+          "name": "a",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.geotech.hoek_brown_tensile_strength",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "sigma_ci",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "Pa"
+        },
+        {
+          "name": "mb",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        },
+        {
+          "name": "s",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.geotech.hoek_brown_uniaxial_strength",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "sigma_ci",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "Pa"
+        },
+        {
+          "name": "s",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        },
+        {
+          "name": "a",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.geotech.inverse_velocity_ttf",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "t",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "s"
+        },
+        {
+          "name": "velocity",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m/s"
+        },
+        {
+          "name": "window",
+          "kind": "positional_or_keyword",
+          "default": "None",
+          "unit": "count"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.geotech.los_from_phase",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "phase",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "rad"
+        },
+        {
+          "name": "wavelength",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.geotech.los_phase",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "los_displacement",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        },
+        {
+          "name": "wavelength",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        },
+        {
+          "name": "noise_sd",
+          "kind": "positional_or_keyword",
+          "default": "0",
+          "unit": "rad"
+        },
+        {
+          "name": "rng",
+          "kind": "positional_or_keyword",
+          "default": "None",
+          "unit": null
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.geotech.max_unambiguous_los_step",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "wavelength",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.geotech.monte_carlo_fos",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "width",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        },
+        {
+          "name": "weight",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "N/m"
+        },
+        {
+          "name": "base_angle",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "rad"
+        },
+        {
+          "name": "pore_pressure",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "Pa"
+        },
+        {
+          "name": "cohesion_mean",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "Pa"
+        },
+        {
+          "name": "cohesion_sd",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "Pa"
+        },
+        {
+          "name": "friction_mean",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "rad"
+        },
+        {
+          "name": "friction_sd",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "rad"
+        },
+        {
+          "name": "n_samples",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "count"
+        },
+        {
+          "name": "rng",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": null
+        },
+        {
+          "name": "method",
+          "kind": "positional_or_keyword",
+          "default": "'bishop'",
+          "unit": null
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.geotech.probability_of_failure",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "fos_samples",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        },
+        {
+          "name": "threshold",
+          "kind": "positional_or_keyword",
+          "default": "1",
+          "unit": "1"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.geotech.required_samples",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "pof",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        },
+        {
+          "name": "relative_error",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.geotech.sigma3_max",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "sigma_cm",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "Pa"
+        },
+        {
+          "name": "unit_weight",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "N/m^3"
+        },
+        {
+          "name": "height",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        },
+        {
+          "name": "application",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": null
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.geotech.slope_radar_los",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "displacement",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        },
+        {
+          "name": "radar_position",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        },
+        {
+          "name": "target_position",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.geotech.spencer_fos",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "width",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        },
+        {
+          "name": "weight",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "N/m"
+        },
+        {
+          "name": "base_angle",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "rad"
+        },
+        {
+          "name": "pore_pressure",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "Pa"
+        },
+        {
+          "name": "cohesion",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "Pa"
+        },
+        {
+          "name": "friction_angle",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "rad"
+        },
+        {
+          "name": "tol",
+          "kind": "positional_or_keyword",
+          "default": "1e-12",
+          "unit": "1"
+        },
+        {
+          "name": "max_iter",
+          "kind": "positional_or_keyword",
+          "default": "200",
+          "unit": "count"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.geotech.voight_creep_series",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "t",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "s"
+        },
+        {
+          "name": "failure_time",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "s"
+        },
+        {
+          "name": "a",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "(m/s)^(1-alpha)/s"
+        },
+        {
+          "name": "alpha",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.geotech.wrap_phase",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "phase",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "rad"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.haulage",
+      "kind": "module",
+      "deprecated": null
+    },
+    {
+      "name": "minephys.haulage.FiniteSourceResult",
+      "kind": "class",
+      "deprecated": null
+    },
+    {
+      "name": "minephys.haulage.MMCResult",
+      "kind": "class",
+      "deprecated": null
+    },
+    {
+      "name": "minephys.haulage.MVAResult",
+      "kind": "class",
+      "deprecated": null
+    },
+    {
+      "name": "minephys.haulage.bev_cycle_energy",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "mass",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "kg"
+        },
+        {
+          "name": "length",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        },
+        {
+          "name": "rolling_resistance",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        },
+        {
+          "name": "grade",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        },
+        {
+          "name": "drive_efficiency",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        },
+        {
+          "name": "regen_efficiency",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        },
+        {
+          "name": "small_angle",
+          "kind": "positional_or_keyword",
+          "default": "False",
+          "unit": null
+        },
+        {
+          "name": "g",
+          "kind": "positional_or_keyword",
+          "default": "9.80665",
+          "unit": "m/s^2"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.haulage.co2_from_diesel",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "fuel_volume",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m^3"
+        },
+        {
+          "name": "emission_factor",
+          "kind": "positional_or_keyword",
+          "default": "None",
+          "unit": "kg/m^3"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.haulage.co2_from_electricity",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "energy",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "J"
+        },
+        {
+          "name": "grid_intensity",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "kg/J"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.haulage.cycle_energy",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "mass",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "kg"
+        },
+        {
+          "name": "length",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        },
+        {
+          "name": "rolling_resistance",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        },
+        {
+          "name": "grade",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        },
+        {
+          "name": "efficiency",
+          "kind": "positional_or_keyword",
+          "default": "1",
+          "unit": "1"
+        },
+        {
+          "name": "regen_efficiency",
+          "kind": "positional_or_keyword",
+          "default": "0",
+          "unit": "1"
+        },
+        {
+          "name": "small_angle",
+          "kind": "positional_or_keyword",
+          "default": "False",
+          "unit": null
+        },
+        {
+          "name": "g",
+          "kind": "positional_or_keyword",
+          "default": "9.80665",
+          "unit": "m/s^2"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.haulage.cycle_time",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "spot_load",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "s"
+        },
+        {
+          "name": "load",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "s"
+        },
+        {
+          "name": "haul_travel",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "s"
+        },
+        {
+          "name": "spot_dump",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "s"
+        },
+        {
+          "name": "dump",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "s"
+        },
+        {
+          "name": "return_travel",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "s"
+        },
+        {
+          "name": "queue_load",
+          "kind": "positional_or_keyword",
+          "default": "0",
+          "unit": "s"
+        },
+        {
+          "name": "queue_dump",
+          "kind": "positional_or_keyword",
+          "default": "0",
+          "unit": "s"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.haulage.finite_source_queue",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "n_trucks",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "count"
+        },
+        {
+          "name": "travel_rate",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1/s"
+        },
+        {
+          "name": "service_rate",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1/s"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.haulage.fuel_use",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "source_energy",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "J"
+        },
+        {
+          "name": "fuel_energy_density",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "J/m^3"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.haulage.grade_resistance",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "grade",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        },
+        {
+          "name": "small_angle",
+          "kind": "positional_or_keyword",
+          "default": "False",
+          "unit": null
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.haulage.loading_passes",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "target_payload",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "kg"
+        },
+        {
+          "name": "bucket_volume",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m^3"
+        },
+        {
+          "name": "fill_factor",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        },
+        {
+          "name": "loose_density",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "kg/m^3"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.haulage.loose_density",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "bank_density",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "kg/m^3"
+        },
+        {
+          "name": "swell",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.haulage.match_factor",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "n_trucks",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "count"
+        },
+        {
+          "name": "n_loaders",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "count"
+        },
+        {
+          "name": "load_time",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "s"
+        },
+        {
+          "name": "cycle_time",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "s"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.haulage.mean_value_analysis",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "population",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "count"
+        },
+        {
+          "name": "service_time",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "s"
+        },
+        {
+          "name": "visit_ratio",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        },
+        {
+          "name": "station_type",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": null
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.haulage.mmc_queue",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "arrival_rate",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1/s"
+        },
+        {
+          "name": "service_rate",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1/s"
+        },
+        {
+          "name": "servers",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "count"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.haulage.required_force",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "mass",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "kg"
+        },
+        {
+          "name": "total_resistance",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        },
+        {
+          "name": "acceleration",
+          "kind": "positional_or_keyword",
+          "default": "0",
+          "unit": "m/s^2"
+        },
+        {
+          "name": "effective_mass",
+          "kind": "positional_or_keyword",
+          "default": "None",
+          "unit": "kg"
+        },
+        {
+          "name": "drag_area",
+          "kind": "positional_or_keyword",
+          "default": "0",
+          "unit": "m^2"
+        },
+        {
+          "name": "air_density",
+          "kind": "positional_or_keyword",
+          "default": "None",
+          "unit": "kg/m^3"
+        },
+        {
+          "name": "speed",
+          "kind": "positional_or_keyword",
+          "default": "0",
+          "unit": "m/s"
+        },
+        {
+          "name": "g",
+          "kind": "positional_or_keyword",
+          "default": "9.80665",
+          "unit": "m/s^2"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.haulage.retarder_limited_speed",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "retarder_power",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "W"
+        },
+        {
+          "name": "mass",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "kg"
+        },
+        {
+          "name": "rolling_resistance",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        },
+        {
+          "name": "grade",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        },
+        {
+          "name": "speed_limit",
+          "kind": "positional_or_keyword",
+          "default": "inf",
+          "unit": "m/s"
+        },
+        {
+          "name": "small_angle",
+          "kind": "positional_or_keyword",
+          "default": "False",
+          "unit": null
+        },
+        {
+          "name": "g",
+          "kind": "positional_or_keyword",
+          "default": "9.80665",
+          "unit": "m/s^2"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.haulage.rimpull_limited_speed",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "power",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "W"
+        },
+        {
+          "name": "mass",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "kg"
+        },
+        {
+          "name": "total_resistance",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        },
+        {
+          "name": "efficiency",
+          "kind": "positional_or_keyword",
+          "default": "1",
+          "unit": "1"
+        },
+        {
+          "name": "traction_limit",
+          "kind": "positional_or_keyword",
+          "default": "inf",
+          "unit": "N"
+        },
+        {
+          "name": "speed_limit",
+          "kind": "positional_or_keyword",
+          "default": "inf",
+          "unit": "m/s"
+        },
+        {
+          "name": "drag_area",
+          "kind": "positional_or_keyword",
+          "default": "0",
+          "unit": "m^2"
+        },
+        {
+          "name": "air_density",
+          "kind": "positional_or_keyword",
+          "default": "None",
+          "unit": "kg/m^3"
+        },
+        {
+          "name": "g",
+          "kind": "positional_or_keyword",
+          "default": "9.80665",
+          "unit": "m/s^2"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.haulage.segment_energy",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "mass",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "kg"
+        },
+        {
+          "name": "length",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        },
+        {
+          "name": "rolling_resistance",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        },
+        {
+          "name": "grade",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        },
+        {
+          "name": "efficiency",
+          "kind": "positional_or_keyword",
+          "default": "1",
+          "unit": "1"
+        },
+        {
+          "name": "regen_efficiency",
+          "kind": "positional_or_keyword",
+          "default": "0",
+          "unit": "1"
+        },
+        {
+          "name": "small_angle",
+          "kind": "positional_or_keyword",
+          "default": "False",
+          "unit": null
+        },
+        {
+          "name": "g",
+          "kind": "positional_or_keyword",
+          "default": "9.80665",
+          "unit": "m/s^2"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.haulage.segment_travel_time",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "length",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        },
+        {
+          "name": "speed",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m/s"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.haulage.total_resistance",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "rolling_resistance",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        },
+        {
+          "name": "grade",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        },
+        {
+          "name": "small_angle",
+          "kind": "positional_or_keyword",
+          "default": "False",
+          "unit": null
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.haulage.trolley_cycle_energy",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "mass",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "kg"
+        },
+        {
+          "name": "length",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        },
+        {
+          "name": "rolling_resistance",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        },
+        {
+          "name": "grade",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        },
+        {
+          "name": "on_trolley",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": null
+        },
+        {
+          "name": "diesel_efficiency",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        },
+        {
+          "name": "electric_efficiency",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        },
+        {
+          "name": "small_angle",
+          "kind": "positional_or_keyword",
+          "default": "False",
+          "unit": null
+        },
+        {
+          "name": "g",
+          "kind": "positional_or_keyword",
+          "default": "9.80665",
+          "unit": "m/s^2"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.knowledge",
+      "kind": "module",
+      "deprecated": null
+    },
+    {
+      "name": "minephys.knowledge.KnowledgeSchemaError",
+      "kind": "class",
+      "deprecated": null
+    },
+    {
+      "name": "minephys.knowledge.Row",
+      "kind": "class",
+      "deprecated": null
+    },
+    {
+      "name": "minephys.knowledge.Table",
+      "kind": "class",
+      "deprecated": null
+    },
+    {
+      "name": "minephys.knowledge.UnverifiedParameterWarning",
+      "kind": "class",
+      "deprecated": null
+    },
+    {
+      "name": "minephys.knowledge.get_parameter",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "id",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": null
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.knowledge.get_value",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "id",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": null
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.knowledge.list_parameters",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "table",
+          "kind": "positional_or_keyword",
+          "default": "None",
+          "unit": null
+        },
+        {
+          "name": "role",
+          "kind": "positional_or_keyword",
+          "default": "None",
+          "unit": null
+        },
+        {
+          "name": "verification",
+          "kind": "positional_or_keyword",
+          "default": "None",
+          "unit": null
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.knowledge.list_tables",
+      "kind": "function",
+      "parameters": [],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.knowledge.load_table",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "table",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": null
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.units",
+      "kind": "module",
+      "deprecated": null
+    },
+    {
+      "name": "minephys.units.deg_to_rad",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "x",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "deg"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.units.fraction_to_pct",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "x",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "1"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.units.ft_to_m",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "x",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "ft"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.units.in_per_s_to_m_per_s",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "x",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "in/s"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.units.j_to_kwh",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "x",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "J"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.units.kg_to_lb",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "x",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "kg"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.units.kwh_to_j",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "x",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "kWh"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.units.lb_to_kg",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "x",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "lb"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.units.m3_to_us_gal",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "x",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m^3"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.units.m_per_s_to_in_per_s",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "x",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m/s"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.units.m_to_ft",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "x",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "m"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.units.pct_to_fraction",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "x",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "%"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.units.rad_to_deg",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "x",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "rad"
+        }
+      ],
+      "deprecated": null
+    },
+    {
+      "name": "minephys.units.us_gal_to_m3",
+      "kind": "function",
+      "parameters": [
+        {
+          "name": "x",
+          "kind": "positional_or_keyword",
+          "default": null,
+          "unit": "US gal"
+        }
+      ],
+      "deprecated": null
+    }
+  ]
+}

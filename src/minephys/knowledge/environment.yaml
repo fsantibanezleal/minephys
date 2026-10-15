@@ -1,0 +1,2001 @@
+schema_version: 1
+table: environment
+title: Environment constants and limits (AP-42, ISC3, lidar dust)
+licence: CC-BY-4.0
+rows:
+  - id: ap42_industrial_k_pm25
+    quantity: AP-42 industrial unpaved road emission factor coefficient k for PM2.5
+    value: 0.15
+    units: "lb/VMT"
+    role: model_constant
+    citation: epa2006ap42s1322
+    page: Table 13.2.2-2, p. 13.2.2-5
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.ap42_unpaved_emission_factor
+  - id: ap42_industrial_k_pm10
+    quantity: AP-42 industrial unpaved road emission factor coefficient k for PM10
+    value: 1.5
+    units: "lb/VMT"
+    role: model_constant
+    citation: epa2006ap42s1322
+    page: Table 13.2.2-2, p. 13.2.2-5
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.ap42_unpaved_emission_factor
+  - id: ap42_industrial_k_pm30
+    quantity: AP-42 industrial unpaved road emission factor coefficient k for PM30
+    value: 4.9
+    units: "lb/VMT"
+    role: model_constant
+    citation: epa2006ap42s1322
+    page: Table 13.2.2-2, p. 13.2.2-5
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.ap42_unpaved_emission_factor
+  - id: ap42_industrial_a_pm25
+    quantity: AP-42 industrial unpaved road silt exponent a for PM2.5
+    value: 0.9
+    units: "1"
+    role: model_constant
+    citation: epa2006ap42s1322
+    page: Table 13.2.2-2, p. 13.2.2-5
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.ap42_unpaved_emission_factor
+  - id: ap42_industrial_a_pm10
+    quantity: AP-42 industrial unpaved road silt exponent a for PM10
+    value: 0.9
+    units: "1"
+    role: model_constant
+    citation: epa2006ap42s1322
+    page: Table 13.2.2-2, p. 13.2.2-5
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.ap42_unpaved_emission_factor
+  - id: ap42_industrial_a_pm30
+    quantity: AP-42 industrial unpaved road silt exponent a for PM30
+    value: 0.7
+    units: "1"
+    role: model_constant
+    citation: epa2006ap42s1322
+    page: Table 13.2.2-2, p. 13.2.2-5
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.ap42_unpaved_emission_factor
+  - id: ap42_industrial_b_pm25
+    quantity: AP-42 industrial unpaved road weight exponent b for PM2.5
+    value: 0.45
+    units: "1"
+    role: model_constant
+    citation: epa2006ap42s1322
+    page: Table 13.2.2-2, p. 13.2.2-5
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.ap42_unpaved_emission_factor
+  - id: ap42_industrial_b_pm10
+    quantity: AP-42 industrial unpaved road weight exponent b for PM10
+    value: 0.45
+    units: "1"
+    role: model_constant
+    citation: epa2006ap42s1322
+    page: Table 13.2.2-2, p. 13.2.2-5
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.ap42_unpaved_emission_factor
+  - id: ap42_industrial_b_pm30
+    quantity: AP-42 industrial unpaved road weight exponent b for PM30
+    value: 0.45
+    units: "1"
+    role: model_constant
+    citation: epa2006ap42s1322
+    page: Table 13.2.2-2, p. 13.2.2-5
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.ap42_unpaved_emission_factor
+  - id: ap42_silt_reference
+    quantity: reference silt content of the AP-42 equation 1a
+    value: 12
+    units: "%"
+    role: model_constant
+    citation: epa2006ap42s1322
+    page: eq. 1a, p. 13.2.2-4
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.ap42_unpaved_emission_factor
+  - id: ap42_weight_reference
+    quantity: reference mean vehicle weight of the AP-42 equation 1a
+    value: 3
+    units: "short tons"
+    role: model_constant
+    citation: epa2006ap42s1322
+    page: eq. 1a, p. 13.2.2-4
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.ap42_unpaved_emission_factor
+  - id: ap42_range_silt
+    quantity: validity range of the AP-42 silt content for industrial roads
+    range: {min: 1.8, max: 25.2}
+    units: "%"
+    role: limit
+    citation: epa2006ap42s1322
+    page: Table 13.2.2-3, p. 13.2.2-5
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol:
+      - minephys.environment.ap42_unpaved_emission_factor
+      - minephys.environment.ap42_unpaved_validity
+  - id: ap42_range_weight
+    quantity: validity range of the AP-42 mean vehicle weight for industrial roads
+    range: {min: 2.0, max: 290.0}
+    units: "short tons"
+    role: limit
+    citation: epa2006ap42s1322
+    page: Table 13.2.2-3, p. 13.2.2-5
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol:
+      - minephys.environment.ap42_unpaved_emission_factor
+      - minephys.environment.ap42_unpaved_validity
+    notes: the metric column of the table prints 1.8 to 260 Mg, the source rounding
+  - id: ap42_range_speed
+    quantity: validity range of the AP-42 mean vehicle speed for industrial roads
+    range: {min: 5.0, max: 43.0}
+    units: "mph"
+    role: limit
+    citation: epa2006ap42s1322
+    page: Table 13.2.2-3, p. 13.2.2-5
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol:
+      - minephys.environment.ap42_unpaved_emission_factor
+      - minephys.environment.ap42_unpaved_validity
+    notes: the metric column of the table prints 8 to 69 km/h
+  - id: ap42_range_wheels
+    quantity: validity range of the AP-42 mean number of wheels for industrial roads
+    range: {min: 4.0, max: 17.0}
+    units: "1"
+    role: limit
+    citation: epa2006ap42s1322
+    page: Table 13.2.2-3, p. 13.2.2-5
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol:
+      - minephys.environment.ap42_unpaved_emission_factor
+      - minephys.environment.ap42_unpaved_validity
+  - id: ap42_range_moisture
+    quantity: validity range of the AP-42 surface moisture content for industrial roads
+    range: {min: 0.03, max: 13.0}
+    units: "%"
+    role: limit
+    citation: epa2006ap42s1322
+    page: Table 13.2.2-3, p. 13.2.2-5
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol:
+      - minephys.environment.ap42_unpaved_emission_factor
+      - minephys.environment.ap42_unpaved_validity
+  - id: ap42_lb_per_vmt_in_g_per_vkt
+    quantity: AP-42 printed conversion of 1 lb per vehicle mile travelled
+    value: 281.9
+    units: "g/VKT"
+    role: conversion
+    citation: epa2006ap42s1322
+    page: p. 13.2.2-4
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.ap42_unpaved_emission_factor
+    notes: printed to four significant figures; the exact conversion is 281.9 g/VKT to within 2e-4
+  - id: ap42_wet_day_threshold
+    quantity: precipitation depth that counts a day as a wet day in the AP-42 annual correction
+    value: 0.254
+    units: "mm"
+    role: model_constant
+    citation: epa2006ap42s1322
+    page: eq. 2, p. 13.2.2-7
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.precipitation_correction
+  - id: ap42_days_per_year
+    quantity: days per year in the AP-42 annual precipitation correction
+    value: 365
+    units: "d"
+    role: model_constant
+    citation: epa2006ap42s1322
+    page: eq. 2, p. 13.2.2-7
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.precipitation_correction
+  - id: ap42_watering_m_1
+    quantity: vertex 1 of the watering control-efficiency curve - ratio of the moisture of the watered surface to that of the uncontrolled surface
+    value: 0
+    units: "1"
+    role: model_constant
+    citation: epa2006ap42s1322
+    page: Figure 13.2.2-2, p. 13.2.2-12
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.watering_control_efficiency
+    notes: vertices read on the vector path of the figure
+  - id: ap42_watering_m_2
+    quantity: vertex 2 of the watering control-efficiency curve - ratio of the moisture of the watered surface to that of the uncontrolled surface
+    value: 1
+    units: "1"
+    role: model_constant
+    citation: epa2006ap42s1322
+    page: Figure 13.2.2-2, p. 13.2.2-12
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.watering_control_efficiency
+  - id: ap42_watering_m_3
+    quantity: vertex 3 of the watering control-efficiency curve - ratio of the moisture of the watered surface to that of the uncontrolled surface
+    value: 2
+    units: "1"
+    role: model_constant
+    citation: epa2006ap42s1322
+    page: Figure 13.2.2-2, p. 13.2.2-12
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.watering_control_efficiency
+  - id: ap42_watering_m_4
+    quantity: vertex 4 of the watering control-efficiency curve - ratio of the moisture of the watered surface to that of the uncontrolled surface
+    value: 5
+    units: "1"
+    role: model_constant
+    citation: epa2006ap42s1322
+    page: Figure 13.2.2-2, p. 13.2.2-12
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.watering_control_efficiency
+  - id: ap42_watering_ce_1
+    quantity: vertex 1 of the watering control-efficiency curve - control efficiency
+    value: 0
+    units: "%"
+    role: model_constant
+    citation: epa2006ap42s1322
+    page: Figure 13.2.2-2, p. 13.2.2-12
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.watering_control_efficiency
+  - id: ap42_watering_ce_2
+    quantity: vertex 2 of the watering control-efficiency curve - control efficiency
+    value: 0
+    units: "%"
+    role: model_constant
+    citation: epa2006ap42s1322
+    page: Figure 13.2.2-2, p. 13.2.2-12
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.watering_control_efficiency
+  - id: ap42_watering_ce_3
+    quantity: vertex 3 of the watering control-efficiency curve - control efficiency
+    value: 75
+    units: "%"
+    role: model_constant
+    citation: epa2006ap42s1322
+    page: Figure 13.2.2-2, p. 13.2.2-12
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.watering_control_efficiency
+  - id: ap42_watering_ce_4
+    quantity: vertex 4 of the watering control-efficiency curve - control efficiency
+    value: 95
+    units: "%"
+    role: model_constant
+    citation: epa2006ap42s1322
+    page: Figure 13.2.2-2, p. 13.2.2-12
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.watering_control_efficiency
+    notes: the vector path of the figure gives 94.99 % at the end of the axis; 95 % is used
+  - id: ap42_mile_in_m
+    quantity: length of the international mile in metres (exact)
+    value: 1609.344
+    units: "m"
+    role: conversion
+    citation: nisthb44
+    page: Appendix C, PDF page 531 (1 mile = 1 609.344 m)
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol:
+      - minephys.environment.ap42_unpaved_emission_factor
+      - minephys.environment.ap42_unpaved_validity
+    notes: AP-42 gives the vehicle mile travelled; 5280 international feet
+  - id: ap42_short_ton_in_kg
+    quantity: mass of the short ton (2000 lb) in kilograms
+    value: 907.18474
+    units: "kg"
+    role: conversion
+    citation: nisthb44
+    page: Appendix C (the figure 907.18474 kg was not located in the extracted text)
+    verification: UNVERIFIED
+    symbol:
+      - minephys.environment.ap42_unpaved_emission_factor
+      - minephys.environment.ap42_unpaved_validity
+    notes: exact by the definition 2000 lb x 0.45359237 kg/lb; kept as its own row so that the weight conversion does not move with the pound row
+  - id: isc3_sigma_y_scale
+    quantity: scale of the ISC3 Pasquill-Gifford lateral dispersion coefficient
+    value: 465.11628
+    units: "m/km"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: eq. 1-32, p. 1-14
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_deg_to_rad
+    quantity: degree to radian factor written in the ISC3 lateral dispersion equation
+    value: 0.017453293
+    units: "rad/deg"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: eq. 1-33, p. 1-14
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_y_c_a
+    quantity: ISC3 Pasquill-Gifford sigma_y coefficient c, stability class A
+    value: 24.167
+    units: "deg"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-1, p. 1-16
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_y_c_b
+    quantity: ISC3 Pasquill-Gifford sigma_y coefficient c, stability class B
+    value: 18.333
+    units: "deg"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-1, p. 1-16
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_y_c_c
+    quantity: ISC3 Pasquill-Gifford sigma_y coefficient c, stability class C
+    value: 12.5
+    units: "deg"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-1, p. 1-16
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_y_c_d
+    quantity: ISC3 Pasquill-Gifford sigma_y coefficient c, stability class D
+    value: 8.333
+    units: "deg"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-1, p. 1-16
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_y_c_e
+    quantity: ISC3 Pasquill-Gifford sigma_y coefficient c, stability class E
+    value: 6.25
+    units: "deg"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-1, p. 1-16
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_y_c_f
+    quantity: ISC3 Pasquill-Gifford sigma_y coefficient c, stability class F
+    value: 4.1667
+    units: "deg"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-1, p. 1-16
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_y_d_a
+    quantity: ISC3 Pasquill-Gifford sigma_y coefficient d, stability class A
+    value: 2.5334
+    units: "deg"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-1, p. 1-16
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_y_d_b
+    quantity: ISC3 Pasquill-Gifford sigma_y coefficient d, stability class B
+    value: 1.8096
+    units: "deg"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-1, p. 1-16
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_y_d_c
+    quantity: ISC3 Pasquill-Gifford sigma_y coefficient d, stability class C
+    value: 1.0857
+    units: "deg"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-1, p. 1-16
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_y_d_d
+    quantity: ISC3 Pasquill-Gifford sigma_y coefficient d, stability class D
+    value: 0.72382
+    units: "deg"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-1, p. 1-16
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_y_d_e
+    quantity: ISC3 Pasquill-Gifford sigma_y coefficient d, stability class E
+    value: 0.54287
+    units: "deg"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-1, p. 1-16
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_y_d_f
+    quantity: ISC3 Pasquill-Gifford sigma_y coefficient d, stability class F
+    value: 0.36191
+    units: "deg"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-1, p. 1-16
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_a_1_xmax
+    quantity: ISC3 Pasquill-Gifford sigma_z band 1 of class A - upper distance
+    value: 0.1
+    units: "km"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+    notes: the band applies for distances above the previous upper distance and up to this one
+  - id: isc3_pg_sigma_z_a_2_xmax
+    quantity: ISC3 Pasquill-Gifford sigma_z band 2 of class A - upper distance
+    value: 0.15
+    units: "km"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+    notes: the band applies for distances above the previous upper distance and up to this one
+  - id: isc3_pg_sigma_z_a_3_xmax
+    quantity: ISC3 Pasquill-Gifford sigma_z band 3 of class A - upper distance
+    value: 0.2
+    units: "km"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+    notes: the band applies for distances above the previous upper distance and up to this one
+  - id: isc3_pg_sigma_z_a_4_xmax
+    quantity: ISC3 Pasquill-Gifford sigma_z band 4 of class A - upper distance
+    value: 0.25
+    units: "km"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+    notes: the band applies for distances above the previous upper distance and up to this one
+  - id: isc3_pg_sigma_z_a_5_xmax
+    quantity: ISC3 Pasquill-Gifford sigma_z band 5 of class A - upper distance
+    value: 0.3
+    units: "km"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+    notes: the band applies for distances above the previous upper distance and up to this one
+  - id: isc3_pg_sigma_z_a_6_xmax
+    quantity: ISC3 Pasquill-Gifford sigma_z band 6 of class A - upper distance
+    value: 0.4
+    units: "km"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+    notes: the band applies for distances above the previous upper distance and up to this one
+  - id: isc3_pg_sigma_z_a_7_xmax
+    quantity: ISC3 Pasquill-Gifford sigma_z band 7 of class A - upper distance
+    value: 0.5
+    units: "km"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+    notes: the band applies for distances above the previous upper distance and up to this one
+  - id: isc3_pg_sigma_z_a_8_xmax
+    quantity: ISC3 Pasquill-Gifford sigma_z band 8 of class A - upper distance
+    value: 3.11
+    units: "km"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+    notes: the band applies for distances above the previous upper distance and up to this one
+  - id: isc3_pg_sigma_z_a_1_a
+    quantity: ISC3 Pasquill-Gifford sigma_z coefficient a, band 1 of class A
+    value: 122.8
+    units: "m"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_a_2_a
+    quantity: ISC3 Pasquill-Gifford sigma_z coefficient a, band 2 of class A
+    value: 158.08
+    units: "m"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_a_3_a
+    quantity: ISC3 Pasquill-Gifford sigma_z coefficient a, band 3 of class A
+    value: 170.22
+    units: "m"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_a_4_a
+    quantity: ISC3 Pasquill-Gifford sigma_z coefficient a, band 4 of class A
+    value: 179.52
+    units: "m"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_a_5_a
+    quantity: ISC3 Pasquill-Gifford sigma_z coefficient a, band 5 of class A
+    value: 217.41
+    units: "m"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_a_6_a
+    quantity: ISC3 Pasquill-Gifford sigma_z coefficient a, band 6 of class A
+    value: 258.89
+    units: "m"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_a_7_a
+    quantity: ISC3 Pasquill-Gifford sigma_z coefficient a, band 7 of class A
+    value: 346.75
+    units: "m"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_a_8_a
+    quantity: ISC3 Pasquill-Gifford sigma_z coefficient a, band 8 of class A
+    value: 453.85
+    units: "m"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_a_9_a
+    quantity: ISC3 Pasquill-Gifford sigma_z coefficient a, band 9 of class A
+    value: 5000
+    units: "m"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+    notes: Table 1-2 prints ** (sigma_z equals 5000 m beyond 3.11 km) for class A - written as a = 5000 m and b = 0
+  - id: isc3_pg_sigma_z_a_1_b
+    quantity: ISC3 Pasquill-Gifford sigma_z exponent b, band 1 of class A
+    value: 0.9447
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_a_2_b
+    quantity: ISC3 Pasquill-Gifford sigma_z exponent b, band 2 of class A
+    value: 1.0542
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_a_3_b
+    quantity: ISC3 Pasquill-Gifford sigma_z exponent b, band 3 of class A
+    value: 1.0932
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_a_4_b
+    quantity: ISC3 Pasquill-Gifford sigma_z exponent b, band 4 of class A
+    value: 1.1262
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_a_5_b
+    quantity: ISC3 Pasquill-Gifford sigma_z exponent b, band 5 of class A
+    value: 1.2644
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_a_6_b
+    quantity: ISC3 Pasquill-Gifford sigma_z exponent b, band 6 of class A
+    value: 1.4094
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_a_7_b
+    quantity: ISC3 Pasquill-Gifford sigma_z exponent b, band 7 of class A
+    value: 1.7283
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_a_8_b
+    quantity: ISC3 Pasquill-Gifford sigma_z exponent b, band 8 of class A
+    value: 2.1166
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_a_9_b
+    quantity: ISC3 Pasquill-Gifford sigma_z exponent b, band 9 of class A
+    value: 0
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_b_1_xmax
+    quantity: ISC3 Pasquill-Gifford sigma_z band 1 of class B - upper distance
+    value: 0.2
+    units: "km"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+    notes: the band applies for distances above the previous upper distance and up to this one
+  - id: isc3_pg_sigma_z_b_2_xmax
+    quantity: ISC3 Pasquill-Gifford sigma_z band 2 of class B - upper distance
+    value: 0.4
+    units: "km"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+    notes: the band applies for distances above the previous upper distance and up to this one
+  - id: isc3_pg_sigma_z_b_1_a
+    quantity: ISC3 Pasquill-Gifford sigma_z coefficient a, band 1 of class B
+    value: 90.673
+    units: "m"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_b_2_a
+    quantity: ISC3 Pasquill-Gifford sigma_z coefficient a, band 2 of class B
+    value: 98.483
+    units: "m"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_b_3_a
+    quantity: ISC3 Pasquill-Gifford sigma_z coefficient a, band 3 of class B
+    value: 109.3
+    units: "m"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_b_1_b
+    quantity: ISC3 Pasquill-Gifford sigma_z exponent b, band 1 of class B
+    value: 0.93198
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_b_2_b
+    quantity: ISC3 Pasquill-Gifford sigma_z exponent b, band 2 of class B
+    value: 0.98332
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_b_3_b
+    quantity: ISC3 Pasquill-Gifford sigma_z exponent b, band 3 of class B
+    value: 1.0971
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_c_1_a
+    quantity: ISC3 Pasquill-Gifford sigma_z coefficient a, band 1 of class C
+    value: 61.141
+    units: "m"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_c_1_b
+    quantity: ISC3 Pasquill-Gifford sigma_z exponent b, band 1 of class C
+    value: 0.91465
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_d_1_xmax
+    quantity: ISC3 Pasquill-Gifford sigma_z band 1 of class D - upper distance
+    value: 0.3
+    units: "km"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+    notes: the band applies for distances above the previous upper distance and up to this one
+  - id: isc3_pg_sigma_z_d_2_xmax
+    quantity: ISC3 Pasquill-Gifford sigma_z band 2 of class D - upper distance
+    value: 1.0
+    units: "km"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+    notes: the band applies for distances above the previous upper distance and up to this one
+  - id: isc3_pg_sigma_z_d_3_xmax
+    quantity: ISC3 Pasquill-Gifford sigma_z band 3 of class D - upper distance
+    value: 3.0
+    units: "km"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+    notes: the band applies for distances above the previous upper distance and up to this one
+  - id: isc3_pg_sigma_z_d_4_xmax
+    quantity: ISC3 Pasquill-Gifford sigma_z band 4 of class D - upper distance
+    value: 10.0
+    units: "km"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+    notes: the band applies for distances above the previous upper distance and up to this one
+  - id: isc3_pg_sigma_z_d_5_xmax
+    quantity: ISC3 Pasquill-Gifford sigma_z band 5 of class D - upper distance
+    value: 30.0
+    units: "km"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+    notes: the band applies for distances above the previous upper distance and up to this one
+  - id: isc3_pg_sigma_z_d_1_a
+    quantity: ISC3 Pasquill-Gifford sigma_z coefficient a, band 1 of class D
+    value: 34.459
+    units: "m"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_d_2_a
+    quantity: ISC3 Pasquill-Gifford sigma_z coefficient a, band 2 of class D
+    value: 32.093
+    units: "m"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_d_3_a
+    quantity: ISC3 Pasquill-Gifford sigma_z coefficient a, band 3 of class D
+    value: 32.093
+    units: "m"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_d_4_a
+    quantity: ISC3 Pasquill-Gifford sigma_z coefficient a, band 4 of class D
+    value: 33.504
+    units: "m"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_d_5_a
+    quantity: ISC3 Pasquill-Gifford sigma_z coefficient a, band 5 of class D
+    value: 36.65
+    units: "m"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_d_6_a
+    quantity: ISC3 Pasquill-Gifford sigma_z coefficient a, band 6 of class D
+    value: 44.053
+    units: "m"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_d_1_b
+    quantity: ISC3 Pasquill-Gifford sigma_z exponent b, band 1 of class D
+    value: 0.86974
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_d_2_b
+    quantity: ISC3 Pasquill-Gifford sigma_z exponent b, band 2 of class D
+    value: 0.81066
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_d_3_b
+    quantity: ISC3 Pasquill-Gifford sigma_z exponent b, band 3 of class D
+    value: 0.64403
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_d_4_b
+    quantity: ISC3 Pasquill-Gifford sigma_z exponent b, band 4 of class D
+    value: 0.60486
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_d_5_b
+    quantity: ISC3 Pasquill-Gifford sigma_z exponent b, band 5 of class D
+    value: 0.56589
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_d_6_b
+    quantity: ISC3 Pasquill-Gifford sigma_z exponent b, band 6 of class D
+    value: 0.51179
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_e_1_xmax
+    quantity: ISC3 Pasquill-Gifford sigma_z band 1 of class E - upper distance
+    value: 0.1
+    units: "km"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+    notes: the band applies for distances above the previous upper distance and up to this one
+  - id: isc3_pg_sigma_z_e_2_xmax
+    quantity: ISC3 Pasquill-Gifford sigma_z band 2 of class E - upper distance
+    value: 0.3
+    units: "km"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+    notes: the band applies for distances above the previous upper distance and up to this one
+  - id: isc3_pg_sigma_z_e_3_xmax
+    quantity: ISC3 Pasquill-Gifford sigma_z band 3 of class E - upper distance
+    value: 1.0
+    units: "km"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+    notes: the band applies for distances above the previous upper distance and up to this one
+  - id: isc3_pg_sigma_z_e_4_xmax
+    quantity: ISC3 Pasquill-Gifford sigma_z band 4 of class E - upper distance
+    value: 2.0
+    units: "km"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+    notes: the band applies for distances above the previous upper distance and up to this one
+  - id: isc3_pg_sigma_z_e_5_xmax
+    quantity: ISC3 Pasquill-Gifford sigma_z band 5 of class E - upper distance
+    value: 4.0
+    units: "km"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+    notes: the band applies for distances above the previous upper distance and up to this one
+  - id: isc3_pg_sigma_z_e_6_xmax
+    quantity: ISC3 Pasquill-Gifford sigma_z band 6 of class E - upper distance
+    value: 10.0
+    units: "km"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+    notes: the band applies for distances above the previous upper distance and up to this one
+  - id: isc3_pg_sigma_z_e_7_xmax
+    quantity: ISC3 Pasquill-Gifford sigma_z band 7 of class E - upper distance
+    value: 20.0
+    units: "km"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+    notes: the band applies for distances above the previous upper distance and up to this one
+  - id: isc3_pg_sigma_z_e_8_xmax
+    quantity: ISC3 Pasquill-Gifford sigma_z band 8 of class E - upper distance
+    value: 40.0
+    units: "km"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+    notes: the band applies for distances above the previous upper distance and up to this one
+  - id: isc3_pg_sigma_z_e_1_a
+    quantity: ISC3 Pasquill-Gifford sigma_z coefficient a, band 1 of class E
+    value: 24.26
+    units: "m"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_e_2_a
+    quantity: ISC3 Pasquill-Gifford sigma_z coefficient a, band 2 of class E
+    value: 23.331
+    units: "m"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_e_3_a
+    quantity: ISC3 Pasquill-Gifford sigma_z coefficient a, band 3 of class E
+    value: 21.628
+    units: "m"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_e_4_a
+    quantity: ISC3 Pasquill-Gifford sigma_z coefficient a, band 4 of class E
+    value: 21.628
+    units: "m"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_e_5_a
+    quantity: ISC3 Pasquill-Gifford sigma_z coefficient a, band 5 of class E
+    value: 22.534
+    units: "m"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_e_6_a
+    quantity: ISC3 Pasquill-Gifford sigma_z coefficient a, band 6 of class E
+    value: 24.703
+    units: "m"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_e_7_a
+    quantity: ISC3 Pasquill-Gifford sigma_z coefficient a, band 7 of class E
+    value: 26.97
+    units: "m"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_e_8_a
+    quantity: ISC3 Pasquill-Gifford sigma_z coefficient a, band 8 of class E
+    value: 35.42
+    units: "m"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_e_9_a
+    quantity: ISC3 Pasquill-Gifford sigma_z coefficient a, band 9 of class E
+    value: 47.618
+    units: "m"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_e_1_b
+    quantity: ISC3 Pasquill-Gifford sigma_z exponent b, band 1 of class E
+    value: 0.8366
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_e_2_b
+    quantity: ISC3 Pasquill-Gifford sigma_z exponent b, band 2 of class E
+    value: 0.81956
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_e_3_b
+    quantity: ISC3 Pasquill-Gifford sigma_z exponent b, band 3 of class E
+    value: 0.7566
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_e_4_b
+    quantity: ISC3 Pasquill-Gifford sigma_z exponent b, band 4 of class E
+    value: 0.63077
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_e_5_b
+    quantity: ISC3 Pasquill-Gifford sigma_z exponent b, band 5 of class E
+    value: 0.57154
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_e_6_b
+    quantity: ISC3 Pasquill-Gifford sigma_z exponent b, band 6 of class E
+    value: 0.50527
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_e_7_b
+    quantity: ISC3 Pasquill-Gifford sigma_z exponent b, band 7 of class E
+    value: 0.46713
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_e_8_b
+    quantity: ISC3 Pasquill-Gifford sigma_z exponent b, band 8 of class E
+    value: 0.37615
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_e_9_b
+    quantity: ISC3 Pasquill-Gifford sigma_z exponent b, band 9 of class E
+    value: 0.29592
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_f_1_xmax
+    quantity: ISC3 Pasquill-Gifford sigma_z band 1 of class F - upper distance
+    value: 0.2
+    units: "km"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+    notes: the band applies for distances above the previous upper distance and up to this one
+  - id: isc3_pg_sigma_z_f_2_xmax
+    quantity: ISC3 Pasquill-Gifford sigma_z band 2 of class F - upper distance
+    value: 0.7
+    units: "km"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+    notes: the band applies for distances above the previous upper distance and up to this one
+  - id: isc3_pg_sigma_z_f_3_xmax
+    quantity: ISC3 Pasquill-Gifford sigma_z band 3 of class F - upper distance
+    value: 1.0
+    units: "km"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+    notes: the band applies for distances above the previous upper distance and up to this one
+  - id: isc3_pg_sigma_z_f_4_xmax
+    quantity: ISC3 Pasquill-Gifford sigma_z band 4 of class F - upper distance
+    value: 2.0
+    units: "km"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+    notes: the band applies for distances above the previous upper distance and up to this one
+  - id: isc3_pg_sigma_z_f_5_xmax
+    quantity: ISC3 Pasquill-Gifford sigma_z band 5 of class F - upper distance
+    value: 3.0
+    units: "km"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+    notes: the band applies for distances above the previous upper distance and up to this one
+  - id: isc3_pg_sigma_z_f_6_xmax
+    quantity: ISC3 Pasquill-Gifford sigma_z band 6 of class F - upper distance
+    value: 7.0
+    units: "km"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+    notes: the band applies for distances above the previous upper distance and up to this one
+  - id: isc3_pg_sigma_z_f_7_xmax
+    quantity: ISC3 Pasquill-Gifford sigma_z band 7 of class F - upper distance
+    value: 15.0
+    units: "km"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+    notes: the band applies for distances above the previous upper distance and up to this one
+  - id: isc3_pg_sigma_z_f_8_xmax
+    quantity: ISC3 Pasquill-Gifford sigma_z band 8 of class F - upper distance
+    value: 30.0
+    units: "km"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+    notes: the band applies for distances above the previous upper distance and up to this one
+  - id: isc3_pg_sigma_z_f_9_xmax
+    quantity: ISC3 Pasquill-Gifford sigma_z band 9 of class F - upper distance
+    value: 60.0
+    units: "km"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+    notes: the band applies for distances above the previous upper distance and up to this one
+  - id: isc3_pg_sigma_z_f_1_a
+    quantity: ISC3 Pasquill-Gifford sigma_z coefficient a, band 1 of class F
+    value: 15.209
+    units: "m"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_f_2_a
+    quantity: ISC3 Pasquill-Gifford sigma_z coefficient a, band 2 of class F
+    value: 14.457
+    units: "m"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_f_3_a
+    quantity: ISC3 Pasquill-Gifford sigma_z coefficient a, band 3 of class F
+    value: 13.953
+    units: "m"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_f_4_a
+    quantity: ISC3 Pasquill-Gifford sigma_z coefficient a, band 4 of class F
+    value: 13.953
+    units: "m"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_f_5_a
+    quantity: ISC3 Pasquill-Gifford sigma_z coefficient a, band 5 of class F
+    value: 14.823
+    units: "m"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_f_6_a
+    quantity: ISC3 Pasquill-Gifford sigma_z coefficient a, band 6 of class F
+    value: 16.187
+    units: "m"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_f_7_a
+    quantity: ISC3 Pasquill-Gifford sigma_z coefficient a, band 7 of class F
+    value: 17.836
+    units: "m"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_f_8_a
+    quantity: ISC3 Pasquill-Gifford sigma_z coefficient a, band 8 of class F
+    value: 22.651
+    units: "m"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_f_9_a
+    quantity: ISC3 Pasquill-Gifford sigma_z coefficient a, band 9 of class F
+    value: 27.074
+    units: "m"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_f_10_a
+    quantity: ISC3 Pasquill-Gifford sigma_z coefficient a, band 10 of class F
+    value: 34.219
+    units: "m"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_f_1_b
+    quantity: ISC3 Pasquill-Gifford sigma_z exponent b, band 1 of class F
+    value: 0.81558
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_f_2_b
+    quantity: ISC3 Pasquill-Gifford sigma_z exponent b, band 2 of class F
+    value: 0.78407
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_f_3_b
+    quantity: ISC3 Pasquill-Gifford sigma_z exponent b, band 3 of class F
+    value: 0.68465
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_f_4_b
+    quantity: ISC3 Pasquill-Gifford sigma_z exponent b, band 4 of class F
+    value: 0.63227
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_f_5_b
+    quantity: ISC3 Pasquill-Gifford sigma_z exponent b, band 5 of class F
+    value: 0.54503
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_f_6_b
+    quantity: ISC3 Pasquill-Gifford sigma_z exponent b, band 6 of class F
+    value: 0.4649
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_f_7_b
+    quantity: ISC3 Pasquill-Gifford sigma_z exponent b, band 7 of class F
+    value: 0.41507
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_f_8_b
+    quantity: ISC3 Pasquill-Gifford sigma_z exponent b, band 8 of class F
+    value: 0.32681
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_f_9_b
+    quantity: ISC3 Pasquill-Gifford sigma_z exponent b, band 9 of class F
+    value: 0.27436
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_pg_sigma_z_f_10_b
+    quantity: ISC3 Pasquill-Gifford sigma_z exponent b, band 10 of class F
+    value: 0.21716
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-2, pp. 1-17, 1-18
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_sigma_z_cap
+    quantity: upper bound of the ISC3 Pasquill-Gifford sigma_z for classes A, B and C
+    value: 5000
+    units: "m"
+    role: limit
+    citation: epa1995isc3v2
+    page: Table 1-2 footnotes, p. 1-17
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_briggs_urban_y_a_coef
+    quantity: ISC3 Briggs urban sigma_y coef, class A
+    value: 0.32
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-3, p. 1-19
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_briggs_urban_y_a_slope
+    quantity: ISC3 Briggs urban sigma_y slope, class A
+    value: 0.0004
+    units: "1/m"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-3, p. 1-19
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_briggs_urban_y_a_exponent
+    quantity: ISC3 Briggs urban sigma_y exponent, class A
+    value: -0.5
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-3, p. 1-19
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_briggs_urban_y_b_coef
+    quantity: ISC3 Briggs urban sigma_y coef, class B
+    value: 0.32
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-3, p. 1-19
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_briggs_urban_y_b_slope
+    quantity: ISC3 Briggs urban sigma_y slope, class B
+    value: 0.0004
+    units: "1/m"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-3, p. 1-19
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_briggs_urban_y_b_exponent
+    quantity: ISC3 Briggs urban sigma_y exponent, class B
+    value: -0.5
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-3, p. 1-19
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_briggs_urban_y_c_coef
+    quantity: ISC3 Briggs urban sigma_y coef, class C
+    value: 0.22
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-3, p. 1-19
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_briggs_urban_y_c_slope
+    quantity: ISC3 Briggs urban sigma_y slope, class C
+    value: 0.0004
+    units: "1/m"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-3, p. 1-19
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_briggs_urban_y_c_exponent
+    quantity: ISC3 Briggs urban sigma_y exponent, class C
+    value: -0.5
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-3, p. 1-19
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_briggs_urban_y_d_coef
+    quantity: ISC3 Briggs urban sigma_y coef, class D
+    value: 0.16
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-3, p. 1-19
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_briggs_urban_y_d_slope
+    quantity: ISC3 Briggs urban sigma_y slope, class D
+    value: 0.0004
+    units: "1/m"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-3, p. 1-19
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_briggs_urban_y_d_exponent
+    quantity: ISC3 Briggs urban sigma_y exponent, class D
+    value: -0.5
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-3, p. 1-19
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_briggs_urban_y_e_coef
+    quantity: ISC3 Briggs urban sigma_y coef, class E
+    value: 0.11
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-3, p. 1-19
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_briggs_urban_y_e_slope
+    quantity: ISC3 Briggs urban sigma_y slope, class E
+    value: 0.0004
+    units: "1/m"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-3, p. 1-19
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_briggs_urban_y_e_exponent
+    quantity: ISC3 Briggs urban sigma_y exponent, class E
+    value: -0.5
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-3, p. 1-19
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_briggs_urban_y_f_coef
+    quantity: ISC3 Briggs urban sigma_y coef, class F
+    value: 0.11
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-3, p. 1-19
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_briggs_urban_y_f_slope
+    quantity: ISC3 Briggs urban sigma_y slope, class F
+    value: 0.0004
+    units: "1/m"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-3, p. 1-19
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_briggs_urban_y_f_exponent
+    quantity: ISC3 Briggs urban sigma_y exponent, class F
+    value: -0.5
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-3, p. 1-19
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_briggs_urban_z_a_coef
+    quantity: ISC3 Briggs urban sigma_z coef, class A
+    value: 0.24
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-4, p. 1-19
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_briggs_urban_z_a_slope
+    quantity: ISC3 Briggs urban sigma_z slope, class A
+    value: 0.001
+    units: "1/m"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-4, p. 1-19
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_briggs_urban_z_a_exponent
+    quantity: ISC3 Briggs urban sigma_z exponent, class A
+    value: 0.5
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-4, p. 1-19
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_briggs_urban_z_b_coef
+    quantity: ISC3 Briggs urban sigma_z coef, class B
+    value: 0.24
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-4, p. 1-19
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_briggs_urban_z_b_slope
+    quantity: ISC3 Briggs urban sigma_z slope, class B
+    value: 0.001
+    units: "1/m"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-4, p. 1-19
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_briggs_urban_z_b_exponent
+    quantity: ISC3 Briggs urban sigma_z exponent, class B
+    value: 0.5
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-4, p. 1-19
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_briggs_urban_z_c_coef
+    quantity: ISC3 Briggs urban sigma_z coef, class C
+    value: 0.2
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-4, p. 1-19
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_briggs_urban_z_c_slope
+    quantity: ISC3 Briggs urban sigma_z slope, class C
+    value: 0
+    units: "1/m"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-4, p. 1-19
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+    notes: Table 1-4 prints 0.20 x with no correction term - written as slope 0 and exponent 0
+  - id: isc3_briggs_urban_z_c_exponent
+    quantity: ISC3 Briggs urban sigma_z exponent, class C
+    value: 0
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-4, p. 1-19
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+    notes: Table 1-4 prints 0.20 x with no correction term - written as slope 0 and exponent 0
+  - id: isc3_briggs_urban_z_d_coef
+    quantity: ISC3 Briggs urban sigma_z coef, class D
+    value: 0.14
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-4, p. 1-19
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_briggs_urban_z_d_slope
+    quantity: ISC3 Briggs urban sigma_z slope, class D
+    value: 0.0003
+    units: "1/m"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-4, p. 1-19
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_briggs_urban_z_d_exponent
+    quantity: ISC3 Briggs urban sigma_z exponent, class D
+    value: -0.5
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-4, p. 1-19
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_briggs_urban_z_e_coef
+    quantity: ISC3 Briggs urban sigma_z coef, class E
+    value: 0.08
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-4, p. 1-19
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_briggs_urban_z_e_slope
+    quantity: ISC3 Briggs urban sigma_z slope, class E
+    value: 0.0015
+    units: "1/m"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-4, p. 1-19
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_briggs_urban_z_e_exponent
+    quantity: ISC3 Briggs urban sigma_z exponent, class E
+    value: -0.5
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-4, p. 1-19
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_briggs_urban_z_f_coef
+    quantity: ISC3 Briggs urban sigma_z coef, class F
+    value: 0.08
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-4, p. 1-19
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_briggs_urban_z_f_slope
+    quantity: ISC3 Briggs urban sigma_z slope, class F
+    value: 0.0015
+    units: "1/m"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-4, p. 1-19
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_briggs_urban_z_f_exponent
+    quantity: ISC3 Briggs urban sigma_z exponent, class F
+    value: -0.5
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: Table 1-4, p. 1-19
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_urban_min_distance
+    quantity: ISC3 distance below which urban concentrations may be suspect
+    value: 100
+    units: "m"
+    role: limit
+    citation: epa1995isc3v2
+    page: p. 1-15
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.pasquill_sigmas
+  - id: isc3_lid_uniform_ratio
+    quantity: ISC3 ratio of sigma_z to the mixing height from which the vertical term is uniform
+    value: 1.6
+    units: "1"
+    role: model_constant
+    citation: epa1995isc3v2
+    page: eq. 1-51, p. 1-33
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.gaussian_plume
+  - id: lidar_dust_onset_transmittance
+    quantity: atmospheric transmittance below which dust starts to affect lidar measurements
+    range: {min: 0.71, max: 0.74}
+    units: "1"
+    role: limit
+    citation: phillips2017dust
+    page: abstract, J. Field Robotics 34(5)
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.lidar_dust_return
+    notes: the abstract reports 71 % to 74 %, quite variable with conditions; read as the one-way transmittance (UNVERIFIED interpretation)
+  - id: lidar_dust_min_transmittance_retroreflective
+    quantity: lowest transmittance at which a retroreflective target is still measured
+    value: 0.02
+    units: "1"
+    role: limit
+    citation: phillips2017dust
+    page: abstract, J. Field Robotics 34(5)
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.lidar_dust_return
+  - id: lidar_dust_min_transmittance_low_reflectivity
+    quantity: lowest transmittance at which a low-reflectivity target is still measured
+    value: 0.06
+    units: "1"
+    role: limit
+    citation: phillips2017dust
+    page: abstract, J. Field Robotics 34(5)
+    verification: verified
+    verified_on: "2026-10-06"
+    symbol: minephys.environment.lidar_dust_return
+  - id: extinction_efficiency_large_particle
+    quantity: extinction efficiency Q_ext of particles much larger than the wavelength
+    value: 2
+    units: "1"
+    role: model_constant
+    citation: bohren1983absorption
+    page: page not read (bibliographic, 1983 edition)
+    verification: UNVERIFIED
+    symbol: minephys.environment.mass_extinction_coefficient
+    notes: the large-particle limit; a model constant that warns when it is the default

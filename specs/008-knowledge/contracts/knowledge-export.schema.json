@@ -1,0 +1,147 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/fsantibanezleal/minephys/contracts/knowledge-export.schema.json",
+  "title": "minephys knowledge export",
+  "description": "Deterministic JSON export written by python -m minephys.knowledge export (DC-008-03, spec 008-knowledge).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "tables",
+    "equations",
+    "glossary",
+    "bibliography",
+    "summary"
+  ],
+  "properties": {
+    "version": {
+      "$ref": "#/$defs/release_version"
+    },
+    "tables": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 64,
+      "items": {
+        "$ref": "knowledge-table.schema.json"
+      }
+    },
+    "equations": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 500,
+      "items": {
+        "$ref": "knowledge-equations.schema.json#/$defs/equation"
+      }
+    },
+    "glossary": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 1000,
+      "items": {
+        "$ref": "knowledge-glossary.schema.json#/$defs/term"
+      }
+    },
+    "bibliography": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 1000,
+      "items": {
+        "$ref": "bibliography-entry.schema.json"
+      }
+    },
+    "summary": {
+      "$ref": "#/$defs/summary"
+    }
+  },
+  "$defs": {
+    "summary": {
+      "description": "Counts of rows and equations (total and UNVERIFIED), terms and references, per table and per role.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rows",
+        "equations",
+        "terms",
+        "references",
+        "per_table",
+        "per_role"
+      ],
+      "properties": {
+        "rows": {
+          "$ref": "#/$defs/count"
+        },
+        "equations": {
+          "$ref": "#/$defs/count"
+        },
+        "terms": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "references": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "per_table": {
+          "type": "object",
+          "minProperties": 1,
+          "maxProperties": 64,
+          "propertyNames": {
+            "type": "string",
+            "maxLength": 64,
+            "pattern": "^[a-z][a-z0-9_]*$"
+          },
+          "additionalProperties": {
+            "$ref": "#/$defs/count"
+          }
+        },
+        "per_role": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "model_constant",
+            "parameter",
+            "limit",
+            "conversion"
+          ],
+          "properties": {
+            "model_constant": {
+              "$ref": "#/$defs/count"
+            },
+            "parameter": {
+              "$ref": "#/$defs/count"
+            },
+            "limit": {
+              "$ref": "#/$defs/count"
+            },
+            "conversion": {
+              "$ref": "#/$defs/count"
+            }
+          }
+        }
+      }
+    },
+    "count": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "total",
+        "unverified"
+      ],
+      "properties": {
+        "total": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unverified": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "release_version": {
+      "type": "string",
+      "maxLength": 16,
+      "pattern": "^[0-9]+\\.[0-9]{2}\\.[0-9]{3}$"
+    }
+  }
+}

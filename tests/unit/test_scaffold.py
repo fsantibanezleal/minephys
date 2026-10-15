@@ -10,7 +10,8 @@ ROOT = Path(__file__).resolve().parents[2]
 
 
 def test_package_imports() -> None:
-    assert minephys.__all__ == []
+    # the full contents of __all__ are pinned by tests/unit/test_t_000_002_package_api.py
+    assert "__version__" in minephys.__all__
 
 
 def test_ships_py_typed() -> None:

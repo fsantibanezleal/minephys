@@ -1,0 +1,411 @@
+schema_version: 1
+table: blasting
+title: Blasting constants, limits and parameters
+licence: CC-BY-4.0
+rows:
+- id: kuznetsov_powder_factor_exponent
+  quantity: exponent of the powder factor in the Kuznetsov mean size
+  value: -0.8
+  units: '1'
+  role: model_constant
+  citation: cunningham2005
+  page: eq. 1, p. 201
+  verification: verified
+  verified_on: '2026-10-06'
+  symbol: minephys.blasting.kuznetsov_x50
+- id: kuznetsov_charge_exponent
+  quantity: exponent of the charge per hole in the Kuznetsov mean size
+  value: 1/6
+  units: '1'
+  role: model_constant
+  citation: cunningham2005
+  page: eq. 1, p. 201
+  verification: verified
+  verified_on: '2026-10-06'
+  symbol: minephys.blasting.kuznetsov_x50
+- id: kuznetsov_tnt_relative_weight_strength
+  quantity: relative weight strength of TNT (ANFO = 100)
+  value: 115
+  units: 1 (ANFO = 100)
+  role: model_constant
+  citation: cunningham2005
+  page: eq. 1, p. 201
+  verification: verified
+  verified_on: '2026-10-06'
+  symbol: minephys.blasting.kuznetsov_x50
+  notes: 115 being the RWS of TNT
+- id: kuzram_rws_exponent_2005
+  quantity: exponent of the relative weight strength ratio, Cunningham 2005 form
+  value: 19/20
+  units: '1'
+  role: model_constant
+  citation: cunningham2005
+  page: eq. 1, p. 201
+  verification: verified
+  verified_on: '2026-10-06'
+  symbol: minephys.blasting.kuznetsov_x50
+- id: kuzram_rws_exponent_1983
+  quantity: exponent of the relative weight strength ratio, 1983/1987 form
+  value: 19/30
+  units: '1'
+  role: model_constant
+  citation: mutinda2021
+  page: eq. 2, p. 109
+  verification: UNVERIFIED
+  symbol: minephys.blasting.kuznetsov_x50
+  notes: Cunningham 1983/1987 (primary not read); Mutinda et al. 2021 print 19/30 and attribute it to Cunningham 2005, which prints 19/20; secondary transcription only
+- id: kuzram_rock_factor_coefficient
+  quantity: coefficient of the rock factor sum
+  value: 0.06
+  units: '1'
+  role: model_constant
+  citation: cunningham2005
+  page: eq. 4, p. 204
+  verification: verified
+  verified_on: '2026-10-06'
+  symbol: minephys.blasting.rock_factor
+- id: kuzram_hardness_modulus_divisor
+  quantity: divisor of Young's modulus (GPa) in the hardness factor
+  value: 3
+  units: '1'
+  role: model_constant
+  citation: cunningham2005
+  page: p. 205
+  verification: verified
+  verified_on: '2026-10-06'
+  symbol: minephys.blasting.hardness_factor
+- id: kuzram_hardness_ucs_divisor
+  quantity: divisor of the uniaxial compressive strength (MPa) in the hardness factor
+  value: 5
+  units: '1'
+  role: model_constant
+  citation: cunningham2005
+  page: p. 205
+  verification: verified
+  verified_on: '2026-10-06'
+  symbol: minephys.blasting.hardness_factor
+- id: kuzram_hardness_modulus_switch
+  quantity: Young's modulus below which the hardness factor uses the modulus
+  value: 50
+  units: GPa
+  role: model_constant
+  citation: cunningham2005
+  page: p. 205
+  verification: verified
+  verified_on: '2026-10-06'
+  symbol: minephys.blasting.hardness_factor
+- id: kuzram_rdi_density_coefficient
+  quantity: coefficient of the density in the rock density influence
+  value: 0.025
+  units: 1/(kg/m³)
+  role: model_constant
+  citation: mutinda2021
+  page: eq. 5, p. 109
+  verification: UNVERIFIED
+  symbol: minephys.blasting.rock_density_influence
+  notes: Cunningham 1987 (primary not read); secondary transcription only
+- id: kuzram_rdi_offset
+  quantity: offset of the rock density influence
+  value: 50
+  units: '1'
+  role: model_constant
+  citation: mutinda2021
+  page: eq. 5, p. 109
+  verification: UNVERIFIED
+  symbol: minephys.blasting.rock_density_influence
+  notes: Cunningham 1987 (primary not read); secondary transcription only
+- id: cunningham_n_constant
+  quantity: constant term of the uniformity index first factor
+  value: 2.2
+  units: '1'
+  role: model_constant
+  citation: cunningham2005
+  page: eq. 3, p. 202
+  verification: verified
+  verified_on: '2026-10-06'
+  symbol: minephys.blasting.uniformity_index
+  notes: the 1987 form
+- id: cunningham_n_burden_coefficient
+  quantity: coefficient of B/d (d in mm) in the uniformity index first factor
+  value: 14
+  units: '1'
+  role: model_constant
+  citation: cunningham2005
+  page: eq. 3, p. 202
+  verification: verified
+  verified_on: '2026-10-06'
+  symbol: minephys.blasting.uniformity_index
+  notes: the 1987 form
+- id: cunningham_n_charge_offset
+  quantity: offset added to |BCL - CCL| / L in the uniformity index
+  value: 0.1
+  units: '1'
+  role: model_constant
+  citation: cunningham2005
+  page: eq. 3, p. 202
+  verification: verified
+  verified_on: '2026-10-06'
+  symbol: minephys.blasting.uniformity_index
+  notes: the 1987 form
+- id: cunningham_n_charge_exponent
+  quantity: exponent of the charge-length term of the uniformity index
+  value: 0.1
+  units: '1'
+  role: model_constant
+  citation: cunningham2005
+  page: eq. 3, p. 202
+  verification: verified
+  verified_on: '2026-10-06'
+  symbol: minephys.blasting.uniformity_index
+  notes: the 1987 form
+- id: rosin_rammler_median_constant
+  quantity: constant printed in the Rosin-Rammler median form
+  value: 0.693
+  units: '1'
+  role: model_constant
+  citation: cunningham2005
+  page: eq. 2, p. 202
+  verification: verified
+  verified_on: '2026-10-06'
+  symbol:
+  - minephys.blasting.rosin_rammler_passing
+  - minephys.blasting.rosin_rammler_size
+  notes: 'documented only: the library uses ln 2 (relative difference 2.1e-4) so that x50 is exactly the median'
+- id: kuzram_rock_factor_min
+  quantity: smallest rock factor of Cunningham's range
+  value: 0.8
+  units: '1'
+  role: limit
+  citation: cunningham2005
+  page: p. 201
+  verification: verified
+  verified_on: '2026-10-06'
+  symbol: minephys.blasting.kuznetsov_x50
+  notes: the rock factor varies between 0.8 and 22
+- id: kuzram_rock_factor_max
+  quantity: largest rock factor of Cunningham's range
+  value: 22
+  units: '1'
+  role: limit
+  citation: cunningham2005
+  page: p. 201
+  verification: verified
+  verified_on: '2026-10-06'
+  symbol: minephys.blasting.kuznetsov_x50
+  notes: the rock factor varies between 0.8 and 22
+- id: kuzram_uniformity_typical_min
+  quantity: lower end of the typical uniformity index range
+  value: 0.8
+  units: '1'
+  role: limit
+  citation: minephys:spec-002-blasting
+  page: §7.3
+  verification: UNVERIFIED
+  symbol: minephys.blasting.uniformity_index
+  notes: typical range associated with the formula; the literature source was not read
+- id: kuzram_uniformity_typical_max
+  quantity: upper end of the typical uniformity index range
+  value: 1.5
+  units: '1'
+  role: limit
+  citation: minephys:spec-002-blasting
+  page: §7.3
+  verification: UNVERIFIED
+  symbol: minephys.blasting.uniformity_index
+  notes: typical range associated with the formula; the literature source was not read
+- id: cfr_816_67_ppv_limit_near
+  quantity: maximum peak particle velocity, 0 to 300 ft
+  value: 1.25
+  units: in/s
+  role: limit
+  citation: cfr30_816_67
+  page: § 816.67(d)(2)(i)
+  verification: verified
+  verified_on: '2026-10-06'
+  symbol: minephys.blasting.ppv_limit
+- id: cfr_816_67_ppv_limit_mid
+  quantity: maximum peak particle velocity, 301 to 5,000 ft
+  value: 1.0
+  units: in/s
+  role: limit
+  citation: cfr30_816_67
+  page: § 816.67(d)(2)(i)
+  verification: verified
+  verified_on: '2026-10-06'
+  symbol: minephys.blasting.ppv_limit
+- id: cfr_816_67_ppv_limit_far
+  quantity: maximum peak particle velocity, 5,001 ft and beyond
+  value: 0.75
+  units: in/s
+  role: limit
+  citation: cfr30_816_67
+  page: § 816.67(d)(2)(i)
+  verification: verified
+  verified_on: '2026-10-06'
+  symbol: minephys.blasting.ppv_limit
+- id: cfr_816_67_distance_band_near_max
+  quantity: upper end of the first distance band
+  value: 300
+  units: ft
+  role: limit
+  citation: cfr30_816_67
+  page: § 816.67(d)(2)(i)
+  verification: verified
+  verified_on: '2026-10-06'
+  symbol:
+  - minephys.blasting.ppv_limit
+  - minephys.blasting.max_charge_per_delay
+- id: cfr_816_67_distance_band_mid_max
+  quantity: upper end of the second distance band
+  value: 5000
+  units: ft
+  role: limit
+  citation: cfr30_816_67
+  page: § 816.67(d)(2)(i)
+  verification: verified
+  verified_on: '2026-10-06'
+  symbol:
+  - minephys.blasting.ppv_limit
+  - minephys.blasting.max_charge_per_delay
+- id: cfr_816_67_scaled_distance_factor_near
+  quantity: scaled-distance factor Ds, 0 to 300 ft
+  value: 50
+  units: ft/lb^½
+  role: limit
+  citation: cfr30_816_67
+  page: § 816.67(d)(3)(i)
+  verification: verified
+  verified_on: '2026-10-06'
+  symbol: minephys.blasting.max_charge_per_delay
+  notes: charge limit W = (D / Ds)^2 lb per 8-millisecond period
+- id: cfr_816_67_scaled_distance_factor_mid
+  quantity: scaled-distance factor Ds, 301 to 5,000 ft
+  value: 55
+  units: ft/lb^½
+  role: limit
+  citation: cfr30_816_67
+  page: § 816.67(d)(3)(i)
+  verification: verified
+  verified_on: '2026-10-06'
+  symbol: minephys.blasting.max_charge_per_delay
+  notes: charge limit W = (D / Ds)^2 lb per 8-millisecond period
+- id: cfr_816_67_scaled_distance_factor_far
+  quantity: scaled-distance factor Ds, 5,001 ft and beyond
+  value: 65
+  units: ft/lb^½
+  role: limit
+  citation: cfr30_816_67
+  page: § 816.67(d)(3)(i)
+  verification: verified
+  verified_on: '2026-10-06'
+  symbol: minephys.blasting.max_charge_per_delay
+  notes: charge limit W = (D / Ds)^2 lb per 8-millisecond period
+- id: lundborg_max_range_coefficient
+  quantity: coefficient of Lundborg's empirical maximum throw
+  value: 260
+  units: m/in^(2/3)
+  role: model_constant
+  citation: szendrei2022
+  page: eq. 1, p. 726
+  verification: UNVERIFIED
+  symbol: minephys.blasting.flyrock_range_lundborg
+  notes: Lundborg (primary not read); secondary transcription only
+- id: lundborg_max_range_exponent
+  quantity: exponent of the hole diameter in Lundborg's maximum throw
+  value: 2/3
+  units: '1'
+  role: model_constant
+  citation: szendrei2022
+  page: eq. 1, p. 726
+  verification: UNVERIFIED
+  symbol: minephys.blasting.flyrock_range_lundborg
+  notes: Lundborg (primary not read); secondary transcription only
+- id: flyrock_drag_coefficient_range
+  quantity: published range of the drag coefficient of flyrock fragments
+  range:
+    min: 0.6
+    max: 1.8
+  units: '1'
+  role: parameter
+  citation: szendrei2022
+  page: p. 728
+  verification: verified
+  verified_on: '2026-10-06'
+  symbol: minephys.blasting.flyrock_trajectory
+  notes: documented range, never a default
+- id: flyrock_air_density_reference
+  quantity: reference air density used for flyrock trajectories
+  value: 1.24
+  units: kg/m³
+  role: parameter
+  citation: szendrei2022
+  page: p. 728
+  verification: verified
+  verified_on: '2026-10-06'
+  symbol: minephys.blasting.flyrock_trajectory
+  notes: documented value, never a default
+- id: tripwire_powder_factor_max
+  quantity: 'unit tripwire: largest plausible powder factor'
+  value: 5.0
+  units: kg/m³
+  role: limit
+  citation: minephys:spec-002-blasting
+  page: §7.3
+  verification: UNVERIFIED
+  symbol: minephys.blasting.kuznetsov_x50
+  notes: design choice of the specification, not a measurement
+- id: tripwire_rws_min
+  quantity: 'unit tripwire: smallest plausible relative weight strength (ANFO = 100)'
+  value: 20.0
+  units: 1 (ANFO = 100)
+  role: limit
+  citation: minephys:spec-002-blasting
+  page: §7.3
+  verification: UNVERIFIED
+  symbol: minephys.blasting.kuznetsov_x50
+  notes: design choice of the specification, not a measurement
+- id: tripwire_hole_diameter_max
+  quantity: 'unit tripwire: largest plausible hole diameter'
+  value: 1.0
+  units: m
+  role: limit
+  citation: minephys:spec-002-blasting
+  page: §7.3
+  verification: UNVERIFIED
+  symbol:
+  - minephys.blasting.charge_per_hole
+  - minephys.blasting.uniformity_index
+  - minephys.blasting.flyrock_range_lundborg
+  notes: design choice of the specification, not a measurement
+- id: tripwire_k_site_max
+  quantity: 'unit tripwire: largest plausible site constant K'
+  value: 100.0
+  units: m/s
+  role: limit
+  citation: minephys:spec-002-blasting
+  page: §7.3
+  verification: UNVERIFIED
+  symbol: minephys.blasting.ppv_scaled_distance
+  notes: design choice of the specification, not a measurement
+- id: tripwire_launch_speed_max
+  quantity: 'unit tripwire: largest plausible launch speed'
+  value: 500.0
+  units: m/s
+  role: limit
+  citation: minephys:spec-002-blasting
+  page: §7.3
+  verification: UNVERIFIED
+  symbol:
+  - minephys.blasting.flyrock_range_no_drag
+  - minephys.blasting.flyrock_trajectory
+  notes: design choice of the specification, not a measurement
+- id: tripwire_air_density_max
+  quantity: 'unit tripwire: largest plausible air density'
+  value: 2.0
+  units: kg/m³
+  role: limit
+  citation: minephys:spec-002-blasting
+  page: §7.3
+  verification: UNVERIFIED
+  symbol: minephys.blasting.flyrock_trajectory
+  notes: design choice of the specification, not a measurement

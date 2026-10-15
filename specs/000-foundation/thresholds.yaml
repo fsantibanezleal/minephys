@@ -1,7 +1,7 @@
 # Numeric gate thresholds for this product. They only ratchet upwards; lowering one needs a spec change and the
 # maintainer's explicit approval. Values below are starting proposals — calibrate in the first milestone.
 coverage:
-  branch_core_min: 0.85
+  branch_core_min: 0.90
   changed_lines_min: 0.90
 mutation:
   numerical_core_min: 0.80

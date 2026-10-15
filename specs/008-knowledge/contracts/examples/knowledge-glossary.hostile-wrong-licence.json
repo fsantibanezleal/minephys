@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "title": "minephys glossary",
+  "licence": "CC-BY-SA-4.0",
+  "terms": [
+    {
+      "id": "powder_factor",
+      "domain": "blasting",
+      "term_en": "powder factor",
+      "term_es": "factor de carga",
+      "definition_en": "Mass of explosive per unit volume of rock blasted, in kg/m³.",
+      "definition_es": "Masa de explosivo por unidad de volumen de roca tronada, en kg/m³.",
+      "see_also": [
+        "rock_factor"
+      ]
+    },
+    {
+      "id": "rock_factor",
+      "domain": "blasting",
+      "term_en": "rock factor",
+      "term_es": "factor de roca",
+      "definition_en": "Dimensionless rating of the rock mass that scales the mean fragment size in the Kuz-Ram model.",
+      "definition_es": "Índice adimensional del macizo rocoso que escala el tamaño medio de fragmento en el modelo Kuz-Ram.",
+      "citation": "cunningham2005kuzram"
+    },
+    {
+      "id": "validity_range",
+      "domain": "general",
+      "term_en": "validity range",
+      "term_es": "rango de validez",
+      "definition_en": "Interval of inputs inside which a model's source states that the model applies; outside it the library warns.",
+      "definition_es": "Intervalo de entradas dentro del cual la fuente de un modelo declara que el modelo es aplicable; fuera de él la biblioteca emite una advertencia."
+    }
+  ]
+}

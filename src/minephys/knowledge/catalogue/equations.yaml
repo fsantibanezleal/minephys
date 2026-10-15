@@ -1,0 +1,629 @@
+schema_version: 1
+title: minephys equations catalogue
+licence: CC-BY-4.0
+equations:
+  - id: planning_block_economic_value
+    title: Block economic value with the process-or-waste destination
+    domain: planning
+    latex: 'v = \max\big(T\,[\,g\,y\,(p - s_r) - c_p\,],\ 0\big) - T\,c_m'
+    symbols:
+      - {symbol: v, meaning: economic value of the block, units: currency}
+      - {symbol: T, meaning: block tonnage, units: kg}
+      - {symbol: g, meaning: block grade (mass fraction), units: "1"}
+      - {symbol: y, meaning: metallurgical recovery, units: "1"}
+      - {symbol: p, meaning: metal price, units: currency/kg}
+      - {symbol: s_r, meaning: selling cost per kg of metal, units: currency/kg}
+      - {symbol: c_p, meaning: processing cost per kg of ore, units: currency/kg}
+      - {symbol: c_m, meaning: mining cost per kg of rock, units: currency/kg}
+    function: minephys.planning.block_economic_value
+    citation: lane1988economic
+    page: not read (bibliographic); derived form
+    verification: UNVERIFIED
+    notes: the block is sent to the plant exactly when its processing margin is positive; the form is derived in spec 007 and checked by hand calculation
+  - id: planning_breakeven_cutoff_grade
+    title: Break-even cut-off grade
+    domain: planning
+    latex: 'g_{be} = \frac{c_p}{y\,(p - s_r)}'
+    symbols:
+      - {symbol: 'g_{be}', meaning: break-even grade, units: "1"}
+      - {symbol: c_p, meaning: processing cost per kg of ore, units: currency/kg}
+      - {symbol: y, meaning: metallurgical recovery, units: "1"}
+      - {symbol: p, meaning: metal price, units: currency/kg}
+      - {symbol: s_r, meaning: selling cost per kg of metal, units: currency/kg}
+    function: minephys.planning.breakeven_cutoff_grade
+    citation: lane1988economic
+    page: not read (bibliographic); derived form
+    verification: UNVERIFIED
+    notes: the grade at which the processing margin of the block vanishes (spec 007 FR-007-02)
+  - id: planning_ultimate_pit_closure
+    title: Ultimate pit as a maximum-value closure of the block precedence graph
+    domain: planning
+    latex: '\max_{C \subseteq V} \sum_{i \in C} v_i \quad \text{s.t.} \quad i \in C,\ (i, j) \in A \Rightarrow j \in C'
+    symbols:
+      - {symbol: v_i, meaning: economic value of block i, units: currency}
+      - {symbol: C, meaning: closure (the set of mined blocks), units: "1"}
+      - {symbol: A, meaning: precedence arcs (mining block i requires block j), units: "1"}
+    function: minephys.planning.ultimate_pit_mincut
+    citation: lerchs1965optimum
+    page: not read (bibliographic)
+    verification: UNVERIFIED
+    notes: the closure definition is read on picard1976closure (abstract); exhaustive enumeration is the test oracle
+  - id: planning_closure_mincut_reduction
+    title: Reduction of the maximum closure to a minimum s-t cut
+    domain: planning
+    latex: 'c(s, i) = v_i \ (v_i > 0), \quad c(i, t) = -v_i \ (v_i < 0), \quad c(i, j) = \infty \ ((i, j) \in A), \quad C^\ast = \{\, i : i \text{ reachable from } s \text{ in the residual network} \,\}'
+    symbols:
+      - {symbol: c, meaning: arc capacity of the s-t network, units: currency}
+      - {symbol: s, meaning: source node, units: "1"}
+      - {symbol: t, meaning: sink node, units: "1"}
+      - {symbol: 'C^\ast', meaning: smallest maximum-value closure, units: "1"}
+    function: minephys.planning.ultimate_pit_mincut
+    citation: picard1976closure
+    page: not read (the abstract was read); the reduction is re-derived in spec 007
+    verification: UNVERIFIED
+    notes: the minimum cut with the smallest source side gives the smallest optimal closure
+  - id: planning_nested_pits
+    title: Nested pits over revenue factors
+    domain: planning
+    latex: 'v_i(\lambda) = \max\big(T_i\,[\,\lambda\,g_i\,y\,(p - s_r) - c_p\,],\ 0\big) - T_i\,c_m'
+    symbols:
+      - {symbol: '\lambda', meaning: revenue factor, units: "1"}
+      - {symbol: T_i, meaning: tonnage of block i, units: kg}
+      - {symbol: g_i, meaning: grade of block i, units: "1"}
+    function: minephys.planning.nested_pits
+    citation: hochbaum2008pseudoflow
+    page: not read (abstract only); the parametric form is derived in spec 007
+    verification: UNVERIFIED
+    notes: the pits are solved one revenue factor at a time; the parametric pseudoflow algorithm is not implemented
+  - id: planning_strip_ratio
+    title: Strip ratio of a pit or pushback
+    domain: planning
+    latex: 'SR = \frac{\sum_{i \in P,\ \neg ore} T_i}{\sum_{i \in P,\ ore} T_i}'
+    symbols:
+      - {symbol: SR, meaning: strip ratio, units: "1"}
+      - {symbol: P, meaning: selected blocks, units: "1"}
+      - {symbol: T_i, meaning: tonnage of block i, units: kg}
+    function: minephys.planning.strip_ratio
+    citation: lane1988economic
+    page: not read (bibliographic); definition
+    verification: UNVERIFIED
+    notes: waste tonnage over ore tonnage of the selected blocks
+  - id: planning_npv
+    title: Net present value of a cash-flow series
+    domain: planning
+    latex: 'NPV = \sum_{t=1}^{T} \frac{CF_t}{(1 + r)^t}'
+    symbols:
+      - {symbol: CF_t, meaning: cash flow of period t, units: currency}
+      - {symbol: r, meaning: discount rate per period, units: "1"}
+      - {symbol: T, meaning: number of periods, units: "1"}
+    function: minephys.planning.npv
+    citation: lane1988economic
+    page: not read (bibliographic); definition
+    verification: UNVERIFIED
+    notes: end-of-period discounting; start-of-period is available
+  - id: planning_schedule_npv
+    title: Schedule NPV from per-period aggregation of block values
+    domain: planning
+    latex: 'CF_t = \sum_{i:\ \tau_i = t} v_i, \qquad NPV = \sum_{t} \frac{CF_t}{(1 + r)^{t+1}}'
+    symbols:
+      - {symbol: '\tau_i', meaning: period in which block i is mined, units: "1"}
+      - {symbol: v_i, meaning: value of block i, units: currency}
+    function: minephys.planning.schedule_npv
+    citation: lane1988economic
+    page: not read (bibliographic); definition
+    verification: UNVERIFIED
+    notes: a check and an evaluation, not an optimiser (spec 007 section 7)
+  - id: planning_lane_cutoff_grades
+    title: Lane limiting, balancing and optimum cut-off grades
+    domain: planning
+    latex: 'V(g) = (s - r)\,q(g) - h\,x(g) - m - (f + F)\max\!\left(\tfrac{1}{M},\ \tfrac{x(g)}{C},\ \tfrac{q(g)}{R}\right), \quad g_m = \frac{h}{(s - r)\,y}, \quad g_c = \frac{h + (f + F)/C}{(s - r)\,y}, \quad g_r = \frac{h}{\big(s - r - (f + F)/R\big)\,y}'
+    symbols:
+      - {symbol: s, meaning: metal price, units: currency/kg}
+      - {symbol: r, meaning: selling cost per kg of metal, units: currency/kg}
+      - {symbol: y, meaning: metallurgical recovery, units: "1"}
+      - {symbol: h, meaning: processing cost per kg of ore, units: currency/kg}
+      - {symbol: m, meaning: mining cost per kg of material, units: currency/kg}
+      - {symbol: f, meaning: fixed cost per unit time, units: currency/s}
+      - {symbol: F, meaning: opportunity cost per unit time, units: currency/s}
+      - {symbol: 'M, C, R', meaning: 'mine, plant and market capacities', units: kg/s}
+      - {symbol: 'x(g), q(g)', meaning: ore fraction and recovered metal per unit of material, units: "1"}
+    function: minephys.planning.lane_cutoff_grades
+    citation: lane1964choosing
+    page: not read (bibliographic); derived forms
+    verification: UNVERIFIED
+    notes: derived from the controlling-capacity rule read on cetin2013gridsearch pp. 660 and 663; the brute-force grid is the test oracle
+  - id: comminution_bond_energy
+    title: Bond's third law of comminution
+    domain: comminution
+    latex: 'W = 10\,W_i\left(\frac{1}{\sqrt{P_{80}}} - \frac{1}{\sqrt{F_{80}}}\right)'
+    symbols:
+      - {symbol: W, meaning: specific comminution energy, units: J/kg}
+      - {symbol: W_i, meaning: Bond work index, units: J/kg}
+      - {symbol: 'P_{80}', meaning: product 80 % passing size (micrometres inside the formula), units: m}
+      - {symbol: 'F_{80}', meaning: feed 80 % passing size (micrometres inside the formula), units: m}
+    function: minephys.comminution.bond_energy
+    citation: mcivor2016bondgmsg
+    page: p. 1, "Calculations"; worked examples p. 2
+    verification: verified
+    verified_on: "2026-10-06"
+    rows: [bond_law_coefficient, bond_min_product_size]
+    notes: the law is homogeneous in the work index, so the result is in the unit of the index
+  - id: comminution_bond_operating_work_index
+    title: Bond operating work index
+    domain: comminution
+    latex: 'W_{io} = \frac{W}{10/\sqrt{P_{80}} - 10/\sqrt{F_{80}}}'
+    symbols:
+      - {symbol: 'W_{io}', meaning: operating work index, units: J/kg}
+      - {symbol: W, meaning: measured specific energy, units: J/kg}
+      - {symbol: 'P_{80}', meaning: product 80 % passing size, units: m}
+      - {symbol: 'F_{80}', meaning: feed 80 % passing size, units: m}
+    function: minephys.comminution.bond_operating_work_index
+    citation: mcivor2016bondgmsg
+    page: p. 1, "Calculations"; worked examples pp. 1-2
+    verification: verified
+    verified_on: "2026-10-06"
+    rows: [bond_law_coefficient, bond_min_product_size]
+  - id: comminution_bond_ball_mill_work_index
+    title: Bond ball-mill test work index
+    domain: comminution
+    latex: 'W_i = \frac{1.1025 \times 44.5}{P_1^{0.23}\,G_{bp}^{0.82}\left(10/\sqrt{P_{80}} - 10/\sqrt{F_{80}}\right)}'
+    symbols:
+      - {symbol: W_i, meaning: ball-mill work index per metric tonne, units: J/kg}
+      - {symbol: P_1, meaning: closing screen size, units: m}
+      - {symbol: 'G_{bp}', meaning: grindability (net mass finer than the screen per revolution), units: kg}
+      - {symbol: 'P_{80}', meaning: test product 80 % passing size, units: m}
+      - {symbol: 'F_{80}', meaning: test feed 80 % passing size, units: m}
+    function: minephys.comminution.bond_ball_mill_work_index
+    citation: mcivor2016bondgmsg
+    page: p. 10, Annex C1 "Calculations"; test sheet p. 11
+    verification: verified
+    verified_on: "2026-10-06"
+    rows: [bond_bm_constant, bond_bm_exponent_screen, bond_bm_exponent_grindability, bond_short_ton_to_metric, bond_law_coefficient]
+    notes: sizes in micrometres and grindability in g/rev inside the published formula, kWh/t converted to J/kg
+  - id: comminution_morrell_energy
+    title: Morrell energy-size relation
+    domain: comminution
+    latex: 'W = M_i \cdot 4\left(x_2^{f(x_2)} - x_1^{f(x_1)}\right), \quad f(x) = -\left(0.295 + \frac{x}{10^6}\right)'
+    symbols:
+      - {symbol: W, meaning: specific energy, units: J/kg}
+      - {symbol: M_i, meaning: Morrell index of the stage, units: J/kg}
+      - {symbol: x_1, meaning: feed 80 % passing size (micrometres inside the formula), units: m}
+      - {symbol: x_2, meaning: product 80 % passing size (micrometres inside the formula), units: m}
+    function: minephys.comminution.morrell_energy
+    citation: gmsg2016morrell
+    page: eq. 2, p. 2
+    verification: verified
+    verified_on: "2026-10-06"
+    rows: [morrell_coefficient, morrell_f_constant, morrell_f_scale, morrell_relative_error_sd]
+  - id: comminution_morrell_tumbling_coarse
+    title: Morrell coarse tumbling-mill energy
+    domain: comminution
+    latex: 'W_a = K_1 M_{ia}\,4\left(750^{f(750)} - x_1^{f(x_1)}\right)'
+    symbols:
+      - {symbol: W_a, meaning: coarse tumbling-mill energy, units: J/kg}
+      - {symbol: K_1, meaning: 0.95 with a pebble crusher and 1 otherwise, units: "1"}
+      - {symbol: 'M_{ia}', meaning: Morrell index Mia, units: J/kg}
+      - {symbol: x_1, meaning: tumbling-mill feed 80 % passing size, units: m}
+    function: minephys.comminution.morrell_tumbling_coarse
+    citation: gmsg2016morrell
+    page: eqs. B2-B3, p. 6
+    verification: verified
+    verified_on: "2026-10-06"
+    rows: [morrell_coefficient, morrell_f_constant, morrell_f_scale, morrell_coarse_fine_boundary, morrell_k1_pebble_crusher]
+  - id: comminution_morrell_tumbling_fine
+    title: Morrell fine tumbling-mill energy
+    domain: comminution
+    latex: 'W_b = M_{ib}\,4\left(P_{80}^{f(P_{80})} - 750^{f(750)}\right)'
+    symbols:
+      - {symbol: W_b, meaning: fine tumbling-mill energy, units: J/kg}
+      - {symbol: 'M_{ib}', meaning: Morrell index Mib, units: J/kg}
+      - {symbol: 'P_{80}', meaning: final grind 80 % passing size, units: m}
+    function: minephys.comminution.morrell_tumbling_fine
+    citation: gmsg2016morrell
+    page: eqs. B2-B3, p. 6; section B.1, p. 6
+    verification: verified
+    verified_on: "2026-10-06"
+    rows: [morrell_coefficient, morrell_f_constant, morrell_f_scale, morrell_coarse_fine_boundary, morrell_fine_grind_limit]
+  - id: comminution_morrell_crusher
+    title: Morrell crushing energy
+    domain: comminution
+    latex: 'W_c = S_c K_2 M_{ic}\,4\left(x_2^{f(x_2)} - x_1^{f(x_1)}\right), \quad S_c = \min\left(55\,(x_1 x_2)^{-0.2},\ 1\right)'
+    symbols:
+      - {symbol: W_c, meaning: crushing energy per tonne through the crusher, units: J/kg}
+      - {symbol: S_c, meaning: size-dependent factor (1 for tertiary and pebble stages), units: "1"}
+      - {symbol: K_2, meaning: 1 for a closed circuit and 1.19 for an open one, units: "1"}
+      - {symbol: 'M_{ic}', meaning: Morrell index Mic, units: J/kg}
+      - {symbol: x_1, meaning: feed 80 % passing size, units: m}
+      - {symbol: x_2, meaning: product 80 % passing size, units: m}
+    function: minephys.comminution.morrell_crusher
+    citation: gmsg2016morrell
+    page: eqs. B4-B5, pp. 6-7
+    verification: verified
+    verified_on: "2026-10-06"
+    rows: [morrell_coefficient, morrell_f_constant, morrell_f_scale, morrell_k2_open_circuit, morrell_ks_crusher, morrell_s_exponent]
+  - id: comminution_morrell_hpgr
+    title: Morrell high-pressure grinding roll energy
+    domain: comminution
+    latex: 'W_h = S_h K_3 M_{ih}\,4\left(x_2^{f(x_2)} - x_1^{f(x_1)}\right), \quad S_h = \min\left(35\,(x_1 x_2)^{-0.2},\ 1\right)'
+    symbols:
+      - {symbol: W_h, meaning: HPGR energy, units: J/kg}
+      - {symbol: S_h, meaning: size-dependent factor, units: "1"}
+      - {symbol: K_3, meaning: 1 for a closed circuit and 1.19 for an open one, units: "1"}
+      - {symbol: 'M_{ih}', meaning: Morrell index Mih, units: J/kg}
+      - {symbol: x_1, meaning: feed 80 % passing size, units: m}
+      - {symbol: x_2, meaning: product 80 % passing size, units: m}
+    function: minephys.comminution.morrell_hpgr
+    citation: gmsg2016morrell
+    page: eq. B6, p. 7; section B.2.3, p. 7
+    verification: verified
+    verified_on: "2026-10-06"
+    rows: [morrell_coefficient, morrell_f_constant, morrell_f_scale, morrell_k3_open_circuit, morrell_ks_hpgr, morrell_s_exponent]
+  - id: comminution_morrell_size_distribution_correction
+    title: Morrell size-distribution correction energy
+    domain: comminution
+    latex: 'W_s = 0.19\,M_{ia}\,4\left(x_2^{f(x_2)} - x_1^{f(x_1)}\right)'
+    symbols:
+      - {symbol: W_s, meaning: size-distribution correction energy, units: J/kg}
+      - {symbol: 'M_{ia}', meaning: Morrell index Mia, units: J/kg}
+      - {symbol: x_1, meaning: circuit feed 80 % passing size, units: m}
+      - {symbol: x_2, meaning: ball-mill circuit feed 80 % passing size, units: m}
+    function: minephys.comminution.morrell_size_distribution_correction
+    citation: gmsg2016morrell
+    page: section B.2.4, p. 8
+    verification: verified
+    verified_on: "2026-10-06"
+    rows: [morrell_coefficient, morrell_f_constant, morrell_f_scale, morrell_ws_factor]
+  - id: comminution_morrell_mib
+    title: Morrell fine-grinding index from the Bond ball-mill test
+    domain: comminution
+    latex: 'M_{ib} = \frac{18.18}{P_{100}^{0.295}\,G_{bp}\left(P_{80}^{f(P_{80})} - F_{80}^{f(F_{80})}\right)}'
+    symbols:
+      - {symbol: 'M_{ib}', meaning: Morrell index Mib, units: J/kg}
+      - {symbol: 'P_{100}', meaning: closing screen size, units: m}
+      - {symbol: 'G_{bp}', meaning: grindability (net mass finer than the screen per revolution), units: kg}
+      - {symbol: 'P_{80}', meaning: test product 80 % passing size, units: m}
+      - {symbol: 'F_{80}', meaning: test feed 80 % passing size, units: m}
+    function: minephys.comminution.morrell_mib
+    citation: gmsg2016morrell
+    page: eq. 1, p. 2
+    verification: verified
+    verified_on: "2026-10-06"
+    rows: [morrell_mib_constant, morrell_mib_screen_exponent, morrell_f_constant, morrell_f_scale]
+    notes: kWh/t and g/rev inside the published formula, converted to J/kg
+  - id: comminution_pbm_batch_grinding
+    title: Batch grinding population balance
+    domain: comminution
+    latex: '\mathbf{m}(t) = e^{At}\,\mathbf{m}(0), \quad A = -\operatorname{diag}(S) + B\operatorname{diag}(S)'
+    symbols:
+      - {symbol: '\mathbf{m}', meaning: class masses coarse to fine, units: kg}
+      - {symbol: S, meaning: selection (breakage rate) of each class, units: 1/s}
+      - {symbol: B, meaning: breakage matrix (strictly lower triangular), units: "1"}
+      - {symbol: t, meaning: grinding time, units: s}
+    function: minephys.comminution.pbm_batch_grinding
+    citation: reid1965batch
+    page: not read (bibliographic)
+    verification: UNVERIFIED
+    notes: the analytical three-class solution is derived in spec 005 section 7 and is the test oracle
+  - id: comminution_pbm_continuous_mill
+    title: Perfectly mixed continuous mill, tanks in series
+    domain: comminution
+    latex: '\mathbf{m}_{out} = \left(I - \frac{\tau}{N}A\right)^{-N}\mathbf{m}_{in}'
+    symbols:
+      - {symbol: '\mathbf{m}', meaning: class mass flows coarse to fine, units: kg/s}
+      - {symbol: A, meaning: rate matrix -diag(S) + B diag(S), units: 1/s}
+      - {symbol: '\tau', meaning: total mean residence time, units: s}
+      - {symbol: N, meaning: number of equal tanks in series, units: "1"}
+    function: minephys.comminution.pbm_continuous_mill
+    citation: austin1984ballmilling
+    page: not read (bibliographic, 1984 edition)
+    verification: UNVERIFIED
+    notes: derived in spec 005 section 7 from the steady balance of one tank
+  - id: comminution_austin_selection
+    title: Austin selection function
+    domain: comminution
+    latex: 'S_i = \frac{a\,(x_i/x_0)^{\alpha}}{1 + (x_i/\mu)^{\Lambda}}'
+    symbols:
+      - {symbol: S_i, meaning: selection of class i, units: 1/s}
+      - {symbol: a, meaning: selection rate at the reference size, units: 1/s}
+      - {symbol: x_i, meaning: representative class size, units: m}
+      - {symbol: x_0, meaning: reference size, units: m}
+      - {symbol: '\alpha', meaning: size-ratio exponent, units: "1"}
+      - {symbol: '\mu', meaning: size above which the rate falls, units: m}
+      - {symbol: '\Lambda', meaning: steepness of the fall, units: "1"}
+    function: minephys.comminution.austin_selection
+    citation: austin1984ballmilling
+    page: not read (bibliographic, 1984 edition)
+    verification: UNVERIFIED
+    rows: [austin_reference_size]
+    notes: the attribution of the form to Austin is UNVERIFIED; the oracle is the form itself
+  - id: comminution_austin_breakage
+    title: Austin breakage distribution matrix
+    domain: comminution
+    latex: 'b_{ij} = B_j(s_i) - B_j(s_{i+1}), \quad B_j(s) = \phi\left(\frac{s}{s_{j+1}}\right)^{\gamma} + (1 - \phi)\left(\frac{s}{s_{j+1}}\right)^{\beta}'
+    symbols:
+      - {symbol: 'b_{ij}', meaning: fraction of broken class-j material entering finer class i, units: "1"}
+      - {symbol: s_i, meaning: upper size of class i, units: m}
+      - {symbol: '\phi', meaning: weight of the first term, units: "1"}
+      - {symbol: '\gamma', meaning: exponent of the first term, units: "1"}
+      - {symbol: '\beta', meaning: exponent of the second term, units: "1"}
+    function: minephys.comminution.austin_breakage
+    citation: austin1984ballmilling
+    page: not read (bibliographic, 1984 edition)
+    verification: UNVERIFIED
+    notes: the attribution of the form to Austin is UNVERIFIED; the oracle is the form itself and the column sums
+  - id: comminution_flotation_first_order
+    title: First-order flotation recovery
+    domain: comminution
+    latex: 'R = R_\infty\left(1 - e^{-kt}\right)'
+    symbols:
+      - {symbol: R, meaning: recovery, units: "1"}
+      - {symbol: R_\infty, meaning: ultimate recovery, units: "1"}
+      - {symbol: k, meaning: rate constant, units: 1/s}
+      - {symbol: t, meaning: flotation time, units: s}
+    function: minephys.comminution.flotation_first_order
+    citation: wills2016
+    page: not read (textbook form)
+    verification: UNVERIFIED
+  - id: comminution_klimpel_recovery
+    title: Klimpel flotation recovery
+    domain: comminution
+    latex: 'R = R_\infty\left[1 - \frac{1 - e^{-kt}}{kt}\right]'
+    symbols:
+      - {symbol: R, meaning: recovery, units: "1"}
+      - {symbol: R_\infty, meaning: ultimate recovery, units: "1"}
+      - {symbol: k, meaning: maximum rate constant, units: 1/s}
+      - {symbol: t, meaning: flotation time, units: s}
+    function: minephys.comminution.klimpel_recovery
+    citation: gharai2016flotation
+    page: not read (review transcription)
+    verification: UNVERIFIED
+    notes: derived in spec 005 section 7 as the mean of the first-order recovery over a uniform rate distribution on [0, k]
+  - id: comminution_flotation_cell_recovery
+    title: Recovery of perfectly mixed flotation cells in series
+    domain: comminution
+    latex: 'R = R_\infty\left[1 - (1 + k\tau)^{-N}\right]'
+    symbols:
+      - {symbol: R, meaning: recovery of the bank, units: "1"}
+      - {symbol: R_\infty, meaning: ultimate recovery, units: "1"}
+      - {symbol: k, meaning: rate constant, units: 1/s}
+      - {symbol: '\tau', meaning: mean residence time of one cell, units: s}
+      - {symbol: N, meaning: number of cells in series, units: "1"}
+    function: minephys.comminution.flotation_cell_recovery
+    citation: wills2016
+    page: not read (textbook form)
+    verification: UNVERIFIED
+    notes: derived in spec 005 section 7 by integrating the first-order law against an exponential residence-time distribution
+  - id: comminution_two_product_recovery
+    title: Two-product formula
+    domain: comminution
+    latex: '\frac{C}{F} = \frac{f - t}{c - t}, \quad R = \frac{c\,(f - t)}{f\,(c - t)}'
+    symbols:
+      - {symbol: C/F, meaning: mass yield of the concentrate, units: "1"}
+      - {symbol: R, meaning: recovery of the valuable component, units: "1"}
+      - {symbol: f, meaning: feed grade, units: "1"}
+      - {symbol: c, meaning: concentrate grade, units: "1"}
+      - {symbol: t, meaning: tailings grade, units: "1"}
+    function: minephys.comminution.two_product_recovery
+    citation: wills2016
+    page: not read (textbook form)
+    verification: UNVERIFIED
+    notes: the grades share any one unit
+  - id: comminution_passing_size
+    title: Passing size by log-log interpolation
+    domain: comminution
+    latex: '\ln x_p = \ln x_i + \left(\ln p - \ln P_i\right)\frac{\ln x_{i+1} - \ln x_i}{\ln P_{i+1} - \ln P_i}'
+    symbols:
+      - {symbol: x_p, meaning: size at the wanted passing fraction, units: m}
+      - {symbol: p, meaning: wanted passing fraction, units: "1"}
+      - {symbol: x_i, meaning: bracketing curve sizes, units: m}
+      - {symbol: P_i, meaning: cumulative passing at the bracketing sizes, units: "1"}
+    function: minephys.comminution.passing_size
+    citation: ouchterlony2005swebrec
+    page: not read (the Swebrec closed form is the test oracle)
+    verification: UNVERIFIED
+  - id: comminution_class_masses
+    title: Class masses from a cumulative passing curve
+    domain: comminution
+    latex: 'm_i = P(s_i) - P(s_{i+1}) \ (i < n), \qquad m_n = P(s_n)'
+    symbols:
+      - {symbol: m_i, meaning: mass fraction of class i, units: "1"}
+      - {symbol: P, meaning: cumulative passing, units: "1"}
+      - {symbol: s_i, meaning: upper size of class i, units: m}
+    function: minephys.comminution.class_masses
+    citation: ouchterlony2005swebrec
+    page: not read (definition)
+    verification: UNVERIFIED
+  - id: comminution_cumulative_passing
+    title: Cumulative passing from class masses
+    domain: comminution
+    latex: 'P_i = \sum_{k \ge i} m_k'
+    symbols:
+      - {symbol: P_i, meaning: cumulative passing at the upper size of class i, units: "1"}
+      - {symbol: m_k, meaning: mass of class k, units: "1"}
+    function: minephys.comminution.cumulative_passing
+    citation: ouchterlony2005swebrec
+    page: not read (definition)
+    verification: UNVERIFIED
+  - id: comminution_crusher_matrix_model
+    title: Steady-state crusher matrix model
+    domain: comminution
+    latex: '\mathbf{p} = (I - C)(I - BC)^{-1}\mathbf{f}'
+    symbols:
+      - {symbol: '\mathbf{p}', meaning: product mass of each class, units: kg}
+      - {symbol: '\mathbf{f}', meaning: feed mass of each class, units: kg}
+      - {symbol: C, meaning: diagonal matrix of classification probabilities, units: "1"}
+      - {symbol: B, meaning: breakage matrix (strictly lower triangular), units: "1"}
+    function: minephys.comminution.crusher_matrix_model
+    citation: whiten1972crushing
+    page: not read (bibliographic)
+    verification: UNVERIFIED
+    notes: follows from the steady balance x = f + BCx, p = (I - C)x; the attribution to Whiten is UNVERIFIED
+  - id: comminution_whiten_classification
+    title: Whiten classification function
+    domain: comminution
+    latex: 'c(x) = \begin{cases} 0 & x < k_1 \\ 1 - \left(\frac{k_2 - x}{k_2 - k_1}\right)^{k_3} & k_1 \le x < k_2 \\ 1 & x \ge k_2 \end{cases}'
+    symbols:
+      - {symbol: c, meaning: probability that a particle is broken, units: "1"}
+      - {symbol: x, meaning: particle size, units: m}
+      - {symbol: k_1, meaning: size below which nothing is broken, units: m}
+      - {symbol: k_2, meaning: size above which everything is broken, units: m}
+      - {symbol: k_3, meaning: shape exponent, units: "1"}
+    function: minephys.comminution.whiten_classification
+    citation: whiten1972crushing
+    page: not read (bibliographic)
+    verification: UNVERIFIED
+    notes: the form and its attribution to Whiten are UNVERIFIED
+  - id: comminution_mine_to_mill_chain
+    title: Mine-to-mill chain
+    domain: comminution
+    latex: 'P_{crusher} = \mathrm{cumulative}(\mathrm{crusher}(\mathrm{masses}(P_{blast}))), \quad \dot{m} = \frac{P}{W(F_{80} \to P_{80})}'
+    symbols:
+      - {symbol: 'P_{blast}', meaning: cumulative passing of the blast, units: "1"}
+      - {symbol: 'F_{80}', meaning: crusher product 80 % passing size, units: m}
+      - {symbol: 'P_{80}', meaning: target final grind, units: m}
+      - {symbol: W, meaning: specific energy from F80 to P80, units: J/kg}
+      - {symbol: P, meaning: installed power, units: W}
+      - {symbol: '\dot{m}', meaning: throughput, units: kg/s}
+    function: minephys.comminution.mine_to_mill_chain
+    citation: mcivor2016bondgmsg
+    page: composition of the component functions (spec 005 FR-005-30)
+    verification: UNVERIFIED
+    notes: a composition of the equations above; its components carry their own status
+  - id: environment_ap42_unpaved_emission_factor
+    title: AP-42 unpaved industrial road emission factor
+    domain: environment
+    latex: 'E = k\left(\frac{s}{12}\right)^{a}\left(\frac{W}{3}\right)^{b}'
+    symbols:
+      - {symbol: E, meaning: size-specific emission factor, units: g/VKT}
+      - {symbol: k, meaning: particle size multiplier, units: lb/VMT}
+      - {symbol: s, meaning: surface material silt content, units: percent}
+      - {symbol: W, meaning: mean vehicle weight, units: short tons}
+      - {symbol: a, meaning: silt exponent, units: "1"}
+      - {symbol: b, meaning: weight exponent, units: "1"}
+    function: minephys.environment.ap42_unpaved_emission_factor
+    citation: epa2006ap42s1322
+    page: section 13.2.2, unpaved roads at industrial sites
+    verification: UNVERIFIED
+    rows: [ap42_industrial_k_pm25, ap42_industrial_a_pm25, ap42_industrial_b_pm25, ap42_silt_reference, ap42_weight_reference]
+    notes: coefficient rows are read from the section; the assembled form is pinned against the section worked values in the tests
+  - id: environment_precipitation_correction
+    title: AP-42 wet-day correction of an annual emission factor
+    domain: environment
+    latex: 'E_{ext} = E\,\frac{365 - P}{365}'
+    symbols:
+      - {symbol: E_ext, meaning: annual average emission factor, units: g/VKT}
+      - {symbol: E, meaning: dry-condition emission factor, units: g/VKT}
+      - {symbol: P, meaning: number of days with at least 0.254 mm of precipitation, units: d}
+    function: minephys.environment.precipitation_correction
+    citation: epa2006ap42s1322
+    page: section 13.2.2, extrapolation to annual averages
+    verification: UNVERIFIED
+    rows: [ap42_wet_day_threshold, ap42_days_per_year]
+  - id: environment_watering_control_efficiency
+    title: Control efficiency of watering by the moisture ratio
+    domain: environment
+    latex: 'C = \mathrm{interp}(M;\ m_i,\ c_i)'
+    symbols:
+      - {symbol: C, meaning: control efficiency, units: percent}
+      - {symbol: M, meaning: ratio of watered to uncontrolled surface moisture, units: "1"}
+    function: minephys.environment.watering_control_efficiency
+    citation: epa2006ap42s1322
+    page: section 13.2.2, control efficiency versus moisture ratio
+    verification: UNVERIFIED
+    rows: [ap42_watering_m_1, ap42_watering_m_2, ap42_watering_m_3, ap42_watering_m_4, ap42_watering_ce_1, ap42_watering_ce_2, ap42_watering_ce_3, ap42_watering_ce_4]
+    notes: the interpolation between the tabulated points is a spec 006 choice
+  - id: environment_pasquill_sigmas
+    title: Pasquill-Gifford dispersion coefficients
+    domain: environment
+    latex: '\sigma_y = 465.11628\,x\,\tan(0.017453293\,(c - d \ln x)), \qquad \sigma_z = a\,x^{b}'
+    symbols:
+      - {symbol: '\sigma_y', meaning: lateral dispersion coefficient, units: m}
+      - {symbol: '\sigma_z', meaning: vertical dispersion coefficient, units: m}
+      - {symbol: x, meaning: downwind distance, units: km}
+      - {symbol: a, meaning: sigma z coefficient of the distance band, units: "1"}
+      - {symbol: b, meaning: sigma z exponent of the distance band, units: "1"}
+    function: minephys.environment.pasquill_sigmas
+    citation: epa1995isc3v2
+    page: Tables 1-1 to 1-4
+    verification: UNVERIFIED
+    rows: [isc3_sigma_y_scale, isc3_deg_to_rad, isc3_sigma_z_cap, isc3_urban_min_distance]
+    notes: the coefficient rows are read from the tables; the assembled form is UNVERIFIED until checked against the tabulated values
+  - id: environment_gaussian_plume
+    title: Gaussian point-source plume with ground reflection
+    domain: environment
+    latex: 'C = \frac{Q}{2\pi u \sigma_y \sigma_z}\exp\left(-\frac{y^2}{2\sigma_y^2}\right)\left[\exp\left(-\frac{(z-h)^2}{2\sigma_z^2}\right) + \exp\left(-\frac{(z+h)^2}{2\sigma_z^2}\right)\right]'
+    symbols:
+      - {symbol: C, meaning: concentration, units: kg/m^3}
+      - {symbol: Q, meaning: emission rate, units: kg/s}
+      - {symbol: u, meaning: wind speed, units: m/s}
+      - {symbol: h, meaning: source height, units: m}
+    function: minephys.environment.gaussian_plume
+    citation: turner1970workbook
+    page: not read (bibliographic)
+    verification: UNVERIFIED
+  - id: environment_line_source_plume
+    title: Infinite crosswind line-source plume
+    domain: environment
+    latex: 'C = \frac{Q_l}{\sqrt{2\pi}\,u\,\sigma_z}\left[\exp\left(-\frac{(z-h)^2}{2\sigma_z^2}\right) + \exp\left(-\frac{(z+h)^2}{2\sigma_z^2}\right)\right]'
+    symbols:
+      - {symbol: C, meaning: concentration, units: kg/m^3}
+      - {symbol: 'Q_l', meaning: emission rate per unit length, units: kg/(s m)}
+      - {symbol: u, meaning: wind speed, units: m/s}
+    function: minephys.environment.line_source_plume
+    citation: turner1970workbook
+    page: not read (bibliographic)
+    verification: UNVERIFIED
+  - id: environment_finite_line_source_plume
+    title: Finite line-source plume by crosswind integration
+    domain: environment
+    latex: 'C = \frac{Q_l}{2\sqrt{2\pi}\,u\,\sigma_z}\left[\mathrm{erf}\!\left(\frac{y_2 - y}{\sqrt{2}\sigma_y}\right) - \mathrm{erf}\!\left(\frac{y_1 - y}{\sqrt{2}\sigma_y}\right)\right]\left[\exp\left(-\frac{(z-h)^2}{2\sigma_z^2}\right) + \exp\left(-\frac{(z+h)^2}{2\sigma_z^2}\right)\right]'
+    symbols:
+      - {symbol: C, meaning: concentration, units: kg/m^3}
+      - {symbol: 'Q_l', meaning: emission rate per unit length, units: kg/(s m)}
+      - {symbol: 'y_1, y_2', meaning: crosswind ends of the segment, units: m}
+    function: minephys.environment.finite_line_source_plume
+    citation: turner1970workbook
+    page: not read (bibliographic)
+    verification: UNVERIFIED
+    rows: [isc3_lid_uniform_ratio]
+  - id: environment_mass_extinction_coefficient
+    title: Mass extinction coefficient of spherical particles
+    domain: environment
+    latex: 'k_m = \frac{3 Q_{ext}}{2 \rho_p D}'
+    symbols:
+      - {symbol: 'k_m', meaning: mass extinction coefficient, units: m^2/kg}
+      - {symbol: 'Q_{ext}', meaning: extinction efficiency, units: "1"}
+      - {symbol: '\rho_p', meaning: particle density, units: kg/m^3}
+      - {symbol: D, meaning: particle diameter, units: m}
+    function: minephys.environment.mass_extinction_coefficient
+    citation: bohren1983absorption
+    page: not read (bibliographic)
+    verification: UNVERIFIED
+    rows: [extinction_efficiency_large_particle]
+    notes: the large-particle limit Q_ext = 2 is UNVERIFIED
+  - id: environment_beer_lambert_transmittance
+    title: Beer-Lambert transmittance
+    domain: environment
+    latex: 'T = \exp(-\beta L)'
+    symbols:
+      - {symbol: T, meaning: one-way transmittance, units: "1"}
+      - {symbol: '\beta', meaning: extinction coefficient, units: 1/m}
+      - {symbol: L, meaning: path length, units: m}
+    function: minephys.environment.beer_lambert_transmittance
+    citation: bohren1983absorption
+    page: not read (bibliographic)
+    verification: UNVERIFIED
+  - id: environment_lidar_dust_return
+    title: Lidar return state through dust
+    domain: environment
+    latex: 'T = \exp\left(-\int_0^D \beta\,ds\right), \quad \mathrm{state} = \begin{cases} \mathrm{unaffected} & T \ge T_{onset} \\ \mathrm{degraded} & T_{min} \le T < T_{onset} \\ \mathrm{lost} & T < T_{min} \end{cases}'
+    symbols:
+      - {symbol: T, meaning: one-way transmittance, units: "1"}
+      - {symbol: 'T_{onset}', meaning: transmittance below which dust affects the lidar, units: "1"}
+      - {symbol: 'T_{min}', meaning: transmittance below which the target is lost, units: "1"}
+    function: minephys.environment.lidar_dust_return
+    citation: phillips2017dust
+    page: abstract, J. Field Robotics 34(5)
+    verification: UNVERIFIED
+    rows: [lidar_dust_onset_transmittance, lidar_dust_min_transmittance_retroreflective, lidar_dust_min_transmittance_low_reflectivity]
+    notes: applying the published thresholds to the one-way transmittance is an UNVERIFIED interpretation

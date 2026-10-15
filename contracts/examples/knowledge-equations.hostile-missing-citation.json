@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "title": "minephys equations catalogue",
+  "licence": "CC-BY-4.0",
+  "equations": [
+    {
+      "id": "kuznetsov_x50_2005",
+      "title": "Kuznetsov mean fragment size, Kuz-Ram 2005 form",
+      "domain": "blasting",
+      "latex": "x_{50} = A\\,K^{-0.8}\\,Q^{1/6}\\left(\\frac{115}{E}\\right)^{19/20}",
+      "symbols": [
+        {
+          "symbol": "x_{50}",
+          "meaning": "median fragment size",
+          "units": "cm"
+        },
+        {
+          "symbol": "A",
+          "meaning": "rock factor",
+          "units": "1"
+        },
+        {
+          "symbol": "K",
+          "meaning": "powder factor",
+          "units": "kg/m³"
+        },
+        {
+          "symbol": "Q",
+          "meaning": "explosive mass per hole",
+          "units": "kg"
+        },
+        {
+          "symbol": "E",
+          "meaning": "relative weight strength of the explosive (ANFO = 100)",
+          "units": "1"
+        }
+      ],
+      "function": "minephys.blasting.kuznetsov_x50",
+      "citation": "cunningham2005kuzram",
+      "page": "eq. 1, p. 201",
+      "verification": "verified",
+      "verified_on": "2026-10-06",
+      "rows": [
+        "kuznetsov_powder_factor_exponent",
+        "kuznetsov_charge_exponent",
+        "kuznetsov_tnt_relative_weight_strength",
+        "kuzram_rws_exponent_2005"
+      ]
+    },
+    {
+      "id": "ultimate_pit_closure",
+      "title": "Ultimate pit as a maximum-value closure of the block precedence graph",
+      "domain": "planning",
+      "latex": "\\max_{C \\subseteq V} \\sum_{i \\in C} v_i \\quad \\text{s.t.} \\quad i \\in C,\\ (i, j) \\in A \\Rightarrow j \\in C",
+      "symbols": [
+        {
+          "symbol": "v_i",
+          "meaning": "economic value of block i",
+          "units": "currency unit"
+        },
+        {
+          "symbol": "C",
+          "meaning": "closure: the set of mined blocks",
+          "units": "1"
+        },
+        {
+          "symbol": "A",
+          "meaning": "precedence arcs: mining block i requires block j",
+          "units": "1"
+        }
+      ],
+      "function": "minephys.planning.ultimate_pit_mincut",
+      "page": "not read (bibliographic)",
+      "verification": "UNVERIFIED",
+      "notes": "the closure definition is read on `picard1976closure` (abstract); exhaustive enumeration is the test oracle"
+    }
+  ]
+}

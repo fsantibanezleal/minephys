@@ -26,6 +26,7 @@ jobs:
       - run: uv sync --all-groups --locked
       - run: uv run ruff check . && uv run ruff format --check .
       - run: uv run mypy src
+      - run: uv run python -m minephys.knowledge validate
       - run: uv run python tools/trace.py --check
       - run: uv run python tools/check_tdd.py --replay
       - run: uv run python tools/check_repo.py
@@ -39,11 +40,15 @@ jobs:
         python: ["3.12", "3.13", "3.14"]
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with: { persist-credentials: false }
+        with: { fetch-depth: 0, persist-credentials: false }
       - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
         with: { python-version: "${{ matrix.python }}" }
       - run: uv sync --all-groups --locked
-      - run: uv run pytest -m "not gpu" --cov=src --cov-branch
+      - run: uv run pytest -m "not gpu and not pyodide and not kit" --cov=src --cov-branch --cov-report=xml
+        env:
+          HYPOTHESIS_PROFILE: ci
+      - run: uv run diff-cover coverage.xml --compare-branch=origin/develop --fail-under 90
+        if: github.event_name == 'pull_request'
 
   wheel:
     # The tests run against the built wheel in a clean environment, not against the source tree.
@@ -55,4 +60,22 @@ jobs:
       - run: uv build --no-sources
       - run: uv sync --all-groups --locked --no-install-project
       - run: uv pip install dist/*.whl
-      - run: uv run --no-sync pytest -m "not gpu" -p no:cacheprovider
+      - run: uv run --no-sync pytest -m "not gpu and not pyodide and not kit" -p no:cacheprovider
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with: { name: wheel, path: dist/*.whl }
+
+  pyodide:
+    # The wheel runs in Pyodide (Python in WebAssembly) with Pyodide's own NumPy and PyYAML.
+    needs: wheel
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with: { persist-credentials: false }
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with: { node-version: "24" }
+      - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with: { name: wheel, path: dist }
+      - run: npm install --no-save pyodide@314.0.0
+      - run: uv sync --all-groups --locked --no-install-project
+      - run: uv run --no-sync pytest -m pyodide -p no:cacheprovider

@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/fsantibanezleal/minephys/contracts/knowledge-glossary.schema.json",
+  "title": "minephys bilingual glossary",
+  "description": "English and Spanish glossary src/minephys/knowledge/catalogue/glossary.yaml (DC-008-02, spec 008-knowledge).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "title",
+    "licence",
+    "terms"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "title": {
+      "$ref": "#/$defs/text_line"
+    },
+    "licence": {
+      "const": "CC-BY-4.0"
+    },
+    "terms": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 1000,
+      "items": {
+        "$ref": "#/$defs/term"
+      }
+    }
+  },
+  "$defs": {
+    "term": {
+      "description": "One term with its English and Spanish name and definition.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "domain",
+        "term_en",
+        "term_es",
+        "definition_en",
+        "definition_es"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "domain": {
+          "$ref": "#/$defs/glossary_domain"
+        },
+        "term_en": {
+          "$ref": "#/$defs/term_text"
+        },
+        "term_es": {
+          "$ref": "#/$defs/term_text"
+        },
+        "definition_en": {
+          "$ref": "#/$defs/definition_text"
+        },
+        "definition_es": {
+          "$ref": "#/$defs/definition_text"
+        },
+        "citation": {
+          "$ref": "#/$defs/bib_key"
+        },
+        "see_also": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 16,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/identifier"
+          }
+        }
+      }
+    },
+    "term_text": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1000,
+      "pattern": "^[^ \\t\\r\\n]([^\\r\\n]*[^ \\t\\r\\n])?$"
+    },
+    "definition_text": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1000
+    },
+    "identifier": {
+      "type": "string",
+      "maxLength": 64,
+      "pattern": "^[a-z][a-z0-9_]*$"
+    },
+    "bib_key": {
+      "type": "string",
+      "maxLength": 64,
+      "pattern": "^[a-z][a-z0-9_:-]*$"
+    },
+    "text_line": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200,
+      "pattern": "^[^ \\t\\r\\n]([^\\r\\n]*[^ \\t\\r\\n])?$"
+    },
+    "glossary_domain": {
+      "enum": [
+        "haulage",
+        "blasting",
+        "geotech",
+        "bulk",
+        "comminution",
+        "environment",
+        "planning",
+        "general"
+      ]
+    }
+  }
+}

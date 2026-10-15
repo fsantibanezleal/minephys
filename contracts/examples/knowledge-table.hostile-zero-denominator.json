@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "table": "blasting",
+  "title": "Blasting constants, limits and parameters",
+  "licence": "CC-BY-4.0",
+  "rows": [
+    {
+      "id": "cfr_816_67_ppv_limit_near",
+      "quantity": "maximum peak particle velocity from 0 to 300 ft from the blast",
+      "value": 1.25,
+      "units": "in/s",
+      "role": "limit",
+      "citation": "cfr30s816_67",
+      "page": "§ 816.67(d)(2)(i)",
+      "verification": "verified",
+      "verified_on": "2026-10-06",
+      "symbol": [
+        "minephys.blasting.ppv_limit",
+        "minephys.blasting.max_charge_per_delay"
+      ]
+    },
+    {
+      "id": "flyrock_drag_coefficient_range",
+      "quantity": "drag coefficient of flyrock fragments",
+      "range": {
+        "min": 0.6,
+        "max": 1.8
+      },
+      "units": "1",
+      "role": "parameter",
+      "citation": "szendrei2022flyrock",
+      "page": "p. 728",
+      "verification": "verified",
+      "verified_on": "2026-10-06",
+      "symbol": "minephys.blasting.flyrock_trajectory",
+      "notes": "typical range; not a default"
+    },
+    {
+      "id": "kuznetsov_powder_factor_exponent",
+      "quantity": "Kuznetsov exponent of the powder factor",
+      "value": -0.8,
+      "units": "1",
+      "role": "model_constant",
+      "citation": "cunningham2005kuzram",
+      "page": "eq. 1, p. 201",
+      "verification": "verified",
+      "verified_on": "2026-10-06",
+      "symbol": "minephys.blasting.kuznetsov_x50"
+    },
+    {
+      "id": "kuzram_rws_exponent_1983",
+      "quantity": "Kuz-Ram exponent of the relative weight strength, 1983/1987 form",
+      "value": "19/0",
+      "units": "1",
+      "role": "model_constant",
+      "citation": "cunningham1983kuzram",
+      "page": "not read (primary unavailable)",
+      "verification": "UNVERIFIED",
+      "symbol": "minephys.blasting.kuznetsov_x50",
+      "notes": "transcription read on `mutinda2021kco` p. 109 (eq. 2)"
+    }
+  ]
+}

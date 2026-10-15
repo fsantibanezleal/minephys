@@ -1,0 +1,239 @@
+schema_version: 1
+table: geotech
+title: Geotechnical constants, limits and parameters
+licence: CC-BY-4.0
+rows:
+- id: hb_mb_gsi_denominator_constant
+  quantity: constant of the GSI denominator of m_b
+  value: 28
+  units: '1'
+  role: model_constant
+  citation: hoek2002
+  page: eq. 3, pp. 267-268
+  verification: verified
+  verified_on: '2026-10-06'
+  symbol: minephys.geotech.hoek_brown_parameters
+  notes: mb = mi exp((GSI - 100) / (28 - 14 D))
+- id: hb_mb_disturbance_coefficient
+  quantity: coefficient of D in the GSI denominator of m_b
+  value: 14
+  units: '1'
+  role: model_constant
+  citation: hoek2002
+  page: eq. 3, pp. 267-268
+  verification: verified
+  verified_on: '2026-10-06'
+  symbol: minephys.geotech.hoek_brown_parameters
+- id: hb_s_gsi_denominator_constant
+  quantity: constant of the GSI denominator of s
+  value: 9
+  units: '1'
+  role: model_constant
+  citation: hoek2002
+  page: eq. 4, pp. 267-268
+  verification: verified
+  verified_on: '2026-10-06'
+  symbol: minephys.geotech.hoek_brown_parameters
+  notes: s = exp((GSI - 100) / (9 - 3 D))
+- id: hb_s_disturbance_coefficient
+  quantity: coefficient of D in the GSI denominator of s
+  value: 3
+  units: '1'
+  role: model_constant
+  citation: hoek2002
+  page: eq. 4, pp. 267-268
+  verification: verified
+  verified_on: '2026-10-06'
+  symbol: minephys.geotech.hoek_brown_parameters
+- id: hb_a_gsi_scale
+  quantity: GSI scale of the exponent a
+  value: 15
+  units: '1'
+  role: model_constant
+  citation: hoek2002
+  page: eq. 5, pp. 267-268
+  verification: verified
+  verified_on: '2026-10-06'
+  symbol: minephys.geotech.hoek_brown_parameters
+  notes: a = 1/2 + (exp(-GSI/15) - exp(-20/3)) / 6; identical in Hoek and Brown 2019, eqs. 4-6, in-press p. 2
+- id: hb_a_offset_exponent
+  quantity: offset exponent of the exponent a (exact rational)
+  value: 20/3
+  units: '1'
+  role: model_constant
+  citation: hoek2002
+  page: eq. 5, pp. 267-268
+  verification: verified
+  verified_on: '2026-10-06'
+  symbol: minephys.geotech.hoek_brown_parameters
+- id: hb_sigma3max_slope_coefficient
+  quantity: coefficient of sigma3max for slopes
+  value: 0.72
+  units: '1'
+  role: model_constant
+  citation: hoek2002
+  page: eq. 19, p. 270
+  verification: verified
+  verified_on: '2026-10-06'
+  symbol: minephys.geotech.sigma3_max
+- id: hb_sigma3max_slope_exponent
+  quantity: exponent of sigma_cm / (gamma H) in sigma3max for slopes
+  value: -0.91
+  units: '1'
+  role: model_constant
+  citation: hoek2002
+  page: eq. 19, p. 270
+  verification: verified
+  verified_on: '2026-10-06'
+  symbol: minephys.geotech.sigma3_max
+- id: hb_sigma3max_tunnel_coefficient
+  quantity: coefficient of sigma3max for tunnels
+  value: 0.47
+  units: '1'
+  role: model_constant
+  citation: hoek2002
+  page: eq. 18, p. 270
+  verification: verified
+  verified_on: '2026-10-06'
+  symbol: minephys.geotech.sigma3_max
+- id: hb_sigma3max_tunnel_exponent
+  quantity: exponent of sigma_cm / (gamma H) in sigma3max for tunnels
+  value: -0.94
+  units: '1'
+  role: model_constant
+  citation: hoek2002
+  page: eq. 18, p. 270
+  verification: verified
+  verified_on: '2026-10-06'
+  symbol: minephys.geotech.sigma3_max
+- id: hb_disturbance_open_pit_production_blasting
+  quantity: disturbance factor of an open-pit slope with production blasting
+  value: 1.0
+  units: '1'
+  role: parameter
+  citation: hoek2002
+  page: Table 1, p. 272
+  verification: verified
+  verified_on: '2026-10-06'
+  symbol: minephys.geotech.hoek_brown_parameters
+  notes: documented value, never a default (disturbance is a required argument); Hoek and Brown 2019, Table 2 (in-press p. 9)
+- id: hb_disturbance_open_pit_mechanical_excavation
+  quantity: disturbance factor of an open-pit slope excavated mechanically
+  value: 0.7
+  units: '1'
+  role: parameter
+  citation: hoek2002
+  page: Table 1, p. 272
+  verification: verified
+  verified_on: '2026-10-06'
+  symbol: minephys.geotech.hoek_brown_parameters
+  notes: documented value, never a default (disturbance is a required argument)
+- id: gbsar_ku_band_wavelength
+  quantity: wavelength of a Ku-band ground-based radar
+  value: 0.0175
+  units: m
+  role: parameter
+  citation: wolff2023
+  page: p. 8
+  verification: verified
+  verified_on: '2026-10-06'
+  symbol:
+  - minephys.geotech.los_phase
+  - minephys.geotech.los_from_phase
+  - minephys.geotech.max_unambiguous_los_step
+  notes: Ku-band with a wavelength equal to 1.75 cm; documented value, never a default
+- id: tripwire_sigma_ci_min
+  quantity: 'unit tripwire: smallest plausible intact-rock strength'
+  value: 100000.0
+  units: Pa
+  role: limit
+  citation: minephys:spec-003-geotech
+  page: §7.3
+  verification: UNVERIFIED
+  symbol:
+  - minephys.geotech.hoek_brown_sigma1
+  - minephys.geotech.hoek_brown_uniaxial_strength
+  - minephys.geotech.hoek_brown_tensile_strength
+  - minephys.geotech.hoek_brown_rock_mass_strength
+  - minephys.geotech.equivalent_mohr_coulomb
+  notes: design choice of the specification, not a measurement
+- id: tripwire_sigma_ci_max
+  quantity: 'unit tripwire: largest plausible intact-rock strength'
+  value: 1000000000.0
+  units: Pa
+  role: limit
+  citation: minephys:spec-003-geotech
+  page: §7.3
+  verification: UNVERIFIED
+  symbol:
+  - minephys.geotech.hoek_brown_sigma1
+  - minephys.geotech.hoek_brown_uniaxial_strength
+  - minephys.geotech.hoek_brown_tensile_strength
+  - minephys.geotech.hoek_brown_rock_mass_strength
+  - minephys.geotech.equivalent_mohr_coulomb
+  notes: design choice of the specification, not a measurement
+- id: tripwire_cohesion_min
+  quantity: 'unit tripwire: smallest plausible nonzero cohesion'
+  value: 100.0
+  units: Pa
+  role: limit
+  citation: minephys:spec-003-geotech
+  page: §7.3
+  verification: UNVERIFIED
+  symbol:
+  - minephys.geotech.bishop_simplified_fos
+  - minephys.geotech.spencer_fos
+  - minephys.geotech.monte_carlo_fos
+  notes: design choice of the specification, not a measurement
+- id: tripwire_unit_weight_min
+  quantity: 'unit tripwire: smallest plausible unit weight'
+  value: 1000.0
+  units: N/m³
+  role: limit
+  citation: minephys:spec-003-geotech
+  page: §7.3
+  verification: UNVERIFIED
+  symbol:
+  - minephys.geotech.sigma3_max
+  - minephys.geotech.circular_slices
+  notes: design choice of the specification, not a measurement
+- id: tripwire_friction_angle_max
+  quantity: 'unit tripwire: largest plausible friction angle'
+  value: 1.2
+  units: rad
+  role: limit
+  citation: minephys:spec-003-geotech
+  page: §7.3
+  verification: UNVERIFIED
+  symbol:
+  - minephys.geotech.bishop_simplified_fos
+  - minephys.geotech.spencer_fos
+  - minephys.geotech.monte_carlo_fos
+  notes: design choice of the specification, not a measurement
+- id: tripwire_slope_velocity_max
+  quantity: 'unit tripwire: largest plausible slope velocity'
+  value: 0.01
+  units: m/s
+  role: limit
+  citation: minephys:spec-003-geotech
+  page: §7.3
+  verification: UNVERIFIED
+  symbol:
+  - minephys.geotech.inverse_velocity_ttf
+  - minephys.geotech.bayesian_ttf
+  notes: design choice of the specification, not a measurement
+- id: tripwire_wavelength_range
+  quantity: 'unit tripwire: plausible radar wavelength range'
+  range:
+    min: 0.0001
+    max: 1.0
+  units: m
+  role: limit
+  citation: minephys:spec-003-geotech
+  page: §7.3
+  verification: UNVERIFIED
+  symbol:
+  - minephys.geotech.los_phase
+  - minephys.geotech.los_from_phase
+  - minephys.geotech.max_unambiguous_los_step
+  notes: design choice of the specification, not a measurement

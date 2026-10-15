@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "table": "haulage",
+  "title": "Haulage constants and parameters",
+  "licence": "CC-BY-4.0",
+  "rows": [
+    {
+      "id": "diesel_co2_kg_per_us_gal",
+      "quantity": "diesel fuel combustion CO₂ emission factor",
+      "value": 10.21,
+      "units": "kg CO₂ / US gal",
+      "role": "parameter",
+      "citation": "epa2025ghghub",
+      "page": "Table 2, p. 2",
+      "verification": "verified",
+      "verified_on": "06/10/2026",
+      "symbol": "minephys.haulage.co2_from_diesel",
+      "notes": "combustion (tank-to-wheel) CO₂ only; the CH₄ and N₂O factors are in Table 5 (p. 3) of the same document"
+    },
+    {
+      "id": "rolling_resistance_hard_smooth",
+      "quantity": "rolling resistance of a hard, smooth, stabilised haul road",
+      "value": 0.015,
+      "units": "1",
+      "role": "parameter",
+      "citation": "oem2016rollingresistance",
+      "page": "rolling-resistance table",
+      "verification": "UNVERIFIED",
+      "symbol": "minephys.haulage.total_resistance",
+      "notes": "typical input only, never a default; the source was unreachable at specification"
+    },
+    {
+      "id": "tripwire_grade_abs_max",
+      "quantity": "unit tripwire: largest plausible absolute grade as a fraction",
+      "value": 0.3,
+      "units": "1",
+      "role": "limit",
+      "citation": "minephys:spec-001-haulage",
+      "page": "§7.3",
+      "verification": "UNVERIFIED",
+      "symbol": [
+        "minephys.haulage.grade_resistance",
+        "minephys.haulage.total_resistance"
+      ],
+      "notes": "design choice of the specification, not a measurement"
+    }
+  ]
+}
