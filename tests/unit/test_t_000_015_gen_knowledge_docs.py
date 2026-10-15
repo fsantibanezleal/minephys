@@ -76,7 +76,9 @@ def test_page_lists_every_row_with_all_fields(tmp_path: Path) -> None:
     proc = generate(root)
     assert proc.returncode == 0, proc.stdout + proc.stderr
     text = page_of(root)
-    assert [text.index(i) for i in ORDER] == sorted(text.index(i) for i in ORDER), "rows must keep the table order"
+    by_id = sorted(ORDER)
+    assert by_id != ORDER, "the fixture lists its rows out of id order, so the sort is really tested"
+    assert [text.index(i) for i in by_id] == sorted(text.index(i) for i in ORDER), "rows are sorted by id (FR-008-15)"
     a = segment(text, "alpha_verified", ORDER)
     for token in ("10.21", "kg CO2 / US gal", "doe2020", "10.1000/xyz123", "p. 1", "minephys.demo.f", "verified"):
         assert token in a, (token, a)
@@ -186,7 +188,9 @@ def test_hostile_text_does_not_break_the_page(tmp_path: Path) -> None:
     assert proc.returncode == 0, proc.stdout + proc.stderr
     text = page_of(root)
     order = ["pipe_row", "md_row", "uni_row", "last_row"]
-    assert [text.index(o) for o in order] == sorted(text.index(o) for o in order)
+    by_id = sorted(order)
+    assert by_id != order, "the fixture lists its rows out of id order, so the sort is really tested"
+    assert [text.index(o) for o in by_id] == sorted(text.index(o) for o in order), "rows are sorted by id (FR-008-15)"
     for token in ("CO₂", "μσ"):
         assert token in text
     assert (root / REQ_PAGE / "demo.md").read_bytes().decode("utf-8")  # valid UTF-8
