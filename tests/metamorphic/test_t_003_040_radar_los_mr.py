@@ -19,7 +19,7 @@ from __future__ import annotations
 
 import numpy as np
 import pytest
-from hypothesis import assume, given, settings
+from hypothesis import assume, example, given, settings
 from hypothesis import strategies as st
 
 from minephys import geotech as G
@@ -69,12 +69,21 @@ def test_rigid_motion_invariance(u, radar, target, shift, seed) -> None:
 @pytest.mark.req("P-003-11")
 @pytest.mark.oracle("analytical", "linearity in the displacement: d(a u1 + b u2) = a d(u1) + b d(u2)")
 @CFG
+@example(  # the subnormal case that exposed the underflowing tolerance
+    u1=np.array([1.0, 1.0, 1.0]),
+    u2=np.array([1.0, 1.0, 1.0]),
+    radar=np.zeros(3),
+    target=np.array([3.0, 0.0, 4.0]),
+    a=0.0,
+    b=5e-324,
+)
 @given(u1=DISP, u2=DISP, radar=VEC, target=VEC, a=st.floats(-10.0, 10.0), b=st.floats(-10.0, 10.0))
 def test_linearity(u1, u2, radar, target, a, b) -> None:
     apart(radar, target)
     lhs = los(a * u1 + b * u2, radar, target)
     rhs = a * los(u1, radar, target) + b * los(u2, radar, target)
-    assert lhs == pytest.approx(rhs, rel=1e-9, abs=1e-14 * (abs(a) + abs(b)))
+    # the floor 1e-300 (as in test_bound) keeps a tolerance when 1e-14*(|a|+|b|) underflows (a=0, b=5e-324)
+    assert lhs == pytest.approx(rhs, rel=1e-9, abs=1e-14 * (abs(a) + abs(b)) + 1e-300)
 
 
 @pytest.mark.req("P-003-11")
