@@ -47,7 +47,7 @@ def _call(factors=FACTORS):
 
 
 @pytest.mark.req("FR-007-06")
-@pytest.mark.oracle("worked-example", "PitStudio planning theory: v_d(lambda) = 6 lambda - 1, pit empty up to lambda = 2/3, full beyond")
+@pytest.mark.oracle("hand-calculation", "PitStudio planning theory: v_d(lambda) = 6 lambda - 1, pit empty up to lambda = 2/3, full beyond")
 def test_fr_007_06_worked_example() -> None:
     masks = [np.asarray(m, dtype=bool) for m in _call()]
     assert len(masks) == len(FACTORS)
