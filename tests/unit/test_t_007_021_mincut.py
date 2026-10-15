@@ -31,7 +31,7 @@ A_BCD = np.array([[3, 0], [3, 1], [3, 2]], dtype=np.int64)
 
 
 @pytest.mark.req("FR-007-04")
-@pytest.mark.oracle("worked-example", "PitStudio planning theory: three waste blocks over one ore block")
+@pytest.mark.oracle("hand-calculation", "PitStudio planning theory: three waste blocks over one ore block")
 @pytest.mark.parametrize(
     ("vd", "mask", "value"),
     [
