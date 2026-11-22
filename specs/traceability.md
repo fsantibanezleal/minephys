@@ -1,15 +1,15 @@
-# Traceability matrix — generated 2026-10-11 by tools/trace.py (do not edit)
+# Traceability matrix — generated 2026-10-12 by tools/trace.py (do not edit)
 
 | Req ID | Spec | Status | Tasks | Tests |
 |---|---|---|---|---|
 | DC-000-01 | 000-foundation | retired | - | - |
-| DC-000-02 | 000-foundation | draft | T-000-001, T-008-010 | - |
-| DC-000-03 | 000-foundation | draft | T-000-001, T-008-011 | - |
-| DC-000-04 | 000-foundation | draft | T-000-001, T-000-030 | - |
-| DC-001-01 | 001-haulage | draft | T-001-001 | - |
-| DC-002-01 | 002-blasting | draft | T-002-001 | - |
-| DC-003-01 | 003-geotech | draft | T-003-001 | - |
-| DC-004-01 | 004-bulk | draft | T-004-001 | - |
+| DC-000-02 | 000-foundation | draft | T-000-001, T-008-010 | tests/contract/test_t_000_001_schemas.py |
+| DC-000-03 | 000-foundation | draft | T-000-001, T-008-011 | tests/contract/test_t_000_001_schemas.py |
+| DC-000-04 | 000-foundation | draft | T-000-001, T-000-030 | tests/contract/test_t_000_001_schemas.py, tests/unit/test_t_000_030_api_stability.py |
+| DC-001-01 | 001-haulage | draft | T-001-001 | tests/contract/test_t_001_001_haulage_table.py |
+| DC-002-01 | 002-blasting | draft | T-002-001 | tests/contract/test_t_002_001_blasting_table.py |
+| DC-003-01 | 003-geotech | draft | T-003-001 | tests/contract/test_t_003_001_geotech_table.py |
+| DC-004-01 | 004-bulk | draft | T-004-001 | tests/contract/test_t_004_001_bulk_table.py |
 | DC-005-01 | 005-comminution | draft | T-005-001 | - |
 | DC-005-02 | 005-comminution | draft | T-005-001 | - |
 | DC-006-01 | 006-environment | draft | T-006-001 | - |
@@ -18,120 +18,120 @@
 | DC-008-01 | 008-knowledge | draft | T-008-001 | - |
 | DC-008-02 | 008-knowledge | draft | T-008-001 | - |
 | DC-008-03 | 008-knowledge | draft | T-008-001 | - |
-| FR-000-01 | 000-foundation | retired | - | - |
-| FR-000-02 | 000-foundation | retired | - | - |
+| FR-000-01 | 000-foundation | retired | - | tests/contract/test_t_000_016_oracle_markers.py |
+| FR-000-02 | 000-foundation | retired | - | tests/contract/test_t_000_016_oracle_markers.py |
 | FR-000-03 | 000-foundation | retired | - | - |
 | FR-000-04 | 000-foundation | retired | - | - |
-| FR-000-05 | 000-foundation | draft | T-000-010, T-001-080, T-002-080, T-003-080, T-004-080, T-005-064, T-006-054, T-007-054 | - |
-| FR-000-06 | 000-foundation | draft | T-000-011 | - |
-| FR-000-07 | 000-foundation | draft | T-000-003, T-000-010, T-001-080, T-002-080, T-003-080, T-004-080, T-005-064, T-006-054, T-007-054 | - |
-| FR-000-08 | 000-foundation | draft | T-000-006, T-000-012 | - |
-| FR-000-09 | 000-foundation | draft | T-000-012 | - |
-| FR-000-10 | 000-foundation | draft | T-000-003, T-001-080, T-002-080, T-003-080, T-004-080, T-005-064, T-006-054, T-007-054 | - |
-| FR-000-11 | 000-foundation | draft | T-000-003, T-001-080, T-002-080, T-003-080, T-004-080, T-005-064, T-006-054, T-007-054 | - |
-| FR-000-12 | 000-foundation | draft | T-000-003, T-001-080, T-002-080, T-003-080, T-004-080, T-005-064, T-006-054, T-007-054 | - |
-| FR-000-13 | 000-foundation | draft | T-000-003, T-001-080, T-003-080, T-005-064, T-006-054, T-007-054 | - |
-| FR-000-14 | 000-foundation | draft | T-000-003 | - |
-| FR-000-15 | 000-foundation | draft | T-000-003 | - |
-| FR-000-16 | 000-foundation | draft | T-000-003 | - |
-| FR-000-17 | 000-foundation | draft | T-000-004 | - |
-| FR-000-18 | 000-foundation | draft | T-000-005, T-003-080 | - |
-| FR-000-19 | 000-foundation | draft | T-000-013 | - |
-| FR-000-20 | 000-foundation | draft | T-000-014 | - |
-| FR-000-21 | 000-foundation | draft | T-000-014 | - |
-| FR-000-22 | 000-foundation | draft | T-000-014 | - |
-| FR-000-23 | 000-foundation | draft | T-000-015 | - |
-| FR-000-24 | 000-foundation | draft | T-000-020 | - |
-| FR-000-25 | 000-foundation | draft | T-000-021 | - |
-| FR-000-26 | 000-foundation | draft | T-000-022 | - |
-| FR-000-27 | 000-foundation | draft | T-000-002 | - |
-| FR-000-28 | 000-foundation | draft | T-000-030 | - |
-| FR-000-29 | 000-foundation | draft | T-000-030 | - |
-| FR-000-30 | 000-foundation | draft | T-000-031 | - |
-| FR-000-31 | 000-foundation | draft | T-000-014 | - |
-| FR-000-32 | 000-foundation | draft | T-000-002 | - |
-| FR-000-33 | 000-foundation | draft | T-000-016 | - |
-| FR-000-34 | 000-foundation | draft | T-000-033 | - |
-| FR-001-01 | 001-haulage | draft | T-001-010 | - |
-| FR-001-02 | 001-haulage | draft | T-001-010 | - |
-| FR-001-03 | 001-haulage | draft | T-001-011 | - |
-| FR-001-04 | 001-haulage | draft | T-001-012 | - |
-| FR-001-05 | 001-haulage | draft | T-001-012 | - |
-| FR-001-06 | 001-haulage | draft | T-001-013 | - |
-| FR-001-07 | 001-haulage | draft | T-001-014 | - |
-| FR-001-08 | 001-haulage | draft | T-001-020 | - |
-| FR-001-09 | 001-haulage | draft | T-001-020 | - |
-| FR-001-10 | 001-haulage | draft | T-001-015 | - |
-| FR-001-11 | 001-haulage | draft | T-001-030 | - |
-| FR-001-12 | 001-haulage | draft | T-001-030 | - |
-| FR-001-13 | 001-haulage | draft | T-001-031 | - |
-| FR-001-14 | 001-haulage | draft | T-001-031 | - |
-| FR-001-15 | 001-haulage | draft | T-001-031 | - |
-| FR-001-16 | 001-haulage | draft | T-001-032 | - |
-| FR-001-17 | 001-haulage | draft | T-001-032 | - |
-| FR-001-18 | 001-haulage | draft | T-001-040 | - |
-| FR-001-19 | 001-haulage | draft | T-001-041 | - |
-| FR-001-20 | 001-haulage | draft | T-001-042 | - |
-| FR-001-21 | 001-haulage | draft | T-001-043 | - |
-| FR-001-22 | 001-haulage | draft | T-001-080 | - |
-| FR-001-23 | 001-haulage | draft | T-001-080 | - |
-| FR-001-24 | 001-haulage | draft | T-001-041 | - |
-| FR-001-25 | 001-haulage | draft | T-001-032 | - |
-| FR-001-26 | 001-haulage | draft | T-001-043 | - |
-| FR-002-01 | 002-blasting | draft | T-002-010 | - |
-| FR-002-02 | 002-blasting | draft | T-002-011 | - |
-| FR-002-03 | 002-blasting | draft | T-002-012 | - |
-| FR-002-04 | 002-blasting | draft | T-002-013 | - |
-| FR-002-05 | 002-blasting | draft | T-002-020 | - |
-| FR-002-06 | 002-blasting | draft | T-002-020 | - |
-| FR-002-07 | 002-blasting | draft | T-002-021 | - |
-| FR-002-08 | 002-blasting | draft | T-002-030 | - |
-| FR-002-09 | 002-blasting | draft | T-002-031 | - |
-| FR-002-10 | 002-blasting | draft | T-002-040 | - |
-| FR-002-11 | 002-blasting | draft | T-002-040 | - |
-| FR-002-12 | 002-blasting | draft | T-002-041 | - |
-| FR-002-13 | 002-blasting | draft | T-002-041 | - |
-| FR-002-14 | 002-blasting | draft | T-002-013 | - |
-| FR-002-15 | 002-blasting | draft | T-002-020 | - |
-| FR-002-16 | 002-blasting | draft | T-002-080 | - |
-| FR-002-17 | 002-blasting | draft | T-002-080 | - |
-| FR-002-18 | 002-blasting | draft | T-002-011, T-002-080 | - |
-| FR-003-01 | 003-geotech | draft | T-003-010 | - |
-| FR-003-02 | 003-geotech | draft | T-003-010 | - |
-| FR-003-03 | 003-geotech | draft | T-003-010 | - |
-| FR-003-04 | 003-geotech | draft | T-003-011 | - |
-| FR-003-05 | 003-geotech | draft | T-003-011 | - |
-| FR-003-06 | 003-geotech | draft | T-003-010 | - |
-| FR-003-07 | 003-geotech | draft | T-003-020 | - |
-| FR-003-08 | 003-geotech | draft | T-003-020 | - |
-| FR-003-09 | 003-geotech | draft | T-003-021, T-003-023 | - |
-| FR-003-10 | 003-geotech | draft | T-003-022 | - |
-| FR-003-11 | 003-geotech | draft | T-003-021, T-003-022 | - |
-| FR-003-12 | 003-geotech | draft | T-003-024 | - |
-| FR-003-13 | 003-geotech | draft | T-003-024 | - |
-| FR-003-14 | 003-geotech | draft | T-003-030 | - |
-| FR-003-15 | 003-geotech | draft | T-003-031 | - |
-| FR-003-16 | 003-geotech | draft | T-003-031 | - |
-| FR-003-17 | 003-geotech | draft | T-003-032 | - |
-| FR-003-18 | 003-geotech | draft | T-003-040 | - |
-| FR-003-19 | 003-geotech | draft | T-003-041 | - |
-| FR-003-20 | 003-geotech | draft | T-003-080 | - |
-| FR-003-21 | 003-geotech | draft | T-003-080 | - |
-| FR-003-22 | 003-geotech | draft | T-003-021, T-003-022 | - |
-| FR-003-23 | 003-geotech | draft | T-003-032, T-003-080 | - |
-| FR-003-24 | 003-geotech | draft | T-003-024, T-003-080 | - |
-| FR-004-01 | 004-bulk | draft | T-004-010 | - |
-| FR-004-02 | 004-bulk | draft | T-004-010 | - |
-| FR-004-03 | 004-bulk | draft | T-004-011 | - |
-| FR-004-04 | 004-bulk | draft | T-004-011 | - |
-| FR-004-05 | 004-bulk | draft | T-004-020 | - |
-| FR-004-06 | 004-bulk | draft | T-004-020 | - |
-| FR-004-07 | 004-bulk | draft | T-004-020 | - |
-| FR-004-08 | 004-bulk | draft | T-004-030 | - |
-| FR-004-09 | 004-bulk | draft | T-004-031 | - |
-| FR-004-10 | 004-bulk | draft | T-004-080 | - |
-| FR-004-11 | 004-bulk | draft | T-004-080 | - |
-| FR-004-12 | 004-bulk | draft | T-004-030, T-004-031 | - |
+| FR-000-05 | 000-foundation | draft | T-000-010, T-001-080, T-002-080, T-003-080, T-004-080, T-005-064, T-006-054, T-007-054 | tests/property/test_t_000_010_contract_suite.py, tests/property/test_t_001_080_haulage_contract.py, tests/property/test_t_002_080_blasting_contract.py, tests/property/test_t_003_080_geotech_contract.py, tests/property/test_t_004_080_bulk_contract.py |
+| FR-000-06 | 000-foundation | draft | T-000-011 | tests/unit/test_t_000_011_import_purity.py |
+| FR-000-07 | 000-foundation | draft | T-000-003, T-000-010, T-001-080, T-002-080, T-003-080, T-004-080, T-005-064, T-006-054, T-007-054 | tests/property/test_t_000_006_unit_conversions.py, tests/property/test_t_000_010_contract_suite.py, tests/property/test_t_001_080_haulage_contract.py, tests/property/test_t_002_080_blasting_contract.py, tests/property/test_t_003_080_geotech_contract.py, tests/property/test_t_004_080_bulk_contract.py, tests/unit/test_t_000_003_validation_helpers.py |
+| FR-000-08 | 000-foundation | draft | T-000-006, T-000-012 | tests/contract/test_t_000_012_model_cards.py, tests/property/test_t_000_006_unit_conversions.py |
+| FR-000-09 | 000-foundation | draft | T-000-012 | tests/contract/test_t_000_012_model_cards.py |
+| FR-000-10 | 000-foundation | draft | T-000-003, T-001-080, T-002-080, T-003-080, T-004-080, T-005-064, T-006-054, T-007-054 | tests/property/test_t_000_006_unit_conversions.py, tests/property/test_t_000_010_contract_suite.py, tests/property/test_t_001_080_haulage_contract.py, tests/property/test_t_002_080_blasting_contract.py, tests/property/test_t_003_080_geotech_contract.py, tests/property/test_t_004_080_bulk_contract.py, tests/unit/test_t_000_003_validation_helpers.py, tests/unit/test_t_000_004_solver_helper.py, tests/unit/test_t_003_040_radar_los.py, tests/unit/test_t_003_041_radar_phase.py |
+| FR-000-11 | 000-foundation | draft | T-000-003, T-001-080, T-002-080, T-003-080, T-004-080, T-005-064, T-006-054, T-007-054 | tests/property/test_t_000_006_unit_conversions.py, tests/property/test_t_000_010_contract_suite.py, tests/property/test_t_001_080_haulage_contract.py, tests/property/test_t_002_080_blasting_contract.py, tests/property/test_t_003_080_geotech_contract.py, tests/property/test_t_004_080_bulk_contract.py, tests/unit/test_t_000_003_validation_helpers.py, tests/unit/test_t_003_040_radar_los.py, tests/unit/test_t_003_041_radar_phase.py |
+| FR-000-12 | 000-foundation | draft | T-000-003, T-001-080, T-002-080, T-003-080, T-004-080, T-005-064, T-006-054, T-007-054 | tests/property/test_t_000_010_contract_suite.py, tests/property/test_t_001_080_haulage_contract.py, tests/property/test_t_002_080_blasting_contract.py, tests/property/test_t_003_080_geotech_contract.py, tests/property/test_t_004_080_bulk_contract.py, tests/unit/test_t_000_003_validation_helpers.py, tests/unit/test_t_003_040_radar_los.py, tests/unit/test_t_003_041_radar_phase.py |
+| FR-000-13 | 000-foundation | draft | T-000-003, T-001-080, T-003-080, T-005-064, T-006-054, T-007-054 | tests/property/test_t_001_080_haulage_contract.py, tests/property/test_t_002_080_blasting_contract.py, tests/property/test_t_003_080_geotech_contract.py, tests/property/test_t_004_080_bulk_contract.py, tests/unit/test_t_000_003_validation_helpers.py, tests/unit/test_t_003_040_radar_los.py, tests/unit/test_t_003_041_radar_phase.py |
+| FR-000-14 | 000-foundation | draft | T-000-003 | tests/unit/test_t_000_003_validation_helpers.py, tests/unit/test_t_000_004_solver_helper.py |
+| FR-000-15 | 000-foundation | draft | T-000-003 | tests/unit/test_t_000_003_validation_helpers.py |
+| FR-000-16 | 000-foundation | draft | T-000-003 | tests/unit/test_t_000_003_validation_helpers.py |
+| FR-000-17 | 000-foundation | draft | T-000-004 | tests/unit/test_t_000_004_solver_helper.py |
+| FR-000-18 | 000-foundation | draft | T-000-005, T-003-080 | tests/property/test_t_000_005_random_source.py, tests/property/test_t_000_010_contract_suite.py, tests/property/test_t_003_080_geotech_contract.py |
+| FR-000-19 | 000-foundation | draft | T-000-013 | tests/contract/test_t_000_013_literal_audit.py, tests/unit/test_standard_gravity_row.py |
+| FR-000-20 | 000-foundation | draft | T-000-014 | tests/contract/test_t_000_001_schemas.py, tests/contract/test_t_000_014_knowledge_honesty.py |
+| FR-000-21 | 000-foundation | draft | T-000-014 | tests/contract/test_t_000_014_knowledge_honesty.py |
+| FR-000-22 | 000-foundation | draft | T-000-014 | tests/contract/test_t_000_014_knowledge_honesty.py |
+| FR-000-23 | 000-foundation | draft | T-000-015 | tests/unit/test_t_000_015_gen_knowledge_docs.py |
+| FR-000-24 | 000-foundation | draft | T-000-020 | tests/contract/test_t_000_020_wheel.py, tests/pyodide/test_t_000_021_pyodide_smoke.py |
+| FR-000-25 | 000-foundation | draft | T-000-021 | tests/pyodide/test_t_000_021_pyodide_smoke.py |
+| FR-000-26 | 000-foundation | draft | T-000-022 | tests/kit/test_t_000_022_kit_smoke.py |
+| FR-000-27 | 000-foundation | draft | T-000-002 | tests/contract/test_t_000_020_wheel.py, tests/unit/test_t_000_002_package_api.py |
+| FR-000-28 | 000-foundation | draft | T-000-030 | tests/contract/test_t_000_001_schemas.py, tests/unit/test_t_000_030_api_stability.py |
+| FR-000-29 | 000-foundation | draft | T-000-030 | tests/unit/test_t_000_030_api_stability.py |
+| FR-000-30 | 000-foundation | draft | T-000-031 | tests/unit/test_t_000_031_value_changelog.py |
+| FR-000-31 | 000-foundation | draft | T-000-014 | tests/contract/test_t_000_014_knowledge_honesty.py |
+| FR-000-32 | 000-foundation | draft | T-000-002 | tests/unit/test_t_000_002_package_api.py |
+| FR-000-33 | 000-foundation | draft | T-000-016 | tests/contract/test_t_000_016_oracle_markers.py |
+| FR-000-34 | 000-foundation | draft | T-000-033 | tests/unit/test_t_000_033_api_snapshot_strict_json.py |
+| FR-001-01 | 001-haulage | draft | T-001-010 | tests/unit/test_t_001_010_resistance.py |
+| FR-001-02 | 001-haulage | draft | T-001-010 | tests/metamorphic/test_t_001_010_resistance_mr.py, tests/unit/test_t_001_010_resistance.py |
+| FR-001-03 | 001-haulage | draft | T-001-011 | tests/unit/test_t_001_011_required_force.py |
+| FR-001-04 | 001-haulage | draft | T-001-012 | tests/unit/test_t_001_012_rimpull_speed.py |
+| FR-001-05 | 001-haulage | draft | T-001-012 | tests/metamorphic/test_t_001_012_rimpull_speed_mr.py, tests/unit/test_t_001_012_rimpull_speed.py |
+| FR-001-06 | 001-haulage | draft | T-001-013 | tests/unit/test_t_001_013_retarder_speed.py |
+| FR-001-07 | 001-haulage | draft | T-001-014 | tests/unit/test_t_001_014_unbounded_speed.py |
+| FR-001-08 | 001-haulage | draft | T-001-020 | tests/unit/test_t_001_020_loading_passes.py |
+| FR-001-09 | 001-haulage | draft | T-001-020 | tests/unit/test_t_001_020_loading_passes.py |
+| FR-001-10 | 001-haulage | draft | T-001-015 | tests/unit/test_t_001_015_cycle_time.py |
+| FR-001-11 | 001-haulage | draft | T-001-030 | tests/unit/test_t_001_030_energy.py |
+| FR-001-12 | 001-haulage | draft | T-001-030 | tests/unit/test_t_001_030_energy.py |
+| FR-001-13 | 001-haulage | draft | T-001-031 | tests/unit/test_t_001_031_fuel_co2.py |
+| FR-001-14 | 001-haulage | draft | T-001-031 | tests/metamorphic/test_t_001_030_energy_mr.py, tests/unit/test_t_001_031_fuel_co2.py |
+| FR-001-15 | 001-haulage | draft | T-001-031 | tests/unit/test_t_001_031_fuel_co2.py |
+| FR-001-16 | 001-haulage | draft | T-001-032 | tests/unit/test_t_001_032_trolley_bev.py |
+| FR-001-17 | 001-haulage | draft | T-001-032 | tests/unit/test_t_001_032_trolley_bev.py |
+| FR-001-18 | 001-haulage | draft | T-001-040 | tests/unit/test_t_001_040_match_factor.py |
+| FR-001-19 | 001-haulage | draft | T-001-041 | tests/unit/test_t_001_041_mmc_queue.py |
+| FR-001-20 | 001-haulage | draft | T-001-042 | tests/unit/test_t_001_042_finite_source.py |
+| FR-001-21 | 001-haulage | draft | T-001-043 | tests/unit/test_t_001_043_mva.py |
+| FR-001-22 | 001-haulage | draft | T-001-080 | tests/property/test_t_001_080_haulage_contract.py, tests/unit/test_t_001_011_required_force.py |
+| FR-001-23 | 001-haulage | draft | T-001-080 | tests/property/test_t_001_080_haulage_contract.py |
+| FR-001-24 | 001-haulage | draft | T-001-041 | tests/unit/test_t_001_041_mmc_queue.py |
+| FR-001-25 | 001-haulage | draft | T-001-032 | tests/unit/test_t_001_032_trolley_bev.py |
+| FR-001-26 | 001-haulage | draft | T-001-043 | tests/unit/test_t_001_043_mva.py |
+| FR-002-01 | 002-blasting | draft | T-002-010 | tests/unit/test_t_002_010_design.py |
+| FR-002-02 | 002-blasting | draft | T-002-011 | tests/unit/test_t_002_011_kuznetsov.py |
+| FR-002-03 | 002-blasting | draft | T-002-012 | tests/unit/test_t_002_012_rock_factor.py |
+| FR-002-04 | 002-blasting | draft | T-002-013 | tests/property/test_t_002_080_blasting_contract.py, tests/unit/test_t_002_013_uniformity.py |
+| FR-002-05 | 002-blasting | draft | T-002-020 | tests/property/test_t_002_080_blasting_contract.py, tests/unit/test_t_002_020_distributions.py |
+| FR-002-06 | 002-blasting | draft | T-002-020 | tests/unit/test_t_002_020_distributions.py |
+| FR-002-07 | 002-blasting | draft | T-002-021 | tests/unit/test_t_002_021_kco.py |
+| FR-002-08 | 002-blasting | draft | T-002-030 | tests/unit/test_t_002_030_ppv.py |
+| FR-002-09 | 002-blasting | draft | T-002-031 | tests/unit/test_t_002_031_cfr_limits.py |
+| FR-002-10 | 002-blasting | draft | T-002-040 | tests/unit/test_t_002_040_flyrock_ranges.py |
+| FR-002-11 | 002-blasting | draft | T-002-040 | tests/unit/test_t_002_040_flyrock_ranges.py |
+| FR-002-12 | 002-blasting | draft | T-002-041 | tests/parity/test_t_002_041_flyrock_scipy.py, tests/property/test_t_002_080_blasting_contract.py, tests/unit/test_t_002_041_flyrock_trajectory.py |
+| FR-002-13 | 002-blasting | draft | T-002-041 | tests/unit/test_t_002_041_flyrock_trajectory.py |
+| FR-002-14 | 002-blasting | draft | T-002-013 | tests/unit/test_t_002_013_uniformity.py |
+| FR-002-15 | 002-blasting | draft | T-002-020 | tests/unit/test_t_002_020_distributions.py, tests/unit/test_t_002_021_kco.py |
+| FR-002-16 | 002-blasting | draft | T-002-080 | tests/property/test_t_002_080_blasting_contract.py, tests/unit/test_t_002_041_flyrock_trajectory.py |
+| FR-002-17 | 002-blasting | draft | T-002-080 | tests/property/test_t_002_080_blasting_contract.py |
+| FR-002-18 | 002-blasting | draft | T-002-011, T-002-080 | tests/property/test_t_002_080_blasting_contract.py, tests/unit/test_t_002_011_kuznetsov.py, tests/unit/test_t_002_031_cfr_limits.py |
+| FR-003-01 | 003-geotech | draft | T-003-010 | tests/unit/test_t_003_010_hoek_brown.py |
+| FR-003-02 | 003-geotech | draft | T-003-010 | tests/unit/test_t_003_010_hoek_brown.py |
+| FR-003-03 | 003-geotech | draft | T-003-010 | tests/unit/test_t_003_010_hoek_brown.py |
+| FR-003-04 | 003-geotech | draft | T-003-011 | tests/unit/test_t_003_011_equivalent_mc.py |
+| FR-003-05 | 003-geotech | draft | T-003-011 | tests/unit/test_t_003_011_equivalent_mc.py |
+| FR-003-06 | 003-geotech | draft | T-003-010 | tests/unit/test_t_003_010_hoek_brown.py |
+| FR-003-07 | 003-geotech | draft | T-003-020 | tests/unit/test_t_003_020_circular_slices.py |
+| FR-003-08 | 003-geotech | draft | T-003-020 | tests/unit/test_t_003_020_circular_slices.py |
+| FR-003-09 | 003-geotech | draft | T-003-021, T-003-023 | tests/parity/test_t_003_023_pyslope_parity.py, tests/unit/test_t_003_021_bishop.py |
+| FR-003-10 | 003-geotech | draft | T-003-022 | tests/metamorphic/test_t_003_022_spencer_mr.py, tests/unit/test_t_003_022_spencer.py |
+| FR-003-11 | 003-geotech | draft | T-003-021, T-003-022 | tests/unit/test_t_003_021_bishop.py, tests/unit/test_t_003_022_spencer.py, tests/unit/test_t_003_024_pof.py |
+| FR-003-12 | 003-geotech | draft | T-003-024 | tests/property/test_t_003_024_pof_props.py, tests/unit/test_t_003_024_pof.py |
+| FR-003-13 | 003-geotech | draft | T-003-024 | tests/property/test_t_003_024_pof_props.py, tests/unit/test_t_003_024_pof.py |
+| FR-003-14 | 003-geotech | draft | T-003-030 | tests/unit/test_t_003_030_voight.py |
+| FR-003-15 | 003-geotech | draft | T-003-031 | tests/metamorphic/test_t_003_031_inverse_velocity_mr.py, tests/unit/test_t_003_031_inverse_velocity.py |
+| FR-003-16 | 003-geotech | draft | T-003-031 | tests/metamorphic/test_t_003_031_inverse_velocity_mr.py, tests/unit/test_t_003_031_inverse_velocity.py |
+| FR-003-17 | 003-geotech | draft | T-003-032 | tests/property/test_t_003_032_bayesian_ttf_props.py, tests/unit/test_t_003_032_bayesian_ttf.py |
+| FR-003-18 | 003-geotech | draft | T-003-040 | tests/unit/test_t_003_040_radar_los.py |
+| FR-003-19 | 003-geotech | draft | T-003-041 | tests/metamorphic/test_t_003_041_radar_phase_mr.py, tests/property/test_t_003_080_geotech_contract.py, tests/unit/test_t_003_041_radar_phase.py |
+| FR-003-20 | 003-geotech | draft | T-003-080 | tests/property/test_t_003_080_geotech_contract.py, tests/unit/test_t_003_020_circular_slices.py, tests/unit/test_t_003_024_pof.py, tests/unit/test_t_003_030_voight.py, tests/unit/test_t_003_031_inverse_velocity.py, tests/unit/test_t_003_032_bayesian_ttf.py, tests/unit/test_t_003_040_radar_los.py, tests/unit/test_t_003_041_radar_phase.py |
+| FR-003-21 | 003-geotech | draft | T-003-080 | tests/property/test_t_003_080_geotech_contract.py, tests/unit/test_t_003_031_inverse_velocity.py, tests/unit/test_t_003_032_bayesian_ttf.py, tests/unit/test_t_003_041_radar_phase.py |
+| FR-003-22 | 003-geotech | draft | T-003-021, T-003-022 | tests/unit/test_t_003_021_bishop.py, tests/unit/test_t_003_022_spencer.py |
+| FR-003-23 | 003-geotech | draft | T-003-032, T-003-080 | tests/property/test_t_003_080_geotech_contract.py, tests/unit/test_t_003_024_pof.py, tests/unit/test_t_003_031_inverse_velocity.py, tests/unit/test_t_003_032_bayesian_ttf.py, tests/unit/test_t_003_041_radar_phase.py |
+| FR-003-24 | 003-geotech | draft | T-003-024, T-003-080 | tests/property/test_t_003_080_geotech_contract.py, tests/unit/test_t_003_011_equivalent_mc.py, tests/unit/test_t_003_024_pof.py |
+| FR-004-01 | 004-bulk | draft | T-004-010 | tests/metamorphic/test_t_004_010_beverloo_mr.py, tests/property/test_t_004_080_bulk_contract.py, tests/unit/test_t_004_010_beverloo.py |
+| FR-004-02 | 004-bulk | draft | T-004-010 | tests/unit/test_t_004_010_beverloo.py |
+| FR-004-03 | 004-bulk | draft | T-004-011 | tests/unit/test_t_004_011_repose.py |
+| FR-004-04 | 004-bulk | draft | T-004-011 | tests/metamorphic/test_t_004_011_repose_mr.py, tests/unit/test_t_004_011_repose.py |
+| FR-004-05 | 004-bulk | draft | T-004-020 | tests/metamorphic/test_t_004_020_conveyor_mr.py, tests/unit/test_t_004_020_conveyor.py |
+| FR-004-06 | 004-bulk | draft | T-004-020 | tests/metamorphic/test_t_004_020_conveyor_mr.py, tests/unit/test_t_004_020_conveyor.py |
+| FR-004-07 | 004-bulk | draft | T-004-020 | tests/metamorphic/test_t_004_020_conveyor_mr.py, tests/unit/test_t_004_020_conveyor.py |
+| FR-004-08 | 004-bulk | draft | T-004-030 | tests/metamorphic/test_t_004_030_gy_fse_mr.py, tests/unit/test_t_004_030_gy_fse.py |
+| FR-004-09 | 004-bulk | draft | T-004-031 | tests/unit/test_t_004_031_blending.py |
+| FR-004-10 | 004-bulk | draft | T-004-080 | tests/property/test_t_004_080_bulk_contract.py |
+| FR-004-11 | 004-bulk | draft | T-004-080 | tests/property/test_t_004_080_bulk_contract.py |
+| FR-004-12 | 004-bulk | draft | T-004-030, T-004-031 | tests/property/test_t_004_080_bulk_contract.py, tests/unit/test_t_004_030_gy_fse.py, tests/unit/test_t_004_031_blending.py |
 | FR-005-01 | 005-comminution | draft | T-005-010 | - |
 | FR-005-02 | 005-comminution | draft | T-005-010 | - |
 | FR-005-03 | 005-comminution | draft | T-005-010 | - |
@@ -226,20 +226,20 @@
 | FR-008-22 | 008-knowledge | draft | T-008-001, T-008-016 | - |
 | NFR-000-01 | 000-foundation | retired | - | - |
 | NFR-000-02 | 000-foundation | retired | - | - |
-| NFR-000-03 | 000-foundation | draft | T-000-011 | - |
-| NFR-000-04 | 000-foundation | draft | T-000-020 | - |
-| NFR-000-05 | 000-foundation | draft | T-000-020 | - |
-| NFR-000-06 | 000-foundation | draft | T-000-021 | - |
-| NFR-000-07 | 000-foundation | draft | T-000-023 | - |
-| NFR-000-08 | 000-foundation | draft | T-000-024 | - |
-| NFR-000-09 | 000-foundation | draft | T-000-024 | - |
-| NFR-001-01 | 001-haulage | draft | T-001-081 | - |
-| NFR-001-02 | 001-haulage | draft | T-001-081 | - |
-| NFR-002-01 | 002-blasting | draft | T-002-081 | - |
-| NFR-002-02 | 002-blasting | draft | T-002-081 | - |
-| NFR-003-01 | 003-geotech | draft | T-003-081 | - |
-| NFR-003-02 | 003-geotech | draft | T-003-081 | - |
-| NFR-004-01 | 004-bulk | draft | T-004-081 | - |
+| NFR-000-03 | 000-foundation | draft | T-000-011 | tests/unit/test_t_000_011_import_purity.py |
+| NFR-000-04 | 000-foundation | draft | T-000-020 | tests/contract/test_t_000_020_wheel.py |
+| NFR-000-05 | 000-foundation | draft | T-000-020 | tests/contract/test_t_000_020_wheel.py |
+| NFR-000-06 | 000-foundation | draft | T-000-021 | tests/pyodide/test_t_000_021_pyodide_smoke.py |
+| NFR-000-07 | 000-foundation | draft | T-000-023 | tests/unit/test_t_000_023_bench_runner.py |
+| NFR-000-08 | 000-foundation | draft | T-000-024 | tests/contract/test_t_000_024_ci_gates.py |
+| NFR-000-09 | 000-foundation | draft | T-000-024 | tests/contract/test_t_000_024_ci_gates.py |
+| NFR-001-01 | 001-haulage | draft | T-001-081 | tests/unit/test_t_001_081_haulage_bench_registry.py |
+| NFR-001-02 | 001-haulage | draft | T-001-081 | tests/unit/test_t_001_081_haulage_bench_registry.py |
+| NFR-002-01 | 002-blasting | draft | T-002-081 | tests/unit/test_t_002_081_blasting_bench_registry.py |
+| NFR-002-02 | 002-blasting | draft | T-002-081 | tests/unit/test_t_002_081_blasting_bench_registry.py |
+| NFR-003-01 | 003-geotech | draft | T-003-081 | tests/unit/test_t_003_081_geotech_bench_registry.py |
+| NFR-003-02 | 003-geotech | draft | T-003-081 | tests/unit/test_t_003_081_geotech_bench_registry.py |
+| NFR-004-01 | 004-bulk | draft | T-004-081 | tests/unit/test_t_004_081_bulk_bench_registry.py |
 | NFR-005-01 | 005-comminution | draft | T-005-060 | - |
 | NFR-005-02 | 005-comminution | draft | T-005-061 | - |
 | NFR-005-03 | 005-comminution | draft | T-005-062 | - |
@@ -259,54 +259,54 @@
 | NFR-008-03 | 008-knowledge | draft | T-008-062 | - |
 | NFR-008-04 | 008-knowledge | draft | T-008-063 | - |
 | NFR-008-05 | 008-knowledge | draft | T-008-064 | - |
-| P-000-01 | 000-foundation | draft | T-000-010, T-001-080, T-002-080, T-003-080, T-004-080, T-005-064, T-006-054, T-007-054 | - |
-| P-000-02 | 000-foundation | draft | T-000-010, T-001-080, T-002-080, T-003-080, T-004-080, T-005-064, T-006-054, T-007-054 | - |
-| P-000-03 | 000-foundation | draft | T-000-010, T-001-080, T-002-080, T-003-080, T-004-080, T-005-064, T-006-054, T-007-054 | - |
-| P-000-04 | 000-foundation | draft | T-000-005, T-003-080 | - |
-| P-000-05 | 000-foundation | draft | T-000-006 | - |
-| P-001-01 | 001-haulage | draft | T-001-010 | - |
-| P-001-02 | 001-haulage | draft | T-001-012 | - |
-| P-001-03 | 001-haulage | draft | T-001-012 | - |
-| P-001-04 | 001-haulage | draft | T-001-013 | - |
-| P-001-05 | 001-haulage | draft | T-001-030 | - |
-| P-001-06 | 001-haulage | draft | T-001-030 | - |
-| P-001-07 | 001-haulage | draft | T-001-030 | - |
-| P-001-08 | 001-haulage | draft | T-001-041 | - |
-| P-001-09 | 001-haulage | draft | T-001-041 | - |
-| P-001-10 | 001-haulage | draft | T-001-042 | - |
-| P-001-11 | 001-haulage | draft | T-001-043 | - |
-| P-001-12 | 001-haulage | draft | T-001-040 | - |
-| P-001-13 | 001-haulage | draft | T-001-020 | - |
-| P-002-01 | 002-blasting | draft | T-002-011 | - |
-| P-002-02 | 002-blasting | draft | T-002-011 | - |
-| P-002-03 | 002-blasting | draft | T-002-013 | - |
-| P-002-04 | 002-blasting | draft | T-002-020 | - |
-| P-002-05 | 002-blasting | draft | T-002-020 | - |
-| P-002-06 | 002-blasting | draft | T-002-021 | - |
-| P-002-07 | 002-blasting | draft | T-002-030 | - |
-| P-002-08 | 002-blasting | draft | T-002-031 | - |
-| P-002-09 | 002-blasting | draft | T-002-040 | - |
-| P-002-10 | 002-blasting | draft | T-002-041 | - |
-| P-003-01 | 003-geotech | draft | T-003-010 | - |
-| P-003-02 | 003-geotech | draft | T-003-010 | - |
-| P-003-03 | 003-geotech | draft | T-003-010 | - |
-| P-003-04 | 003-geotech | draft | T-003-021 | - |
-| P-003-05 | 003-geotech | draft | T-003-021 | - |
-| P-003-06 | 003-geotech | draft | T-003-021 | - |
-| P-003-07 | 003-geotech | draft | T-003-021 | - |
-| P-003-08 | 003-geotech | draft | T-003-024 | - |
-| P-003-09 | 003-geotech | draft | T-003-031 | - |
-| P-003-10 | 003-geotech | draft | T-003-032 | - |
-| P-003-11 | 003-geotech | draft | T-003-040 | - |
-| P-003-12 | 003-geotech | draft | T-003-041 | - |
-| P-004-01 | 004-bulk | draft | T-004-010 | - |
-| P-004-02 | 004-bulk | draft | T-004-010 | - |
-| P-004-03 | 004-bulk | draft | T-004-011 | - |
-| P-004-04 | 004-bulk | draft | T-004-020 | - |
-| P-004-05 | 004-bulk | draft | T-004-020 | - |
-| P-004-06 | 004-bulk | draft | T-004-020 | - |
-| P-004-07 | 004-bulk | draft | T-004-030 | - |
-| P-004-08 | 004-bulk | draft | T-004-031 | - |
+| P-000-01 | 000-foundation | draft | T-000-010, T-001-080, T-002-080, T-003-080, T-004-080, T-005-064, T-006-054, T-007-054 | tests/property/test_t_000_010_contract_suite.py, tests/property/test_t_001_080_haulage_contract.py, tests/property/test_t_002_080_blasting_contract.py, tests/property/test_t_003_080_geotech_contract.py, tests/property/test_t_004_080_bulk_contract.py |
+| P-000-02 | 000-foundation | draft | T-000-010, T-001-080, T-002-080, T-003-080, T-004-080, T-005-064, T-006-054, T-007-054 | tests/property/test_t_000_010_contract_suite.py, tests/property/test_t_001_080_haulage_contract.py, tests/property/test_t_002_080_blasting_contract.py, tests/property/test_t_003_080_geotech_contract.py, tests/property/test_t_004_080_bulk_contract.py |
+| P-000-03 | 000-foundation | draft | T-000-010, T-001-080, T-002-080, T-003-080, T-004-080, T-005-064, T-006-054, T-007-054 | tests/property/test_t_000_010_contract_suite.py, tests/property/test_t_001_080_haulage_contract.py, tests/property/test_t_002_080_blasting_contract.py, tests/property/test_t_003_080_geotech_contract.py, tests/property/test_t_004_080_bulk_contract.py |
+| P-000-04 | 000-foundation | draft | T-000-005, T-003-080 | tests/property/test_t_000_005_random_source.py, tests/property/test_t_000_010_contract_suite.py, tests/property/test_t_003_080_geotech_contract.py, tests/unit/test_t_003_032_bayesian_ttf.py, tests/unit/test_t_003_041_radar_phase.py |
+| P-000-05 | 000-foundation | draft | T-000-006 | tests/property/test_t_000_006_unit_conversions.py |
+| P-001-01 | 001-haulage | draft | T-001-010 | tests/metamorphic/test_t_001_010_resistance_mr.py |
+| P-001-02 | 001-haulage | draft | T-001-012 | tests/metamorphic/test_t_001_012_rimpull_speed_mr.py |
+| P-001-03 | 001-haulage | draft | T-001-012 | tests/metamorphic/test_t_001_012_rimpull_speed_mr.py |
+| P-001-04 | 001-haulage | draft | T-001-013 | tests/metamorphic/test_t_001_013_retarder_speed_mr.py |
+| P-001-05 | 001-haulage | draft | T-001-030 | tests/metamorphic/test_t_001_030_energy_mr.py |
+| P-001-06 | 001-haulage | draft | T-001-030 | tests/metamorphic/test_t_001_030_energy_mr.py |
+| P-001-07 | 001-haulage | draft | T-001-030 | tests/metamorphic/test_t_001_030_energy_mr.py |
+| P-001-08 | 001-haulage | draft | T-001-041 | tests/metamorphic/test_t_001_041_mmc_queue_mr.py |
+| P-001-09 | 001-haulage | draft | T-001-041 | tests/metamorphic/test_t_001_041_mmc_queue_mr.py |
+| P-001-10 | 001-haulage | draft | T-001-042 | tests/metamorphic/test_t_001_042_finite_source_mr.py |
+| P-001-11 | 001-haulage | draft | T-001-043 | tests/metamorphic/test_t_001_043_mva_mr.py |
+| P-001-12 | 001-haulage | draft | T-001-040 | tests/unit/test_t_001_040_match_factor.py |
+| P-001-13 | 001-haulage | draft | T-001-020 | tests/property/test_t_001_020_loading_passes_props.py |
+| P-002-01 | 002-blasting | draft | T-002-011 | tests/metamorphic/test_t_002_011_kuznetsov_mr.py |
+| P-002-02 | 002-blasting | draft | T-002-011 | tests/metamorphic/test_t_002_011_kuznetsov_mr.py |
+| P-002-03 | 002-blasting | draft | T-002-013 | tests/metamorphic/test_t_002_013_uniformity_mr.py |
+| P-002-04 | 002-blasting | draft | T-002-020 | tests/metamorphic/test_t_002_020_distributions_mr.py |
+| P-002-05 | 002-blasting | draft | T-002-020 | tests/metamorphic/test_t_002_020_distributions_mr.py |
+| P-002-06 | 002-blasting | draft | T-002-021 | tests/property/test_t_002_021_kco_props.py |
+| P-002-07 | 002-blasting | draft | T-002-030 | tests/metamorphic/test_t_002_030_ppv_mr.py |
+| P-002-08 | 002-blasting | draft | T-002-031 | tests/unit/test_t_002_031_cfr_limits.py |
+| P-002-09 | 002-blasting | draft | T-002-040 | tests/metamorphic/test_t_002_040_flyrock_ranges_mr.py |
+| P-002-10 | 002-blasting | draft | T-002-041 | tests/parity/test_t_002_041_flyrock_scipy.py, tests/unit/test_t_002_041_flyrock_trajectory.py |
+| P-003-01 | 003-geotech | draft | T-003-010 | tests/metamorphic/test_t_003_010_hoek_brown_mr.py |
+| P-003-02 | 003-geotech | draft | T-003-010 | tests/metamorphic/test_t_003_010_hoek_brown_mr.py |
+| P-003-03 | 003-geotech | draft | T-003-010 | tests/metamorphic/test_t_003_010_hoek_brown_mr.py, tests/unit/test_t_003_010_hoek_brown.py |
+| P-003-04 | 003-geotech | draft | T-003-021 | tests/metamorphic/test_t_003_021_bishop_mr.py, tests/metamorphic/test_t_003_022_spencer_mr.py |
+| P-003-05 | 003-geotech | draft | T-003-021 | tests/metamorphic/test_t_003_021_bishop_mr.py, tests/metamorphic/test_t_003_022_spencer_mr.py |
+| P-003-06 | 003-geotech | draft | T-003-021 | tests/metamorphic/test_t_003_021_bishop_mr.py, tests/metamorphic/test_t_003_022_spencer_mr.py |
+| P-003-07 | 003-geotech | draft | T-003-021 | tests/metamorphic/test_t_003_021_bishop_mr.py, tests/metamorphic/test_t_003_022_spencer_mr.py, tests/unit/test_t_003_022_spencer.py |
+| P-003-08 | 003-geotech | draft | T-003-024 | tests/property/test_t_003_024_pof_props.py, tests/unit/test_t_003_024_pof.py |
+| P-003-09 | 003-geotech | draft | T-003-031 | tests/metamorphic/test_t_003_031_inverse_velocity_mr.py |
+| P-003-10 | 003-geotech | draft | T-003-032 | tests/property/test_t_003_032_bayesian_ttf_props.py, tests/unit/test_t_003_032_bayesian_ttf.py |
+| P-003-11 | 003-geotech | draft | T-003-040 | tests/metamorphic/test_t_003_040_radar_los_mr.py |
+| P-003-12 | 003-geotech | draft | T-003-041 | tests/metamorphic/test_t_003_041_radar_phase_mr.py |
+| P-004-01 | 004-bulk | draft | T-004-010 | tests/metamorphic/test_t_004_010_beverloo_mr.py |
+| P-004-02 | 004-bulk | draft | T-004-010 | tests/metamorphic/test_t_004_010_beverloo_mr.py |
+| P-004-03 | 004-bulk | draft | T-004-011 | tests/metamorphic/test_t_004_011_repose_mr.py |
+| P-004-04 | 004-bulk | draft | T-004-020 | tests/metamorphic/test_t_004_020_conveyor_mr.py |
+| P-004-05 | 004-bulk | draft | T-004-020 | tests/metamorphic/test_t_004_020_conveyor_mr.py, tests/unit/test_t_004_020_conveyor.py |
+| P-004-06 | 004-bulk | draft | T-004-020 | tests/metamorphic/test_t_004_020_conveyor_mr.py |
+| P-004-07 | 004-bulk | draft | T-004-030 | tests/metamorphic/test_t_004_030_gy_fse_mr.py |
+| P-004-08 | 004-bulk | draft | T-004-031 | tests/metamorphic/test_t_004_031_blending_mr.py |
 | P-005-01 | 005-comminution | draft | T-005-010 | - |
 | P-005-02 | 005-comminution | draft | T-005-010 | - |
 | P-005-03 | 005-comminution | draft | T-005-010, T-005-012 | - |
@@ -350,9 +350,9 @@
 | P-008-04 | 008-knowledge | draft | T-008-040 | - |
 | P-008-05 | 008-knowledge | draft | T-008-011 | - |
 | SC-000-01 | 000-foundation | retired | - | - |
-| SC-000-02 | 000-foundation | draft | T-000-016 | - |
-| SC-000-03 | 000-foundation | draft | T-000-032 | - |
-| SC-000-04 | 000-foundation | draft | T-000-032 | - |
+| SC-000-02 | 000-foundation | draft | T-000-016 | tests/contract/test_t_000_016_oracle_markers.py |
+| SC-000-03 | 000-foundation | draft | T-000-032 | tests/contract/test_t_000_014_knowledge_honesty.py, tests/unit/test_t_000_032_release_evidence.py |
+| SC-000-04 | 000-foundation | draft | T-000-032 | tests/unit/test_t_000_032_release_evidence.py |
 | SC-005-01 | 005-comminution | draft | T-005-010, T-005-012 | - |
 | SC-005-02 | 005-comminution | draft | T-005-090 | - |
 | SC-006-01 | 006-environment | draft | T-006-012 | - |
@@ -401,4 +401,6 @@
 | US-008-3 | 008-knowledge | draft | T-008-030, T-008-031, T-008-032 | - |
 | US-008-4 | 008-knowledge | draft | T-008-012, T-008-016, T-008-041 | - |
 
-Problems: 0
+Problems: 2
+- retired FR-000-01 is still referenced by tests ['tests/contract/test_t_000_016_oracle_markers.py']
+- retired FR-000-02 is still referenced by tests ['tests/contract/test_t_000_016_oracle_markers.py']

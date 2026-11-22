@@ -90,7 +90,13 @@
         "T-006-054",
         "T-007-054"
       ],
-      "tests": []
+      "tests": [
+        "tests/property/test_t_000_010_contract_suite.py",
+        "tests/property/test_t_001_080_haulage_contract.py",
+        "tests/property/test_t_002_080_blasting_contract.py",
+        "tests/property/test_t_003_080_geotech_contract.py",
+        "tests/property/test_t_004_080_bulk_contract.py"
+      ]
     },
     "FR-000-06": {
       "spec": "000-foundation",
@@ -100,7 +106,9 @@
       "tasks": [
         "T-000-011"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_000_011_import_purity.py"
+      ]
     },
     "FR-000-07": {
       "spec": "000-foundation",
@@ -118,7 +126,15 @@
         "T-006-054",
         "T-007-054"
       ],
-      "tests": []
+      "tests": [
+        "tests/property/test_t_000_006_unit_conversions.py",
+        "tests/property/test_t_000_010_contract_suite.py",
+        "tests/property/test_t_001_080_haulage_contract.py",
+        "tests/property/test_t_002_080_blasting_contract.py",
+        "tests/property/test_t_003_080_geotech_contract.py",
+        "tests/property/test_t_004_080_bulk_contract.py",
+        "tests/unit/test_t_000_003_validation_helpers.py"
+      ]
     },
     "FR-000-08": {
       "spec": "000-foundation",
@@ -129,7 +145,10 @@
         "T-000-006",
         "T-000-012"
       ],
-      "tests": []
+      "tests": [
+        "tests/contract/test_t_000_012_model_cards.py",
+        "tests/property/test_t_000_006_unit_conversions.py"
+      ]
     },
     "FR-000-09": {
       "spec": "000-foundation",
@@ -139,7 +158,9 @@
       "tasks": [
         "T-000-012"
       ],
-      "tests": []
+      "tests": [
+        "tests/contract/test_t_000_012_model_cards.py"
+      ]
     },
     "FR-000-10": {
       "spec": "000-foundation",
@@ -156,7 +177,18 @@
         "T-006-054",
         "T-007-054"
       ],
-      "tests": []
+      "tests": [
+        "tests/property/test_t_000_006_unit_conversions.py",
+        "tests/property/test_t_000_010_contract_suite.py",
+        "tests/property/test_t_001_080_haulage_contract.py",
+        "tests/property/test_t_002_080_blasting_contract.py",
+        "tests/property/test_t_003_080_geotech_contract.py",
+        "tests/property/test_t_004_080_bulk_contract.py",
+        "tests/unit/test_t_000_003_validation_helpers.py",
+        "tests/unit/test_t_000_004_solver_helper.py",
+        "tests/unit/test_t_003_040_radar_los.py",
+        "tests/unit/test_t_003_041_radar_phase.py"
+      ]
     },
     "FR-000-11": {
       "spec": "000-foundation",
@@ -173,7 +205,17 @@
         "T-006-054",
         "T-007-054"
       ],
-      "tests": []
+      "tests": [
+        "tests/property/test_t_000_006_unit_conversions.py",
+        "tests/property/test_t_000_010_contract_suite.py",
+        "tests/property/test_t_001_080_haulage_contract.py",
+        "tests/property/test_t_002_080_blasting_contract.py",
+        "tests/property/test_t_003_080_geotech_contract.py",
+        "tests/property/test_t_004_080_bulk_contract.py",
+        "tests/unit/test_t_000_003_validation_helpers.py",
+        "tests/unit/test_t_003_040_radar_los.py",
+        "tests/unit/test_t_003_041_radar_phase.py"
+      ]
     },
     "FR-000-12": {
       "spec": "000-foundation",
@@ -190,7 +232,16 @@
         "T-006-054",
         "T-007-054"
       ],
-      "tests": []
+      "tests": [
+        "tests/property/test_t_000_010_contract_suite.py",
+        "tests/property/test_t_001_080_haulage_contract.py",
+        "tests/property/test_t_002_080_blasting_contract.py",
+        "tests/property/test_t_003_080_geotech_contract.py",
+        "tests/property/test_t_004_080_bulk_contract.py",
+        "tests/unit/test_t_000_003_validation_helpers.py",
+        "tests/unit/test_t_003_040_radar_los.py",
+        "tests/unit/test_t_003_041_radar_phase.py"
+      ]
     },
     "FR-000-13": {
       "spec": "000-foundation",
@@ -205,7 +256,15 @@
         "T-006-054",
         "T-007-054"
       ],
-      "tests": []
+      "tests": [
+        "tests/property/test_t_001_080_haulage_contract.py",
+        "tests/property/test_t_002_080_blasting_contract.py",
+        "tests/property/test_t_003_080_geotech_contract.py",
+        "tests/property/test_t_004_080_bulk_contract.py",
+        "tests/unit/test_t_000_003_validation_helpers.py",
+        "tests/unit/test_t_003_040_radar_los.py",
+        "tests/unit/test_t_003_041_radar_phase.py"
+      ]
     },
     "FR-000-14": {
       "spec": "000-foundation",
@@ -215,7 +274,10 @@
       "tasks": [
         "T-000-003"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_000_003_validation_helpers.py",
+        "tests/unit/test_t_000_004_solver_helper.py"
+      ]
     },
     "FR-000-15": {
       "spec": "000-foundation",
@@ -225,7 +287,9 @@
       "tasks": [
         "T-000-003"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_000_003_validation_helpers.py"
+      ]
     },
     "FR-000-16": {
       "spec": "000-foundation",
@@ -235,7 +299,9 @@
       "tasks": [
         "T-000-003"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_000_003_validation_helpers.py"
+      ]
     },
     "FR-000-17": {
       "spec": "000-foundation",
@@ -245,7 +311,9 @@
       "tasks": [
         "T-000-004"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_000_004_solver_helper.py"
+      ]
     },
     "FR-000-18": {
       "spec": "000-foundation",
@@ -256,7 +324,11 @@
         "T-000-005",
         "T-003-080"
       ],
-      "tests": []
+      "tests": [
+        "tests/property/test_t_000_005_random_source.py",
+        "tests/property/test_t_000_010_contract_suite.py",
+        "tests/property/test_t_003_080_geotech_contract.py"
+      ]
     },
     "FR-000-19": {
       "spec": "000-foundation",
@@ -266,7 +338,10 @@
       "tasks": [
         "T-000-013"
       ],
-      "tests": []
+      "tests": [
+        "tests/contract/test_t_000_013_literal_audit.py",
+        "tests/unit/test_standard_gravity_row.py"
+      ]
     },
     "FR-000-20": {
       "spec": "000-foundation",
@@ -276,7 +351,10 @@
       "tasks": [
         "T-000-014"
       ],
-      "tests": []
+      "tests": [
+        "tests/contract/test_t_000_001_schemas.py",
+        "tests/contract/test_t_000_014_knowledge_honesty.py"
+      ]
     },
     "FR-000-21": {
       "spec": "000-foundation",
@@ -286,7 +364,9 @@
       "tasks": [
         "T-000-014"
       ],
-      "tests": []
+      "tests": [
+        "tests/contract/test_t_000_014_knowledge_honesty.py"
+      ]
     },
     "FR-000-22": {
       "spec": "000-foundation",
@@ -296,7 +376,9 @@
       "tasks": [
         "T-000-014"
       ],
-      "tests": []
+      "tests": [
+        "tests/contract/test_t_000_014_knowledge_honesty.py"
+      ]
     },
     "FR-000-23": {
       "spec": "000-foundation",
@@ -306,7 +388,9 @@
       "tasks": [
         "T-000-015"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_000_015_gen_knowledge_docs.py"
+      ]
     },
     "FR-000-24": {
       "spec": "000-foundation",
@@ -316,7 +400,10 @@
       "tasks": [
         "T-000-020"
       ],
-      "tests": []
+      "tests": [
+        "tests/contract/test_t_000_020_wheel.py",
+        "tests/pyodide/test_t_000_021_pyodide_smoke.py"
+      ]
     },
     "FR-000-25": {
       "spec": "000-foundation",
@@ -326,7 +413,9 @@
       "tasks": [
         "T-000-021"
       ],
-      "tests": []
+      "tests": [
+        "tests/pyodide/test_t_000_021_pyodide_smoke.py"
+      ]
     },
     "FR-000-26": {
       "spec": "000-foundation",
@@ -336,7 +425,9 @@
       "tasks": [
         "T-000-022"
       ],
-      "tests": []
+      "tests": [
+        "tests/kit/test_t_000_022_kit_smoke.py"
+      ]
     },
     "FR-000-27": {
       "spec": "000-foundation",
@@ -346,7 +437,10 @@
       "tasks": [
         "T-000-002"
       ],
-      "tests": []
+      "tests": [
+        "tests/contract/test_t_000_020_wheel.py",
+        "tests/unit/test_t_000_002_package_api.py"
+      ]
     },
     "FR-000-28": {
       "spec": "000-foundation",
@@ -356,7 +450,10 @@
       "tasks": [
         "T-000-030"
       ],
-      "tests": []
+      "tests": [
+        "tests/contract/test_t_000_001_schemas.py",
+        "tests/unit/test_t_000_030_api_stability.py"
+      ]
     },
     "FR-000-29": {
       "spec": "000-foundation",
@@ -366,7 +463,9 @@
       "tasks": [
         "T-000-030"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_000_030_api_stability.py"
+      ]
     },
     "FR-000-30": {
       "spec": "000-foundation",
@@ -376,7 +475,9 @@
       "tasks": [
         "T-000-031"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_000_031_value_changelog.py"
+      ]
     },
     "FR-000-31": {
       "spec": "000-foundation",
@@ -386,7 +487,9 @@
       "tasks": [
         "T-000-014"
       ],
-      "tests": []
+      "tests": [
+        "tests/contract/test_t_000_014_knowledge_honesty.py"
+      ]
     },
     "FR-000-32": {
       "spec": "000-foundation",
@@ -396,7 +499,9 @@
       "tasks": [
         "T-000-002"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_000_002_package_api.py"
+      ]
     },
     "FR-000-33": {
       "spec": "000-foundation",
@@ -406,7 +511,9 @@
       "tasks": [
         "T-000-016"
       ],
-      "tests": []
+      "tests": [
+        "tests/contract/test_t_000_016_oracle_markers.py"
+      ]
     },
     "FR-000-34": {
       "spec": "000-foundation",
@@ -416,7 +523,9 @@
       "tasks": [
         "T-000-033"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_000_033_api_snapshot_strict_json.py"
+      ]
     },
     "P-000-01": {
       "spec": "000-foundation",
@@ -433,7 +542,13 @@
         "T-006-054",
         "T-007-054"
       ],
-      "tests": []
+      "tests": [
+        "tests/property/test_t_000_010_contract_suite.py",
+        "tests/property/test_t_001_080_haulage_contract.py",
+        "tests/property/test_t_002_080_blasting_contract.py",
+        "tests/property/test_t_003_080_geotech_contract.py",
+        "tests/property/test_t_004_080_bulk_contract.py"
+      ]
     },
     "P-000-02": {
       "spec": "000-foundation",
@@ -450,7 +565,13 @@
         "T-006-054",
         "T-007-054"
       ],
-      "tests": []
+      "tests": [
+        "tests/property/test_t_000_010_contract_suite.py",
+        "tests/property/test_t_001_080_haulage_contract.py",
+        "tests/property/test_t_002_080_blasting_contract.py",
+        "tests/property/test_t_003_080_geotech_contract.py",
+        "tests/property/test_t_004_080_bulk_contract.py"
+      ]
     },
     "P-000-03": {
       "spec": "000-foundation",
@@ -467,7 +588,13 @@
         "T-006-054",
         "T-007-054"
       ],
-      "tests": []
+      "tests": [
+        "tests/property/test_t_000_010_contract_suite.py",
+        "tests/property/test_t_001_080_haulage_contract.py",
+        "tests/property/test_t_002_080_blasting_contract.py",
+        "tests/property/test_t_003_080_geotech_contract.py",
+        "tests/property/test_t_004_080_bulk_contract.py"
+      ]
     },
     "P-000-04": {
       "spec": "000-foundation",
@@ -478,7 +605,13 @@
         "T-000-005",
         "T-003-080"
       ],
-      "tests": []
+      "tests": [
+        "tests/property/test_t_000_005_random_source.py",
+        "tests/property/test_t_000_010_contract_suite.py",
+        "tests/property/test_t_003_080_geotech_contract.py",
+        "tests/unit/test_t_003_032_bayesian_ttf.py",
+        "tests/unit/test_t_003_041_radar_phase.py"
+      ]
     },
     "P-000-05": {
       "spec": "000-foundation",
@@ -488,7 +621,9 @@
       "tasks": [
         "T-000-006"
       ],
-      "tests": []
+      "tests": [
+        "tests/property/test_t_000_006_unit_conversions.py"
+      ]
     },
     "NFR-000-03": {
       "spec": "000-foundation",
@@ -498,7 +633,9 @@
       "tasks": [
         "T-000-011"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_000_011_import_purity.py"
+      ]
     },
     "NFR-000-04": {
       "spec": "000-foundation",
@@ -508,7 +645,9 @@
       "tasks": [
         "T-000-020"
       ],
-      "tests": []
+      "tests": [
+        "tests/contract/test_t_000_020_wheel.py"
+      ]
     },
     "NFR-000-05": {
       "spec": "000-foundation",
@@ -518,7 +657,9 @@
       "tasks": [
         "T-000-020"
       ],
-      "tests": []
+      "tests": [
+        "tests/contract/test_t_000_020_wheel.py"
+      ]
     },
     "NFR-000-06": {
       "spec": "000-foundation",
@@ -528,7 +669,9 @@
       "tasks": [
         "T-000-021"
       ],
-      "tests": []
+      "tests": [
+        "tests/pyodide/test_t_000_021_pyodide_smoke.py"
+      ]
     },
     "NFR-000-07": {
       "spec": "000-foundation",
@@ -538,7 +681,9 @@
       "tasks": [
         "T-000-023"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_000_023_bench_runner.py"
+      ]
     },
     "NFR-000-08": {
       "spec": "000-foundation",
@@ -548,7 +693,9 @@
       "tasks": [
         "T-000-024"
       ],
-      "tests": []
+      "tests": [
+        "tests/contract/test_t_000_024_ci_gates.py"
+      ]
     },
     "NFR-000-09": {
       "spec": "000-foundation",
@@ -558,7 +705,9 @@
       "tasks": [
         "T-000-024"
       ],
-      "tests": []
+      "tests": [
+        "tests/contract/test_t_000_024_ci_gates.py"
+      ]
     },
     "SC-000-02": {
       "spec": "000-foundation",
@@ -568,7 +717,9 @@
       "tasks": [
         "T-000-016"
       ],
-      "tests": []
+      "tests": [
+        "tests/contract/test_t_000_016_oracle_markers.py"
+      ]
     },
     "SC-000-03": {
       "spec": "000-foundation",
@@ -578,7 +729,10 @@
       "tasks": [
         "T-000-032"
       ],
-      "tests": []
+      "tests": [
+        "tests/contract/test_t_000_014_knowledge_honesty.py",
+        "tests/unit/test_t_000_032_release_evidence.py"
+      ]
     },
     "SC-000-04": {
       "spec": "000-foundation",
@@ -588,7 +742,9 @@
       "tasks": [
         "T-000-032"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_000_032_release_evidence.py"
+      ]
     },
     "DC-000-02": {
       "spec": "000-foundation",
@@ -599,7 +755,9 @@
         "T-000-001",
         "T-008-010"
       ],
-      "tests": []
+      "tests": [
+        "tests/contract/test_t_000_001_schemas.py"
+      ]
     },
     "DC-000-03": {
       "spec": "000-foundation",
@@ -610,7 +768,9 @@
         "T-000-001",
         "T-008-011"
       ],
-      "tests": []
+      "tests": [
+        "tests/contract/test_t_000_001_schemas.py"
+      ]
     },
     "DC-000-04": {
       "spec": "000-foundation",
@@ -621,7 +781,10 @@
         "T-000-001",
         "T-000-030"
       ],
-      "tests": []
+      "tests": [
+        "tests/contract/test_t_000_001_schemas.py",
+        "tests/unit/test_t_000_030_api_stability.py"
+      ]
     },
     "US-000-1": {
       "spec": "000-foundation",
@@ -637,7 +800,9 @@
       "draft": true,
       "phase": "clarified",
       "tasks": [],
-      "tests": []
+      "tests": [
+        "tests/contract/test_t_000_016_oracle_markers.py"
+      ]
     },
     "FR-000-02": {
       "spec": "000-foundation",
@@ -645,7 +810,9 @@
       "draft": true,
       "phase": "clarified",
       "tasks": [],
-      "tests": []
+      "tests": [
+        "tests/contract/test_t_000_016_oracle_markers.py"
+      ]
     },
     "FR-000-03": {
       "spec": "000-foundation",
@@ -755,7 +922,9 @@
       "tasks": [
         "T-001-010"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_001_010_resistance.py"
+      ]
     },
     "FR-001-02": {
       "spec": "001-haulage",
@@ -765,7 +934,10 @@
       "tasks": [
         "T-001-010"
       ],
-      "tests": []
+      "tests": [
+        "tests/metamorphic/test_t_001_010_resistance_mr.py",
+        "tests/unit/test_t_001_010_resistance.py"
+      ]
     },
     "FR-001-03": {
       "spec": "001-haulage",
@@ -775,7 +947,9 @@
       "tasks": [
         "T-001-011"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_001_011_required_force.py"
+      ]
     },
     "FR-001-04": {
       "spec": "001-haulage",
@@ -785,7 +959,9 @@
       "tasks": [
         "T-001-012"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_001_012_rimpull_speed.py"
+      ]
     },
     "FR-001-05": {
       "spec": "001-haulage",
@@ -795,7 +971,10 @@
       "tasks": [
         "T-001-012"
       ],
-      "tests": []
+      "tests": [
+        "tests/metamorphic/test_t_001_012_rimpull_speed_mr.py",
+        "tests/unit/test_t_001_012_rimpull_speed.py"
+      ]
     },
     "FR-001-06": {
       "spec": "001-haulage",
@@ -805,7 +984,9 @@
       "tasks": [
         "T-001-013"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_001_013_retarder_speed.py"
+      ]
     },
     "FR-001-07": {
       "spec": "001-haulage",
@@ -815,7 +996,9 @@
       "tasks": [
         "T-001-014"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_001_014_unbounded_speed.py"
+      ]
     },
     "FR-001-08": {
       "spec": "001-haulage",
@@ -825,7 +1008,9 @@
       "tasks": [
         "T-001-020"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_001_020_loading_passes.py"
+      ]
     },
     "FR-001-09": {
       "spec": "001-haulage",
@@ -835,7 +1020,9 @@
       "tasks": [
         "T-001-020"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_001_020_loading_passes.py"
+      ]
     },
     "FR-001-10": {
       "spec": "001-haulage",
@@ -845,7 +1032,9 @@
       "tasks": [
         "T-001-015"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_001_015_cycle_time.py"
+      ]
     },
     "FR-001-11": {
       "spec": "001-haulage",
@@ -855,7 +1044,9 @@
       "tasks": [
         "T-001-030"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_001_030_energy.py"
+      ]
     },
     "FR-001-12": {
       "spec": "001-haulage",
@@ -865,7 +1056,9 @@
       "tasks": [
         "T-001-030"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_001_030_energy.py"
+      ]
     },
     "FR-001-13": {
       "spec": "001-haulage",
@@ -875,7 +1068,9 @@
       "tasks": [
         "T-001-031"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_001_031_fuel_co2.py"
+      ]
     },
     "FR-001-14": {
       "spec": "001-haulage",
@@ -885,7 +1080,10 @@
       "tasks": [
         "T-001-031"
       ],
-      "tests": []
+      "tests": [
+        "tests/metamorphic/test_t_001_030_energy_mr.py",
+        "tests/unit/test_t_001_031_fuel_co2.py"
+      ]
     },
     "FR-001-15": {
       "spec": "001-haulage",
@@ -895,7 +1093,9 @@
       "tasks": [
         "T-001-031"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_001_031_fuel_co2.py"
+      ]
     },
     "FR-001-16": {
       "spec": "001-haulage",
@@ -905,7 +1105,9 @@
       "tasks": [
         "T-001-032"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_001_032_trolley_bev.py"
+      ]
     },
     "FR-001-17": {
       "spec": "001-haulage",
@@ -915,7 +1117,9 @@
       "tasks": [
         "T-001-032"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_001_032_trolley_bev.py"
+      ]
     },
     "FR-001-18": {
       "spec": "001-haulage",
@@ -925,7 +1129,9 @@
       "tasks": [
         "T-001-040"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_001_040_match_factor.py"
+      ]
     },
     "FR-001-19": {
       "spec": "001-haulage",
@@ -935,7 +1141,9 @@
       "tasks": [
         "T-001-041"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_001_041_mmc_queue.py"
+      ]
     },
     "FR-001-20": {
       "spec": "001-haulage",
@@ -945,7 +1153,9 @@
       "tasks": [
         "T-001-042"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_001_042_finite_source.py"
+      ]
     },
     "FR-001-21": {
       "spec": "001-haulage",
@@ -955,7 +1165,9 @@
       "tasks": [
         "T-001-043"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_001_043_mva.py"
+      ]
     },
     "FR-001-22": {
       "spec": "001-haulage",
@@ -965,7 +1177,10 @@
       "tasks": [
         "T-001-080"
       ],
-      "tests": []
+      "tests": [
+        "tests/property/test_t_001_080_haulage_contract.py",
+        "tests/unit/test_t_001_011_required_force.py"
+      ]
     },
     "FR-001-23": {
       "spec": "001-haulage",
@@ -975,7 +1190,9 @@
       "tasks": [
         "T-001-080"
       ],
-      "tests": []
+      "tests": [
+        "tests/property/test_t_001_080_haulage_contract.py"
+      ]
     },
     "FR-001-24": {
       "spec": "001-haulage",
@@ -985,7 +1202,9 @@
       "tasks": [
         "T-001-041"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_001_041_mmc_queue.py"
+      ]
     },
     "FR-001-25": {
       "spec": "001-haulage",
@@ -995,7 +1214,9 @@
       "tasks": [
         "T-001-032"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_001_032_trolley_bev.py"
+      ]
     },
     "FR-001-26": {
       "spec": "001-haulage",
@@ -1005,7 +1226,9 @@
       "tasks": [
         "T-001-043"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_001_043_mva.py"
+      ]
     },
     "P-001-01": {
       "spec": "001-haulage",
@@ -1015,7 +1238,9 @@
       "tasks": [
         "T-001-010"
       ],
-      "tests": []
+      "tests": [
+        "tests/metamorphic/test_t_001_010_resistance_mr.py"
+      ]
     },
     "P-001-02": {
       "spec": "001-haulage",
@@ -1025,7 +1250,9 @@
       "tasks": [
         "T-001-012"
       ],
-      "tests": []
+      "tests": [
+        "tests/metamorphic/test_t_001_012_rimpull_speed_mr.py"
+      ]
     },
     "P-001-03": {
       "spec": "001-haulage",
@@ -1035,7 +1262,9 @@
       "tasks": [
         "T-001-012"
       ],
-      "tests": []
+      "tests": [
+        "tests/metamorphic/test_t_001_012_rimpull_speed_mr.py"
+      ]
     },
     "P-001-04": {
       "spec": "001-haulage",
@@ -1045,7 +1274,9 @@
       "tasks": [
         "T-001-013"
       ],
-      "tests": []
+      "tests": [
+        "tests/metamorphic/test_t_001_013_retarder_speed_mr.py"
+      ]
     },
     "P-001-05": {
       "spec": "001-haulage",
@@ -1055,7 +1286,9 @@
       "tasks": [
         "T-001-030"
       ],
-      "tests": []
+      "tests": [
+        "tests/metamorphic/test_t_001_030_energy_mr.py"
+      ]
     },
     "P-001-06": {
       "spec": "001-haulage",
@@ -1065,7 +1298,9 @@
       "tasks": [
         "T-001-030"
       ],
-      "tests": []
+      "tests": [
+        "tests/metamorphic/test_t_001_030_energy_mr.py"
+      ]
     },
     "P-001-07": {
       "spec": "001-haulage",
@@ -1075,7 +1310,9 @@
       "tasks": [
         "T-001-030"
       ],
-      "tests": []
+      "tests": [
+        "tests/metamorphic/test_t_001_030_energy_mr.py"
+      ]
     },
     "P-001-08": {
       "spec": "001-haulage",
@@ -1085,7 +1322,9 @@
       "tasks": [
         "T-001-041"
       ],
-      "tests": []
+      "tests": [
+        "tests/metamorphic/test_t_001_041_mmc_queue_mr.py"
+      ]
     },
     "P-001-09": {
       "spec": "001-haulage",
@@ -1095,7 +1334,9 @@
       "tasks": [
         "T-001-041"
       ],
-      "tests": []
+      "tests": [
+        "tests/metamorphic/test_t_001_041_mmc_queue_mr.py"
+      ]
     },
     "P-001-10": {
       "spec": "001-haulage",
@@ -1105,7 +1346,9 @@
       "tasks": [
         "T-001-042"
       ],
-      "tests": []
+      "tests": [
+        "tests/metamorphic/test_t_001_042_finite_source_mr.py"
+      ]
     },
     "P-001-11": {
       "spec": "001-haulage",
@@ -1115,7 +1358,9 @@
       "tasks": [
         "T-001-043"
       ],
-      "tests": []
+      "tests": [
+        "tests/metamorphic/test_t_001_043_mva_mr.py"
+      ]
     },
     "P-001-12": {
       "spec": "001-haulage",
@@ -1125,7 +1370,9 @@
       "tasks": [
         "T-001-040"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_001_040_match_factor.py"
+      ]
     },
     "P-001-13": {
       "spec": "001-haulage",
@@ -1135,7 +1382,9 @@
       "tasks": [
         "T-001-020"
       ],
-      "tests": []
+      "tests": [
+        "tests/property/test_t_001_020_loading_passes_props.py"
+      ]
     },
     "NFR-001-01": {
       "spec": "001-haulage",
@@ -1145,7 +1394,9 @@
       "tasks": [
         "T-001-081"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_001_081_haulage_bench_registry.py"
+      ]
     },
     "NFR-001-02": {
       "spec": "001-haulage",
@@ -1155,7 +1406,9 @@
       "tasks": [
         "T-001-081"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_001_081_haulage_bench_registry.py"
+      ]
     },
     "DC-001-01": {
       "spec": "001-haulage",
@@ -1165,7 +1418,9 @@
       "tasks": [
         "T-001-001"
       ],
-      "tests": []
+      "tests": [
+        "tests/contract/test_t_001_001_haulage_table.py"
+      ]
     },
     "US-002-1": {
       "spec": "002-blasting",
@@ -1223,7 +1478,9 @@
       "tasks": [
         "T-002-010"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_002_010_design.py"
+      ]
     },
     "FR-002-02": {
       "spec": "002-blasting",
@@ -1233,7 +1490,9 @@
       "tasks": [
         "T-002-011"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_002_011_kuznetsov.py"
+      ]
     },
     "FR-002-03": {
       "spec": "002-blasting",
@@ -1243,7 +1502,9 @@
       "tasks": [
         "T-002-012"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_002_012_rock_factor.py"
+      ]
     },
     "FR-002-04": {
       "spec": "002-blasting",
@@ -1253,7 +1514,10 @@
       "tasks": [
         "T-002-013"
       ],
-      "tests": []
+      "tests": [
+        "tests/property/test_t_002_080_blasting_contract.py",
+        "tests/unit/test_t_002_013_uniformity.py"
+      ]
     },
     "FR-002-05": {
       "spec": "002-blasting",
@@ -1263,7 +1527,10 @@
       "tasks": [
         "T-002-020"
       ],
-      "tests": []
+      "tests": [
+        "tests/property/test_t_002_080_blasting_contract.py",
+        "tests/unit/test_t_002_020_distributions.py"
+      ]
     },
     "FR-002-06": {
       "spec": "002-blasting",
@@ -1273,7 +1540,9 @@
       "tasks": [
         "T-002-020"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_002_020_distributions.py"
+      ]
     },
     "FR-002-07": {
       "spec": "002-blasting",
@@ -1283,7 +1552,9 @@
       "tasks": [
         "T-002-021"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_002_021_kco.py"
+      ]
     },
     "FR-002-08": {
       "spec": "002-blasting",
@@ -1293,7 +1564,9 @@
       "tasks": [
         "T-002-030"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_002_030_ppv.py"
+      ]
     },
     "FR-002-09": {
       "spec": "002-blasting",
@@ -1303,7 +1576,9 @@
       "tasks": [
         "T-002-031"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_002_031_cfr_limits.py"
+      ]
     },
     "FR-002-10": {
       "spec": "002-blasting",
@@ -1313,7 +1588,9 @@
       "tasks": [
         "T-002-040"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_002_040_flyrock_ranges.py"
+      ]
     },
     "FR-002-11": {
       "spec": "002-blasting",
@@ -1323,7 +1600,9 @@
       "tasks": [
         "T-002-040"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_002_040_flyrock_ranges.py"
+      ]
     },
     "FR-002-12": {
       "spec": "002-blasting",
@@ -1333,7 +1612,11 @@
       "tasks": [
         "T-002-041"
       ],
-      "tests": []
+      "tests": [
+        "tests/parity/test_t_002_041_flyrock_scipy.py",
+        "tests/property/test_t_002_080_blasting_contract.py",
+        "tests/unit/test_t_002_041_flyrock_trajectory.py"
+      ]
     },
     "FR-002-13": {
       "spec": "002-blasting",
@@ -1343,7 +1626,9 @@
       "tasks": [
         "T-002-041"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_002_041_flyrock_trajectory.py"
+      ]
     },
     "FR-002-14": {
       "spec": "002-blasting",
@@ -1353,7 +1638,9 @@
       "tasks": [
         "T-002-013"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_002_013_uniformity.py"
+      ]
     },
     "FR-002-15": {
       "spec": "002-blasting",
@@ -1363,7 +1650,10 @@
       "tasks": [
         "T-002-020"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_002_020_distributions.py",
+        "tests/unit/test_t_002_021_kco.py"
+      ]
     },
     "FR-002-16": {
       "spec": "002-blasting",
@@ -1373,7 +1663,10 @@
       "tasks": [
         "T-002-080"
       ],
-      "tests": []
+      "tests": [
+        "tests/property/test_t_002_080_blasting_contract.py",
+        "tests/unit/test_t_002_041_flyrock_trajectory.py"
+      ]
     },
     "FR-002-17": {
       "spec": "002-blasting",
@@ -1383,7 +1676,9 @@
       "tasks": [
         "T-002-080"
       ],
-      "tests": []
+      "tests": [
+        "tests/property/test_t_002_080_blasting_contract.py"
+      ]
     },
     "FR-002-18": {
       "spec": "002-blasting",
@@ -1394,7 +1689,11 @@
         "T-002-011",
         "T-002-080"
       ],
-      "tests": []
+      "tests": [
+        "tests/property/test_t_002_080_blasting_contract.py",
+        "tests/unit/test_t_002_011_kuznetsov.py",
+        "tests/unit/test_t_002_031_cfr_limits.py"
+      ]
     },
     "P-002-01": {
       "spec": "002-blasting",
@@ -1404,7 +1703,9 @@
       "tasks": [
         "T-002-011"
       ],
-      "tests": []
+      "tests": [
+        "tests/metamorphic/test_t_002_011_kuznetsov_mr.py"
+      ]
     },
     "P-002-02": {
       "spec": "002-blasting",
@@ -1414,7 +1715,9 @@
       "tasks": [
         "T-002-011"
       ],
-      "tests": []
+      "tests": [
+        "tests/metamorphic/test_t_002_011_kuznetsov_mr.py"
+      ]
     },
     "P-002-03": {
       "spec": "002-blasting",
@@ -1424,7 +1727,9 @@
       "tasks": [
         "T-002-013"
       ],
-      "tests": []
+      "tests": [
+        "tests/metamorphic/test_t_002_013_uniformity_mr.py"
+      ]
     },
     "P-002-04": {
       "spec": "002-blasting",
@@ -1434,7 +1739,9 @@
       "tasks": [
         "T-002-020"
       ],
-      "tests": []
+      "tests": [
+        "tests/metamorphic/test_t_002_020_distributions_mr.py"
+      ]
     },
     "P-002-05": {
       "spec": "002-blasting",
@@ -1444,7 +1751,9 @@
       "tasks": [
         "T-002-020"
       ],
-      "tests": []
+      "tests": [
+        "tests/metamorphic/test_t_002_020_distributions_mr.py"
+      ]
     },
     "P-002-06": {
       "spec": "002-blasting",
@@ -1454,7 +1763,9 @@
       "tasks": [
         "T-002-021"
       ],
-      "tests": []
+      "tests": [
+        "tests/property/test_t_002_021_kco_props.py"
+      ]
     },
     "P-002-07": {
       "spec": "002-blasting",
@@ -1464,7 +1775,9 @@
       "tasks": [
         "T-002-030"
       ],
-      "tests": []
+      "tests": [
+        "tests/metamorphic/test_t_002_030_ppv_mr.py"
+      ]
     },
     "P-002-08": {
       "spec": "002-blasting",
@@ -1474,7 +1787,9 @@
       "tasks": [
         "T-002-031"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_002_031_cfr_limits.py"
+      ]
     },
     "P-002-09": {
       "spec": "002-blasting",
@@ -1484,7 +1799,9 @@
       "tasks": [
         "T-002-040"
       ],
-      "tests": []
+      "tests": [
+        "tests/metamorphic/test_t_002_040_flyrock_ranges_mr.py"
+      ]
     },
     "P-002-10": {
       "spec": "002-blasting",
@@ -1494,7 +1811,10 @@
       "tasks": [
         "T-002-041"
       ],
-      "tests": []
+      "tests": [
+        "tests/parity/test_t_002_041_flyrock_scipy.py",
+        "tests/unit/test_t_002_041_flyrock_trajectory.py"
+      ]
     },
     "NFR-002-01": {
       "spec": "002-blasting",
@@ -1504,7 +1824,9 @@
       "tasks": [
         "T-002-081"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_002_081_blasting_bench_registry.py"
+      ]
     },
     "NFR-002-02": {
       "spec": "002-blasting",
@@ -1514,7 +1836,9 @@
       "tasks": [
         "T-002-081"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_002_081_blasting_bench_registry.py"
+      ]
     },
     "DC-002-01": {
       "spec": "002-blasting",
@@ -1524,7 +1848,9 @@
       "tasks": [
         "T-002-001"
       ],
-      "tests": []
+      "tests": [
+        "tests/contract/test_t_002_001_blasting_table.py"
+      ]
     },
     "US-003-1": {
       "spec": "003-geotech",
@@ -1584,7 +1910,9 @@
       "tasks": [
         "T-003-010"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_003_010_hoek_brown.py"
+      ]
     },
     "FR-003-02": {
       "spec": "003-geotech",
@@ -1594,7 +1922,9 @@
       "tasks": [
         "T-003-010"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_003_010_hoek_brown.py"
+      ]
     },
     "FR-003-03": {
       "spec": "003-geotech",
@@ -1604,7 +1934,9 @@
       "tasks": [
         "T-003-010"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_003_010_hoek_brown.py"
+      ]
     },
     "FR-003-04": {
       "spec": "003-geotech",
@@ -1614,7 +1946,9 @@
       "tasks": [
         "T-003-011"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_003_011_equivalent_mc.py"
+      ]
     },
     "FR-003-05": {
       "spec": "003-geotech",
@@ -1624,7 +1958,9 @@
       "tasks": [
         "T-003-011"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_003_011_equivalent_mc.py"
+      ]
     },
     "FR-003-06": {
       "spec": "003-geotech",
@@ -1634,7 +1970,9 @@
       "tasks": [
         "T-003-010"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_003_010_hoek_brown.py"
+      ]
     },
     "FR-003-07": {
       "spec": "003-geotech",
@@ -1644,7 +1982,9 @@
       "tasks": [
         "T-003-020"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_003_020_circular_slices.py"
+      ]
     },
     "FR-003-08": {
       "spec": "003-geotech",
@@ -1654,7 +1994,9 @@
       "tasks": [
         "T-003-020"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_003_020_circular_slices.py"
+      ]
     },
     "FR-003-09": {
       "spec": "003-geotech",
@@ -1665,7 +2007,10 @@
         "T-003-021",
         "T-003-023"
       ],
-      "tests": []
+      "tests": [
+        "tests/parity/test_t_003_023_pyslope_parity.py",
+        "tests/unit/test_t_003_021_bishop.py"
+      ]
     },
     "FR-003-10": {
       "spec": "003-geotech",
@@ -1675,7 +2020,10 @@
       "tasks": [
         "T-003-022"
       ],
-      "tests": []
+      "tests": [
+        "tests/metamorphic/test_t_003_022_spencer_mr.py",
+        "tests/unit/test_t_003_022_spencer.py"
+      ]
     },
     "FR-003-11": {
       "spec": "003-geotech",
@@ -1686,7 +2034,11 @@
         "T-003-021",
         "T-003-022"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_003_021_bishop.py",
+        "tests/unit/test_t_003_022_spencer.py",
+        "tests/unit/test_t_003_024_pof.py"
+      ]
     },
     "FR-003-12": {
       "spec": "003-geotech",
@@ -1696,7 +2048,10 @@
       "tasks": [
         "T-003-024"
       ],
-      "tests": []
+      "tests": [
+        "tests/property/test_t_003_024_pof_props.py",
+        "tests/unit/test_t_003_024_pof.py"
+      ]
     },
     "FR-003-13": {
       "spec": "003-geotech",
@@ -1706,7 +2061,10 @@
       "tasks": [
         "T-003-024"
       ],
-      "tests": []
+      "tests": [
+        "tests/property/test_t_003_024_pof_props.py",
+        "tests/unit/test_t_003_024_pof.py"
+      ]
     },
     "FR-003-14": {
       "spec": "003-geotech",
@@ -1716,7 +2074,9 @@
       "tasks": [
         "T-003-030"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_003_030_voight.py"
+      ]
     },
     "FR-003-15": {
       "spec": "003-geotech",
@@ -1726,7 +2086,10 @@
       "tasks": [
         "T-003-031"
       ],
-      "tests": []
+      "tests": [
+        "tests/metamorphic/test_t_003_031_inverse_velocity_mr.py",
+        "tests/unit/test_t_003_031_inverse_velocity.py"
+      ]
     },
     "FR-003-16": {
       "spec": "003-geotech",
@@ -1736,7 +2099,10 @@
       "tasks": [
         "T-003-031"
       ],
-      "tests": []
+      "tests": [
+        "tests/metamorphic/test_t_003_031_inverse_velocity_mr.py",
+        "tests/unit/test_t_003_031_inverse_velocity.py"
+      ]
     },
     "FR-003-17": {
       "spec": "003-geotech",
@@ -1746,7 +2112,10 @@
       "tasks": [
         "T-003-032"
       ],
-      "tests": []
+      "tests": [
+        "tests/property/test_t_003_032_bayesian_ttf_props.py",
+        "tests/unit/test_t_003_032_bayesian_ttf.py"
+      ]
     },
     "FR-003-18": {
       "spec": "003-geotech",
@@ -1756,7 +2125,9 @@
       "tasks": [
         "T-003-040"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_003_040_radar_los.py"
+      ]
     },
     "FR-003-19": {
       "spec": "003-geotech",
@@ -1766,7 +2137,11 @@
       "tasks": [
         "T-003-041"
       ],
-      "tests": []
+      "tests": [
+        "tests/metamorphic/test_t_003_041_radar_phase_mr.py",
+        "tests/property/test_t_003_080_geotech_contract.py",
+        "tests/unit/test_t_003_041_radar_phase.py"
+      ]
     },
     "FR-003-20": {
       "spec": "003-geotech",
@@ -1776,7 +2151,16 @@
       "tasks": [
         "T-003-080"
       ],
-      "tests": []
+      "tests": [
+        "tests/property/test_t_003_080_geotech_contract.py",
+        "tests/unit/test_t_003_020_circular_slices.py",
+        "tests/unit/test_t_003_024_pof.py",
+        "tests/unit/test_t_003_030_voight.py",
+        "tests/unit/test_t_003_031_inverse_velocity.py",
+        "tests/unit/test_t_003_032_bayesian_ttf.py",
+        "tests/unit/test_t_003_040_radar_los.py",
+        "tests/unit/test_t_003_041_radar_phase.py"
+      ]
     },
     "FR-003-21": {
       "spec": "003-geotech",
@@ -1786,7 +2170,12 @@
       "tasks": [
         "T-003-080"
       ],
-      "tests": []
+      "tests": [
+        "tests/property/test_t_003_080_geotech_contract.py",
+        "tests/unit/test_t_003_031_inverse_velocity.py",
+        "tests/unit/test_t_003_032_bayesian_ttf.py",
+        "tests/unit/test_t_003_041_radar_phase.py"
+      ]
     },
     "FR-003-22": {
       "spec": "003-geotech",
@@ -1797,7 +2186,10 @@
         "T-003-021",
         "T-003-022"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_003_021_bishop.py",
+        "tests/unit/test_t_003_022_spencer.py"
+      ]
     },
     "FR-003-23": {
       "spec": "003-geotech",
@@ -1808,7 +2200,13 @@
         "T-003-032",
         "T-003-080"
       ],
-      "tests": []
+      "tests": [
+        "tests/property/test_t_003_080_geotech_contract.py",
+        "tests/unit/test_t_003_024_pof.py",
+        "tests/unit/test_t_003_031_inverse_velocity.py",
+        "tests/unit/test_t_003_032_bayesian_ttf.py",
+        "tests/unit/test_t_003_041_radar_phase.py"
+      ]
     },
     "FR-003-24": {
       "spec": "003-geotech",
@@ -1819,7 +2217,11 @@
         "T-003-024",
         "T-003-080"
       ],
-      "tests": []
+      "tests": [
+        "tests/property/test_t_003_080_geotech_contract.py",
+        "tests/unit/test_t_003_011_equivalent_mc.py",
+        "tests/unit/test_t_003_024_pof.py"
+      ]
     },
     "P-003-01": {
       "spec": "003-geotech",
@@ -1829,7 +2231,9 @@
       "tasks": [
         "T-003-010"
       ],
-      "tests": []
+      "tests": [
+        "tests/metamorphic/test_t_003_010_hoek_brown_mr.py"
+      ]
     },
     "P-003-02": {
       "spec": "003-geotech",
@@ -1839,7 +2243,9 @@
       "tasks": [
         "T-003-010"
       ],
-      "tests": []
+      "tests": [
+        "tests/metamorphic/test_t_003_010_hoek_brown_mr.py"
+      ]
     },
     "P-003-03": {
       "spec": "003-geotech",
@@ -1849,7 +2255,10 @@
       "tasks": [
         "T-003-010"
       ],
-      "tests": []
+      "tests": [
+        "tests/metamorphic/test_t_003_010_hoek_brown_mr.py",
+        "tests/unit/test_t_003_010_hoek_brown.py"
+      ]
     },
     "P-003-04": {
       "spec": "003-geotech",
@@ -1859,7 +2268,10 @@
       "tasks": [
         "T-003-021"
       ],
-      "tests": []
+      "tests": [
+        "tests/metamorphic/test_t_003_021_bishop_mr.py",
+        "tests/metamorphic/test_t_003_022_spencer_mr.py"
+      ]
     },
     "P-003-05": {
       "spec": "003-geotech",
@@ -1869,7 +2281,10 @@
       "tasks": [
         "T-003-021"
       ],
-      "tests": []
+      "tests": [
+        "tests/metamorphic/test_t_003_021_bishop_mr.py",
+        "tests/metamorphic/test_t_003_022_spencer_mr.py"
+      ]
     },
     "P-003-06": {
       "spec": "003-geotech",
@@ -1879,7 +2294,10 @@
       "tasks": [
         "T-003-021"
       ],
-      "tests": []
+      "tests": [
+        "tests/metamorphic/test_t_003_021_bishop_mr.py",
+        "tests/metamorphic/test_t_003_022_spencer_mr.py"
+      ]
     },
     "P-003-07": {
       "spec": "003-geotech",
@@ -1889,7 +2307,11 @@
       "tasks": [
         "T-003-021"
       ],
-      "tests": []
+      "tests": [
+        "tests/metamorphic/test_t_003_021_bishop_mr.py",
+        "tests/metamorphic/test_t_003_022_spencer_mr.py",
+        "tests/unit/test_t_003_022_spencer.py"
+      ]
     },
     "P-003-08": {
       "spec": "003-geotech",
@@ -1899,7 +2321,10 @@
       "tasks": [
         "T-003-024"
       ],
-      "tests": []
+      "tests": [
+        "tests/property/test_t_003_024_pof_props.py",
+        "tests/unit/test_t_003_024_pof.py"
+      ]
     },
     "P-003-09": {
       "spec": "003-geotech",
@@ -1909,7 +2334,9 @@
       "tasks": [
         "T-003-031"
       ],
-      "tests": []
+      "tests": [
+        "tests/metamorphic/test_t_003_031_inverse_velocity_mr.py"
+      ]
     },
     "P-003-10": {
       "spec": "003-geotech",
@@ -1919,7 +2346,10 @@
       "tasks": [
         "T-003-032"
       ],
-      "tests": []
+      "tests": [
+        "tests/property/test_t_003_032_bayesian_ttf_props.py",
+        "tests/unit/test_t_003_032_bayesian_ttf.py"
+      ]
     },
     "P-003-11": {
       "spec": "003-geotech",
@@ -1929,7 +2359,9 @@
       "tasks": [
         "T-003-040"
       ],
-      "tests": []
+      "tests": [
+        "tests/metamorphic/test_t_003_040_radar_los_mr.py"
+      ]
     },
     "P-003-12": {
       "spec": "003-geotech",
@@ -1939,7 +2371,9 @@
       "tasks": [
         "T-003-041"
       ],
-      "tests": []
+      "tests": [
+        "tests/metamorphic/test_t_003_041_radar_phase_mr.py"
+      ]
     },
     "NFR-003-01": {
       "spec": "003-geotech",
@@ -1949,7 +2383,9 @@
       "tasks": [
         "T-003-081"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_003_081_geotech_bench_registry.py"
+      ]
     },
     "NFR-003-02": {
       "spec": "003-geotech",
@@ -1959,7 +2395,9 @@
       "tasks": [
         "T-003-081"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_003_081_geotech_bench_registry.py"
+      ]
     },
     "DC-003-01": {
       "spec": "003-geotech",
@@ -1969,7 +2407,9 @@
       "tasks": [
         "T-003-001"
       ],
-      "tests": []
+      "tests": [
+        "tests/contract/test_t_003_001_geotech_table.py"
+      ]
     },
     "US-004-1": {
       "spec": "004-bulk",
@@ -2013,7 +2453,11 @@
       "tasks": [
         "T-004-010"
       ],
-      "tests": []
+      "tests": [
+        "tests/metamorphic/test_t_004_010_beverloo_mr.py",
+        "tests/property/test_t_004_080_bulk_contract.py",
+        "tests/unit/test_t_004_010_beverloo.py"
+      ]
     },
     "FR-004-02": {
       "spec": "004-bulk",
@@ -2023,7 +2467,9 @@
       "tasks": [
         "T-004-010"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_004_010_beverloo.py"
+      ]
     },
     "FR-004-03": {
       "spec": "004-bulk",
@@ -2033,7 +2479,9 @@
       "tasks": [
         "T-004-011"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_004_011_repose.py"
+      ]
     },
     "FR-004-04": {
       "spec": "004-bulk",
@@ -2043,7 +2491,10 @@
       "tasks": [
         "T-004-011"
       ],
-      "tests": []
+      "tests": [
+        "tests/metamorphic/test_t_004_011_repose_mr.py",
+        "tests/unit/test_t_004_011_repose.py"
+      ]
     },
     "FR-004-05": {
       "spec": "004-bulk",
@@ -2053,7 +2504,10 @@
       "tasks": [
         "T-004-020"
       ],
-      "tests": []
+      "tests": [
+        "tests/metamorphic/test_t_004_020_conveyor_mr.py",
+        "tests/unit/test_t_004_020_conveyor.py"
+      ]
     },
     "FR-004-06": {
       "spec": "004-bulk",
@@ -2063,7 +2517,10 @@
       "tasks": [
         "T-004-020"
       ],
-      "tests": []
+      "tests": [
+        "tests/metamorphic/test_t_004_020_conveyor_mr.py",
+        "tests/unit/test_t_004_020_conveyor.py"
+      ]
     },
     "FR-004-07": {
       "spec": "004-bulk",
@@ -2073,7 +2530,10 @@
       "tasks": [
         "T-004-020"
       ],
-      "tests": []
+      "tests": [
+        "tests/metamorphic/test_t_004_020_conveyor_mr.py",
+        "tests/unit/test_t_004_020_conveyor.py"
+      ]
     },
     "FR-004-08": {
       "spec": "004-bulk",
@@ -2083,7 +2543,10 @@
       "tasks": [
         "T-004-030"
       ],
-      "tests": []
+      "tests": [
+        "tests/metamorphic/test_t_004_030_gy_fse_mr.py",
+        "tests/unit/test_t_004_030_gy_fse.py"
+      ]
     },
     "FR-004-09": {
       "spec": "004-bulk",
@@ -2093,7 +2556,9 @@
       "tasks": [
         "T-004-031"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_004_031_blending.py"
+      ]
     },
     "FR-004-10": {
       "spec": "004-bulk",
@@ -2103,7 +2568,9 @@
       "tasks": [
         "T-004-080"
       ],
-      "tests": []
+      "tests": [
+        "tests/property/test_t_004_080_bulk_contract.py"
+      ]
     },
     "FR-004-11": {
       "spec": "004-bulk",
@@ -2113,7 +2580,9 @@
       "tasks": [
         "T-004-080"
       ],
-      "tests": []
+      "tests": [
+        "tests/property/test_t_004_080_bulk_contract.py"
+      ]
     },
     "FR-004-12": {
       "spec": "004-bulk",
@@ -2124,7 +2593,11 @@
         "T-004-030",
         "T-004-031"
       ],
-      "tests": []
+      "tests": [
+        "tests/property/test_t_004_080_bulk_contract.py",
+        "tests/unit/test_t_004_030_gy_fse.py",
+        "tests/unit/test_t_004_031_blending.py"
+      ]
     },
     "P-004-01": {
       "spec": "004-bulk",
@@ -2134,7 +2607,9 @@
       "tasks": [
         "T-004-010"
       ],
-      "tests": []
+      "tests": [
+        "tests/metamorphic/test_t_004_010_beverloo_mr.py"
+      ]
     },
     "P-004-02": {
       "spec": "004-bulk",
@@ -2144,7 +2619,9 @@
       "tasks": [
         "T-004-010"
       ],
-      "tests": []
+      "tests": [
+        "tests/metamorphic/test_t_004_010_beverloo_mr.py"
+      ]
     },
     "P-004-03": {
       "spec": "004-bulk",
@@ -2154,7 +2631,9 @@
       "tasks": [
         "T-004-011"
       ],
-      "tests": []
+      "tests": [
+        "tests/metamorphic/test_t_004_011_repose_mr.py"
+      ]
     },
     "P-004-04": {
       "spec": "004-bulk",
@@ -2164,7 +2643,9 @@
       "tasks": [
         "T-004-020"
       ],
-      "tests": []
+      "tests": [
+        "tests/metamorphic/test_t_004_020_conveyor_mr.py"
+      ]
     },
     "P-004-05": {
       "spec": "004-bulk",
@@ -2174,7 +2655,10 @@
       "tasks": [
         "T-004-020"
       ],
-      "tests": []
+      "tests": [
+        "tests/metamorphic/test_t_004_020_conveyor_mr.py",
+        "tests/unit/test_t_004_020_conveyor.py"
+      ]
     },
     "P-004-06": {
       "spec": "004-bulk",
@@ -2184,7 +2668,9 @@
       "tasks": [
         "T-004-020"
       ],
-      "tests": []
+      "tests": [
+        "tests/metamorphic/test_t_004_020_conveyor_mr.py"
+      ]
     },
     "P-004-07": {
       "spec": "004-bulk",
@@ -2194,7 +2680,9 @@
       "tasks": [
         "T-004-030"
       ],
-      "tests": []
+      "tests": [
+        "tests/metamorphic/test_t_004_030_gy_fse_mr.py"
+      ]
     },
     "P-004-08": {
       "spec": "004-bulk",
@@ -2204,7 +2692,9 @@
       "tasks": [
         "T-004-031"
       ],
-      "tests": []
+      "tests": [
+        "tests/metamorphic/test_t_004_031_blending_mr.py"
+      ]
     },
     "NFR-004-01": {
       "spec": "004-bulk",
@@ -2214,7 +2704,9 @@
       "tasks": [
         "T-004-081"
       ],
-      "tests": []
+      "tests": [
+        "tests/unit/test_t_004_081_bulk_bench_registry.py"
+      ]
     },
     "DC-004-01": {
       "spec": "004-bulk",
@@ -2224,7 +2716,9 @@
       "tasks": [
         "T-004-001"
       ],
-      "tests": []
+      "tests": [
+        "tests/contract/test_t_004_001_bulk_table.py"
+      ]
     },
     "FR-005-01": {
       "spec": "005-comminution",
