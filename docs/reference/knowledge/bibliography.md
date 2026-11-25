@@ -2,8 +2,18 @@
 
 Sources cited by the knowledge tables and catalogues.
 
-Items: 59
+Items: 60
 UNVERIFIED: 0
+
+### `afdc2026fuelproperties`
+
+- Title: Fuel Properties Comparison
+- Author: US Department of Energy, Alternative Fuels Data Center
+- Year: 2026
+- Type: misc
+- Access: open
+- URL: https://afdc.energy.gov/fuels/properties
+- Note: US Government work; the page is undated and was read on 2026-11-25; row Low Sulfur Diesel lists a lower heating value of 128,488 Btu/gal and a higher heating value of 138,490 Btu/gal, taken from the GREET 2019 input fuel specifications of Argonne National Laboratory
 
 ### `austin1971rate`
 

@@ -2,8 +2,32 @@
 
 Table `haulage`, licence CC-BY-4.0.
 
-Items: 14
+Items: 19
 UNVERIFIED: 13
+
+### `battery_electric_battery_to_wheel_efficiency`
+
+- Quantity: efficiency of a battery-electric haul truck from battery terminals to the wheel when discharging
+- Value: 0.85845
+- Units: 1
+- Role: parameter
+- Citation: `lindgren2022`, DOI 10.3390/en15134871
+- Page: Table 2, p. 7
+- Verification: verified (2026-11-25)
+- Symbol: `minephys.haulage.bev_cycle_energy`
+- Notes: Derived: (1 - 0.115) times (1 - 0.03), the DC-bus-to-wheel loss and the "Resistive loss in battery and DC/DC converter at 1C charge/discharge rate" 3 % (Table 2), the battery loss applied once. Uncertainty: the authors call the battery and power-electronics losses "highly uncertain since it is a new system that is yet to be developed" (p. 13); the 3 % holds at a 1C rate and no interval is given.
+
+### `battery_electric_regeneration_efficiency`
+
+- Quantity: electrical efficiency of regenerative braking from the wheel to the battery terminals
+- Value: 0.85845
+- Units: 1
+- Role: parameter
+- Citation: `lindgren2022`, DOI 10.3390/en15134871
+- Page: Table 2, p. 7
+- Verification: verified (2026-11-25)
+- Symbol: `minephys.haulage.bev_cycle_energy`
+- Notes: Derived: the DC-bus-to-wheel loss is "the same in reverse at regeneration" (Table 2), so (1 - 0.115) times (1 - 0.03). Boundary: electrical conversion only. It is an upper bound on the recovered share of braking energy, because friction braking and the practical electric braking power of 3300 kW (Table 2, note b) are not modelled. Uncertainty: no interval is given; the battery part is "highly uncertain" (p. 13).
 
 ### `diesel_co2_kg_per_us_gal`
 
@@ -16,6 +40,42 @@ UNVERIFIED: 13
 - Verification: verified (2026-10-06)
 - Symbol: `minephys.haulage.co2_from_diesel`
 - Notes: combustion (tank-to-wheel) CO₂ only; the CH₄ and N₂O factors are in Table 5 (p. 3) of the same document
+
+### `diesel_electric_fuel_to_wheel_efficiency`
+
+- Quantity: marginal efficiency of a diesel-electric haul truck from fuel energy to wheel energy (engine, generator, rectifier, DC bus, motor, gear)
+- Value: 0.354
+- Units: 1
+- Role: parameter
+- Citation: `lindgren2022`, DOI 10.3390/en15134871
+- Page: Table 2, p. 7
+- Verification: verified (2026-11-25)
+- Symbol: `minephys.haulage.trolley_cycle_energy`
+- Notes: Derived: 0.40 (Table 2, "ca 40% efficiency, fuel to DC-power", marginal diesel consumption 0.253 l/kWh) times 0.885 (the DC-bus-to-wheel row). Uncertainty: the source gives "ca 40%" with no interval; the authors inferred their parameters from truck specifications and recorded fuel consumption (p. 4) and their modelled DC-bus energy matched the measured 361 kWh per cycle within 1 % (358 kWh, p. 5), which checks the DC-bus energy, not this efficiency. The value is marginal: the load-independent consumption of 50 l/h in Table 2 is excluded, so a cycle-average efficiency from the tank is lower.
+
+### `diesel_lower_heating_value_j_per_m3`
+
+- Quantity: lower heating value of low-sulfur diesel fuel per unit volume
+- Value: 35811696091.9353
+- Units: J/m³
+- Role: parameter
+- Citation: `afdc2026fuelproperties`, https://afdc.energy.gov/fuels/properties
+- Page: Fuel Properties Comparison, row Low Sulfur Diesel, lower heating value (128,488 Btu/gal)
+- Verification: verified (2026-11-25)
+- Symbol: `minephys.haulage.fuel_use`
+- Notes: Converted: 128,488 Btu/gal times 1055.05585262 J/Btu (International Table Btu) divided by 3.785411784e-3 m3/gal, which is 35.81 MJ/l; the page does not say which Btu it uses (the thermochemical Btu would change the value by 0.03 %). The page cites the GREET 2019 input fuel specifications of Argonne National Laboratory for it. Uncertainty: the page gives one value and no interval; heating value varies with fuel grade. Cross-check: Table 2 of lindgren2022 (0.253 l/kWh at ca 40 %) implies 35.57 MJ/l, 0.7 % lower. The higher heating value on the same page is 138,490 Btu/gal and is not this row.
+
+### `electric_dc_bus_to_wheel_efficiency`
+
+- Quantity: efficiency of the electric drive from the DC bus to the wheel (motors, power electronics, gears), forward
+- Value: 0.885
+- Units: 1
+- Role: parameter
+- Citation: `lindgren2022`, DOI 10.3390/en15134871
+- Page: Table 2, p. 7
+- Verification: verified (2026-11-25)
+- Symbol: `minephys.haulage.trolley_cycle_energy`
+- Notes: Derived: 1 - 0.115 from "Loss from DC-bus to wheel, same in reverse at regeneration" 11.5 % (Table 2). Boundary: it starts at the DC bus; pantograph, contact-line, rectifier and feeder losses are not in it (the authors estimate the mine distribution loss at 2.63 %, p. 14, for one truck on a 500 m line). Uncertainty: the source gives no interval; the loss is a model parameter inferred by the authors from truck specifications (p. 4) and was not measured on its own.
 
 ### `rolling_resistance_firm_maintained`
 
