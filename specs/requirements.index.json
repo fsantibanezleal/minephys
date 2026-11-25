@@ -1452,6 +1452,18 @@
         "tests/contract/test_t_001_001_haulage_table.py"
       ]
     },
+    "DC-001-02": {
+      "spec": "001-haulage",
+      "retired": false,
+      "draft": true,
+      "phase": "clarified",
+      "tasks": [
+        "T-001-002"
+      ],
+      "tests": [
+        "tests/contract/test_t_001_002_energy_rows.py"
+      ]
+    },
     "US-002-1": {
       "spec": "002-blasting",
       "retired": false,
@@ -5145,6 +5157,9 @@
     "T-000-091": [],
     "T-001-001": [
       "DC-001-01"
+    ],
+    "T-001-002": [
+      "DC-001-02"
     ],
     "T-001-010": [
       "US-001-2",

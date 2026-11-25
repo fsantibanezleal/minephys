@@ -5,6 +5,7 @@ and are locked after `[red]` (`python tools/lock_tests.py specs/001-haulage/test
 
 ## Phase 1 — Setup
 - [ ] T-001-001 (DC-001-01) `haulage.yaml` rows of spec §7.5 and their BibTeX entries; contract test of the table — test: tests/contract/test_t_001_001_haulage_table.py
+- [ ] T-001-002 (DC-001-02) the five route-energy rows (fuel-to-wheel, DC-bus-to-wheel, battery-to-wheel and regeneration efficiencies, diesel lower heating value) and the BibTeX entry `afdc2026fuelproperties`; contract test of the rows — test: tests/contract/test_t_001_002_energy_rows.py
 
 ## Phase 2 — US-001-2 (P1) road physics
 - [ ] T-001-010 [US-001-2] (FR-001-01, FR-001-02, P-001-01) grade and total resistance — test: tests/unit/test_t_001_010_resistance.py, tests/metamorphic/test_t_001_010_resistance_mr.py

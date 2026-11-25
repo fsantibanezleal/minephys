@@ -90,6 +90,7 @@ are in §7.1.
 | ID | Artifact | Schema | Producer → Consumer |
 |---|---|---|---|
 | DC-001-01 | `src/minephys/knowledge/haulage.yaml` (rows of §7.5) | `contracts/knowledge-table.schema.json` (foundation DC-000-02) | this spec → `minephys.haulage`, docs generator, PitStudio knowledge pages |
+| DC-001-02 | `src/minephys/knowledge/haulage.yaml` (the five route-energy rows of §7.5, second table) and the entries `lindgren2022` and `afdc2026fuelproperties` of `references.bib` | `contracts/knowledge-table.schema.json` (DC-000-02), `contracts/bibliography-entry.schema.json` (DC-000-03) | this spec → `minephys.haulage.trolley_cycle_energy`, `bev_cycle_energy`, `fuel_use`, docs generator, PitStudio route-energy engine (spec 007 FR-007-40) |
 
 ## 7. Edge cases and assumptions
 
@@ -201,6 +202,21 @@ float64; FR-001-09's integer rule applies); `loading_passes(220000, 40, 0.9, 200
 | `rolling_resistance_loose_gravel` | 0.10 | 1 | parameter | same | UNVERIFIED |
 | `rolling_resistance_per_cm_penetration` | 0.006 | 1 per cm | parameter | same | UNVERIFIED |
 | `tripwire_*` (Table 7.3) | as listed | as listed | limit | this specification, §7.3 | UNVERIFIED (design choice, not a measurement) |
+
+Route-energy rows (DC-001-02). All five are `verified` (read on the source on 2026-11-25) and role `parameter`; each
+states its system boundary and what is known of its uncertainty in `notes`. Neither source gives an interval, so none is
+invented.
+
+| Row id | Value | Units | Citation, page | Derivation |
+|---|---|---|---|---|
+| `diesel_electric_fuel_to_wheel_efficiency` | 0.354 | 1 | Lindgren et al. 2022 (`lindgren2022`), Table 2, p. 7 | 0.40 (fuel to DC power, "ca 40 %") × (1 − 0.115) |
+| `electric_dc_bus_to_wheel_efficiency` | 0.885 | 1 | same, Table 2, p. 7 | 1 − 0.115 ("loss from DC-bus to wheel") |
+| `battery_electric_battery_to_wheel_efficiency` | 0.85845 | 1 | same, Table 2, p. 7 | (1 − 0.115) × (1 − 0.03) |
+| `battery_electric_regeneration_efficiency` | 0.85845 | 1 | same, Table 2, p. 7 | the same loss "in reverse at regeneration" |
+| `diesel_lower_heating_value_j_per_m3` | 3.58117e10 | J/m³ | US DOE Alternative Fuels Data Center, Fuel Properties Comparison (`afdc2026fuelproperties`), row Low Sulfur Diesel, lower heating value | 128,488 Btu/gal × 1055.05585262 J/Btu ÷ 3.785411784e-3 m³/gal |
+
+The regeneration value is the electrical wheel-to-battery conversion efficiency. It is an upper bound on the recovered
+share of braking energy: friction braking and the practical electric braking power limit are not modelled.
 
 Standard gravity and the US gallon, inch and pound definitions are rows of the foundation `units` table. The rolling-
 resistance rows document typical inputs only; no function uses them as defaults (foundation FR-000-22).

@@ -1,4 +1,4 @@
-# Traceability matrix — generated 2026-10-15 by tools/trace.py (do not edit)
+# Traceability matrix — generated 2026-11-25 by tools/trace.py (do not edit)
 
 | Req ID | Spec | Status | Tasks | Tests |
 |---|---|---|---|---|
@@ -7,6 +7,7 @@
 | DC-000-03 | 000-foundation | draft | T-000-001, T-008-011 | tests/contract/test_t_000_001_schemas.py |
 | DC-000-04 | 000-foundation | draft | T-000-001, T-000-030 | tests/contract/test_t_000_001_schemas.py, tests/unit/test_t_000_030_api_stability.py |
 | DC-001-01 | 001-haulage | draft | T-001-001 | tests/contract/test_t_001_001_haulage_table.py |
+| DC-001-02 | 001-haulage | draft | T-001-002 | tests/contract/test_t_001_002_energy_rows.py |
 | DC-002-01 | 002-blasting | draft | T-002-001 | tests/contract/test_t_002_001_blasting_table.py |
 | DC-003-01 | 003-geotech | draft | T-003-001 | tests/contract/test_t_003_001_geotech_table.py |
 | DC-004-01 | 004-bulk | draft | T-004-001 | tests/contract/test_t_004_001_bulk_table.py |
