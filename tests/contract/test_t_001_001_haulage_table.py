@@ -65,6 +65,16 @@ TRIPWIRES = {
     "tripwire_grid_intensity_max": (1.0e-6, "kg/J"),
 }
 
+# DC-001-02 (T-001-002): the five route-energy rows added by spec 001 section 7.5, second table
+ROUTE_ENERGY_ROWS = {
+    "diesel_electric_fuel_to_wheel_efficiency",
+    "electric_dc_bus_to_wheel_efficiency",
+    "battery_electric_battery_to_wheel_efficiency",
+    "battery_electric_regeneration_efficiency",
+    "diesel_lower_heating_value_j_per_m3",
+}
+ROUTE_ENERGY_CITATIONS = {"lindgren2022", "afdc2026fuelproperties"}
+
 
 def symbols(row: dict) -> list[str]:
     s = row["symbol"]
@@ -139,7 +149,7 @@ def test_tripwire_rows(row_id: str, expected: tuple[float, str]) -> None:
 @pytest.mark.oracle("hand-calculation", "spec 001 7.5: no UNVERIFIED value is presented as verified, and vice versa")
 def test_only_the_epa_row_is_verified() -> None:
     verified = {i for i, r in rows_by_id(TABLE).items() if r["verification"] == "verified"}
-    assert verified == {"diesel_co2_kg_per_us_gal"}
+    assert verified == {"diesel_co2_kg_per_us_gal"} | ROUTE_ENERGY_ROWS
 
 
 @pytest.mark.req("DC-001-01")
@@ -147,7 +157,7 @@ def test_only_the_epa_row_is_verified() -> None:
 def test_cited_bibliography_entries() -> None:
     bib = load_bib()
     cited = {r["citation"] for r in load_table(TABLE)["rows"]}
-    assert cited == {"epa2025ghghub", "oem2016rollingresistance", "minephys:spec-001-haulage"}
+    assert cited == {"epa2025ghghub", "oem2016rollingresistance", "minephys:spec-001-haulage"} | ROUTE_ENERGY_CITATIONS
     for key in cited:
         assert key in bib, f"references.bib has no entry {key}"
         assert schema_errors("bibliography-entry.schema.json", bib_entry_as_object(key, bib[key])) == [], key
